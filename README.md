@@ -7,3 +7,7 @@ Using the normal Kodi skins in this cases causes part of the skin to spill outsi
 
 
 This version of the skin contains all the GUI within an 810 pixel height. 
+
+To install simply download the zip file (option on right of screen) and then within Kodi go to AddOns and 'Install from Zip' and it should install. 
+
+Any issues, please let me know.
