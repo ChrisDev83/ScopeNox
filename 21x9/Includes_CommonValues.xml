@@ -40,8 +40,7 @@
 	<include name="ButtonTopbarCommonvalues">
 		<height>60</height>
 		<width>60</width>
-		<align>center</align>
-		<aligny>top</aligny>
+		<top>130</top>
 		<textoffsety>3</textoffsety>
 		<font>IconSmall</font>
 		<textcolor>grey</textcolor>
