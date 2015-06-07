@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1129" type="dialog">
+<!--     <defaultcontrol always="false">100</defaultcontrol> -->
+<!--     <visible>Window.IsVisible(FullScreenVideo)</visible> -->
+	<visible>Skin.HasSetting(showscope)</visible>
+    <controls>
+        <control type="group">
+        	<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>130</height>
+			<texture>black.png</texture>
+			
+<!-- 			<left>0</left> -->
+<!-- 			<top>120</top> -->
+<!-- 			<width>1920</width> -->
+<!-- 			<height>10</height> -->
+<!-- 			<texture background="true" fallback="special://skin/orange.png">missing.png</texture> -->
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>950</top>
+			<width>1920</width>
+			<height>140</height>
+			<texture>black.png</texture>
+			
+<!-- 			<left>0</left> -->
+<!-- 			<top>950</top> -->
+<!-- 			<width>1920</width> -->
+<!-- 			<height>10</height> -->
+<!-- 			<texture background="true" fallback="special://skin/orange.png">missing.png</texture> -->
+		</control>
+        </control>
+    </controls>
+</window>
