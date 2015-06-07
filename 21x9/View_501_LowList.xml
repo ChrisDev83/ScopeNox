@@ -836,7 +836,7 @@
 			</control>
 			<control type="group">
 				<left>5</left>
-				<top>442</top>
+				<top>342</top>
 				<control type="image">
 					<width>440</width>
 					<height>640</height>
@@ -943,7 +943,7 @@
 				<left>450</left>
 				<top>652</top>
 				<width>976</width>
-				<height>427</height>
+				<height>290</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>60</onright>
@@ -1259,7 +1259,7 @@
 		<movement>6</movement>
 	</include>
 	<include name="LowListHeightLow">
-		<height>347</height>
+		<height>290</height>
 		<movement>4</movement>
 	</include>
 </includes>

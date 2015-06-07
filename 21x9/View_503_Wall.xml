@@ -9,7 +9,7 @@
 			<control type="panel" id="503">
 				<top>130</top>
 				<left>50</left>
-				<width>1920</width>
+				<width>1888</width>
 				<height>820</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>

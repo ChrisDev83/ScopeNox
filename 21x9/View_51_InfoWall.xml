@@ -187,25 +187,25 @@
 			<top>15</top>
 			<control type="image">
 				<description>background image</description>
-				<left>140</left>
+				<left>20</left>
 				<top>1080</top>
-				<width>1640</width>
-				<height>964</height>
+				<width>1888</width>
+				<height>785</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
 				<description>background image</description>
-				<left>140</left>
+				<left>20</left>
 				<top>148</top>
-				<width>1640</width>
-				<height>964</height>
+				<width>1888</width>
+				<height>785</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="51">
-				<left>170</left>
-				<top>240</top>
-				<width>900</width>
-				<height>900</height>
+				<left>50</left>
+				<top>180</top>
+				<width>1200</width>
+				<height>720</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -358,10 +358,10 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>104</left>
-				<top>240</top>
+				<left>404</left>
+				<top>180</top>
 				<width>14</width>
-				<height>900</height>
+				<height>720</height>
 				<onright>50</onright>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
@@ -375,10 +375,10 @@
 			</control>
 
 			<control type="group">
-				<left>1070</left>
+				<left>1270</left>
 				<top>240</top>
 				<control type="image">
-					<width>680</width>
+					<width>380</width>
 					<height>400</height>
 					<aspectratio>scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
@@ -388,7 +388,7 @@
 				</control>
 				<control type="label">
 					<top>401</top>
-					<width>628</width>
+					<width>615</width>
 					<height>60</height>
 					<font>font16_title_bold</font>
 					<textcolor>grey</textcolor>
@@ -438,7 +438,7 @@
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="scrollbar" id="61">
-					<left>677</left>
+					<left>590</left>
 					<top>555</top>
 					<width>14</width>
 					<height>342</height>

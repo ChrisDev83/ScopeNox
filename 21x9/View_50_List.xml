@@ -1256,7 +1256,7 @@
 					<left>0</left>
 					<top>180</top>
 					<width>1140</width>
-					<height>750</height>
+					<height>730</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>

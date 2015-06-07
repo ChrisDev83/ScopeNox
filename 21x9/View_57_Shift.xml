@@ -133,7 +133,7 @@
 			<visible>Control.IsVisible(57) + !Window.IsActive(addoninformation)</visible>
 			<control type="fixedlist" id="57">
 				<left>-120</left>
-				<top>300</top>
+				<top>200</top>
 				<width>2100</width>
 				<height>750</height>
 				<onup>SetProperty(MediaMenu,True,home)</onup>
@@ -153,7 +153,7 @@
 				<focusedlayout width="315" height="750">
 					<control type="image">
 						<left>-35</left>
-						<top>340</top>
+						<top>240</top>
 						<width>390</width>
 						<height>400</height>
 						<aspectratio>keep</aspectratio>

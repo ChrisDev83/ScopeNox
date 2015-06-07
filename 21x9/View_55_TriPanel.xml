@@ -885,7 +885,7 @@
 					<left>0</left>
 					<top>92</top>
 					<width>806</width>
-					<height>575</height>
+					<height>530</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>

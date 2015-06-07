@@ -49,12 +49,12 @@
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,806" start="0,0">WindowClose</animation>
-			<top>-30</top>
+			<top>-60</top>
 			<control type="group">
 				<visible>Control.IsVisible(54) | Control.IsVisible(52)</visible>
 				<control type="group">
 					<left>410</left>
-					<top>1010</top>
+					<top>925</top>
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -83,7 +83,7 @@
 				</control>
 				<control type="group">
 					<left>0</left>
-					<top>1010</top>
+					<top>925</top>
 					<width>1920</width>
 					<align>center</align>
 					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
@@ -116,7 +116,7 @@
 				<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 				<control type="group">
 					<left>90</left>
-					<top>1010</top>
+					<top>920</top>
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -145,7 +145,7 @@
 				</control>
 				<control type="grouplist">
 					<left>0</left>
-					<top>1000</top>
+					<top>8900</top>
 					<width>1840</width>
 					<height>90</height>
 					<align>right</align>
