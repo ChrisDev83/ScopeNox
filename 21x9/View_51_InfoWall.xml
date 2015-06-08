@@ -480,8 +480,8 @@
 			<control type="panel" id="51">
 				<left>40</left>
 				<top>180</top>
-				<width>1000</width>
-				<height>800</height>
+				<width>1200</width>
+				<height>720</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>

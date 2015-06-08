@@ -2,7 +2,7 @@
 <window id="1129" type="dialog">
 <!--     <defaultcontrol always="false">100</defaultcontrol> -->
 <!--     <visible>Window.IsVisible(FullScreenVideo)</visible> -->
-	<visible>Skin.HasSetting(showscope)</visible>
+	<visible>Skin.HasSetting(showscope) + Window.IsVisible(FullScreenVideo)</visible>
     <controls>
         <control type="group">
         	<control type="image">

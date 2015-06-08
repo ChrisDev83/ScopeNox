@@ -32,7 +32,7 @@
 				<visible>Control.IsVisible(54) | Control.IsVisible(52)</visible>
 				<control type="group">
 					<left>410</left>
-					<top>1010</top>
+					<top>890</top>
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -61,7 +61,7 @@
 				</control>
 				<control type="group">
 					<left>0</left>
-					<top>1010</top>
+					<top>890</top>
 					<width>1920</width>
 					<align>center</align>
 					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
@@ -98,7 +98,7 @@
 					<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 					<control type="group">
 						<left>90</left>
-						<top>1010</top>
+						<top>835</top>
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -126,13 +126,13 @@
 						</control>
 					</control>
 					<control type="label">
-						<left>1800</left>
-						<top>1000</top>
+						<left>1620</left>
+						<top>850</top>
 						<width>198</width>
 						<height>90</height>
 						<align>right</align>
 						<label>$INFO[ListItem.Property(Addon.Version)]</label>
-						<font>font35_title_bold</font>
+						<font>font13_title_bold</font>
 						<textcolor>white</textcolor>
 						<wrapmultiline>true</wrapmultiline>
 					</control>

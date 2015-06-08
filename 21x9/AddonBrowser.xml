@@ -30,7 +30,7 @@
 			<top>-30</top>
 			<control type="group">
 				<left>410</left>
-				<top>1010</top>
+				<top>890</top>
 				<visible>Control.IsVisible(54)</visible>
 				<control type="label">
 					<left>0</left>
@@ -94,13 +94,13 @@
 					</control>
 				</control>
 				<control type="label">
-					<left>1800</left>
-					<top>1000</top>
+					<left>1620</left>
+					<top>900</top>
 					<width>198</width>
 					<height>90</height>
 					<align>right</align>
 					<label>$INFO[ListItem.Property(Addon.Version)]</label>
-					<font>font35_title_bold</font>
+					<font>font13_title_bold</font>
 					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 				</control>

@@ -426,7 +426,7 @@
 				<left>60</left>
 				<top>200</top>
 				<width>1840</width>
-				<height>610</height>
+				<height>640</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>60</onright>
@@ -493,7 +493,7 @@
 				<left>1860</left>
 				<top>200</top>
 				<width>8</width>
-				<height>690</height>
+				<height>640</height>
 				<onleft>50</onleft>
 				<onright>SetProperty(MediaMenu,True,home)</onright>
 				<onright>SetFocus(9050)</onright>
