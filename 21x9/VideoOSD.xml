@@ -173,10 +173,12 @@
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="707">
-	                <width>140</width>
-	                <label>Scope Mask</label>
-	                <height>82</height>
-	                <font>font10</font>
+					<texturefocus>osd/buttons/osdscopefo.png</texturefocus>
+					<texturenofocus>osd/buttons/osdscopenf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
 	                <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 	                <onclick>Skin.ToggleSetting(showscope)</onclick>
 	            </control>
