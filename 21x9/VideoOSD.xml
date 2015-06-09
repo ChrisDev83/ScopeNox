@@ -172,14 +172,24 @@
 					<onclick>ActivateWindow(1118)</onclick>
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 				</control>
-				<control type="button" id="707">
-					<texturefocus>osd/buttons/osdscopefo.png</texturefocus>
-					<texturenofocus>osd/buttons/osdscopenf.png</texturenofocus>
+				<control type="button" id="708">
+					<texturefocus>osd/buttons/osdmaskonfo.png</texturefocus>
+					<texturenofocus>osd/buttons/osdmaskonnf.png</texturenofocus>
 					<label>-</label>
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+	                <visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + Skin.HasSetting(showscope)</visible>
+	                <onclick>Skin.ToggleSetting(showscope)</onclick>
+	            </control>
+				<control type="button" id="707">
+					<texturefocus>osd/buttons/osdmaskofffo.png</texturefocus>
+					<texturenofocus>osd/buttons/osdmaskoffnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+	                <visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !Skin.HasSetting(showscope)</visible>
 	                <onclick>Skin.ToggleSetting(showscope)</onclick>
 	            </control>
 			</control>
