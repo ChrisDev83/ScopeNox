@@ -235,32 +235,59 @@
 		</control>
 	</include>
 	<include name="219Bars">
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>1920</width>
-			<height>130</height>
-			<texture>black.png</texture>
-			
+<!-- 		<control type="image"> -->
 <!-- 			<left>0</left> -->
-<!-- 			<top>120</top> -->
+<!-- 			<top>0</top> -->
 <!-- 			<width>1920</width> -->
-<!-- 			<height>10</height> -->
-<!-- 			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture> -->
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>950</top>
-			<width>1920</width>
-			<height>140</height>
-			<texture>black.png</texture>
-			
+<!-- 			<height>130</height> -->
+<!-- 			<texture>black.png</texture> -->
+<!-- 		</control> -->
+<!-- 		<control type="image" zorder="0"> -->
 <!-- 			<left>0</left> -->
 <!-- 			<top>950</top> -->
 <!-- 			<width>1920</width> -->
-<!-- 			<height>10</height> -->
-<!-- 			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture> -->
+<!-- 			<height>140</height> -->
+<!-- 			<texture>black.png</texture> -->
+<!-- 		</control> -->
+		
+		
+		
+		
+		
+		
+		<control type="image">
+			<left>0</left>
+			<top>125</top>
+			<width>1920</width>
+			<height>5</height>
+			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture>
 		</control>
+		<control type="image" zorder="0">
+			<left>0</left>
+			<top>950</top>
+			<width>1920</width>
+			<height>5</height>
+			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture>
+		</control>
+		
+		<control type="image">
+			<left>0</left>
+			<top>135</top>
+			<width>1920</width>
+			<height>5</height>
+			<texture background="true">special://skin/extras/red.png</texture>
+		</control>
+		<control type="image" zorder="0">
+			<left>0</left>
+			<top>940</top>
+			<width>1920</width>
+			<height>5</height>
+			<texture background="true">special://skin/extras/red.png</texture>
+		</control>
+		
+		
+		
+		
 	</include>
 	<!-- Navigation Bar -->
 	<include name="Topbar">
