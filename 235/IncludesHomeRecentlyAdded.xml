@@ -128,7 +128,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Premiered,,  |  ]$INFO[Container(8000).ListItem.RatingAndVotes]$INFO[Container(8000).ListItem.Duration,  |  , $LOCALIZE[12391]]</label>
@@ -137,7 +137,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Director,$LOCALIZE[31000] ]</label>
@@ -146,7 +146,7 @@
 					<!--<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Property(episodeno)]</label>
@@ -155,7 +155,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Artist]</label>
@@ -164,7 +164,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Year]</label>
@@ -173,7 +173,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Album]$INFO[Container(8000).ListItem.Year, [,]]</label>
@@ -187,7 +187,7 @@
 						<description>Plot</description>
 						<width>900</width>
 						<height>150</height>
-						<font>font14_textbox</font>
+						<font>font13</font>
 						<align>left</align>
 						<label>$INFO[Container(8000).ListItem.Plot]$INFO[Container(8000).ListItem.Property(Album_Description)]</label>
 						<textcolor>white2</textcolor>
@@ -206,7 +206,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>40</height>
-						<font>font14_title</font>
+						<font>font12_title</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Property(Addon.Name)]</label>
@@ -215,7 +215,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>20</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Property(Addon.Version)]</label>
@@ -227,7 +227,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Property(Addon.Creator),[COLOR labelheader]$LOCALIZE[21863]:[/COLOR] ]</label>
@@ -240,7 +240,7 @@
 						<description>Plot</description>
 						<width>900</width>
 						<height>250</height>
-						<font>font14_textbox</font>
+						<font>font13</font>
 						<align>left</align>
 						<label>$INFO[Container(8000).ListItem.Property(Addon.Description)]</label>
 						<textcolor>white2</textcolor>
@@ -576,7 +576,7 @@
 					<left>50</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font48_title</font>
+					<font>font30_title</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title]</label>
@@ -589,7 +589,7 @@
 					<left>90</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font13</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.Artist]</label>
@@ -598,7 +598,7 @@
 					<left>100</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font13</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
@@ -607,7 +607,7 @@
 					<left>90</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font13</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.offset(1).TrackNumber,[COLOR=labelheader]$LOCALIZE[19031]:[/COLOR] ,. ]$INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
@@ -622,7 +622,7 @@
 					<height>50</height>
 					<width>1300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=labelheader] / [/COLOR]]</label>
-					<font>font48</font>
+					<font>font13</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>

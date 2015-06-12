@@ -427,7 +427,7 @@
 					<left>952</left>
 					<width>800</width>
 					<height>180</height>
-					<font>font12_textbox2</font>
+					<font>font13</font>
 					<pagecontrol>62</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>

@@ -20,7 +20,7 @@
 		<font>
 			<name>font13</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>30</size>
+			<size>23</size>
 		</font>
 		<font>
 			<name>font14_textbox</name>
@@ -37,7 +37,7 @@
 		<font>
 			<name>font15_textbox</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>35</size>
+			<size>30</size>
 			<linespacing>1.4</linespacing>
 		</font>
 		<font>
@@ -94,7 +94,7 @@
 			<name>font13_title</name>
 			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
-			<size>30</size>
+			<size>27</size>
 		</font>
 		<font>
 			<name>font14_title</name>
@@ -106,7 +106,7 @@
 			<name>font15_title</name>
 			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
-			<size>35</size>
+			<size>30</size>
 		</font>
 		<font>
 			<name>font16_title</name>

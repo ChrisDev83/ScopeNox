@@ -132,7 +132,7 @@
 						<height>90</height>
 						<align>right</align>
 						<label>$INFO[ListItem.Property(Addon.Version)]</label>
-						<font>font13_title_bold</font>
+						<font>font13</font>
 						<textcolor>white</textcolor>
 						<wrapmultiline>true</wrapmultiline>
 					</control>
