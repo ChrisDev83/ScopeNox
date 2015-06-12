@@ -44,7 +44,7 @@
 				<top>26</top>
 				<width>900</width>
 				<height>90</height>
-				<font>font11_title</font>
+				<font>font12_title</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>grey2</textcolor>
 				<shadowcolor>shadow</shadowcolor>
@@ -58,7 +58,7 @@
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>
-				<font>font11_title</font>
+				<font>font12_title</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>grey2</textcolor>
 				<shadowcolor>shadow</shadowcolor>
@@ -73,7 +73,7 @@
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>
-				<font>font11_title</font>
+				<font>font12_title</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>grey2</textcolor>
 				<shadowcolor>shadow</shadowcolor>
@@ -88,7 +88,7 @@
 				<left>1020</left>
 				<width>900</width>
 				<height>90</height>
-				<font>font11_title</font>
+				<font>font12_title</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>grey2</textcolor>
 				<shadowcolor>shadow</shadowcolor>

@@ -1298,7 +1298,7 @@
 							<top>5</top>
 							<width>80</width>
 							<height>80</height>
-							<font>font35caps_title</font>
+							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -1310,7 +1310,7 @@
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
-							<font>font28</font>
+							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1323,7 +1323,7 @@
 							<top>50</top>
 							<width>810</width>
 							<height>60</height>
-							<font>font11</font>
+							<font>font13</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1334,7 +1334,7 @@
 							<left>60</left>
 							<width>1060</width>
 							<height>70</height>
-							<font>font25</font>
+							<font>font13</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1414,7 +1414,7 @@
 							<top>5</top>
 							<width>80</width>
 							<height>80</height>
-							<font>font35caps_title</font>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -1426,7 +1426,7 @@
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
-							<font>font20</font>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1440,7 +1440,7 @@
 							<top>50</top>
 							<width>810</width>
 							<height>60</height>
-							<font>font11</font>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1452,7 +1452,7 @@
 							<left>60</left>
 							<width>1060</width>
 							<height>70</height>
-							<font>font20</font>
+							<font>font13</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1860,7 +1860,7 @@
 							<top>-15</top>
 							<width>985</width>
 							<height>80</height>
-							<font>font28</font>
+							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1934,7 +1934,7 @@
 							<top>-15</top>
 							<width>985</width>
 							<height>80</height>
-							<font>font25</font>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
