@@ -304,7 +304,7 @@
 				<texture border="1">topbar.png</texture>
 			</control>
 			<control type="label">
-				<top>140</top>
+				<top>143</top>
 				<width>900</width>
 				<height>90</height>
 				<font>font13_title</font>
@@ -317,7 +317,7 @@
 			</control>
 			<control type="label">
 				<visible>!Window.IsActive(script-globalsearch-main.xml)</visible>
-				<top>140</top>
+				<top>143</top>
 				<left>1020</left>
 				<width>900</width>
 				<height>90</height>
@@ -330,7 +330,7 @@
 				<label>$INFO[Container.NumItems,, $LOCALIZE[31025]]$INFO[Container.CurrentPage,[COLOR grey3] | ,]$INFO[Container.NumPages,/,[/COLOR]]</label>
 			</control>
 			<control type="label">
-				<top>140</top>
+				<top>143</top>
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>

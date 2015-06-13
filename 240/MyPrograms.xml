@@ -27,7 +27,7 @@
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,806" start="0,0">WindowClose</animation>
-			<top>20</top>
+			<top>220</top>
 			<control type="group">
 				<visible>Control.IsVisible(54) | Control.IsVisible(52)</visible>
 				<control type="group">

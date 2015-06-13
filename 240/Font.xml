@@ -23,6 +23,12 @@
 			<size>23</size>
 		</font>
 		<font>
+			<name>font14_textbox_plot</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>28</size>
+			<linespacing>1.2</linespacing>
+		</font>
+		<font>
 			<name>font14_textbox</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>33</size>
@@ -68,6 +74,11 @@
 			<size>38</size>
 		</font>
 		<font>
+			<name>font25</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
 			<name>font30</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>45</size>
@@ -82,6 +93,12 @@
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<style>bold</style>
 			<size>48</size>
+		</font>
+		<font>
+			<name>font35_bold</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<style>bold</style>
+			<size>35</size>
 		</font>
 		<!-- Title Fonts -->
 		<font>
@@ -142,7 +159,7 @@
 			<name>font30_title_bold</name>
 			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase bold</style>
-			<size>45</size>
+			<size>40</size>
 		</font>
 		<font>
 			<name>font48_title</name>

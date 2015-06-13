@@ -174,7 +174,7 @@
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<left>320</left>
+						<left>275</left>
 						<top>0</top>
 						<width>100</width>
 						<height>100</height>
@@ -218,7 +218,7 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="image">
-							<left>320</left>
+							<left>275</left>
 							<top>0</top>
 							<width>100</width>
 							<height>100</height>

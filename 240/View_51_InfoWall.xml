@@ -542,7 +542,7 @@
 				</focusedlayout>
 			</control>
 			<control type="group">
-				<left>1270</left>
+				<left>1160</left>
 				<top>190</top>
 				<control type="image">
 					<width>625</width>
@@ -554,7 +554,7 @@
 					<bordersize>2</bordersize>
 				</control>
 				<control type="label">
-					<top>355</top>
+					<top>360</top>
 					<width>628</width>
 					<height>60</height>
 					<font>font16_title_bold</font>
@@ -589,6 +589,7 @@
 				<control type="button">
 					<top>407</top>
 					<width>680</width>
+					<textcolor>labelheader</textcolor>
 					<label>$INFO[ListItem.Property(Addon.Creator),,[CR]]$INFO[ListItem.Property(Addon.Version)]</label>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<visible>Container.Content(addons)</visible>
@@ -597,18 +598,18 @@
 					<label>$VAR[MusicPlotVar]</label>
 					<top>470</top>
 					<left>15</left>
-					<width>650</width>
+					<width>690</width>
 					<height>232</height>
-					<font>font14_textbox</font>
+					<font>font12_textbox</font>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
 					<pagecontrol>61</pagecontrol>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="scrollbar" id="61">
 					<left>677</left>
-					<top>555</top>
+					<top>480</top>
 					<width>14</width>
-					<height>342</height>
+					<height>225</height>
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
