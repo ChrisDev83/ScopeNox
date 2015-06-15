@@ -6,14 +6,14 @@
 			<visible>Control.IsVisible(55)</visible>
 			<include>ViewAnimation</include>
 			<top>0</top>
-			<control type="group">
+			<control type="group"><!-- Info Right -->
 				<left>1400</left>
 				<top>136</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
 					<top>780</top>
-					<width>512</width>
+					<width>542</width>
 					<height>752</height>
 					<texture border="40">panel_reflect.png</texture>
 				</control>
@@ -21,7 +21,7 @@
 					<description>background image</description>
 					<left>-32</left>
 					<top>60</top>
-					<width>512</width>
+					<width>542</width>
 					<height>750</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
@@ -98,9 +98,9 @@
 				</control>
 				<control type="textbox" id="70">
 					<label>$VAR[VideoPlotVar]</label>
-					<left>15</left>
+					<left>25</left>
 					<top>370</top>
-					<width>418</width>
+					<width>448</width>
 					<height>350</height>
 					<font>font13</font>
 					<pagecontrol>62</pagecontrol>
@@ -108,10 +108,10 @@
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 				</control>
 				<control type="scrollbar" id="62">
-					<left>448</left>
+					<left>470</left>
 					<top>370</top>
 					<width>14</width>
-					<height>402</height>
+					<height>345</height>
 					<onup>PageUp(70)</onup>
 					<ondown>PageUp(70)</ondown>
 					<onleft>50</onleft>
@@ -124,7 +124,7 @@
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group"> <!-- Poster -->
 				<left>846</left>
 				<top>160</top>
 				<control type="image">
@@ -154,7 +154,7 @@
 					<texture flipx="true" border="1">side_shadow.png</texture>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group"> <!--   Left List -->
 				<left>36</left>
 				<top>60</top>
 				<control type="image">
@@ -826,7 +826,7 @@
 						<top>15</top>
 						<width>418</width>
 						<height>300</height>
-						<font>font14_textbox</font>
+						<font>font12_textbox</font>
 						<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 						<include>ShowCaseInfoPanelButtonsValues</include>
 					</control>

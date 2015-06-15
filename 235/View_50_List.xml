@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- Video List -->
+	<!-- Video : List -->
 	<include name="VideoList">
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
 			<control type="group">
 				<left>100</left>
-				<top>-40</top>
+				<top>-30</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>935</top>
 					<width>1204</width>
-					<height>904</height>
+					<height>804</height>
 					<texture border="40">panel_reflect.png</texture>
 				</control>
 				<control type="image">
@@ -21,14 +21,14 @@
 					<left>-32</left>
 					<top>210</top>
 					<width>1204</width>
-					<height>780</height>
+					<height>760</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="list" id="50">
 					<left>0</left>
 					<top>240</top>
 					<width>1140</width>
-					<height>720</height>
+					<height>700</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -37,18 +37,18 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="120" width="1140" condition="Container.Content(movies)">
+					<itemlayout height="101" width="1140" condition="Container.Content(movies)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -56,26 +56,215 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
+							<top>20</top>
 							<width>790</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>55</top>
 							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
+							<aligny>top</aligny>
+							<label>$VAR[VideoListLabel2Var]</label>
+						</control>
+						<control type="image">
+							<left>935</left>
+							<top>36</top>
+							<width>42</width>
+							<height>28</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[UnFocusHDIndicator]</texture>
+							<colordiffuse>grey2</colordiffuse>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+						</control>
+						<control type="label">
+							<width>1060</width>
+							<height>97</height>
+							<font>font25</font>
+							<align>right</align>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<left>5</left>
+							<width>1060</width>
+							<height>97</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="image">
+							<left>1076</left>
+							<top>18</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[ListItem.Overlay]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout height="101" width="1140" condition="Container.Content(movies)">
+						<control type="image">
+							<top>0</top>
+							<width>1140</width>
+							<height>101</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>1140</width>
+							<height>101</height>
+							<texture border="4">listselect_fo.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
+							<fadetime>IconCrossfadeTime</fadetime>
+						</control>
+						<control type="label">
+							<top>20</top>
+							<left>135</left>
+							<width>790</width>
+							<height>101</height>
+							<font>font25</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label]</label> <!-- Movie Title -->
+							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>55</top>
+							<width>790</width>
+							<height>101</height>
+							<font>font10</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$VAR[VideoListLabel2Var]</label>
+							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>935</left>
+							<top>36</top>
+							<width>42</width>
+							<height>28</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[UnFocusHDIndicator]</texture>
+							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+						</control>
+						<control type="label">
+							<width>1060</width>
+							<height>97</height>
+							<font>font25</font>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<left>5</left>
+							<width>1060</width>
+							<height>97</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="image">
+							<left>1076</left>
+							<top>18</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[ListItem.Overlay]</texture>
+						</control>
+					</focusedlayout>
+					<itemlayout height="101" width="1140" condition="Container.Content(episodes)">
+						<control type="image">
+							<top>0</top>
+							<width>1140</width>
+							<height>101</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<colordiffuse>grey2</colordiffuse>
+							<visible>SubString(ListItem.Icon,Default,left)</visible>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>20</top>
+							<width>790</width>
+							<height>70</height>
+							<font>font25</font>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>55</top>
+							<width>790</width>
+							<height>101</height>
+							<font>font10</font>
+							<textcolor>grey3</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 						<control type="image">
@@ -86,12 +275,12 @@
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<width>1060</width>
 							<height>116</height>
-							<font>font30</font>
+							<font>font25</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -120,40 +309,52 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(movies)">
+					<focusedlayout height="101" width="1140" condition="Container.Content(episodes)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
-							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
+							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
+							<visible>SubString(ListItem.Icon,Default,left)</visible>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<visible>!SubString(ListItem.Icon,Default,left)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
+							<top>20</top>
 							<width>790</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
@@ -161,12 +362,12 @@
 							<left>135</left>
 							<top>55</top>
 							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font10</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
@@ -178,12 +379,12 @@
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
 							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<width>1060</width>
 							<height>116</height>
-							<font>font30</font>
+							<font>font25</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -214,218 +415,18 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.Content(episodes)">
+					<itemlayout height="101" width="1140" condition="Container.Content(tvshows)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>0</top>
-							<width>790</width>
-							<height>70</height>
-							<font>font30</font>
-							<textcolor>grey2</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>55</top>
-							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
-							<textcolor>grey3</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$VAR[VideoListLabel2Var]</label>
-						</control>
-						<control type="image">
-							<left>935</left>
-							<top>46</top>
-							<width>42</width>
-							<height>28</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$VAR[UnFocusHDIndicator]</texture>
-							<colordiffuse>grey2</colordiffuse>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="label">
-							<width>1060</width>
-							<height>116</height>
-							<font>font30</font>
-							<align>right</align>
-							<textcolor>grey2</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="label">
-							<left>5</left>
-							<width>1060</width>
-							<height>116</height>
-							<font>font15</font>
-							<align>right</align>
-							<textcolor>grey2</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="image">
-							<left>1076</left>
-							<top>28</top>
-							<width>64</width>
-							<height>64</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$VAR[ListItem.Overlay]</texture>
-						</control>
-					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(episodes)">
-						<control type="image">
-							<top>62</top>
-							<width>1140</width>
-							<height>60</height>
-							<texture border="1">separator2.png</texture>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
-							<height>120</height>
-							<texture border="4">listselect_fo.png</texture>
-							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>0</top>
-							<width>790</width>
-							<height>70</height>
-							<font>font30</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>55</top>
-							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$VAR[VideoListLabel2Var]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-						</control>
-						<control type="image">
-							<left>935</left>
-							<top>46</top>
-							<width>42</width>
-							<height>28</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$VAR[UnFocusHDIndicator]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="label">
-							<width>1060</width>
-							<height>116</height>
-							<font>font30</font>
-							<align>right</align>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="label">
-							<left>5</left>
-							<width>1060</width>
-							<height>116</height>
-							<font>font15</font>
-							<align>right</align>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
-						</control>
-						<control type="image">
-							<left>1076</left>
-							<top>28</top>
-							<width>64</width>
-							<height>64</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$VAR[ListItem.Overlay]</texture>
-						</control>
-					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.Content(tvshows)">
-						<control type="image">
-							<top>62</top>
-							<width>1140</width>
-							<height>60</height>
-							<texture border="1">separator2.png</texture>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -433,32 +434,32 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
+							<top>20</top>
 							<width>790</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>55</top>
 							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 						<control type="label">
 							<width>1060</width>
-							<height>116</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font12</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -467,7 +468,7 @@
 						</control>
 						<control type="image">
 							<left>1076</left>
-							<top>28</top>
+							<top>20</top>
 							<width>64</width>
 							<height>64</height>
 							<aspectratio>keep</aspectratio>
@@ -489,7 +490,7 @@
 								<left>-18</left>
 								<top>0</top>
 								<width>100</width>
-								<height>120</height>
+								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
 								<aligny>center</aligny>
@@ -500,41 +501,41 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(tvshows)">
+					<focusedlayout height="101" width="1140" condition="Container.Content(tvshows)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
+							<top>20</top>
 							<width>790</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
@@ -542,19 +543,19 @@
 							<left>135</left>
 							<top>55</top>
 							<width>790</width>
-							<height>60</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font10</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<width>1060</width>
-							<height>116</height>
-							<font>font15</font>
+							<height>101</height>
+							<font>font12</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -564,7 +565,7 @@
 						</control>
 						<control type="image">
 							<left>1076</left>
-							<top>28</top>
+							<top>20</top>
 							<width>64</width>
 							<height>64</height>
 							<aspectratio>keep</aspectratio>
@@ -586,7 +587,7 @@
 								<left>-18</left>
 								<top>0</top>
 								<width>100</width>
-								<height>120</height>
+								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
 								<aligny>center</aligny>
@@ -597,18 +598,19 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.Content(seasons)">
+					<itemlayout height="101" width="1140" condition="Container.Content(seasons)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
+							<height>101</height>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -616,9 +618,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -628,8 +630,8 @@
 						<control type="label">
 							<left>135</left>
 							<width>960</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -639,7 +641,7 @@
 						<control type="label">
 							<width>1060</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font12</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -668,9 +670,9 @@
 							</control>
 							<control type="label">
 								<left>-18</left>
-								<top>0</top>
+								<top>8</top>
 								<width>100</width>
-								<height>120</height>
+								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
 								<aligny>center</aligny>
@@ -681,27 +683,27 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(seasons)">
+					<focusedlayout height="101" width="1140" condition="Container.Content(seasons)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -709,9 +711,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -720,8 +722,8 @@
 						<control type="label">
 							<left>135</left>
 							<width>960</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -732,7 +734,7 @@
 						<control type="label">
 							<width>1060</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font12</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -762,9 +764,9 @@
 							</control>
 							<control type="label">
 								<left>-18</left>
-								<top>0</top>
+								<top>8</top>
 								<width>100</width>
-								<height>120</height>
+								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
 								<aligny>center</aligny>
@@ -775,18 +777,18 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="101" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>101</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -795,9 +797,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -807,7 +809,7 @@
 							<left>135</left>
 							<width>905</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -819,7 +821,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -830,7 +832,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -839,27 +841,27 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="101" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>101</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -867,9 +869,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -879,7 +881,7 @@
 							<left>135</left>
 							<width>905</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -892,7 +894,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -904,7 +906,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -914,18 +916,18 @@
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
+					<itemlayout height="101" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -934,9 +936,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -945,9 +947,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -957,8 +959,8 @@
 							<left>135</left>
 							<top>0</top>
 							<width>960</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -968,7 +970,7 @@
 						<control type="label">
 							<left>100</left>
 							<width>960</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -985,27 +987,27 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
+					<focusedlayout height="101" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1013,9 +1015,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1023,9 +1025,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1035,8 +1037,8 @@
 							<left>135</left>
 							<top>0</top>
 							<width>960</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1047,7 +1049,7 @@
 						<control type="label">
 							<left>100</left>
 							<width>960</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -1070,7 +1072,7 @@
 					<left>1140</left>
 					<top>240</top>
 					<width>14</width>
-					<height>715</height>
+					<height>700</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
@@ -1164,14 +1166,14 @@
 					<left>32</left>
 					<top>468</top>
 					<width>506</width>
-					<height>60</height>
+					<height>101</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="image">
 					<left>32</left>
 					<top>620</top>
 					<width>506</width>
-					<height>60</height>
+					<height>101</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="group">
@@ -1204,7 +1206,7 @@
 					<left>47</left>
 					<width>476</width>
 					<height>458</height>
-					<font>font15_textbox</font>
+					<font>font14_textbox_plot</font>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<pagecontrol>62</pagecontrol>
@@ -1235,7 +1237,7 @@
 			<include>ViewAnimation</include>
 			<control type="group">
 				<left>100</left>
-				<top>15</top>
+				<top>25</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
@@ -1252,7 +1254,7 @@
 					<height>790</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
+				<control type="list" id="50"> <!-- Music : List -->
 					<left>0</left>
 					<top>180</top>
 					<width>1140</width>
@@ -1265,18 +1267,18 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="90" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<itemlayout height="81" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>60</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1285,9 +1287,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1295,10 +1297,10 @@
 						</control>
 						<control type="label">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<font>font45caps_title</font>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
+							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -1310,27 +1312,29 @@
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
+							<top>10</top>
 							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
-							<label>$VAR[MusicListLabel3Var]</label>
+							<aligny>top</aligny>
+							<label>$VAR[MusicListLabel3Var]</label> <!-- Album Title -->
 							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Artist)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font13</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>bottom</aligny>
 							<label>$INFO[ListItem.Artist]</label>
 						</control>
 						<control type="label">
+							<top>10</top>
 							<left>60</left>
 							<width>1060</width>
 							<height>70</height>
@@ -1338,15 +1342,15 @@
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label fallback="• • • •">$VAR[MusicListLabel4Var]</label>
 							<visible>!IsEmpty(ListItem.Title)</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>50</top>
+							<top>8</top>
 							<width>180</width>
-							<height>70</height>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>grey3</colordiffuse>
 							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
@@ -1373,27 +1377,27 @@
 							<visible>!IsEmpty(ListItem.Title) + [ListItem.IsPlaying | ListItem.IsSelected]</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout height="90" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<focusedlayout height="81" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>60</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1401,9 +1405,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1411,10 +1415,10 @@
 						</control>
 						<control type="label">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
-							<font>font45caps_title</font>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
@@ -1423,6 +1427,7 @@
 							<visible>Container.Content(songs)</visible>
 						</control>
 						<control type="label">
+							<top>10</top>
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
@@ -1430,25 +1435,26 @@
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label>$VAR[MusicListLabel3Var]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Artist)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>bottom</aligny>
 							<label>$INFO[ListItem.Artist]</label>
 							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
+							<top>10</top>
 							<left>60</left>
 							<width>1060</width>
 							<height>70</height>
@@ -1456,34 +1462,34 @@
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
+							<aligny>top</aligny>
 							<label fallback="• • • •">$VAR[MusicListLabel4Var]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 							<visible>!IsEmpty(ListItem.Title)</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>50</top>
+							<top>8</top>
 							<width>180</width>
-							<height>70</height>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>$VAR[StarRatingDiffuseVar]</colordiffuse>
 							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
 							<visible>!IsEmpty(ListItem.Title)</visible>
 						</control>
 					</focusedlayout>
-					<itemlayout height="90" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="81" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>81</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1492,9 +1498,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1504,7 +1510,7 @@
 							<left>135</left>
 							<width>905</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1516,7 +1522,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1527,7 +1533,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -1536,27 +1542,27 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="90" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="81" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>81</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1564,9 +1570,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>5</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1576,7 +1582,7 @@
 							<left>135</left>
 							<width>905</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1589,7 +1595,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1601,7 +1607,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -1611,18 +1617,18 @@
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="90" width="1140" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
+					<itemlayout height="81" width="1140" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
 						<control type="image">
-							<top>30</top>
+							<top>81</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
 							<top>0</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1632,8 +1638,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>0</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1641,20 +1647,20 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>-20</top>
+							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>81</height>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$INFO[ListItem.Label]</label> <!-- Title Label -->
 						</control>
 						<control type="label">
 							<left>60</left>
 							<width>1005</width>
-							<height>120</height>
+							<height>81</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -1663,18 +1669,18 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="90" width="1140" condition="![Container.Content(albums) | Container.Content(songs) |  Container.Content(addons)]">
+					<focusedlayout height="81" width="1140" condition="![Container.Content(albums) | Container.Content(songs) |  Container.Content(addons)]">
 						<control type="image">
-							<top>30</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>-5</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -1682,8 +1688,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>0</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1692,8 +1698,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>0</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1701,10 +1707,10 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>-20</top>
+							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>81</height>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -1715,7 +1721,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>1005</width>
-							<height>120</height>
+							<height>81</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -1803,7 +1809,7 @@
 					<left>-32</left>
 					<top>1020</top>
 					<width>1204</width>
-					<height>780</height>
+					<height>750</height>
 					<texture border="40">panel_reflect.png</texture>
 				</control>
 				<control type="image">
@@ -1811,14 +1817,14 @@
 					<left>-32</left>
 					<top>148</top>
 					<width>1204</width>
-					<height>780</height>
+					<height>750</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
+				<control type="list" id="50"> <!-- Addon : List -->
 					<left>0</left>
 					<top>180</top>
 					<width>1140</width>
-					<height>720</height>
+					<height>700</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1827,18 +1833,18 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="90" width="1140">
+					<itemlayout height="81" width="1140">
 						<control type="image">
 							<top>0</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
 							<top>5</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1848,8 +1854,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>5</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1857,20 +1863,20 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>-15</top>
+							<top>-10</top>
 							<width>985</width>
-							<height>80</height>
-							<font>font13</font>
+							<height>81</height>
+							<font>font14</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>middle</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>35</top>
+							<top>30</top>
 							<width>985</width>
 							<height>70</height>
 							<font>font12</font>
@@ -1884,7 +1890,7 @@
 							<left>60</left>
 							<top>0</top>
 							<width>1060</width>
-							<height>90</height>
+							<height>81</height>
 							<font>font14</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -1893,18 +1899,18 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="90" width="1140">
+					<focusedlayout height="81" width="1140">
 						<control type="image">
 							<top>0</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>90</height>
+							<height>81</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -1912,8 +1918,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>5</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1922,8 +1928,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>5</top>
-							<width>80</width>
-							<height>80</height>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -1931,21 +1937,21 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>-15</top>
+							<top>-5</top>
 							<width>985</width>
-							<height>80</height>
-							<font>font13</font>
+							<height>81</height>
+							<font>font14</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
+							<aligny>middle</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>35</top>
+							<top>30</top>
 							<width>985</width>
 							<height>70</height>
 							<font>font12</font>
@@ -1960,7 +1966,7 @@
 							<left>60</left>
 							<top>0</top>
 							<width>1060</width>
-							<height>90</height>
+							<height>81</height>
 							<font>font14</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2048,18 +2054,18 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="120" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="101" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>101</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2068,9 +2074,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2081,7 +2087,7 @@
 							<top>0</top>
 							<width>985</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -2093,7 +2099,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>985</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2105,7 +2111,7 @@
 							<left>60</left>
 							<top>0</top>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2114,27 +2120,27 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="101" width="1140" condition="Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>101</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2142,9 +2148,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2155,7 +2161,7 @@
 							<top>0</top>
 							<width>985</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -2168,7 +2174,7 @@
 							<left>135</left>
 							<top>50</top>
 							<width>985</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2181,7 +2187,7 @@
 							<left>60</left>
 							<top>0</top>
 							<width>1060</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2191,18 +2197,18 @@
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="!Container.Content(addons)">
+					<itemlayout height="101" width="1140" condition="!Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>0</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2211,9 +2217,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2223,8 +2229,8 @@
 							<left>135</left>
 							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -2235,7 +2241,7 @@
 							<left>115</left>
 							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2244,27 +2250,27 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="!Container.Content(addons)">
+					<focusedlayout height="101" width="1140" condition="!Container.Content(addons)">
 						<control type="image">
-							<top>60</top>
+							<top>101</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1140</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2272,9 +2278,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<fadetime>IconCrossfadeTime</fadetime>
@@ -2284,8 +2290,8 @@
 							<left>135</left>
 							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
-							<font>font30</font>
+							<height>101</height>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
@@ -2297,7 +2303,7 @@
 							<left>115</left>
 							<top>0</top>
 							<width>1005</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2389,13 +2395,13 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>895</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2416,7 +2422,7 @@
 						<control type="label">
 							<left>5</left>
 							<width>1060</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2464,12 +2470,12 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -2477,7 +2483,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>895</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2499,7 +2505,7 @@
 						<control type="label">
 							<left>5</left>
 							<width>1060</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2547,13 +2553,13 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2564,7 +2570,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2577,12 +2583,12 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -2590,7 +2596,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2602,7 +2608,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2695,7 +2701,7 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -2711,7 +2717,7 @@
 						<control type="label">
 							<left>200</left>
 							<width>900</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2722,7 +2728,7 @@
 						<control type="label">
 							<left>210</left>
 							<width>900</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2735,12 +2741,12 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -2757,7 +2763,7 @@
 						<control type="label">
 							<left>200</left>
 							<width>900</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2769,7 +2775,7 @@
 						<control type="label">
 							<left>210</left>
 							<width>900</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2783,13 +2789,13 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2800,7 +2806,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2813,12 +2819,12 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -2826,7 +2832,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2838,7 +2844,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -2931,13 +2937,13 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2948,7 +2954,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -2961,12 +2967,12 @@
 						<control type="image">
 							<top>2</top>
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>1140</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeEffect</include>
@@ -2974,7 +2980,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -2986,7 +2992,7 @@
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>60</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>

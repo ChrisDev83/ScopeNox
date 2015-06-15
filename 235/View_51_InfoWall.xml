@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- Video InfoWall -->
+	<!-- Video : InfoWall -->
 	<include name="VideoInfoWall">
 		<control type="group">
 			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation)</visible>
@@ -9,9 +9,9 @@
 			<control type="image">
 				<description>background image</description>
 				<left>2</left>
-				<top>180</top>
+				<top>933</top>
 				<width>1900</width>
-				<height>785</height>
+				<height>775</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
@@ -19,14 +19,14 @@
 				<left>2</left>
 				<top>148</top>
 				<width>1930</width>
-				<height>785</height>
+				<height>765</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="51">
 				<left>28</left>
-				<top>175</top>
+				<top>180</top>
 				<width>1300</width>
-				<height>725</height>
+				<height>700</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -97,10 +97,10 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>104</left>
-				<top>240</top>
+				<left>14</left>
+				<top>180</top>
 				<width>14</width>
-				<height>725</height>
+				<height>700</height>
 				<onright>50</onright>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
@@ -542,7 +542,7 @@
 				</focusedlayout>
 			</control>
 			<control type="group">
-				<left>1270</left>
+				<left>1160</left>
 				<top>190</top>
 				<control type="image">
 					<width>625</width>
@@ -589,6 +589,7 @@
 				<control type="button">
 					<top>407</top>
 					<width>680</width>
+					<textcolor>labelheader</textcolor>
 					<label>$INFO[ListItem.Property(Addon.Creator),,[CR]]$INFO[ListItem.Property(Addon.Version)]</label>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<visible>Container.Content(addons)</visible>
@@ -597,9 +598,9 @@
 					<label>$VAR[MusicPlotVar]</label>
 					<top>470</top>
 					<left>15</left>
-					<width>650</width>
+					<width>690</width>
 					<height>232</height>
-					<font>font14_textbox</font>
+					<font>font12_textbox</font>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
 					<pagecontrol>61</pagecontrol>
 					<include>ShowCaseInfoPanelButtonsValues</include>

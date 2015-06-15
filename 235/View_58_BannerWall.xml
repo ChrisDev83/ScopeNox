@@ -5,13 +5,13 @@
 		<control type="group">
 			<visible>Control.IsVisible(58) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>80</top>
+			<top>85</top>
 			<control type="image">
 				<description>background image</description>
 				<left>90</left>
 				<top>885</top>
 				<width>1740</width>
-				<height>790</height>
+				<height>775</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
@@ -19,14 +19,14 @@
 				<left>90</left>
 				<top>89</top>
 				<width>1740</width>
-				<height>780</height>
+				<height>755</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="58">
 				<left>120</left>
 				<top>120</top>
 				<width>1180</width>
-				<height>730</height>
+				<height>715</height>
 				<onleft>60</onleft>
 				<onright>61</onright>
 				<onup>58</onup>
@@ -140,9 +140,9 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<left>104</left>
-				<top>179</top>
+				<top>120</top>
 				<width>14</width>
-				<height>750</height>
+				<height>745</height>
 				<onright>50</onright>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>

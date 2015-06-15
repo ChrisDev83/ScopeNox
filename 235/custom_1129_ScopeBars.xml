@@ -2,35 +2,21 @@
 <window id="1129" type="dialog">
 <!--     <defaultcontrol always="false">100</defaultcontrol> -->
 <!--     <visible>Window.IsVisible(FullScreenVideo)</visible> -->
-	<visible>Skin.HasSetting(showscope) + Window.IsVisible(FullScreenVideo)</visible>
+	<visible>!Skin.HasSetting(DebugInfo) + [[Skin.HasSetting(showscope) + Window.IsVisible(FullScreenVideo)] | !Window.IsVisible(FullScreenVideo)]</visible>
     <controls>
-        <control type="group">
-        	<control type="image">
+        <control type="image">
 			<left>0</left>
 			<top>0</top>
 			<width>1920</width>
 			<height>130</height>
 			<texture>black.png</texture>
-			
-<!-- 			<left>0</left> -->
-<!-- 			<top>120</top> -->
-<!-- 			<width>1920</width> -->
-<!-- 			<height>10</height> -->
-<!-- 			<texture background="true" fallback="special://skin/orange.png">missing.png</texture> -->
 		</control>
-		<control type="image">
+		<control type="image" zorder="0">
 			<left>0</left>
 			<top>950</top>
 			<width>1920</width>
-			<height>140</height>
+			<height>130</height>
 			<texture>black.png</texture>
-			
-<!-- 			<left>0</left> -->
-<!-- 			<top>950</top> -->
-<!-- 			<width>1920</width> -->
-<!-- 			<height>10</height> -->
-<!-- 			<texture background="true" fallback="special://skin/orange.png">missing.png</texture> -->
 		</control>
-        </control>
     </controls>
 </window>

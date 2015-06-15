@@ -11,7 +11,7 @@
 				<visible>ControlGroup(9003).HasFocus() + !Skin.HasSetting(lowermainmenu)</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="image">
-					<left>130</left>
+					<left>170</left>
 					<top>0</top>
 					<width>1920</width>
 					<height>630</height>
@@ -48,11 +48,12 @@
 			<control type="group">
 				<visible>Control.HasFocus(8000)</visible>
 				<include>VisibleFadeEffect</include>
+				<top>-20</top>
 				<control type="image">
-					<left>0</left>
+					<left>70</left>
 					<top>143</top>
-					<width>400</width>
-					<height>400</height>
+					<width>360</width>
+					<height>360</height>
 					<aspectratio align="right">keep</aspectratio>
 					<texture background="true">$VAR[WidgetPosterVar]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
@@ -61,16 +62,16 @@
 				</control>
 				<control type="grouplist">
 					<left>432</left>
-					<top>143</top>
+					<top>165</top>
 					<width>1300</width>
-					<height>400</height>
-					<itemgap>12</itemgap>
-					<align>center</align>
+					<height>311</height>
+					<itemgap>2</itemgap>
+					<align>top</align>
 					<visible>!SubString(Container(9000).ListItem.Property(Widget),addons://sources/,left)</visible>
 					<control type="label">
 						<width>900</width>
 						<height>40</height>
-						<font>font14_title</font>
+						<font>font12_title</font>
 						<textcolor>labelheader</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Title]</label>
@@ -79,7 +80,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>20</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Tagline]</label>
@@ -88,7 +89,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>20</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.TvShowTitle]</label>
@@ -101,7 +102,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Genre]</label>
@@ -110,7 +111,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14_title</font>
+						<font>font12_title</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Property(episodeno)]</label>
@@ -119,7 +120,7 @@
 					<control type="label">
 						<width>900</width>
 						<height>35</height>
-						<font>font14</font>
+						<font>font13</font>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>$INFO[Container(8000).ListItem.Year]$INFO[Container(8000).ListItem.RatingAndVotes,  |  ]$INFO[Container(8000).ListItem.Duration,  |  , $LOCALIZE[12391]]</label>
@@ -134,15 +135,15 @@
 						<label>$INFO[Container(8000).ListItem.Premiered,,  |  ]$INFO[Container(8000).ListItem.RatingAndVotes]$INFO[Container(8000).ListItem.Duration,  |  , $LOCALIZE[12391]]</label>
 						<visible>!IsEmpty(Container(8000).ListItem.TvShowTitle)</visible>
 					</control>
-					<control type="label">
-						<width>900</width>
-						<height>35</height>
-						<font>font13</font>
-						<textcolor>white2</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<label>$INFO[Container(8000).ListItem.Director,$LOCALIZE[31000] ]</label>
-						<visible>IsEmpty(Container(8000).ListItem.Artist) + IsEmpty(Container(8000).ListItem.TvShowTitle)</visible>
-					</control>
+<!-- 					<control type="label"> -->
+<!-- 						<width>900</width> -->
+<!-- 						<height>35</height> -->
+<!-- 						<font>font13</font> -->
+<!-- 						<textcolor>white2</textcolor> -->
+<!-- 						<shadowcolor>black</shadowcolor> -->
+<!-- 						<label>$INFO[Container(8000).ListItem.Director,$LOCALIZE[31000] ]</label> -->
+<!-- 						<visible>IsEmpty(Container(8000).ListItem.Artist) + IsEmpty(Container(8000).ListItem.TvShowTitle)</visible> -->
+<!-- 					</control> -->
 					<!--<control type="label">
 						<width>900</width>
 						<height>35</height>
@@ -185,8 +186,8 @@
 					</control>
 					<control type="textbox">
 						<description>Plot</description>
-						<width>900</width>
-						<height>150</height>
+						<width>1000</width>
+						<height>300</height>
 						<font>font13</font>
 						<align>left</align>
 						<label>$INFO[Container(8000).ListItem.Plot]$INFO[Container(8000).ListItem.Property(Album_Description)]</label>
@@ -251,7 +252,7 @@
 			</control>
 			<control type="group">
 				<left>1520</left>
-				<top>130</top> <!-- Position -->
+				<top>145</top> <!-- Position -->
 				<control type="group">
 					<animation type="Conditional" condition="Control.HasFocus(8000)">
 						<effect type="rotatey" start="0" end="180" center="221,0" time="400" tween="sine" easing="inout" />
@@ -260,14 +261,14 @@
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>350</width>
-						<height>335</height>
+						<width>300</width>
+						<height>285</height>
 						<texture border="40">dialogs/default/bg2.png</texture>
 					</control>
 					<control type="label">
 						<left>47</left>
 						<top>32</top>
-						<width>270</width>
+						<width>220</width>
 						<height>40</height>
 						<font>font15_title</font>
 						<align>center</align>
@@ -276,8 +277,8 @@
 					</control>
 					<control type="image">
 						<left>32</left>
-						<top>86</top>
-						<width>289</width>
+						<top>80</top>
+						<width>239</width>
 						<height>180</height>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -288,8 +289,8 @@
 					<control type="label">
 						<description>Plot</description>
 						<left>47</left>
-						<top>255</top>
-						<width>270</width>
+						<top>215</top>
+						<width>220</width>
 						<height>50</height>
 						<font>font13_title</font>
 						<align>center</align>
@@ -308,22 +309,22 @@
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>350</width>
-						<height>335</height>
+						<width>300</width>
+						<height>285</height>
 						<texture border="40">dialogs/default/bg2.png</texture>
 					</control>
 					<control type="image">
 						<left>30</left>
 						<top>30</top>
-						<width>289</width>
-						<height>275</height>
+						<width>239</width>
+						<height>180</height>
 						<texture border="5">dialogs/default/inner2.png</texture>
 					</control>
 					<control type="list" id="8000">
 						<left>31</left>
 						<top>31</top>
-						<width>289</width>
-						<height>275</height>
+						<width>239</width>
+						<height>220</height>
 						<onup>8000</onup>
 						<ondown>8000</ondown>
 						<onleft>9000</onleft>
@@ -335,32 +336,32 @@
 						<scrolltime tween="quadratic" easing="out">200</scrolltime>
 						<visible>!IsEmpty(Container(9000).ListItem.Property(Widget))</visible>
 						<autoscroll time="10000" delay="10000" repeat="10000">Control.IsVisible(9003) + !Control.HasFocus(8000)</autoscroll>
-						<itemlayout height="60" width="360">
+						<itemlayout height="40" width="360">
 							<control type="image">
 								<width>360</width>
-								<height>60</height>
+								<height>40</height>
 								<texture border="1">separator2.png</texture>
 							</control>
 							<control type="label">
 								<width>360</width>
-								<height>60</height>
-								<font>font14</font>
+								<height>40</height>
+								<font>font13</font>
 								<textcolor>grey2</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<textoffsetx>15</textoffsetx>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 						</itemlayout>
-						<focusedlayout height="60" width="360">
+						<focusedlayout height="40" width="360">
 							<control type="image">
 								<width>360</width>
-								<height>60</height>
+								<height>40</height>
 								<texture border="5">listselect_fo.png</texture>
 							</control>
 							<control type="label">
 								<width>360</width>
-								<height>60</height>
-								<font>font14</font>
+								<height>40</height>
+								<font>font13</font>
 								<selectedcolor>selected</selectedcolor>
 								<textoffsetx>15</textoffsetx>
 								<label>$INFO[ListItem.Label]</label>
@@ -397,7 +398,7 @@
 		<!-- Video Info -->
 		<control type="group">
 			<left>0</left>
-			<top>622</top>
+			<top>618</top>
 			<visible>Player.HasVideo</visible>
 			<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv)</visible>
 			<include>VisibleFadeEffect</include>
@@ -541,7 +542,7 @@
 		<!-- Music Info -->
 		<control type="group">
 			<left>0</left>
-			<top>712</top>
+			<top>582</top>
 			<visible>Player.HasAudio</visible>
 			<include>VisibleFadeEffect</include>
 			<animation effect="slide" tween="cubic" time="720" start="0,1080" end="0,0" condition="!Skin.HasSetting(lowermainmenu)">WindowOpen</animation>
@@ -570,10 +571,10 @@
 				<top>86</top>
 				<width>1510</width>
 				<height>460</height>
-				<itemgap>12</itemgap>
+				<itemgap>3</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
-					<left>50</left>
+					<left>10</left>
 					<width>1300</width>
 					<height>40</height>
 					<font>font30_title</font>
@@ -586,7 +587,7 @@
 					<label>-</label>
 				</control>
 				<control type="label">
-					<left>90</left>
+					<left>30</left>
 					<width>1300</width>
 					<height>40</height>
 					<font>font13</font>
@@ -595,7 +596,7 @@
 					<label>$INFO[MusicPlayer.Artist]</label>
 				</control>
 				<control type="label">
-					<left>100</left>
+					<left>30</left>
 					<width>1300</width>
 					<height>40</height>
 					<font>font13</font>
@@ -604,7 +605,7 @@
 					<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
 				</control>
 				<control type="label">
-					<left>90</left>
+					<left>20</left>
 					<width>1300</width>
 					<height>40</height>
 					<font>font13</font>
@@ -617,8 +618,9 @@
 					<label>-</label>
 				</control>
 				<control type="label">
+					<top>-10</top>
 					<description>Time Label</description>
-					<left>50</left>
+					<left>0</left>
 					<height>50</height>
 					<width>1300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=labelheader] / [/COLOR]]</label>
@@ -630,8 +632,8 @@
 			<control type="image">
 				<left>160</left>
 				<top>45</top>
-				<width>360</width>
-				<height>360</height>
+				<width>300</width>
+				<height>300</height>
 				<aligny>top</aligny>
 				<aspectratio align="left">keep</aspectratio>
 				<fadetime>300</fadetime>
@@ -643,8 +645,8 @@
 				<description>Cover image</description>
 				<left>-10</left>
 				<top>45</top>
-				<width>390</width>
-				<height>360</height>
+				<width>300</width>
+				<height>300</height>
 				<aspectratio align="right">keep</aspectratio>
 				<texture diffuse="thumbs/cdcover_mask2.png" fallback="DefaultAlbumCover.png">$INFO[Player.Art(thumb)]</texture>
 				<bordertexture border="28">thumbs/cd_shadow2.png</bordertexture>
@@ -759,7 +761,7 @@
 				<control type="rss">
 					<description>RSS feed</description>
 					<left>140</left>
-					<top>44</top>
+					<top>50</top>
 					<height>30</height>
 					<width>1730</width>
 					<font>font13</font>
@@ -789,7 +791,7 @@
 			</control>
 			<control type="panel" id="300">
 				<left>0</left>
-				<top>125</top>
+				<top>150</top>
 				<width>1920</width>
 				<height>300</height>
 				<onup>9000</onup>
@@ -807,15 +809,15 @@
 					<control type="image">
 						<description>current weather icon</description>
 						<top>60</top>
-						<width>320</width>
-						<height>100</height>
+						<width>300</width>
+						<height>90</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio aligny="top">keep</aspectratio>
 					</control>
 					<control type="label">
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
@@ -825,9 +827,9 @@
 					</control>
 					<control type="label">
 						<top>160</top>
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
@@ -837,9 +839,9 @@
 					</control>
 					<control type="label">
 						<top>240</top>
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<textcolor>white2</textcolor>
 						<shadowcolor>black</shadowcolor>
@@ -856,22 +858,22 @@
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="image">
-						<width>320</width>
-						<height>300</height>
+						<width>300</width>
+						<height>290</height>
 						<texture border="4">listselect_fo.png</texture>
 					</control>
 					<control type="image">
 						<description>current weather icon</description>
 						<top>60</top>
-						<width>320</width>
-						<height>100</height>
+						<width>300</width>
+						<height>90</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio aligny="top">keep</aspectratio>
 					</control>
 					<control type="label">
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
 						<shadowcolor>black</shadowcolor>
@@ -880,9 +882,9 @@
 					</control>
 					<control type="label">
 						<top>160</top>
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<selectedcolor>selected</selectedcolor>
 						<shadowcolor>black</shadowcolor>
@@ -891,9 +893,9 @@
 					</control>
 					<control type="label">
 						<top>240</top>
-						<width>320</width>
+						<width>300</width>
 						<height>60</height>
-						<font>font15</font>
+						<font>font14</font>
 						<align>center</align>
 						<shadowcolor>black</shadowcolor>
 						<selectedcolor>selected</selectedcolor>

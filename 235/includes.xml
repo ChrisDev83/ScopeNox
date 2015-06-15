@@ -234,64 +234,64 @@
 			</control>
 		</control>
 	</include>
-	<include name="219Bars">
+<!-- 	<include name="219Bars"> -->
+<!-- <!-- 		<control type="image"> --> -->
+<!-- <!-- 			<left>0</left> --> -->
+<!-- <!-- 			<top>0</top> --> -->
+<!-- <!-- 			<width>1920</width> --> -->
+<!-- <!-- 			<height>130</height> --> -->
+<!-- <!-- 			<texture>black.png</texture> --> -->
+<!-- <!-- 		</control> --> -->
+<!-- <!-- 		<control type="image" zorder="0"> --> -->
+<!-- <!-- 			<left>0</left> --> -->
+<!-- <!-- 			<top>950</top> --> -->
+<!-- <!-- 			<width>1920</width> --> -->
+<!-- <!-- 			<height>140</height> --> -->
+<!-- <!-- 			<texture>black.png</texture> --> -->
+<!-- <!-- 		</control> --> -->
+		
+		
+		
+		
+		
+		
 <!-- 		<control type="image"> -->
 <!-- 			<left>0</left> -->
-<!-- 			<top>0</top> -->
+<!-- 			<top>125</top> -->
 <!-- 			<width>1920</width> -->
-<!-- 			<height>130</height> -->
-<!-- 			<texture>black.png</texture> -->
+<!-- 			<height>5</height> -->
+<!-- 			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture> -->
 <!-- 		</control> -->
 <!-- 		<control type="image" zorder="0"> -->
 <!-- 			<left>0</left> -->
 <!-- 			<top>950</top> -->
 <!-- 			<width>1920</width> -->
-<!-- 			<height>140</height> -->
-<!-- 			<texture>black.png</texture> -->
+<!-- 			<height>5</height> -->
+<!-- 			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture> -->
+<!-- 		</control> -->
+		
+<!-- 		<control type="image"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>135</top> -->
+<!-- 			<width>1920</width> -->
+<!-- 			<height>5</height> -->
+<!-- 			<texture background="true">special://skin/extras/red.png</texture> -->
+<!-- 		</control> -->
+<!-- 		<control type="image" zorder="0"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>940</top> -->
+<!-- 			<width>1920</width> -->
+<!-- 			<height>5</height> -->
+<!-- 			<texture background="true">special://skin/extras/red.png</texture> -->
 <!-- 		</control> -->
 		
 		
 		
 		
-		
-		
-		<control type="image">
-			<left>0</left>
-			<top>125</top>
-			<width>1920</width>
-			<height>5</height>
-			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture>
-		</control>
-		<control type="image" zorder="0">
-			<left>0</left>
-			<top>950</top>
-			<width>1920</width>
-			<height>5</height>
-			<texture background="true" fallback="special://skin/extras/orange.png">missing.png</texture>
-		</control>
-		
-		<control type="image">
-			<left>0</left>
-			<top>135</top>
-			<width>1920</width>
-			<height>5</height>
-			<texture background="true">special://skin/extras/red.png</texture>
-		</control>
-		<control type="image" zorder="0">
-			<left>0</left>
-			<top>940</top>
-			<width>1920</width>
-			<height>5</height>
-			<texture background="true">special://skin/extras/red.png</texture>
-		</control>
-		
-		
-		
-		
-	</include>
+<!-- 	</include> -->
 	<!-- Navigation Bar -->
 	<include name="Topbar">
-		<include>219Bars</include>
+<!-- 		<include>219Bars</include> -->
 		<control type="group">
 			<!--animation effect="slide" start="0,130" end="0,130" time="9000" tween="cubic" condition="Control.IsVisible(503) + System.IdleTime(2)">Conditional</animation>
 			<animation effect="slide" start="0,-90" end="0,0" delay="900" time="2280" condition="Window.Previous(home)">WindowOpen</animation>
@@ -304,7 +304,7 @@
 				<texture border="1">topbar.png</texture>
 			</control>
 			<control type="label">
-				<top>130</top>
+				<top>133</top>
 				<width>900</width>
 				<height>90</height>
 				<font>font13_title</font>
@@ -317,7 +317,7 @@
 			</control>
 			<control type="label">
 				<visible>!Window.IsActive(script-globalsearch-main.xml)</visible>
-				<top>130</top>
+				<top>133</top>
 				<left>1020</left>
 				<width>900</width>
 				<height>90</height>
@@ -330,7 +330,7 @@
 				<label>$INFO[Container.NumItems,, $LOCALIZE[31025]]$INFO[Container.CurrentPage,[COLOR grey3] | ,]$INFO[Container.NumPages,/,[/COLOR]]</label>
 			</control>
 			<control type="label">
-				<top>130</top>
+				<top>133</top>
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>

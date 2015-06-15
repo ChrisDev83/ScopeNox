@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Fullscreen Wall -->
+<!-- 	Video : Wall -->
 	<include name="View_503_Wall">
 		<control type="group">
 			<visible>Control.IsVisible(503)</visible>
 			<include>ViewAnimation</include>
 
 			<control type="panel" id="503">
-				<top>130</top>
+				<top>150</top>
 				<left>50</left>
 				<width>1888</width>
-				<height>820</height>
+				<height>790</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>60</onright>
@@ -187,9 +188,9 @@
 
 			<control type="scrollbar" id="60">
 				<left>1906</left>
-				<top>130</top>
+				<top>150</top>
 				<width>14</width>
-				<height>820</height>
+				<height>790</height>
 				<onup>60</onup>
 				<ondown>60</ondown>
 				<onleft>502</onleft>

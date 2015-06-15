@@ -4,59 +4,59 @@
 	<controls>
 		<control type="group">
 			<left>0</left>
-			<top>128</top>
+			<top>130</top>
 			<control type="list" id="90000">
 				<left>82</left>
-				<top>32</top>
+				<top>60</top>
 				<width>356</width>
-				<height>750</height>
+				<height>660</height>
 				<onleft>61</onleft>
 				<onright>90001</onright>
 				<onup>90000</onup>
 				<ondown>90000</ondown>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime tween="quadratic" easing="out">200</scrolltime>
-				<itemlayout height="90" width="356">
+				<itemlayout height="60" width="356">
 					<control type="image">
-						<top>30</top>
+						<top>0</top>
 						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>10</height>
+						<height>60</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
+						<aligny>middle</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="90" width="356">
+				<focusedlayout height="60" width="356">
 					<control type="image">
-						<top>30</top>
+						<top>0</top>
 						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="image">
 						<width>356</width>
-						<height>90</height>
+						<height>60</height>
 						<texture border="4">listselect_fo.png</texture>
 						<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(90000)">Conditional</animation>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>90</height>
+						<height>60</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
+						<aligny>middle</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 						<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(90000)">Conditional</animation>
 					</control>
@@ -84,9 +84,9 @@
 			</control>
 			<control type="scrollbar" id="61">
 				<left>68</left>
-				<top>32</top>
+				<top>60</top>
 				<width>8</width>
-				<height>720</height>
+				<height>660</height>
 				<onleft>90001</onleft>
 				<onright>90000</onright>
 				<ondown>61</ondown>
@@ -99,7 +99,7 @@
 			<control type="textbox">
 				<description>description area</description>
 				<left>552</left>
-				<top>754</top>
+				<top>700</top>
 				<width>1256</width>
 				<height>115</height>
 				<font>font15_textbox</font>
@@ -113,9 +113,9 @@
 			<control type="grouplist" id="90001">
 				<description>control area</description>
 				<left>522</left>
-				<top>32</top>
+				<top>60</top>
 				<width>1316</width>
-				<height>720</height>
+				<height>660</height>
 				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>90000</onleft>
@@ -125,7 +125,7 @@
 				<control type="radiobutton" id="90010">
 					<description>Enable/Disable Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[305]</label>
@@ -142,7 +142,7 @@
 				<control type="button" id="90011">
 					<description>Edit Label Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[13334]</label>
@@ -153,7 +153,7 @@
 				<control type="button" id="90012">
 					<description>Background Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31027]</label>
@@ -168,7 +168,7 @@
 				<control type="button" id="90013">
 					<description>Default select action Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[22079]</label>
@@ -184,7 +184,7 @@
 				<control type="button" id="90021">
 					<description>Default select action Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[22079]</label>
@@ -196,7 +196,7 @@
 				<control type="button" id="90014">
 					<description>Widget Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31041]</label>
@@ -213,7 +213,7 @@
 				<control type="button" id="90015">
 					<description>Icon Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31047]</label>
@@ -225,7 +225,7 @@
 				<control type="button" id="90016">
 					<description>Infoline Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31049]</label>
@@ -238,7 +238,7 @@
 				<control type="button" id="90017">
 					<description>Move Item Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31073]</label>
@@ -268,7 +268,7 @@
 				<control type="button" id="90018">
 					<description>Manage SubMenu Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[31080]</label>
@@ -279,7 +279,7 @@
 				<control type="button" id="90020">
 					<description>Reset Button</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>60</height>
 					<textoffsetx>30</textoffsetx>
 					<font>font15</font>
 					<label>$LOCALIZE[10035]</label>
@@ -299,8 +299,8 @@
 			<control type="image">
 				<left>1729</left>
 				<top>482</top>
-				<width>90</width>
-				<height>90</height>
+				<width>60</width>
+				<height>60</height>
 				<texture background="true">$INFO[Container(90000).ListItem.ActualIcon]</texture>
 				<visible>Skin.HasSetting(mainmenuicons)</visible>
 				<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="inout" condition="!Control.HasFocus(90015)">Conditional</animation>
@@ -309,7 +309,7 @@
 				<left>1841</left>
 				<top>32</top>
 				<width>8</width>
-				<height>720</height>
+				<height>660</height>
 				<onleft>90001</onleft>
 				<onright>90000</onright>
 				<ondown>60</ondown>

@@ -41,7 +41,7 @@
 				<colordiffuse>AAffffff</colordiffuse>
 			</control>
 			<control type="label">
-				<top>24</top>
+				<top>26</top>
 				<width>900</width>
 				<height>90</height>
 				<font>font12_title</font>
@@ -54,7 +54,7 @@
 				<label>$VAR[PlayerTitleLabelVar]</label>
 			</control>
 			<control type="label">
-				<top>24</top>
+				<top>26</top>
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>
@@ -69,7 +69,7 @@
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label">
-				<top>24</top>
+				<top>26</top>
 				<left>0</left>
 				<width>1920</width>
 				<height>90</height>
@@ -84,7 +84,7 @@
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label">
-				<top>24</top>
+				<top>26</top>
 				<left>1020</left>
 				<width>900</width>
 				<height>90</height>
@@ -99,7 +99,7 @@
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label">
-				<top>24</top>
+				<top>26</top>
 				<left>1020</left>
 				<width>900</width>
 				<height>90</height>
@@ -262,7 +262,7 @@
 		</control>
 		<control type="image">
 			<left>1470</left>
-			<top>645</top>
+			<top>635</top>
 			<width>450</width>
 			<height>254</height>
 			<aspectratio aligny="bottom" align="right">keep</aspectratio>

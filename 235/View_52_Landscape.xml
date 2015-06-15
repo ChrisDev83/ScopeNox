@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View_52_Landscape">
+<!-- 	Video : Landscape -->
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
 			<top>455</top>
@@ -189,8 +190,8 @@
 		<viewtype label="31076">bigwrap</viewtype>
 		<scrolltime tween="sine" easing="inout">500</scrolltime>
 		<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(artists) | Container.Content(sets)</visible>
-		<itemlayout width="642" height="680"/>
-		<focusedlayout width="636" height="680"/>
+		<itemlayout width="642" height="670"/>
+		<focusedlayout width="636" height="670"/>
 	</include>
 	<include name="LandscapeThumbCommonValues">
 		<left>0</left>

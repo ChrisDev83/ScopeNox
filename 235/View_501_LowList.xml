@@ -6,7 +6,7 @@
 			<visible>Control.IsVisible(501) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
 			<control type="image">
-				<top>610</top>
+				<top>600</top>
 				<width>1920</width>
 				<height>520</height>
 				<texture border="1,32,1,1">bottombar.png</texture>
@@ -14,7 +14,7 @@
 			</control>
 			<control type="group">
 				<left>5</left>
-				<top>322</top>
+				<top>317</top>
 				<control type="image">
 					<width>440</width>
 					<height>640</height>
@@ -27,7 +27,7 @@
 			</control>
 			<control type="grouplist">
 				<left>1270</left>
-				<top>633</top>
+				<top>623</top>
 				<width>650</width>
 				<height>270</height>
 				<animation effect="slide" end="0,-170" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
@@ -81,7 +81,7 @@
 			</control>
 			<control type="group">
 				<left>1270</left>
-				<top>630</top>
+				<top>595</top>
 				<visible>!Skin.HasSetting(nohighlist) + ![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 				<include>VisibleFadeEffect</include>
 				<control type="textbox" id="70">
@@ -89,7 +89,7 @@
 					<left>15</left>
 					<top>105</top>
 					<width>615</width>
-					<height>155</height>
+					<height>150</height>
 					<font>font13</font>
 					<pagecontrol>62</pagecontrol>
 					<include>ShowCaseInfoPanelButtonsValues</include>

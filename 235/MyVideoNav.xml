@@ -278,7 +278,7 @@
 						<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
 					</control>
 				</control>
-				<control type="group">
+				<control type="group"> <!-- View : Posters Labels Resolution etc. -->
 					<left>1246</left>
 					<top>870</top>
 					<width>1840</width>
