@@ -1348,7 +1348,7 @@
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>30</top>
+							<top>8</top>
 							<width>180</width>
 							<height>101</height>
 							<aspectratio>keep</aspectratio>
@@ -1469,7 +1469,7 @@
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>30</top>
+							<top>8</top>
 							<width>180</width>
 							<height>101</height>
 							<aspectratio>keep</aspectratio>

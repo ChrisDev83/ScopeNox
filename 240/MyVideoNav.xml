@@ -112,7 +112,7 @@
 				</control>
 				<control type="group">
 					<left>0</left>
-					<top>880</top>
+					<top>890</top>
 					<width>1920</width>
 					<align>center</align>
 					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
