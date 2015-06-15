@@ -753,7 +753,7 @@
 			</control>
 			<control type="group">
 				<left>3</left>
-				<top></top>
+				<top>0</top>
 				<control type="image">
 					<top>450</top>
 					<width>594</width>
