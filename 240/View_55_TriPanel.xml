@@ -108,10 +108,10 @@
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 				</control>
 				<control type="scrollbar" id="62">
-					<left>448</left>
+					<left>470</left>
 					<top>370</top>
 					<width>14</width>
-					<height>402</height>
+					<height>345</height>
 					<onup>PageUp(70)</onup>
 					<ondown>PageUp(70)</ondown>
 					<onleft>50</onleft>

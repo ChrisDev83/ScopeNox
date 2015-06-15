@@ -24,9 +24,9 @@
 			</control>
 			<control type="panel" id="51">
 				<left>28</left>
-				<top>175</top>
+				<top>190</top>
 				<width>1300</width>
-				<height>725</height>
+				<height>710</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -97,10 +97,10 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>104</left>
-				<top>240</top>
+				<left>14</left>
+				<top>190</top>
 				<width>14</width>
-				<height>725</height>
+				<height>710</height>
 				<onright>50</onright>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
