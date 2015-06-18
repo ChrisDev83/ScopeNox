@@ -14,7 +14,7 @@
 	  point="xbmc.gui.skin"
 	  debugging="false"
 	  effectslowdown="0.75">
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="240" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="scopeformat" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="de">Scope Nox</summary>
