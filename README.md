@@ -6,8 +6,11 @@ It is made to suit people with CIH setups that have the resolution at 1920x1080 
 Using the normal Kodi skins in this cases causes part of the skin to spill outside the scope frame onto walls.
 
 
-This version of the skin contains all the GUI within an 810 pixel height. 
+This version of the skin contains all the GUI within an 800/820 pixel height. 
 
 To install simply download the zip file (option on right of screen) and then within Kodi go to AddOns and 'Install from Zip' and it should install. 
+
+In order to switch between 2.35 and 2.40 format go to :
+System -> Appearance -> Skin -> Settings -> General -> Scope Format (Toggle)
 
 Any issues, please let me know.
