@@ -406,7 +406,7 @@
 			<animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0" condition="!Skin.HasSetting(lowermainmenu)">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,-1080" end="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,-1080" start="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowClose</animation>
-			<animation effect="slide" end="0,-540" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="slide" end="0,-500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="group">
 				<control type="image">
 					<description>Cover image</description>
@@ -549,7 +549,7 @@
 			<animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0" condition="!Skin.HasSetting(lowermainmenu)">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,-1080" end="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,-1080" start="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowClose</animation>
-			<animation effect="slide" end="0,-540" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="slide" end="0,-500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="image">
 				<left>0</left>
 				<top>-172</top>
@@ -730,7 +730,7 @@
 			<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!window.previous(startup)">WindowOpen</animation>
 			<animation effect="slide" start="1870" end="0" time="240">VisibleChange</animation>
 			<animation effect="slide" start="1870,0" end="0,0" delay="800" time="480" condition="window.previous(startup)">WindowOpen</animation>
-			<animation effect="slide" end="0,-946" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="slide" end="0,-906" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<top>853</top>
 			<animation effect="slide" start="0,0" end="0,10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<control type="group">
@@ -788,7 +788,7 @@
 				<height>630</height>
 				<texture flipy="true" border="1">nowplaying_shadow.png</texture>
 				<animation effect="rotatex" end="80" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-				<animation effect="slide" end="0,-710" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+				<animation effect="slide" end="0,-670" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			</control>
 			<control type="panel" id="300">
 				<left>0</left>

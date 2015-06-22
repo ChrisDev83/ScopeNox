@@ -125,7 +125,8 @@
 	<!-- Media Flags -->
 	<include name="MediaFlagVars">
 		<width>135</width>
-		<height>90</height>
+		<height>75</height>
+		<halign>middle</halign>
 		<aspectratio>keep</aspectratio>
 		<fadetime>250</fadetime>
 		<colordiffuse>white</colordiffuse>

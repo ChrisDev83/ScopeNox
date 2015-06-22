@@ -4,7 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<include condition="Skin.HasSetting(Enable.TvTunes)">LoadTvTunes</include>
 	<controls>
-		<control type="group">
+		<control type="group"> <!-- Movie Poster -->
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<animation effect="slide" start="-729,0" end="0,0" time="500" tween="quadratic">WindowOpen</animation>
 			<animation effect="slide" end="-729,0" time="500" tween="quadratic">WindowClose</animation>
@@ -128,15 +128,15 @@
 				</control>
 				<control type="grouplist">
 					<left>0</left>
-					<top>75</top>
+					<top>90</top>
 					<width>1364</width>
-					<height>90</height>
+					<height>75</height>
 					<itemgap>0</itemgap>
 					<align>left</align>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<width>140</width>
-						<height>90</height>
+						<height>75</height>
 						<align>left</align>
 						<label>$INFO[ListItem.Year]</label>
 						<font>font30_title_bold</font>
@@ -144,7 +144,7 @@
 					</control>
 					<control type="image">
 						<width>2</width>
-						<height>90</height>
+						<height>75</height>
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="group">
@@ -159,7 +159,7 @@
 						<control type="label">
 							<left>0</left>
 							<width>178</width>
-							<height>90</height>
+							<height>80</height>
 							<align>center</align>
 							<label>$INFO[ListItem.Studio]</label>
 							<font>font10</font>
@@ -170,7 +170,7 @@
 					</control>
 					<control type="image">
 						<width>2</width>
-						<height>90</height>
+						<height>75</height>
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="image">
@@ -181,7 +181,7 @@
 					</control>
 					<control type="image">
 						<width>2</width>
-						<height>90</height>
+						<height>75</height>
 						<texture border="1">separator3.png</texture>
 						<visible>![Container.Content(tvshows) + Skin.HasSetting(Disable.NextAired)]</visible>
 					</control>
@@ -190,7 +190,7 @@
 						<visible>![Container.Content(tvshows) + Skin.HasSetting(Disable.NextAired)]</visible>
 						<control type="label">
 							<left>0</left>
-							<top>2</top>
+							<top>-5</top>
 							<width>160</width>
 							<height>60</height>
 							<align>center</align>
@@ -199,7 +199,7 @@
 							<textcolor>grey</textcolor>
 						</control>
 						<control type="label">
-							<top>52</top>
+							<top>40</top>
 							<width>160</width>
 							<height>30</height>
 							<align>center</align>
@@ -210,7 +210,7 @@
 					</control>
 					<control type="image">
 						<width>2</width>
-						<height>90</height>
+						<height>75</height>
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="group">
@@ -218,7 +218,7 @@
 						<width>200</width>
 						<control type="label">
 							<left>0</left>
-							<top>2</top>
+							<top>-5</top>
 							<width>200</width>
 							<height>60</height>
 							<align>center</align>
@@ -227,7 +227,7 @@
 							<textcolor>grey</textcolor>
 						</control>
 						<control type="label">
-							<top>52</top>
+							<top>40</top>
 							<width>200</width>
 							<height>30</height>
 							<align>center</align>
@@ -238,7 +238,7 @@
 					</control>
 					<control type="image">
 						<width>2</width>
-						<height>90</height>
+						<height>75</height>
 						<texture border="1">separator3.png</texture>
 						<visible>!IsEmpty(ListItem.Rating)</visible>
 					</control>
@@ -276,29 +276,29 @@
 				<control type="image">
 					<left>-37</left>
 					<top>107</top>
-					<width>1188</width>
+					<width>1380</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="panel" id="300">
 					<left>-36</left>
 					<top>164</top>
-					<width>1188</width>
+					<width>1380</width>
 					<height>306</height>
 					<onup>4002</onup>
 					<ondown>9000</ondown>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="82" width="594">
+					<itemlayout height="82" width="530">
 						<control type="image">
 							<top>42</top>
-							<width>594</width>
+							<width>1380</width>
 							<height>40</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<top>40</top>
-							<width>594</width>
+							<width>530</width>
 							<height>40</height>
 							<font>font12</font>
 							<textcolor>grey</textcolor>
@@ -308,7 +308,7 @@
 						</control>
 						<control type="label">
 							<top>5</top>
-							<width>594</width>
+							<width>530</width>
 							<height>40</height>
 							<font>font12</font>
 							<textcolor>labelheader</textcolor>
@@ -317,16 +317,16 @@
 							<textoffsetx>36</textoffsetx>
 						</control>
 					</itemlayout>
-					<focusedlayout height="82" width="594">
+					<focusedlayout height="82" width="530">
 						<control type="image">
 							<top>42</top>
-							<width>594</width>
+							<width>1380</width>
 							<height>82</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<top>1</top>
-							<width>594</width>
+							<width>530</width>
 							<height>80</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(300)</visible>
@@ -334,7 +334,7 @@
 						</control>
 						<control type="label">
 							<top>40</top>
-							<width>594</width>
+							<width>530</width>
 							<height>40</height>
 							<font>font12</font>
 							<textcolor>white</textcolor>
@@ -345,7 +345,7 @@
 						</control>
 						<control type="label">
 							<top>5</top>
-							<width>594</width>
+							<width>530</width>
 							<height>40</height>
 							<font>font12</font>
 							<textcolor>white</textcolor>
@@ -521,7 +521,7 @@
 					<top>970</top>
 					<control type="image">
 						<top>-60</top>
-						<width>1188</width>
+						<width>1380</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
@@ -766,7 +766,7 @@
 				<top>0</top>
 				<control type="image">
 					<top>450</top>
-					<width>594</width>
+					<width>1380</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 					<visible>!IntegerGreaterThan(Container(300).NumItems,2)</visible>
@@ -774,15 +774,15 @@
 				<control type="image">
 					<left>594</left>
 					<top>450</top>
-					<width>594</width>
+					<width>1380</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 					<visible>!IntegerGreaterThan(Container(300).NumItems,5)</visible>
 				</control>
 				<control type="grouplist" id="9000">
 					<left>1</left>
-					<top>570</top>
-					<width>1192</width>
+					<top>558</top>
+					<width>1380</width>
 					<height>60</height>
 					<itemgap>0</itemgap>
 					<onleft>9000</onleft>
@@ -868,7 +868,7 @@
 					<control type="button" id="207">
 						<description>Extras</description>
 						<font>IconMedium</font>
-						<width>80</width>
+						<width>270</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>+</label>
 						<onclick>ActivateWindow(1119)</onclick>
