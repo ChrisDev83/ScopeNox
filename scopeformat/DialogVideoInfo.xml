@@ -319,7 +319,7 @@
 					</itemlayout>
 					<focusedlayout height="82" width="530">
 						<control type="image">
-							<top>42</top>
+							<top>0</top>
 							<width>1380</width>
 							<height>82</height>
 							<texture border="1">separator2.png</texture>

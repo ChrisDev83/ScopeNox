@@ -6,9 +6,9 @@
 			<visible>Control.IsVisible(501) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
 			<control type="image">
-				<top>600</top>
+				<top>585</top>
 				<width>1920</width>
-				<height>520</height>
+				<height>540</height>
 				<texture border="1,32,1,1">bottombar.png</texture>
 				<animation effect="slide" end="0,-170" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
 			</control>
@@ -27,7 +27,7 @@
 			</control>
 			<control type="grouplist">
 				<left>1270</left>
-				<top>623</top>
+				<top>610</top>
 				<width>650</width>
 				<height>270</height>
 				<animation effect="slide" end="0,-170" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
@@ -178,9 +178,9 @@
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group"> <!-- Codec etc -->
 				<left>1270</left>
-				<top>860</top>
+				<top>873</top>
 				<width>1840</width>
 				<height>90</height>
 				<control type="image">
@@ -311,8 +311,7 @@
 			</control>
 			<control type="fixedlist" id="501">
 				<left>450</left>
-				<top>633</top>
-				<height>490</height>
+				<top>620</top>
 				<width>976</width>
 				<include condition="!Skin.HasSetting(nohighlist)">LowListHeightHigh</include>
 				<include condition="Skin.HasSetting(nohighlist)">LowListHeightLow</include>
@@ -805,11 +804,10 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<left>1256</left>
-				<top>734</top>
+				<top>625</top>
 				<width>14</width>
 				<include condition="!Skin.HasSetting(nohighlist)">LowListHeightHigh</include>
 				<include condition="Skin.HasSetting(nohighlist)">LowListHeightLow</include>
-				<height>117</height>
 				<onup>60</onup>
 				<ondown>60</ondown>
 				<onleft>50</onleft>
@@ -1255,11 +1253,11 @@
 		</control>
 	</include>
 	<include name="LowListHeightHigh">
-		<height>517</height>
+		<height>475</height>
 		<movement>6</movement>
 	</include>
 	<include name="LowListHeightLow">
-		<height>290</height>
-		<movement>4</movement>
+		<height>320</height>
+		<movement>3</movement>
 	</include>
 </includes>

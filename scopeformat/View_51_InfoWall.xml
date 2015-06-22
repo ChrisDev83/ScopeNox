@@ -117,7 +117,7 @@
 				<left>1230</left>
 				<top>190</top>
 				<control type="image">
-					<width>675</width>
+					<width>670</width>
 					<height>400</height>
 					<aspectratio>scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
@@ -145,14 +145,14 @@
 					<colordiffuse>grey</colordiffuse>
 				</control>
 				<control type="button">
-					<top>461</top>
-					<width>680</width>
+					<top>450</top>
+					<width>670</width>
 					<label>$INFO[ListItem.Genre,,[CR]]$VAR[VideoSubLabelVar]</label>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="textbox">
 					<label>$VAR[VideoPlotVar]</label>
-					<top>555</top>
+					<top>540</top>
 					<left>15</left>
 					<width>650</width>
 					<height>170</height>

@@ -176,7 +176,7 @@
 				<control type="list" id="55">
 					<left>0</left>
 					<top>130</top>
-					<height>730</height>
+					<height>680</height>
 					<width>806</width>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
@@ -660,10 +660,10 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>806</left>
-					<top>140</top>
+					<left>810</left>
+					<top>130</top>
 					<width>14</width>
-					<height>730</height>
+					<height>670</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>

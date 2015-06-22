@@ -221,7 +221,7 @@
 					</control>-->
 					<control type="label">
 						<left>0</left>
-						<top>0</top>
+						<top>5</top>
 						<width>1150</width>
 						<height>42</height>
 						<aligny>top</aligny>
@@ -235,7 +235,7 @@
 					</control>
 					<control type="label">
 						<left>0</left>
-						<top>45</top>
+						<top>50</top>
 						<width>1100</width>
 						<height>30</height>
 						<align>left</align>
