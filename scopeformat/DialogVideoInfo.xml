@@ -243,21 +243,21 @@
 						<visible>!IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="group">
-						<visible>!IsEmpty(ListItem.Top250)</visible>
+ 						<visible>!IsEmpty(ListItem.Top250)</visible>
 						<width>200</width>
 						<control type="label">
 							<left>0</left>
-							<top>2</top>
+							<top>-5</top>
 							<width>200</width>
 							<height>60</height>
 							<align>center</align>
 							<label>$INFO[ListItem.Top250,#]</label>
-							<font>font48_bold</font>
+							<font>font35_bold</font>
 							<wrapmultiline>true</wrapmultiline>
 							<textcolor>grey</textcolor>
 						</control>
 						<control type="label">
-							<top>52</top>
+							<top>40</top>
 							<width>200</width>
 							<height>30</height>
 							<align>center</align>
@@ -473,7 +473,7 @@
 				<control type="textbox" id="400">
 					<description>Plot</description>
 					<left>0</left>
-					<top>490</top>
+					<top>470</top>
 					<width>1308</width>
 					<height>315</height>
 					<font>font14_textbox_plot</font>

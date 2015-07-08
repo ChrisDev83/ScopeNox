@@ -5,14 +5,14 @@
 		<control type="group">
 			<include>WindowASViewAnimation</include>
 			<left>0</left>
-			<top>140</top>
+			<top>130</top>
 			<control type="group">
 				<include>SystemLeftPanel</include>
 				<control type="image">
 					<left>110</left>
-					<top>60</top>
-					<width>300</width>
-					<height>300</height>
+					<top>80</top>
+					<width>280</width>
+					<height>280</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
 					<bordertexture border="1,1,2,1">thumbs/panel_border.png</bordertexture>
@@ -20,7 +20,7 @@
 				</control>
 				<control type="grouplist" id="9000">
 					<left>82</left>
-					<top>360</top>
+					<top>353</top>
 					<width>300</width>
 					<height>436</height>
 					<onleft>60</onleft>
@@ -95,7 +95,7 @@
 					<include>SettingsFadeEffect</include>
 					<control type="grouplist">
 						<left>32</left>
-						<top>65</top>
+						<top>85</top>
 						<width>658</width>
 						<itemgap>10</itemgap>
 						<control type="button">
@@ -109,7 +109,7 @@
 					</control>
 					<control type="grouplist">
 						<left>690</left>
-						<top>65</top>
+						<top>85</top>
 						<itemgap>10</itemgap>
 						<width>658</width>
 						<usecontrolcoords>true</usecontrolcoords>
@@ -124,7 +124,7 @@
 					</control>
 					<control type="grouplist">
 						<left>47</left>
-						<top>253</top>
+						<top>273</top>
 						<usecontrolcoords>true</usecontrolcoords>
 						<control type="textbox" id="400">
 							<description>Description</description>
@@ -159,9 +159,9 @@
 					</control>
 					<control type="scrollbar" id="60">
 						<left>1351</left>
-						<top>232</top>
+						<top>272</top>
 						<width>8</width>
-						<height>294</height>
+						<height>305</height>
 						<onleft>9000</onleft>
 						<onright>9000</onright>
 						<ondown>60</ondown>

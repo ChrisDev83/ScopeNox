@@ -460,12 +460,12 @@
 		<control type="group">
 			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>15</top>
+			<top>25</top>
 			<control type="image">
 				<description>background image</description>
 				<left>10</left>
 				<top>1080</top>
-				<width>1900</width>
+				<width>1875</width>
 				<height>880</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
@@ -473,15 +473,15 @@
 				<description>background image</description>
 				<left>10</left>
 				<top>148</top>
-				<width>1930</width>
-				<height>784</height>
+				<width>1900</width>
+				<height>775</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="51">
 				<left>40</left>
 				<top>180</top>
 				<width>1200</width>
-				<height>720</height>
+				<height>710</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -606,7 +606,7 @@
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="scrollbar" id="61">
-					<left>677</left>
+					<left>700</left>
 					<top>480</top>
 					<width>14</width>
 					<height>225</height>

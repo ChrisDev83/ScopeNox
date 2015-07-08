@@ -298,7 +298,7 @@
 			</control>
 			<control type="image">
 				<left>1729</left>
-				<top>482</top>
+				<top>360</top>
 				<width>60</width>
 				<height>60</height>
 				<texture background="true">$INFO[Container(90000).ListItem.ActualIcon]</texture>
