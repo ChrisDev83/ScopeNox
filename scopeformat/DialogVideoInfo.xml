@@ -60,12 +60,12 @@
 				<height>854</height>
 				<control type="grouplist">
 					<top>-20</top>
-					<width>1276</width>
+					<width>1300</width>
 					<height>110</height>
 					<itemgap>0</itemgap>
 					<align>center</align>
 					<control type="label">
-						<width>1100</width>
+						<width>1370</width>
 						<height>60</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -475,10 +475,10 @@
 					<left>0</left>
 					<top>470</top>
 					<width>1308</width>
-					<height>315</height>
+					<height>245</height>
 					<font>font14_textbox_plot</font>
 					<align>left</align>
-					<label>$VAR[VideoInfoPlotVar]</label>
+					<label>$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]</label>
 					<textcolor>white</textcolor>
 					<pagecontrol>60</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
@@ -502,9 +502,10 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1310</left>
+					<animation effect="slide" start="0,0" end="-10,0" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 					<top>470</top>
 					<width>14</width>
-					<height>310</height>
+					<height>245</height>
 					<onup>9000</onup>
 					<ondown>noop</ondown>
 					<onleft>9000</onleft>
@@ -518,7 +519,7 @@
 				</control>
 				<control type="group">
 					<left>-37</left>
-					<top>970</top>
+					<top>720</top>
 					<control type="image">
 						<top>-60</top>
 						<width>1380</width>
@@ -528,8 +529,9 @@
 					<control type="grouplist">
 						<left>0</left>
 						<top>0</top>
+						<animation effect="slide" start="0,0" end="0,10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 						<width>1188</width>
-						<height>90</height>
+						<height>75</height>
 						<align>left</align>
 						<aligny>center</aligny>
 						<itemgap>0</itemgap>
@@ -672,16 +674,10 @@
 							<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
 						</control>
 					</control>
-					<control type="image">
-						<top>90</top>
-						<width>1188</width>
-						<height>2</height>
-						<texture border="1">separator2.png</texture>
-					</control>
 				</control>
 				<control type="panel" id="50">
 					<left>-36</left>
-					<top>540</top>
+					<top>467</top>
 					<width>1367</width>
 					<height>250</height>
 					<onleft>50</onleft>
@@ -702,20 +698,20 @@
 							<bordersize>2</bordersize>
 						</control>
                         <control type="image">
-                            <top>322</top>
-                            <width>300</width>
-                            <height>98</height>
+                            <top>165</top>
+                            <width>178</width>
+                            <height>85</height>
                             <texture>black.png</texture>
                             <colordiffuse>88ffffff</colordiffuse>
 							<bordersize>2</bordersize>
                         </control>
 						<control type="textbox">
 							<left>10</left>
-							<top>325</top>
-							<width>280</width>
+							<top>170</top>
+							<width>150</width>
 							<height>87</height>
 							<align>center</align>
-							<font>font14</font>
+							<font>font10</font>
 							<textcolor>grey</textcolor>
 							<shadowcolor>shadow</shadowcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -737,20 +733,20 @@
 								<bordersize>8</bordersize>
 							</control>
                             <control type="image">
-                                <top>316</top>
-                                <width>300</width>
-                                <height>104</height>
+                                <top>160</top>
+                                <width>178</width>
+                                <height>90</height>
                                 <texture>black.png</texture>
                                 <colordiffuse>88ffffff</colordiffuse>
 								<bordersize>8</bordersize>
                             </control>
 							<control type="textbox">
 								<left>10</left>
-								<top>325</top>
-								<width>280</width>
+								<top>170</top>
+								<width>150</width>
 								<height>87</height>
 								<align>center</align>
-								<font>font14</font>
+								<font>font10</font>
 								<selectedcolor>selected</selectedcolor>
 								<shadowcolor>shadow</shadowcolor>
 								<label>$INFO[ListItem.Label]</label>
