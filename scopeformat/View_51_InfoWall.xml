@@ -135,6 +135,69 @@
 					<label>$VAR[FloorLabelVar]</label>
 					<textoffsetx>15</textoffsetx>
 				</control>
+
+
+
+					<control type="image">
+                            <top>330</top>
+                            <width>680</width>
+                            <height>70</height>
+                            <texture>black.png</texture>
+                            <colordiffuse>DDffffff</colordiffuse>
+							<bordersize>2</bordersize>
+                        </control>
+					<control type="grouplist">
+						<left>0</left>
+						<top>330</top>
+						<width>680</width>
+						<height>75</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<itemgap>0</itemgap>
+						<orientation>horizontal</orientation>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+							<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+							<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
+							<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<colordiffuse>grey</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>flags/cc.png</texture>
+							<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
+						</control>
+					</control>
+
+
 				<control type="image">
 					<left>628</left>
 					<top>417</top>
