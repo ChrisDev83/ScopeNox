@@ -478,7 +478,7 @@
 					<height>245</height>
 					<font>font14_textbox_plot</font>
 					<align>left</align>
-					<label>$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]$VAR[VideoInfoPlotVar]</label>
+					<label>$VAR[VideoInfoPlotVar]</label>
 					<textcolor>white</textcolor>
 					<pagecontrol>60</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
