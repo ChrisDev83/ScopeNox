@@ -1825,7 +1825,7 @@
 					<left>0</left>
 					<top>180</top>
 					<width>1140</width>
-					<height>685</height>
+					<height>660</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1980,7 +1980,7 @@
 					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
-					<height>720</height>
+					<height>680</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
