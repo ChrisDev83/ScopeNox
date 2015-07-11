@@ -9,7 +9,7 @@
 			<control type="group">
 				<include>SystemLeftPanel</include>
 				<control type="image">
-					<left>110</left>
+					<left>130</left>
 					<top>80</top>
 					<width>280</width>
 					<height>280</height>
@@ -20,8 +20,8 @@
 				</control>
 				<control type="grouplist" id="9000">
 					<left>82</left>
-					<top>353</top>
-					<width>300</width>
+					<top>365</top>
+					<width>360</width>
 					<height>436</height>
 					<onleft>60</onleft>
 					<onright>60</onright>
@@ -32,7 +32,7 @@
 					<control type="button" id="9">
 						<description>Configure Addon</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24020</label>
 						<align>left</align>
 						<font>font15</font>
@@ -40,7 +40,7 @@
 					<control type="button" id="8">
 						<description>Update Addon button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24069</label>
 						<align>left</align>
 						<font>font15</font>
@@ -48,7 +48,7 @@
 					<control type="button" id="12">
 						<description>Launch Addon button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>518</label>
 						<align>left</align>
 						<font>font15</font>
@@ -56,7 +56,7 @@
 					<control type="button" id="6">
 						<description>Install/UnInstall Addon button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24022</label>
 						<align>left</align>
 						<font>font15</font>
@@ -64,7 +64,7 @@
 					<control type="button" id="7">
 						<description>Enable/Disable Addon button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24021</label>
 						<align>left</align>
 						<font>font15</font>
@@ -72,7 +72,7 @@
 					<control type="button" id="11">
 						<description>Rollback button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24048</label>
 						<align>left</align>
 						<font>font15</font>
@@ -80,7 +80,7 @@
 					<control type="button" id="10">
 						<description>Changelog button</description>
 						<width>356</width>
-						<height>60</height>
+						<height>50</height>
 						<label>24036</label>
 						<align>left</align>
 						<font>font15</font>
