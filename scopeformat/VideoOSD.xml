@@ -180,7 +180,7 @@
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + Skin.HasSetting(showscope)</visible>
+	                <visible>Skin.HasSetting(showscope)</visible>
 	                <onclick>Skin.ToggleSetting(showscope)</onclick>
 	            </control>
 				<control type="button" id="707">
@@ -190,7 +190,7 @@
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !Skin.HasSetting(showscope)</visible>
+	                <visible>!Skin.HasSetting(showscope)</visible>
 	                <onclick>Skin.ToggleSetting(showscope)</onclick>
 	            </control>
 			</control>
