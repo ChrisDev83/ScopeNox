@@ -97,9 +97,9 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>14</left>
+				<left>18</left>
 				<top>190</top>
-				<width>14</width>
+				<width>9</width>
 				<height>710</height>
 				<onright>50</onright>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -186,7 +186,7 @@
 							<width>90</width>
 							<colordiffuse>grey</colordiffuse>
 							<include>MediaFlagVars</include>
-							<texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+							<texture>flags/aspectratio/$VAR[AspectRatio].png</texture>
 						</control>
 						<control type="image">
 							<width>90</width>
