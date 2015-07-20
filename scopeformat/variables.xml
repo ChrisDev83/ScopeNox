@@ -591,4 +591,17 @@
         <value condition="Container.Content(movies) + IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.Tagline,[COLOR labelheader],[/COLOR] - ]$INFO[ListItem.Plot]</value>
         <value>$INFO[ListItem.Plot]</value>
 	</variable>
+	<variable name="ScopeFormat">
+        <value condition="SubString(ListItem.FileNameAndPath,1.33) | SubString(ListItem.FileNameAndPath,4-3)">1.33</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.37) | SubString(ListItem.FileNameAndPath,4-3)">1.37</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.66) | SubString(ListItem.FileNameAndPath,15-9)">1.66</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.78) | SubString(ListItem.FileNameAndPath,16-9)">1.78</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.85) | SubString(ListItem.FileNameAndPath,16-9)">1.85</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.20) | SubString(ListItem.FileNameAndPath,22-10)">2.20</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.35) | SubString(ListItem.FileNameAndPath,21-9">2.35</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.40) | SubString(ListItem.FileNameAndPath,21-9)">2.40</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.55) | SubString(ListItem.FileNameAndPath,23-9)">2.55</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.76) | SubString(ListItem.FileNameAndPath,11-4)">2.76</value>
+		<value condistion="!SubString(ListItem.FileNameAndPath,1.33) + !SubString(ListItem.FileNameAndPath,4-3) + !SubString(ListItem.FileNameAndPath,1.37) + !SubString(ListItem.FileNameAndPath,4-3) !SubString(ListItem.FileNameAndPath,1.66) + !SubString(ListItem.FileNameAndPath,15-9) + !SubString(ListItem.FileNameAndPath,1.78) + !SubString(ListItem.FileNameAndPath,16-9) !SubString(ListItem.FileNameAndPath,1.85) + !SubString(ListItem.FileNameAndPath,16-9) + !SubString(ListItem.FileNameAndPath,2.20) + !SubString(ListItem.FileNameAndPath,22-10) !SubString(ListItem.FileNameAndPath,2.35) + !SubString(ListItem.FileNameAndPath,21-9 + !SubString(ListItem.FileNameAndPath,2.40) + !SubString(ListItem.FileNameAndPath,21-9) !SubString(ListItem.FileNameAndPath,2.55) + !SubString(ListItem.FileNameAndPath,23-9) + !SubString(ListItem.FileNameAndPath,2.76) + !SubString(ListItem.FileNameAndPath,11-4) ">$INFO[ListItem.VideoAspect]</value>
+	</variable>
 </includes>
