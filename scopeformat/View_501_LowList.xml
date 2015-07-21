@@ -217,12 +217,16 @@
 					<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
+				<control type="label" id="9907">
+					<label>$VAR[AudioChannelCustom]</label>
+					<visible>false</visible>
+				</control>
 				<control type="image">
 					<left>339</left>
 					<colordiffuse>grey2</colordiffuse>
 					<include>MediaFlagVars</include>
-					<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
-					<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+					<texture>flags/channels/$VAR[AudioChannelCustom].png</texture>
+					<visible>!IsEmpty(Control.GetLabel(9907))</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
