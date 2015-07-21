@@ -602,6 +602,17 @@
 		<value condition="SubString(ListItem.FileNameAndPath,2.40) | SubString(ListItem.FileNameAndPath,21-9)">2.40</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.55) | SubString(ListItem.FileNameAndPath,23-9)">2.55</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.76) | SubString(ListItem.FileNameAndPath,11-4)">2.76</value>
-		<value condistion="!SubString(ListItem.FileNameAndPath,1.33) + !SubString(ListItem.FileNameAndPath,4-3) + !SubString(ListItem.FileNameAndPath,1.37) + !SubString(ListItem.FileNameAndPath,4-3) !SubString(ListItem.FileNameAndPath,1.66) + !SubString(ListItem.FileNameAndPath,15-9) + !SubString(ListItem.FileNameAndPath,1.78) + !SubString(ListItem.FileNameAndPath,16-9) !SubString(ListItem.FileNameAndPath,1.85) + !SubString(ListItem.FileNameAndPath,16-9) + !SubString(ListItem.FileNameAndPath,2.20) + !SubString(ListItem.FileNameAndPath,22-10) !SubString(ListItem.FileNameAndPath,2.35) + !SubString(ListItem.FileNameAndPath,21-9 + !SubString(ListItem.FileNameAndPath,2.40) + !SubString(ListItem.FileNameAndPath,21-9) !SubString(ListItem.FileNameAndPath,2.55) + !SubString(ListItem.FileNameAndPath,23-9) + !SubString(ListItem.FileNameAndPath,2.76) + !SubString(ListItem.FileNameAndPath,11-4) ">$INFO[ListItem.VideoAspect]</value>
+		<value>$INFO[ListItem.VideoAspect]</value>
+	</variable>
+	<variable name="AudioChannelCustom">
+        <value condition="SubString(ListItem.FileNameAndPath,1.0)">1</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.0)">2</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.1)">3</value>
+		<value condition="SubString(ListItem.FileNameAndPath,4.0)">4</value>
+		<value condition="SubString(ListItem.FileNameAndPath,4.1)">5</value>
+		<value condition="SubString(ListItem.FileNameAndPath,5.1)">6</value>
+		<value condition="SubString(ListItem.FileNameAndPath,6.1)">7</value>
+		<value condition="SubString(ListItem.FileNameAndPath,7.1)">8</value>
+		<value>$INFO[ListItem.AudioChannels]</value>
 	</variable>
 </includes>
