@@ -155,6 +155,21 @@
 						<aligny>center</aligny>
 						<itemgap>0</itemgap>
 						<orientation>horizontal</orientation>
+						
+						<!-- Invisible labels so that the IsEmpty can be called on VARs -->
+						<control type="label" id="9901">
+							<label>$VAR[AspectRatio]</label>
+							<visible>false</visible>
+						</control>
+						<control type="label" id="9902">
+							<label>$VAR[AudioChannelCustom]</label>
+							<visible>false</visible>
+						</control>
+						<control type="label" id="9903">
+							<label>$VAR[SourceFlagVar]</label>
+							<visible>false</visible>
+						</control>
+						
 						<control type="image">
 							<width>90</width>
 							<colordiffuse>grey</colordiffuse>
@@ -173,20 +188,22 @@
 							<width>90</width>
 							<colordiffuse>grey</colordiffuse>
 							<include>MediaFlagVars</include>
-							<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
-							<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+							<texture>flags/channels/$VAR[AudioChannelCustom].png</texture>
+							<visible>!IsEmpty(Control.GetLabel(9902))</visible>
 						</control>
 						<control type="image">
 							<width>90</width>
 							<colordiffuse>grey</colordiffuse>
 							<include>MediaFlagVars</include>
 							<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
+							<visible>!IsEmpty(Control.GetLabel(9903))</visible>
 						</control>
 						<control type="image">
 							<width>90</width>
 							<colordiffuse>grey</colordiffuse>
 							<include>MediaFlagVars</include>
 							<texture>flags/aspectratio/$VAR[AspectRatio].png</texture>
+							<visible>!IsEmpty(Control.GetLabel(9901))</visible>
 						</control>
 						<control type="image">
 							<width>90</width>
@@ -199,7 +216,7 @@
 
 
 				<control type="image">
-					<left>628</left>
+					<left>620</left>
 					<top>417</top>
 					<width>42</width>
 					<height>28</height>
@@ -460,7 +477,7 @@
 					<textoffsetx>15</textoffsetx>
 				</control>
 				<control type="image">
-					<left>628</left>
+					<left>620</left>
 					<top>417</top>
 					<width>42</width>
 					<height>28</height>
@@ -627,7 +644,7 @@
 					<textoffsetx>15</textoffsetx>
 				</control>
 				<control type="image">
-					<left>628</left>
+					<left>620</left>
 					<top>356</top>
 					<width>42</width>
 					<height>28</height>
