@@ -2,6 +2,13 @@
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<onunload condition="Window.IsActive(1118)">Dialog.Close(1118)</onunload>
+	<onunload>Skin.SetString(osdFormat,)</onunload>
+	<onunload>Skin.Reset(osdFormatSet)</onunload>
+	
+	<onload>Skin.SetString(osdFormat,$VAR[OSDFormat])</onload>
+<!-- 	<onload>Notification(Value,'$INFO[Skin.String(osdFormat)]')</onload> -->
+	
+	
 	<controls>
 		<!-- codec info -->
 		<control type="group" id="0">

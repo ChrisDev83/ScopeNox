@@ -7,6 +7,8 @@
 			<visible>!Window.IsActive(videoosd) + !VideoPlayer.Content(LiveTV)</visible>
 			<top>140</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -16,7 +18,7 @@
 			</control>
 			<control type="grouplist">
 				<left>0</left>
-				<top>0</top>
+				<top>10</top>
 				<width>1920</width>
 				<height>90</height>
 				<align>center</align>
@@ -83,11 +85,16 @@
 					<include>MediaFlagVars</include>
 					<texture>$VAR[VideoSourceFlagVar,flags/video/,.png]</texture>
 				</control>
+				<control type="label" id="9908">
+					<label>$VAR[VideoPlayerAspectRatio]</label>
+					<visible>false</visible>
+				</control>
 				<control type="image">
 					<width>320</width>
 					<colordiffuse>grey2</colordiffuse>
 					<include>MediaFlagVars</include>
-					<texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+					<texture>flags/aspectratio/$VAR[VideoPlayerAspectRatio].png</texture>
+					<visible>!IsEmpty(Control.GetLabel(9908))</visible>
 				</control>
 			</control>
 		</control>

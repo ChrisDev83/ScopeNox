@@ -12,7 +12,7 @@
 		</control>
 		<control type="image" zorder="0">
 			<left>0</left>
-			<top>950</top>
+			<top>947</top>
 			<width>1920</width>
 			<height>5</height>
 			<texture background="true">special://skin/extras/orange.png</texture>

@@ -7,7 +7,19 @@
 	</coordinates>
 	<onload condition="VideoPlayer.Content(livetv)">SetFocus(808)</onload>
 	<onload condition="!VideoPlayer.Content(livetv)">SetFocus(602)</onload>
+
+<!-- 	<onload condition="!Skin.HasSetting(osdFormatSet)">Notification(Setting,Setting Value)</onload> -->
+	
+	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)">Skin.SetBool(showscope)</onload>
+	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(show169)</onload>
+	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)">Skin.SetBool(show169)</onload>
+	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(showscope)</onload>
+	
+	<!-- This setting is reset when VideoFullScreen is unloaded -->
+	<onload>Skin.SetBool(osdFormatSet)</onload>
+	
 	<controls>
+		
 		<control type="slider">
 			<description>Seek Slider</description>
 			<left>100</left>
@@ -26,6 +38,8 @@
 			<animation effect="slide" end="0,-238" start="0,0" time="240" tween="quadratic">WindowClose</animation>
 			<top>140</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -191,7 +205,30 @@
 					<height>100</height>
 					<font>-</font>
 	                <visible>!Skin.HasSetting(showscope)</visible>
-	                <onclick>Skin.ToggleSetting(showscope)</onclick>
+	                <onclick condition="Skin.HasSetting(show169)">Skin.Reset(show169)</onclick>
+	                <onclick>Skin.SetBool(showscope)</onclick>
+	            </control>
+	            
+	            <control type="button" id="709">
+					<texturefocus>osd/buttons/169onfo.png</texturefocus>
+					<texturenofocus>osd/buttons/169onnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+	                <visible>Skin.HasSetting(show169)</visible>
+	                <onclick>Skin.Reset(show169)</onclick>
+	            </control>
+				<control type="button" id="710">
+					<texturefocus>osd/buttons/169offfo.png</texturefocus>
+					<texturenofocus>osd/buttons/169offnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+	                <visible>!Skin.HasSetting(show169)</visible>
+	                <onclick>Skin.SetBool(show169)</onclick>
+	                <onclick condition="Skin.HasSetting(showscope)">Skin.Reset(showscope)</onclick>
 	            </control>
 			</control>
 			<control type="grouplist" id="202">
