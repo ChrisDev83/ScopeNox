@@ -598,7 +598,7 @@
 		<value condition="SubString(ListItem.FileNameAndPath,1.78) | SubString(ListItem.FileNameAndPath,16-9)">1.78</value>
 		<value condition="SubString(ListItem.FileNameAndPath,1.85) | SubString(ListItem.FileNameAndPath,16-9)">1.85</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.20) | SubString(ListItem.FileNameAndPath,22-10)">2.20</value>
-		<value condition="SubString(ListItem.FileNameAndPath,2.35) | SubString(ListItem.FileNameAndPath,21-9">2.35</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.35) | SubString(ListItem.FileNameAndPath,21-9)">2.35</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.40) | SubString(ListItem.FileNameAndPath,21-9)">2.40</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.55) | SubString(ListItem.FileNameAndPath,23-9)">2.55</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.76) | SubString(ListItem.FileNameAndPath,11-4)">2.76</value>
