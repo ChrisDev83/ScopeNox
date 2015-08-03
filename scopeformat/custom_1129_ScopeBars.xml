@@ -2,7 +2,7 @@
 <window id="1129" type="dialog">
 <!--     <defaultcontrol always="false">100</defaultcontrol> -->
 <!--     <visible>Window.IsVisible(FullScreenVideo)</visible> -->
-	<visible>!Skin.HasSetting(DebugInfo) + [[Skin.HasSetting(showscope) + Window.IsVisible(FullScreenVideo)] | !Window.IsVisible(FullScreenVideo)]</visible>
+	<visible>!Skin.HasSetting(DebugInfo) + [[Skin.HasSetting(scopemask) + Window.IsVisible(FullScreenVideo)] | !Window.IsVisible(FullScreenVideo)]</visible>
     <controls>
         <control type="image">
 			<left>0</left>

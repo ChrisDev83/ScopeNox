@@ -9,11 +9,10 @@
 	<onload condition="!VideoPlayer.Content(livetv)">SetFocus(602)</onload>
 
 <!-- 	<onload condition="!Skin.HasSetting(osdFormatSet)">Notification(Setting,Setting Value)</onload> -->
-	
-	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)">Skin.SetBool(showscope)</onload>
-	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(show169)</onload>
-	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)">Skin.SetBool(show169)</onload>
-	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(showscope)</onload>
+	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)">Skin.SetBool(scopemask)</onload>
+	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(osd169)</onload>
+	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)">Skin.SetBool(osd169)</onload>
+	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(scopemask)</onload>
 	
 	<!-- This setting is reset when VideoFullScreen is unloaded -->
 	<onload>Skin.SetBool(osdFormatSet)</onload>
@@ -38,8 +37,8 @@
 			<animation effect="slide" end="0,-238" start="0,0" time="240" tween="quadratic">WindowClose</animation>
 			<top>140</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -187,26 +186,54 @@
 					<onclick>ActivateWindow(1118)</onclick>
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 				</control>
+				
+				
+				
 				<control type="button" id="708">
-					<texturefocus>osd/buttons/osdmaskonfo.png</texturefocus>
-					<texturenofocus>osd/buttons/osdmaskonnf.png</texturenofocus>
+					<texturefocus>osd/buttons/scopeonfo.png</texturefocus>
+					<texturenofocus>osd/buttons/scopeonnf.png</texturenofocus>
 					<label>-</label>
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>Skin.HasSetting(showscope)</visible>
-	                <onclick>Skin.ToggleSetting(showscope)</onclick>
+	                <visible>Skin.HasSetting(scopemask)</visible>
+	                <onclick>Skin.ToggleSetting(scopemask)</onclick>
 	            </control>
 				<control type="button" id="707">
-					<texturefocus>osd/buttons/osdmaskofffo.png</texturefocus>
-					<texturenofocus>osd/buttons/osdmaskoffnf.png</texturenofocus>
+					<texturefocus>osd/buttons/scopeofffo.png</texturefocus>
+					<texturenofocus>osd/buttons/scopeoffnf.png</texturenofocus>
 					<label>-</label>
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>!Skin.HasSetting(showscope)</visible>
-	                <onclick condition="Skin.HasSetting(show169)">Skin.Reset(show169)</onclick>
-	                <onclick>Skin.SetBool(showscope)</onclick>
+	                <visible>!Skin.HasSetting(scopemask)</visible>
+	                <onclick>Skin.Reset(osd169)</onclick>
+	                <onclick>Skin.SetBool(scopemask)</onclick>
+	            </control>
+	            
+	            
+	            
+	            
+				<control type="button" id="708">
+					<texturefocus>osd/buttons/219onfo.png</texturefocus>
+					<texturenofocus>osd/buttons/219onnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+	                <visible>!Skin.HasSetting(osd169)</visible>
+	                <onclick>Skin.Reset(scopemask)</onclick>
+	                <onclick>Skin.SetBool(osd169)</onclick>
+	            </control>
+				<control type="button" id="707">
+					<texturefocus>osd/buttons/219offfo.png</texturefocus>
+					<texturenofocus>osd/buttons/219offnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+	                <visible>Skin.HasSetting(osd169)</visible>
+	                <onclick>Skin.Reset(osd169)</onclick>
 	            </control>
 	            
 	            <control type="button" id="709">
@@ -216,8 +243,8 @@
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>Skin.HasSetting(show169)</visible>
-	                <onclick>Skin.Reset(show169)</onclick>
+	                <visible>Skin.HasSetting(osd169)</visible>
+	                <onclick>Skin.Reset(osd169)</onclick>
 	            </control>
 				<control type="button" id="710">
 					<texturefocus>osd/buttons/169offfo.png</texturefocus>
@@ -226,9 +253,9 @@
 					<width>100</width>
 					<height>100</height>
 					<font>-</font>
-	                <visible>!Skin.HasSetting(show169)</visible>
-	                <onclick>Skin.SetBool(show169)</onclick>
-	                <onclick condition="Skin.HasSetting(showscope)">Skin.Reset(showscope)</onclick>
+	                <visible>!Skin.HasSetting(osd169)</visible>
+	                <onclick>Skin.SetBool(osd169)</onclick>
+	                <onclick>Skin.Reset(scopemask)</onclick>
 	            </control>
 			</control>
 			<control type="grouplist" id="202">

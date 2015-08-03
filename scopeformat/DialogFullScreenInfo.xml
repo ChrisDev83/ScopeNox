@@ -7,8 +7,8 @@
 			<visible>!Window.IsActive(videoosd) + !VideoPlayer.Content(LiveTV)</visible>
 			<top>140</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>

@@ -8,8 +8,8 @@
 			<left>0</left>
 			<top>140</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<width>1920</width>
 			<height>500</height>
 			<texture border="1,1,1,40">topbar.png</texture>
@@ -20,8 +20,8 @@
 				<left>0</left>
 				<top>140</top>
 				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>338</width>
 				<height>465</height>
 				<aspectratio align="left">keep</aspectratio>
@@ -34,8 +34,8 @@
 				<left>310</left>
 				<top>140</top>
 				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>1580</width>
 				<height>420</height>
 				<control type="button">
@@ -93,8 +93,8 @@
 				<left>0</left>
 				<top>140</top>
 				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>338</width>
 				<height>508</height>
 				<aspectratio align="left">keep</aspectratio>
@@ -107,8 +107,8 @@
 				<left>340</left>
 				<top>140</top>
 				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>1580</width>
 				<height>508</height>
 				<control type="button">
@@ -155,8 +155,8 @@
 			<left>0</left>
 			<top>520</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<width>1920</width>
 			<height>90</height>
 			<align>right</align>
@@ -224,8 +224,8 @@
 			<left>1115</left>
 			<top>150</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<width>775</width>
 			<height>355</height>
 			<font>font14_textbox_plot</font>
@@ -237,8 +237,8 @@
 			<left>1895</left>
 			<top>145</top>
 			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(show169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(show169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-130" time="700" condition="Skin.HasSetting(osd169) + Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-140" time="700" condition="Skin.HasSetting(osd169) + !Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<width>14</width>
 			<height>390</height>
 			<onup>PageUp(70)</onup>
