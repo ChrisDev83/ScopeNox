@@ -629,15 +629,4 @@
 		<value condition="SubString(Player.Filenameandpath,2.76) | SubString(Player.Filenameandpath,11-4)">2.76</value>
 		<value>$INFO[VideoPlayer.VideoAspect]</value>
 	</variable>
-	
-	
-	
-	
-	<variable name="OSDFormat">
-        <value condition="SubString(Player.Filenameandpath,1.33) | SubString(Player.Filenameandpath,4-3) | SubString(Player.Filenameandpath,1.37) | SubString(Player.Filenameandpath,4-3) | SubString(Player.Filenameandpath,1.66) | SubString(Player.Filenameandpath,15-9) | SubString(Player.Filenameandpath,1.78) | SubString(Player.Filenameandpath,16-9) | SubString(Player.Filenameandpath,1.85) | SubString(Player.Filenameandpath,16-9)">16-9</value>
-		<value condition="SubString(Player.Filenameandpath,2.20) | SubString(Player.Filenameandpath,22-10) | SubString(Player.Filenameandpath,2.35) | SubString(Player.Filenameandpath,21-9) | SubString(Player.Filenameandpath,2.40) | SubString(Player.Filenameandpath,21-9) | SubString(Player.Filenameandpath,2.55) | SubString(Player.Filenameandpath,23-9) | SubString(Player.Filenameandpath,2.76) | SubString(Player.Filenameandpath,11-4)">scope</value>
-<!-- 		<value condition="SubString(VideoPlayer.VideoAspect,1.33) | SubString(VideoPlayer.VideoAspect,1.37)  | SubString(VideoPlayer.VideoAspect,1.66) | SubString(VideoPlayer.VideoAspect,1.78) | SubString(VideoPlayer.VideoAspect,1.85)">16:9</value> -->
-<!-- 		<value condition="SubString(VideoPlayer.VideoAspect,2.20) | SubString(VideoPlayer.VideoAspect,2.35) | SubString(VideoPlayer.VideoAspect,2.40) | SubString(VideoPlayer.VideoAspect,2.55) | SubString(VideoPlayer.VideoAspect,2.76)">scope</value> -->
-		<value>default</value>
-	</variable>
 </includes>
