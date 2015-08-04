@@ -2,12 +2,12 @@
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<onunload condition="Window.IsActive(1118)">Dialog.Close(1118)</onunload>
-	<onunload>Skin.SetString(osdFormat,)</onunload>
-	<onunload>Skin.Reset(osdFormatSet)</onunload>
+
+	<onload>Skin.Reset(osd169)</onload>
+	<onload>Skin.Reset(scopemask)</onload>
 	
-	<onload>Skin.SetString(osdFormat,$VAR[OSDFormat])</onload>
-<!-- 	<onload>Notification(Value,'$INFO[Skin.String(osdFormat)]')</onload> -->
-	
+	<onload condition="SubString(Player.Filenameandpath,1.33) | SubString(Player.Filenameandpath,4-3) | SubString(Player.Filenameandpath,1.37) | SubString(Player.Filenameandpath,4-3) | SubString(Player.Filenameandpath,1.66) | SubString(Player.Filenameandpath,15-9) | SubString(Player.Filenameandpath,1.78) | SubString(Player.Filenameandpath,16-9) | SubString(Player.Filenameandpath,1.85) | SubString(Player.Filenameandpath,16-9)">Skin.SetBool(osd169)</onload>
+	<onload condition="SubString(Player.Filenameandpath,2.20) | SubString(Player.Filenameandpath,22-10) | SubString(Player.Filenameandpath,2.35) | SubString(Player.Filenameandpath,21-9) | SubString(Player.Filenameandpath,2.40) | SubString(Player.Filenameandpath,21-9) | SubString(Player.Filenameandpath,2.55) | SubString(Player.Filenameandpath,23-9) | SubString(Player.Filenameandpath,2.76) | SubString(Player.Filenameandpath,11-4)">Skin.SetBool(scopemask)</onload>
 	
 	<controls>
 		<!-- codec info -->

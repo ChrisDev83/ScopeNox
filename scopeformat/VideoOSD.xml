@@ -8,15 +8,6 @@
 	<onload condition="VideoPlayer.Content(livetv)">SetFocus(808)</onload>
 	<onload condition="!VideoPlayer.Content(livetv)">SetFocus(602)</onload>
 
-<!-- 	<onload condition="!Skin.HasSetting(osdFormatSet)">Notification(Setting,Setting Value)</onload> -->
-	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)">Skin.SetBool(scopemask)</onload>
-	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),scope)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(osd169)</onload>
-	<onload condition="!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)">Skin.SetBool(osd169)</onload>
-	<onload condition="[!Skin.HasSetting(osdFormatSet) + StringCompare(Skin.String(osdFormat),16-9)] | StringCompare(Skin.String(osdFormat),default)">Skin.Reset(scopemask)</onload>
-	
-	<!-- This setting is reset when VideoFullScreen is unloaded -->
-	<onload>Skin.SetBool(osdFormatSet)</onload>
-	
 	<controls>
 		
 		<control type="slider">
