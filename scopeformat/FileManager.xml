@@ -10,22 +10,15 @@
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<left>0</left>
-				<top>900</top>
-				<width>885</width>
-				<height>784</height>
-				<texture border="40">panel_reflect.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
 				<top>148</top>
 				<width>885</width>
-				<height>784</height>
+				<height>670</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="label" id="101">
 				<description>current directory text label</description>
 				<left>0</left>
-				<top>910</top>
+				<top>780</top>
 				<width>821</width>
 				<height>90</height>
 				<font>font16_title</font>
@@ -37,7 +30,7 @@
 				<left>856</left>
 				<top>182</top>
 				<width>8</width>
-				<height>720</height>
+				<height>606</height>
 				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -52,7 +45,7 @@
 				<left>32</left>
 				<top>182</top>
 				<width>821</width>
-				<height>720</height>
+				<height>606</height>
 				<onleft>30</onleft>
 				<onright>21</onright>
 				<onup>20</onup>
@@ -130,22 +123,15 @@
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<left>0</left>
-				<top>900</top>
-				<width>885</width>
-				<height>784</height>
-				<texture border="40">panel_reflect.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
 				<top>148</top>
 				<width>885</width>
-				<height>784</height>
+				<height>670</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="label" id="102">
 				<description>current directory text label</description>
 				<left>50</left>
-				<top>910</top>
+				<top>780</top>
 				<width>821</width>
 				<height>90</height>
 				<font>font16_title</font>
@@ -158,7 +144,7 @@
 				<left>856</left>
 				<top>182</top>
 				<width>8</width>
-				<height>720</height>
+				<height>606</height>
 				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -173,7 +159,7 @@
 				<left>32</left>
 				<top>182</top>
 				<width>821</width>
-				<height>720</height>
+				<height>606</height>
 				<onleft>20</onleft>
 				<onright>31</onright>
 				<onup>21</onup>
@@ -247,13 +233,14 @@
 		</control>
 		<control type="image">
 			<left>0</left>
-			<top>970</top>
+			<top>830</top>
 			<width>1920</width>
 			<height>140</height>
 			<texture border="1">gradient_floor.png</texture>
 		</control>
 		<include>Topbar</include>
 		<control type="label">
+			<top>142</top>
 			<left>1020</left>
 			<width>900</width>
 			<height>90</height>
