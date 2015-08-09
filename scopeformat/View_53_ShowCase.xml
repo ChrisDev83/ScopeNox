@@ -332,8 +332,8 @@
 			<include condition="Skin.HasSetting(HorizontalListNav)">scmfixed</include>
 			<include condition="!Skin.HasSetting(HorizontalListNav)">scmwrap</include>
 			<control type="scrollbar" id="61">
-				<left>110</left>
-				<top>984</top>
+				<left>120</left>
+				<top>850</top>
 				<width>1680</width>
 				<height>12</height>
 				<onup>53</onup>
@@ -389,15 +389,16 @@
 					</control>
 				</control>
 				<control type="image">
-					<left>638</left>
+					<left>575</left>
 					<top>170</top>
 					<width>2</width>
-					<height>179</height>
+					<height>157</height>
 					<texture border="1">separator3.png</texture>
 				</control>
 				<control type="grouplist">
 					<left>570</left>
 					<top>170</top>
+					<width>375</width>
 					<control type="button">
 						<label>$VAR[InfoPanelLabel3Var]</label>
 						<include>ShowCaseInfoPanelButtonsValues</include>
@@ -411,12 +412,14 @@
 						<control type="image">
 							<left>251</left>
 							<width>2</width>
+							<height>77</height>
 							<texture border="1">separator3.png</texture>
 						</control>
 						<control type="button">
+							<left>170</left>
 							<label>$VAR[InfoPanelLabel5Var]</label>
 							<left>251</left>
-							<width>250</width>
+							<width>210</width>
 							<include>ShowCaseInfoPanelButtonsValues</include>
 						</control>
 					</control>
@@ -424,19 +427,19 @@
 				<control type="textbox">
 					<label>$VAR[VideoPlotVar]</label>
 					<top>170</top>
-					<left>952</left>
+					<left>960</left>
 					<width>800</width>
-					<height>180</height>
+					<height>160</height>
 					<font>font13</font>
 					<pagecontrol>62</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="scrollbar" id="62">
-					<top>342</top>
-					<left>1128</left>
+					<top>171</top>
+					<left>1766</left>
 					<width>14</width>
-					<height>180</height>
+					<height>160</height>
 					<onup>SetProperty(MediaMenu,True,home)</onup>
 					<onup>SetFocus(9050)</onup>
 					<onleft>50</onleft>
@@ -448,29 +451,28 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-				<control type="image">
-					<left>137</left>
-					<top>464</top>
-					<width>1643</width>
-					<height>60</height>
-					<texture border="1">separator2.png</texture>
-				</control>
-				
+<!-- 				<control type="image"> -->
+<!-- 					<left>137</left> -->
+<!-- 					<top>640</top> -->
+<!-- 					<width>1643</width> -->
+<!-- 					<height>60</height> -->
+<!-- 					<texture border="1">separator2.png</texture> -->
+<!-- 				</control> -->
 			</control>
 			<control type="group">
 				<visible>StringCompare(Control.GetLabel(4420),2)</visible>
 				<include>SettingsFadeEffect</include>
 				<control type="grouplist">
 					<left>137</left>
-					<top>162</top>
+					<top>170</top>
 					<control type="button">
 						<label>$VAR[InfoPanelLabel1Var]</label>
 						<include>ShowCaseInfoPanelButtonsValues</include>
 					</control>
-					<control type="button">
-						<label>$VAR[InfoPanelLabel2Var]</label>
-						<include>ShowCaseInfoPanelButtonsValues</include>
-					</control>
+<!-- 					<control type="button"> -->
+<!-- 						<label>$VAR[InfoPanelLabel2Var]</label> -->
+<!-- 						<include>ShowCaseInfoPanelButtonsValues</include> -->
+<!-- 					</control> -->
 					<control type="button">
 						<label>$VAR[InfoPanelLabel3Var]</label>
 						<include>ShowCaseInfoPanelButtonsValues</include>
@@ -507,19 +509,19 @@
 				<control type="textbox">
 					<left>655</left>
 					<label>$VAR[VideoPlotVar]</label>
-					<top>162</top>
-					<width>800</width>
-					<height>354</height>
-					<font>font14_textbox</font>
+					<top>170</top>
+					<width>910</width>
+					<height>160</height>
+					<font>font13</font>
 					<pagecontrol>62</pagecontrol>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 				</control>
 				<control type="scrollbar" id="62">
-					<top>162</top>
-					<left>1458</left>
+					<top>170</top>
+					<left>1630</left>
 					<width>14</width>
-					<height>360</height>
+					<height>160</height>
 					<onup>SetProperty(MediaMenu,True,home)</onup>
 					<onup>SetFocus(9050)</onup>
 					<onleft>50</onleft>
@@ -542,7 +544,7 @@
 					<left>1142</left>
 					<top>162</top>
 					<width>640</width>
-					<height>360</height>
+					<height>200</height>
 					<fadetime>200</fadetime>
 					<aspectratio align="right">keep</aspectratio>
 					<texture background="true">$VAR[PosterThumbVar]</texture>
