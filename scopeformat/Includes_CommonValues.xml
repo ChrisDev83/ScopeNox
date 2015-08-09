@@ -98,8 +98,8 @@
 		<include>Objects_KeyOffVars</include>
 	</include>
 	<include name="ShowCaseInfoPanelButtonsValues">
-		<height>90</height>
-		<width>501</width>
+		<height>80</height>
+		<width>432</width>
 		<textoffsetx>15</textoffsetx>
 		<aligny>top</aligny>
 		<font>font12</font>
