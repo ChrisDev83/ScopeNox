@@ -9,7 +9,6 @@
 		<include condition="!Skin.HasSetting(Disable.Musicinfo)">NowPlayingMusicWidget</include>
 		<include>HomeRecentlyAddedInfo</include>
 		<include>WeatherWidget</include>
-		<include>219Bars</include>
 		<control type="group">
 			<top>424</top>
 			<control type="group">
