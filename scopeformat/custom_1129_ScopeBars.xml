@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1129" type="dialog">
 	<zorder>10</zorder>
-<!--     <defaultcontrol always="false">100</defaultcontrol> -->
 	<visible>[!Skin.HasSetting(DebugInfo) + [[Skin.HasSetting(scopemask) + Window.IsVisible(FullScreenVideo)] | !Window.IsVisible(FullScreenVideo)]] | System.ScreenSaverActive</visible>
     <controls>
         <control type="image">
