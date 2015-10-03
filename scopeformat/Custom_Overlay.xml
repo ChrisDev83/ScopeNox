@@ -1151,6 +1151,79 @@
 		<label>VisualisationPresetList.xml</label>
 		<visible>Window.IsVisible(VisualisationPresetList.xml)</visible>
 	</control>
+	
+	
+	
+	
+	
+	
+	
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-sequence-item-settings.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-sequence-item-settings.xml)</visible>
+	</control>
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-playlist-dialog.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-playlist-dialog.xml)</visible>
+	</control>
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-image.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-image.xml)</visible>
+	</control>
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-sequence-editor.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-sequence-editor.xml)</visible>
+	</control>
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-multi-select-dialog.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-multi-select-dialog.xml)</visible>
+	</control>
+	<control type="label">
+		<width>780</width>
+		<height>21</height>
+		<textcolor>FF0000FF</textcolor>
+		<shadowcolor>FF000000</shadowcolor>
+		<font>font13</font>
+		<align>left</align>
+		<label>script.cinemavision-experience.xml</label>
+		<visible>Window.IsVisible(script.cinemavision-experience.xml)</visible>
+	</control>
+	
+
+
+
+
+
 
 
 
