@@ -804,6 +804,7 @@
 					<orientation>horizontal</orientation>
 					<control type="togglebutton" id="8">
 						<description>Play/browse to Show</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>208</label>
 						<altlabel>1024</altlabel>
@@ -816,6 +817,7 @@
 					</control>
 					<control type="button" id="5">
 						<description>Cast/Plot</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>206</label>
 					</control>
@@ -826,6 +828,7 @@
 					</control>
 					<control type="button" id="10">
 						<description>Get Thumb</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>13511</label>
 						<enable>!Skin.HasSetting(KioskMode.Enabled)</enable>
@@ -837,12 +840,14 @@
 					</control>
 					<control type="button" id="11">
 						<description>Play Trailer</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>20410</label>
 						<visible>!IsEmpty(ListItem.Trailer) + Container.Content(movies)</visible>
 					</control>
 					<control type="button" id="203">
 						<description>Play Trailer</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>-</label>
 						<onclick>noop</onclick>
@@ -851,6 +856,7 @@
 					</control>
 					<control type="button" id="204">
 						<description>Play Trailer</description>
+						<width>240</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>20410</label>
 						<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[ListItem.Label] Trailer,return)</onclick>
@@ -862,6 +868,17 @@
 						<height>58</height>
 						<texture border="1">separator3.png</texture>
 					</control>
+					
+					<control type="button" id="299">
+						<description>CinemaVision</description>
+						<width>240</width>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>CinemaVision</label>
+						<onclick>Dialog.Close(MovieInformation)</onclick>
+						<onclick>RunScript(script.cinemavision,experience)</onclick>
+						<visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+					</control> 
+					
 					<control type="button" id="6">
 						<description>Refresh</description>
 						<font>IconMedium</font>
@@ -878,7 +895,7 @@
 					<control type="button" id="207">
 						<description>Extras</description>
 						<font>IconMedium</font>
-						<width>270</width>
+						<width>80</width>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>+</label>
 						<onclick>ActivateWindow(1119)</onclick>
