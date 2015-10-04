@@ -13,7 +13,7 @@ This version of the skin contains all the GUI within an 800/820 pixel height.
 
 To install simply download the zip file and then within Kodi go to AddOns and 'Install from Zip' and it should install.
 
-Latest Release : https://github.com/Funkd/ScopeNox/releases/download/1.5/skin.scope.nox.1.5.zip
+Latest Release : https://github.com/Funkd/ScopeNox/releases/download/1.6/skin.scope.nox.1.6.zip
 
 In order to switch between 2.35 and 2.40 format go to :
 System -> Appearance -> Skin -> Settings -> General -> Scope Format (Toggle)
