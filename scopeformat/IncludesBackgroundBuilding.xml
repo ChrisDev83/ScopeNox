@@ -99,6 +99,7 @@
 		</control>
 	</include>
 	<include name="GlobalFanart">
+	<visible>!Control.IsVisible(513)</visible>
 		<control type="list" id="9033">
 			<include>HiddenList</include>
 			<content>
