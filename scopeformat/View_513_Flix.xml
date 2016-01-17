@@ -23,7 +23,8 @@
 						<top>100</top>
 						<aspectratio aligny="top">scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-						<animation effect="slide" start="0,0" end="0,-200" pulse="true" time="20000" condition="[!IsEmpty(ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4421),1)]">Conditional</animation>
+						<animation effect="slide" start="0,-80" end="0,-200" pulse="true" time="12000" condition="[!IsEmpty(ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4421),1)]">Conditional</animation>
+						<animation effect="slide" end="0,-80" time="0" condition="[!IsEmpty(ListItem.Art(fanart)) + StringCompare(Control.GetLabel(4421),2)]">Conditional</animation>
 					</control>
 					<control type="image">
 						<left>-10</left>
