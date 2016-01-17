@@ -140,19 +140,11 @@
 					</control>
 					
 					<control type="button">
-						<visible>!IsEmpty(ListItem.VideoAspect)</visible>
-						<left>70</left>
-						<width>540</width>
-						<font>font10</font>
-						<label>$INFO[ListItem.VideoAspect]</label>
-					</control>
-					<control type="button">
 						<visible>IsEmpty(ListItem.VideoAspect)</visible>
 						<left>70</left>
 						<width>540</width>
 						<font>font10</font>
-						<label>$INFO[Skin.String(Flix.Movies.InfoPanel)]</label>
-						<label condition="!IsEmpty(ListItem.VideoAspect)">$INFO[ListItem.VideoAspect]</label>
+						<label>Unknown</label>
 					</control>
 					<control type="button">
 						<visible>!IsEmpty(ListItem.VideoAspect)</visible>
