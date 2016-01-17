@@ -204,6 +204,9 @@
 		<value condition="Control.IsVisible(52) + Container.Content(episodes)">$INFO[Skin.String(52.Episodes.InfoPanel)]</value>
 		<value condition="Control.IsVisible(52) + Container.Content(sets)">$INFO[Skin.String(52.Sets.InfoPanel)]</value>
 	</variable>
+	<variable name="FlixPanelVar">
+		<value condition="Control.IsVisible(513) + Container.Content(movies)">$INFO[Skin.String(513.Movies.InfoPanel)]</value>
+	</variable>
 	<variable name="MusicInfoPanelVar">
 		<value condition="Control.IsVisible(54) + Container.Content(albums)">$INFO[Skin.String(54.Albums.InfoPanel)]</value>
 		<value condition="Control.IsVisible(54) + Container.Content(artists)">$INFO[Skin.String(54.Artists.InfoPanel)]</value>
@@ -240,6 +243,11 @@
 		<value condition="Container.Content(sets) + StringCompare(Skin.String(53.Sets.InfoPanel),1)">Skin.SetString(53.Sets.InfoPanel,2)</value>
 		<value condition="Container.Content(sets) + StringCompare(Skin.String(53.Sets.InfoPanel),2)">Skin.Reset(53.Sets.InfoPanel)</value>
 	</variable>
+	<variable name="513VideoInfoPanelVar">
+		<value condition="Container.Content(movies) + IsEmpty(Skin.String(513.Movies.InfoPanel))">Skin.SetString(513.Movies.InfoPanel,1)</value>
+		<value condition="Container.Content(movies) + StringCompare(Skin.String(513.Movies.InfoPanel),1)">Skin.SetString(513.Movies.InfoPanel,2)</value>
+		<value condition="Container.Content(movies) + StringCompare(Skin.String(513.Movies.InfoPanel),2)">Skin.SetString(513.Movies.InfoPanel,1)</value>
+	</variable>
 	<variable name="52MusicInfoPanelVar">
 		<value condition="Container.Content(artists) + IsEmpty(Skin.String(52.Artists.InfoPanel))">Skin.SetString(52.Artists.InfoPanel,2)</value>
 		<!--<value condition="Container.Content(artists) + StringCompare(Skin.String(52.Artists.InfoPanel),1)">Skin.SetString(52.Artists.InfoPanel,2)</value>-->
@@ -256,6 +264,11 @@
 		<value condition="StringCompare(Control.GetLabel(4420),1)">$LOCALIZE[20445]</value>
 		<value condition="StringCompare(Control.GetLabel(4420),2)">$LOCALIZE[31086]</value>
 		<value>$LOCALIZE[351]</value>
+	</variable>
+	<variable name="FlixPanelLabelVar">
+		<value condition="StringCompare(Control.GetLabel(4421),1)">On</value>
+		<value condition="StringCompare(Control.GetLabel(4421),2)">Off</value>
+		<value>On</value>
 	</variable>
 	<variable name="InfoPanelDelayOnClickVar">
 		<value condition="IsEmpty(Skin.String(InfoPanel.Delay))">Skin.SetString(InfoPanel.Delay,2)</value>
