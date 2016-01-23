@@ -248,6 +248,48 @@
 	                <onclick>Skin.SetBool(osd169)</onclick>
 	                <onclick>Skin.Reset(scopemask)</onclick>
 	            </control>
+	            <control type="button" id="713">
+					<texturefocus>osd/buttons/zoominfo.png</texturefocus>
+					<texturenofocus>osd/buttons/zoominnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>RunScript(script.scopenox.tools,zoom,in)</onclick>
+					<visible>Skin.HasSetting(showZoomButtons) + System.HasAddon(script.scopenox.tools)</visible>
+				</control>
+				<control type="button" id="714">
+					<texturefocus>osd/buttons/zoomoutfo.png</texturefocus>
+					<texturenofocus>osd/buttons/zoomoutnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>RunScript(script.scopenox.tools,zoom,out)</onclick>
+					<visible>Skin.HasSetting(showZoomButtons) + System.HasAddon(script.scopenox.tools)</visible>
+				</control>
+				
+				<control type="button" id="715">
+					<texturefocus>osd/buttons/subsupfo.png</texturefocus>
+					<texturenofocus>osd/buttons/subsupnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>RunScript(script.scopenox.tools,subtitles,up)</onclick>
+					<visible>Skin.HasSetting(showZoomButtons) + System.HasAddon(script.scopenox.tools)</visible>
+				</control>
+				
+				<control type="button" id="716">
+					<texturefocus>osd/buttons/subsdownfo.png</texturefocus>
+					<texturenofocus>osd/buttons/subsdownnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>RunScript(script.scopenox.tools,subtitles,down)</onclick>
+					<visible>Skin.HasSetting(showZoomButtons) + System.HasAddon(script.scopenox.tools)</visible>
+				</control>
 			</control>
 			<control type="grouplist" id="202">
 				<top>0</top>
