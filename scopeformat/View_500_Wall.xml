@@ -39,12 +39,12 @@
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
-				<itemlayout height="300" width="200" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
+				<itemlayout height="194" width="130" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>200</width>
-						<height>300</height>
+						<width>130</width>
+						<height>194</height>
 						<aspectratio>scale</aspectratio>
 						<texture colordiffuse="BAFFFFFF" background="true">$VAR[PosterThumb]</texture>
 						<fadetime>300</fadetime>
@@ -52,10 +52,10 @@
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<left>110</left>
+						<left>85</left>
 						<top>0</top>
-						<width>100</width>
-						<height>100</height>
+						<width>40</width>
+						<height>40</height>
 						<texture>$VAR[OverlayVar]</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
 						<bordersize>1</bordersize>
@@ -66,7 +66,7 @@
 						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="300" width="200" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
+				<focusedlayout height="194" width="130" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
 					<control type="group">
 						<animation type="Focus" reversible="false">
 							<effect type="zoom" start="95" end="100" time="300" tween="sine" easing="inout" center="auto" />
@@ -75,8 +75,8 @@
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
-							<width>200</width>
-							<height>300</height>
+							<width>130</width>
+							<height>194</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[PosterThumb]</texture>
 							<fadetime>300</fadetime>
@@ -84,10 +84,10 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="image">
-							<left>110</left>
+							<left>85</left>
 							<top>0</top>
-							<width>100</width>
-							<height>100</height>
+							<width>40</width>
+							<height>40</height>
 							<texture>$VAR[OverlayVar]</texture>
 							<aspectratio align="center" aligny="top">keep</aspectratio>
 							<bordersize>8</bordersize>
@@ -99,12 +99,12 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<itemlayout height="300" width="200" condition="Container.Content(genres)">
+				<itemlayout height="194" width="130" condition="Container.Content(genres)">
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>200</width>
-						<height>300</height>
+						<width>130</width>
+						<height>194</height>
 						<aspectratio>scale</aspectratio>
 						<texture colordiffuse="BAFFFFFF" background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
 						<fadetime>300</fadetime>
@@ -112,7 +112,7 @@
 						<bordersize>2</bordersize>
 					</control>
 				</itemlayout>
-				<focusedlayout height="300" width="200" condition="Container.Content(genres)">
+				<focusedlayout height="194" width="130" condition="Container.Content(genres)">
 					<control type="group">
 						<animation type="Focus" reversible="false">
 							<effect type="zoom" start="95" end="100" time="300" tween="sine" easing="inout" center="auto" />
@@ -121,8 +121,8 @@
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
-							<width>200</width>
-							<height>300</height>
+							<width>130</width>
+							<height>194</height>
 							<aspectratio>scale</aspectratio>
 							<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
 							<fadetime>300</fadetime>

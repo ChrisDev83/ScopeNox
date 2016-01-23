@@ -10,15 +10,6 @@
 			<aspectratio aligny="bottom">keep</aspectratio>
 			<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 		</control>
-		<control type="image">
-			<left>52</left>
-			<top>345</top>
-			<width>390</width>
-			<height>164</height>
-			<aspectratio aligny="top">keep</aspectratio>
-			<texture background="true" flipy="true">$INFO[ListItem.Art(clearlogo)]</texture>
-			<animation effect="fade" start="10" end="10" time="160" tween="cubic" easing="inout" condition="true">Conditional</animation>
-		</control>
 		<control type="group">
 			<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
 			<control type="label">
