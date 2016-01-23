@@ -10,7 +10,7 @@
 				<top>150</top>
 				<left>50</left>
 				<width>1888</width>
-				<height>800</height>
+				<height>760</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>60</onright>
@@ -23,12 +23,12 @@
 				<scrolltime tween="quadratic">400</scrolltime>
 				<focusposition>1</focusposition>
 				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums) | Container.Content(addons)</visible>
-				<itemlayout width="128" height="184" condition="![Container.Content(albums) | Container.Content(addons)]">
+				<itemlayout width="135" height="184" condition="![Container.Content(albums) | Container.Content(addons)]">
 					<control type="group">
 						<top>35</top>
 						<control type="image">
 							<left>0</left>
-							<width>128</width>
+							<width>135</width>
 							<height>184</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture background="true">$VAR[PosterThumbVar]</texture>
@@ -52,19 +52,19 @@
 						</control>
 						<control type="image">
 							<left>0</left>
-							<width>128</width>
+							<width>135</width>
 							<height>184</height>
 							<texture border="1" colordiffuse="66FFFFFF">black.png</texture>
 							<bordersize>20</bordersize>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="128" height="184" condition="![Container.Content(albums) | Container.Content(addons)]">
+				<focusedlayout width="135" height="184" condition="![Container.Content(albums) | Container.Content(addons)]">
 					<control type="group">
 						<top>35</top>
 						<control type="image">
 							<left>0</left>
-							<width>128</width>
+							<width>135</width>
 							<height>184</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture background="true">$VAR[PosterThumbVar]</texture>
@@ -75,8 +75,8 @@
 						<control type="image">
 							<top>4</top>
 							<left>4</left>
-							<width>120</width>
-							<height>175</height>
+							<width>127</width>
+							<height>177</height>
 							<texture border="10">thumbs/thumbnail_focused.png</texture>
 							<bordersize>8</bordersize>
 							<animation effect="fade" start="100" end="0" time="200" reversible="false">UnFocus</animation>
@@ -98,7 +98,7 @@
 						</control>
 						<control type="image">
 							<left>0</left>
-							<width>128</width>
+							<width>135</width>
 							<height>184</height>
 							<texture border="1" colordiffuse="66FFFFFF">black.png</texture>
 							<animation effect="fade" start="100" end="0" time="200" reversible="false">Focus</animation>
