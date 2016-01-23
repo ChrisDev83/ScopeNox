@@ -743,3 +743,19 @@ msgstr "SYSTEM"
 msgctxt "#31960"
 msgid "CONCERTS"
 msgstr "CONCERTS"
+
+msgctxt "#31961"
+msgid "Scope Format"
+msgstr ""
+
+msgctxt "#31962"
+msgid "This will adjust the Skin to fit 2.35 or 2.40 format screens."
+msgstr ""
+
+msgctxt "#31963"
+msgid "Show Zoom/Subtitle Buttons for Non-Scope"
+msgstr ""
+
+msgctxt "#31964"
+msgid "This will display 2 extra buttons, zoom out and zoom in, which can be used to fit 16:9 / 4:3 content inside your scope view without zooming your projector out."
+msgstr ""
