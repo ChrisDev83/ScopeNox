@@ -303,11 +303,20 @@
 						<height>60</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
-<!-- 						<label>31913</label> -->
-<!-- 						<label2>[COLOR themecolor]$VAR[lowermainmenuVar][/COLOR]</label2> -->
-						<label>Scope Format</label>
+						<label>31961</label>
 						<label2>[COLOR themecolor]$VAR[scopeFormat235Var][/COLOR]</label2>
 						<onclick>Skin.ToggleSetting(scopeFormat235)</onclick>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="113">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31963</label>
+						<visible>System.HasAddon(script.scopenox.tools)</visible>
+						<onclick>Skin.ToggleSetting(showZoomButtons)</onclick>
+						<selected>Skin.HasSetting(showZoomButtons)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 				</control>
