@@ -866,3 +866,11 @@ msgstr ""
 msgctxt "#31964"
 msgid "This will display 2 extra buttons, zoom out and zoom in, which can be used to fit 16:9 / 4:3 content inside your scope view without zooming your projector out."
 msgstr ""
+
+msgctxt "#31965"
+msgid "Remember Scope Mask"
+msgstr ""
+
+msgctxt "#31966"
+msgid "This will keep the 'Scope Mask' on or off once you set it. It will not reset for each movie/video."
+msgstr ""

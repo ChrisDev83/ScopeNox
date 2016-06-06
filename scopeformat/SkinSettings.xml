@@ -308,6 +308,16 @@
 						<onclick>Skin.ToggleSetting(scopeFormat235)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
+					<control type="button" id="107">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31965</label>
+						<label2>[COLOR themecolor]$VAR[rememberScopeMaskSettingVar][/COLOR]</label2>
+						<onclick>Skin.ToggleSetting(rememberScopeMaskSetting)</onclick>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
 					<control type="radiobutton" id="113">
 						<width>1316</width>
 						<height>60</height>
