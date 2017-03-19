@@ -2,13 +2,12 @@
 <window type="dialog">
 	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<zorder>1</zorder>
 	<coordinates>
 		<system>1</system>
 		<left>161</left>
 		<top>210</top>
 	</coordinates>
-	<include>dialogeffect</include>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 
 		<control type="button" id="500">
@@ -78,7 +77,6 @@
 						<font>font14</font>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
@@ -89,7 +87,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textoffsetx>15</textoffsetx>
 					</control>
 				</itemlayout>
@@ -107,7 +104,6 @@
 						<font>font14</font>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<aligny>center</aligny>
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
@@ -118,7 +114,6 @@
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<textoffsetx>15</textoffsetx>
 					</control>
 				</focusedlayout>
@@ -128,7 +123,7 @@
 				<left>628</left>
 				<width>14</width>
 				<height>542</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>211</onleft>
@@ -179,7 +174,7 @@
 				<description>Set thumbnail Button</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="button" id="307">
 				<description>Set action Button</description>
@@ -195,25 +190,25 @@
 				<description>Change widget</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="button" id="310">
 				<description>Change background</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="label" id="311">
 				<description>Selected widget name</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="label" id="312">
 				<description>Selected background name</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 		</control>
 		<control type="group" id="100">
@@ -260,7 +255,6 @@
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<textoffsetx>15</textoffsetx>
-					<aligny>center</aligny>
 				</control>
 				<control type="label">
 					<width>600</width>
@@ -270,7 +264,6 @@
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>right</align>
-					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
 				</control>
 			</itemlayout>
@@ -280,7 +273,7 @@
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
 					<visible>Control.HasFocus(111)</visible>
-					<include>VisibleFadeEffect</include>
+					<include>VisibleFadeAnimation</include>
 				</control>
 				<control type="label">
 					<width>600</width>
@@ -289,7 +282,6 @@
 					<font>font14</font>
 					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(111)">Conditional</animation>
 				</control>
@@ -301,7 +293,6 @@
 					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>right</align>
-					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(111)">Conditional</animation>
 				</control>
@@ -312,7 +303,7 @@
 			<left>1565</left>
 			<width>14</width>
 			<height>542</height>
-			<texturesliderbackground>-</texturesliderbackground>
+			<texturesliderbackground />
 			<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 			<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			<onleft>111</onleft>

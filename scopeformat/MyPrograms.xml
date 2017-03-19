@@ -6,11 +6,12 @@
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<onunload>ClearProperty(Progams.Games,Home)</onunload>
-	<views>50,51,55,500</views>
+	<views>50,51,54,55,57,500</views>
+	<menucontrol>9051</menucontrol>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
-			<include>Window_OpenClose_Animation</include>
+			<include>WindowOpenCloseAnimation</include>
 			<include condition="!Skin.HasSetting(Enable.SlimList)">AddonList</include>
 			<include condition="Skin.HasSetting(Enable.SlimList)">SlimList</include>
 			<!-- view id = 50 -->
@@ -18,73 +19,44 @@
 			<!-- view id = 51 -->
 			<include>AddonWall</include>
 			<!-- view id = 500 -->
+			<include>View_54_ShowCase</include>
+			<!-- view id = 54 -->
 			<include>GamesTriPanel</include>
 			<!-- view id = 55 -->
+			<include>AlbumShift</include>
+			<!-- view id = 57 -->
 		</control>
 		<control type="group">
-			<visible>Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(57)</visible>
+			<visible>Control.IsVisible(54) | Control.IsVisible(500) | Control.IsVisible(57)</visible>
 			<visible>!Window.IsActive(addoninformation)</visible>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,806" start="0,0">WindowClose</animation>
-			<top>20</top>
+			<top>-30</top>
 			<control type="group">
-				<visible>Control.IsVisible(54) | Control.IsVisible(52)</visible>
+				<visible>Control.IsVisible(54)</visible>
 				<control type="group">
 					<left>410</left>
-					<top>890</top>
+					<top>1010</top>
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width>1100</width>
-						<height>42</height>
-						<aligny>top</aligny>
+						<right>410</right>
+						<height>48</height>
 						<align>center</align>
 						<font>font16_title_bold</font>
 						<textcolor>white</textcolor>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
-						<textoffsety>-2</textoffsety>
 						<textoffsetx>30</textoffsetx>
 					</control>
 					<control type="label">
-						<left>0</left>
 						<top>45</top>
-						<width>1100</width>
+						<right>410</right>
 						<height>30</height>
 						<align>center</align>
 						<font>font13_title</font>
 						<textcolor>white</textcolor>
-						<label>$INFO[ListItem.Label2]</label>
+						<label>$VAR[FloorLabel2Var]</label>
 						<textoffsetx>30</textoffsetx>
-					</control>
-				</control>
-				<control type="group">
-					<left>0</left>
-					<top>890</top>
-					<width>1920</width>
-					<align>center</align>
-					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
-					<control type="group">
-						<left>120</left>
-						<control type="label">
-							<left>-10</left>
-							<width>155</width>
-							<height>90</height>
-							<align>center</align>
-							<label>$INFO[ListItem.Year]</label>
-							<font>font35_title_bold</font>
-							<textcolor>white</textcolor>
-							<wrapmultiline>true</wrapmultiline>
-						</control>
-					</control>
-					<control type="image">
-						<left>1600</left>
-						<colordiffuse>white</colordiffuse>
-						<width>200</width>
-						<fadetime>50</fadetime>
-						<include>MediaFlagVars</include>
-						<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
 					</control>
 				</control>
 			</control>
@@ -98,50 +70,42 @@
 					<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 					<control type="group">
 						<left>90</left>
-						<top>835</top>
+						<top>1010</top>
 						<control type="label">
-							<left>0</left>
-							<top>0</top>
 							<width>1150</width>
-							<height>42</height>
-							<aligny>top</aligny>
-							<align>left</align>
+							<height>48</height>
 							<font>font16_title_bold</font>
 							<textcolor>white</textcolor>
 							<scroll>true</scroll>
 							<label>$INFO[ListItem.Label]</label>
-							<textoffsety>-2</textoffsety>
 							<textoffsetx>30</textoffsetx>
 						</control>
 						<control type="label">
-							<left>0</left>
 							<top>45</top>
 							<width>1500</width>
 							<height>30</height>
-							<align>left</align>
 							<font>font13_title</font>
 							<textcolor>white</textcolor>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+							<label>$INFO[ListItem.AddonSummary]</label>
 							<textoffsetx>30</textoffsetx>
 						</control>
 					</control>
 					<control type="label">
-						<left>1620</left>
-						<top>850</top>
+						<left>1800</left>
+						<top>1000</top>
 						<width>198</width>
 						<height>90</height>
 						<align>right</align>
-						<label>$INFO[ListItem.Property(Addon.Version)]</label>
-						<font>font13</font>
+						<label>$INFO[ListItem.AddonVersion]</label>
+						<font>font35_title_bold</font>
 						<textcolor>white</textcolor>
 						<wrapmultiline>true</wrapmultiline>
 					</control>
 				</control>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<top>970</top>
-				<width>1920</width>
+				<width>100%</width>
 				<height>140</height>
 				<texture border="1">gradient_floor.png</texture>
 			</control>
@@ -167,6 +131,41 @@
 					<label>587</label>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
+				</control>
+				<control type="button" id="203">
+					<description>Actions</description>
+					<textwidth>352</textwidth>
+					<font>font13_title</font>
+					<include>ButtonCommonValues</include>
+					<label>31039</label>
+					<enable>no</enable>
+					<disabledcolor>themecolor</disabledcolor>
+				</control>
+				<control type="button" id="613">
+					<description>Get more</description>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[21452]</label>
+					<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
+					<visible>Container.Content(addons)</visible>
+				</control>
+				<control type="button" id="614">
+					<description>Add-on settings</description>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[10140]</label>
+					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+					<visible>!String.IsEmpty(Container.PluginName)</visible>
+				</control>
+				<control type="button" id="616">
+					<description>Go to playercontrols</description>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31177]</label>
+					<onclick condition="Player.HasAudio">ClearProperty(MediaMenu,Home)</onclick>
+					<onclick condition="Player.HasAudio">SetFocus(50)</onclick>
+					<onclick condition="Player.HasAudio">ActivateWindow(playercontrols)</onclick>
+					<onclick condition="Player.HasVideo">Fullscreen</onclick>
+					<onclick condition="Player.HasVideo">ActivateWindow(videoosd)</onclick>
+					<onclick>ClearProperty(MediaMenu,Home)</onclick>
+					<visible>Player.HasMedia</visible>
 				</control>
 			</control>
 		</control>

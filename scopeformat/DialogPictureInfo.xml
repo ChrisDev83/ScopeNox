@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">5</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<left>399</left>
-		<top>180</top>
-	</coordinates>
-	<include>dialogeffect</include>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="group">
+			<width>1122</width>
+			<height>720</height>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
 			<control type="image">
 				<description>background image</description>
-				<left>0</left>
-				<top>0</top>
 				<width>1122</width>
 				<height>720</height>
 				<texture border="40">dialogs/default/bg.png</texture>
@@ -62,7 +59,6 @@
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
-						<left>0</left>
 						<width>1058</width>
 						<height>60</height>
 						<font>font15</font>
@@ -80,12 +76,11 @@
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="image">
-						<top>0</top>
 						<width>1058</width>
 						<height>60</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(5)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>1058</width>
@@ -98,7 +93,6 @@
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
-						<left>0</left>
 						<width>1058</width>
 						<height>60</height>
 						<font>font15</font>
@@ -121,7 +115,7 @@
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="4">scrollbar/texturesliderbar3.png</texturesliderbar>
 				<texturesliderbarfocus border="4">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
 				<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="Control.IsVisible(3) + !Control.IsVisible(5)">Conditional</animation>

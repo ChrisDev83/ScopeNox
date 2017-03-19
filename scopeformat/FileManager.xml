@@ -5,20 +5,25 @@
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
-			<left>50</left>
+			<centerleft>26%</centerleft>
+			<width>885</width>
 			<top>80</top>
-			<include>Window_OpenClose_Animation</include>
+			<include>WindowOpenCloseAnimation</include>
 			<control type="image">
-				<left>0</left>
+				<top>900</top>
+				<width>885</width>
+				<height>784</height>
+				<texture border="40">panel_reflect.png</texture>
+			</control>
+			<control type="image">
 				<top>148</top>
 				<width>885</width>
-				<height>670</height>
+				<height>784</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="label" id="101">
 				<description>current directory text label</description>
-				<left>0</left>
-				<top>780</top>
+				<top>910</top>
 				<width>821</width>
 				<height>90</height>
 				<font>font16_title</font>
@@ -30,8 +35,8 @@
 				<left>856</left>
 				<top>182</top>
 				<width>8</width>
-				<height>606</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<height>720</height>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>31</onleft>
@@ -45,7 +50,7 @@
 				<left>32</left>
 				<top>182</top>
 				<width>821</width>
-				<height>606</height>
+				<height>720</height>
 				<onleft>30</onleft>
 				<onright>21</onright>
 				<onup>20</onup>
@@ -59,8 +64,6 @@
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
 						<width>630</width>
 						<height>60</height>
 						<font>font14</font>
@@ -91,7 +94,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(20)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -118,20 +121,26 @@
 			</control>
 		</control>
 		<control type="group">
-			<left>985</left>
+			<centerleft>74%</centerleft>
+			<width>885</width>
 			<top>80</top>
-			<include>Window_OpenClose_Animation</include>
+			<include>WindowOpenCloseAnimation</include>
 			<control type="image">
-				<left>0</left>
+				<top>900</top>
+				<width>885</width>
+				<height>784</height>
+				<texture border="40">panel_reflect.png</texture>
+			</control>
+			<control type="image">
 				<top>148</top>
 				<width>885</width>
-				<height>670</height>
+				<height>784</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="label" id="102">
 				<description>current directory text label</description>
 				<left>50</left>
-				<top>780</top>
+				<top>910</top>
 				<width>821</width>
 				<height>90</height>
 				<font>font16_title</font>
@@ -144,8 +153,8 @@
 				<left>856</left>
 				<top>182</top>
 				<width>8</width>
-				<height>606</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<height>720</height>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>21</onleft>
@@ -159,7 +168,7 @@
 				<left>32</left>
 				<top>182</top>
 				<width>821</width>
-				<height>606</height>
+				<height>720</height>
 				<onleft>20</onleft>
 				<onright>31</onright>
 				<onup>21</onup>
@@ -173,8 +182,6 @@
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
 						<width>630</width>
 						<height>60</height>
 						<font>font14</font>
@@ -205,7 +212,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(21)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -232,15 +239,13 @@
 			</control>
 		</control>
 		<control type="image">
-			<left>0</left>
-			<top>830</top>
-			<width>1920</width>
+			<top>970</top>
+			<width>100%</width>
 			<height>140</height>
 			<texture border="1">gradient_floor.png</texture>
 		</control>
 		<include>Topbar</include>
 		<control type="label">
-			<top>142</top>
 			<left>1020</left>
 			<width>900</width>
 			<height>90</height>
@@ -254,7 +259,7 @@
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480" condition="Window.Next(home)">WindowClose</animation>
 			<visible>Control.HasFocus(20)</visible>
-			<include>VisibleFadeEffect</include>
+			<include>VisibleFadeAnimation</include>
 		</control>
 		<control type="label">
 			<left>1020</left>
@@ -270,7 +275,7 @@
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480" condition="Window.Next(home)">WindowClose</animation>
 			<visible>Control.HasFocus(21)</visible>
-			<include>VisibleFadeEffect</include>
+			<include>VisibleFadeAnimation</include>
 		</control>
 	</controls>
 </window>

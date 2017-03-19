@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol allways="true">50</defaultcontrol>
+	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload>SetProperty(Window.HasSettings,True,home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
@@ -19,14 +19,12 @@
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
 			<control type="image">
-				<left>0</left>
 				<top>900</top>
 				<width>885</width>
 				<height>784</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<top>148</top>
 				<width>885</width>
 				<height>784</height>
@@ -34,7 +32,6 @@
 			</control>
 			<control type="label" id="12">
 				<description>current directory text label</description>
-				<left>0</left>
 				<top>910</top>
 				<width>821</width>
 				<height>90</height>
@@ -48,7 +45,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>50</onleft>
@@ -77,8 +74,6 @@
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
 						<width>630</width>
 						<height>60</height>
 						<font>font14</font>
@@ -89,7 +84,6 @@
 					</control>
 					<control type="label">
 						<left>821</left>
-						<top>0</top>
 						<width>821</width>
 						<height>60</height>
 						<font>font14</font>
@@ -111,7 +105,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(50)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -150,14 +144,12 @@
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
 			<control type="image">
-				<left>0</left>
 				<top>900</top>
 				<width>885</width>
 				<height>784</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<top>148</top>
 				<width>885</width>
 				<height>784</height>
@@ -180,7 +172,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>100</onleft>
@@ -209,8 +201,6 @@
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
 						<width>630</width>
 						<height>60</height>
 						<font>font14</font>
@@ -221,7 +211,6 @@
 					</control>
 					<control type="label">
 						<left>821</left>
-						<top>0</top>
 						<width>821</width>
 						<height>60</height>
 						<font>font14</font>
@@ -243,7 +232,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(100)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -271,9 +260,8 @@
 			</control>
 		</control>
 		<control type="image">
-			<left>0</left>
 			<top>970</top>
-			<width>1920</width>
+			<width>100%</width>
 			<height>140</height>
 			<texture border="1">gradient_floor.png</texture>
 		</control>
@@ -282,7 +270,6 @@
 			<left>-440</left>
 			<include>SideBladeLeft</include>
 			<control type="grouplist" id="9050">
-				<left>0</left>
 				<top>100</top>
 				<width>400</width>
 				<height>1080</height>
@@ -293,7 +280,6 @@
 				<ondown>9050</ondown>
 				<onback>ClearProperty(MediaMenu,Home)</onback>
 				<onback>50</onback>
-				<itemgap>0</itemgap>
 				<control type="label" id="200">
 					<width>400</width>
 					<height>52</height>
@@ -301,7 +287,6 @@
 					<font>font13_title</font>
 					<label>31006</label>
 					<textcolor>themecolor</textcolor>
-					<aligny>center</aligny>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>

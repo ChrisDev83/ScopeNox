@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1120" type="dialog">
 	<defaultcontrol always="true">90200</defaultcontrol>
+	<onunload condition="String.IsEqual(Skin.String(Viz.Background),4) + System.HasAddon(script.toolbox)">RunScript(script.toolbox,daemon=True,radius=30)</onunload>
 	<coordinates>
 		<system>1</system>
 		<left>199</left>
 		<top>210</top>
 	</coordinates>
-	<include>dialogeffect</include>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
-			<left>0</left>
-			<top>0</top>
 			<width>1522</width>
 			<height>660</height>
 			<texture border="40">dialogs/default/bg.png</texture>
@@ -40,7 +39,6 @@
 			<top>88</top>
 			<width>1138</width>
 			<height>540</height>
-			<itemgap>0</itemgap>
 			<pagecontrol>6</pagecontrol>
 			<onup>90200</onup>
 			<ondown>90200</ondown>
@@ -51,7 +49,8 @@
 				<width>1138</width>
 				<label>$LOCALIZE[31102]:</label>
 				<label2>$VAR[VizBackgroundLabelVar,[COLOR labelheader],[/COLOR]]</label2>
-				<onclick>$VAR[VizBackgroundClickVar]</onclick>
+				<onclick>SetProperty(Viz.Background,True,1120)</onclick>
+				<onclick>ActivateWindow(1130)</onclick>
 			</control>
 			<control type="radiobutton" id="90202">
 				<description>Background Button</description>
@@ -59,7 +58,7 @@
 				<label>$LOCALIZE[31129]</label>
 				<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 				<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
-				<enable>Visualisation.Enabled + ![StringCompare(Visualisation.Name,waveform) | StringCompare(Visualisation.Name,opengl spectrum) | StringCompare(Visualisation.Name,directx spectrum)]</enable>
+				<enable>Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) | String.IsEqual(Visualisation.Name,directx spectrum)]</enable>
 			</control>
 			<control type="radiobutton" id="90203">
 				<description>Big Ass Label Button</description>
@@ -85,7 +84,7 @@
 			<top>88</top>
 			<width>8</width>
 			<height>540</height>
-			<texturesliderbackground>-</texturesliderbackground>
+			<texturesliderbackground />
 			<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 			<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			<onleft>90200</onleft>
@@ -112,9 +111,6 @@
 				<control type="button" id="28">
 					<description>Ok Button</description>
 					<width>310</width>
-					<align>left</align>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
 					<label>186</label>
 					<onclick>Dialog.Close(1120)</onclick>
 				</control>

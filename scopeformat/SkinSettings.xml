@@ -3,12 +3,18 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x101|x202|x303|x404|x505|x606)</onunload>
 	<controls>
-		<include>CommonBackground</include>
+		<include content="CommonBackground">
+			<param name="windowOpen" value="!Window.Previous(SettingsCategory.xml)" />
+			<param name="windowClose" value="!Window.Next(SettingsCategory.xml)" />
+		</include>
 		<include>Topbar</include>
 		<control type="group">
-			<left>0</left>
 			<top>128</top>
-			<include>Window_OpenClose_Animation</include>
+			<left>SettingsLeft</left>
+			<include content="WindowOpenCloseAnimation">
+				<param name="windowOpen" value="!Window.Previous(SettingsCategory.xml)" />
+				<param name="windowClose" value="!Window.Next(SettingsCategory.xml)" />
+			</include>
 			<include>SystemLeftPanel</include>
 			<control type="panel" id="9000">
 				<left>82</left>
@@ -19,10 +25,10 @@
 				<onright>9010</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
-				<pagecontrol>-</pagecontrol>
+				<pagecontrol />
 				<scrolltime tween="quadratic" easing="out">200</scrolltime>
 				<visible>!Window.IsActive(1121)</visible>
-				<include>SettingsFadeEffect</include>
+				<include>SettingsFadeAnimation</include>
 				<itemlayout height="60" width="356">
 					<control type="image">
 						<top>0</top>
@@ -38,7 +44,6 @@
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
@@ -54,7 +59,7 @@
 						<height>60</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(9000)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>356</width>
@@ -64,7 +69,6 @@
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
@@ -73,53 +77,28 @@
 					<item id="1">
 						<label>513</label>
 						<onclick>noop</onclick>
-						<icon>-</icon>
+						<icon />
 					</item>
 					<item id="2">
 						<label>16000</label>
 						<onclick>noop</onclick>
-						<icon>-</icon>
+						<icon />
 					</item>
 					<item id="3">
 						<label>31014</label>
 						<onclick>noop</onclick>
-						<icon>-</icon>
+						<icon />
 					</item>
 					<item id="4">
 						<label>10038</label>
 						<onclick>noop</onclick>
-						<icon>-</icon>
+						<icon />
 					</item>
-					<!--<item id="5">
-						<label>1</label>
+					<item id="5">
+						<label>Scope Settings</label>
 						<onclick>noop</onclick>
-						<icon>-</icon>
+						<icon />
 					</item>
-					<item id="6">
-						<label>8</label>
-						<onclick>noop</onclick>
-						<icon>-</icon>
-					</item>
-					<item id="7">
-						<label>24001</label>
-						<onclick>noop</onclick>
-						<icon>-</icon>
-					</item>
-					<item id="8">
-						<label>14036</label>
-						<onclick>noop</onclick>
-						<icon>-</icon>
-					</item>
-					<item id="9">
-						<label>13000</label>
-						<onclick>noop</onclick>
-						<icon>-</icon>
-					</item>
-					<item id="10">
-						<label>10511</label>
-						<onclick>noop</onclick>
-						<icon>-</icon>
-					</item>-->
 				</content>
 			</control>
 			<control type="image">
@@ -147,7 +126,6 @@
 				<width>1256</width>
 				<height>95</height>
 				<font>font14_textbox</font>
-				<align>left</align>
 				<textcolor>grey2</textcolor>
 				<label>$VAR[SkinSettingsDescriptionVar]</label>
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
@@ -157,7 +135,7 @@
 			</control>
 			<control type="group" id="9010">
 				<visible>!Window.IsActive(1121)</visible>
-				<include>SettingsFadeEffect</include>
+				<include>SettingsFadeAnimation</include>
 				<control type="grouplist" id="9001">
 					<description>control area</description>
 					<left>522</left>
@@ -234,7 +212,16 @@
 						<onclick condition="Skin.HasSetting(biggergap)">Skin.Reset(biggergap)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
-					
+					<control type="radiobutton" id="105">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>$LOCALIZE[31160]</label>
+						<onclick>Skin.ToggleSetting(Disable.FanartTitle)</onclick>
+						<selected>!Skin.HasSetting(Disable.FanartTitle)</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
 				</control>
 				<control type="grouplist" id="9002">
 					<description>control area</description>
@@ -249,15 +236,6 @@
 					<onup>9002</onup>
 					<ondown>9002</ondown>
 					<visible>Container(9000).HasFocus(2)</visible>
-					<control type="button" id="203">
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>31947</label>
-						<onclick>ActivateWindow(1128)</onclick>
-						<texturenofocus border="1">separator5.png</texturenofocus>
-					</control>
 					<control type="radiobutton" id="200">
 						<width>1316</width>
 						<height>60</height>
@@ -266,6 +244,16 @@
 						<label>20189</label>
 						<onclick>Skin.ToggleSetting(Enable.AutoScroll)</onclick>
 						<selected>Skin.HasSetting(Enable.AutoScroll)</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="203">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>$LOCALIZE[31170]</label>
+						<onclick>Skin.ToggleSetting(Disable.Netflix.Pause)</onclick>
+						<selected>!Skin.HasSetting(Disable.Netflix.Pause)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="204">
@@ -298,37 +286,6 @@
 						<selected>!Skin.HasSetting(Disable.ShowBackgroundVis)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
-					<control type="button" id="105">
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>31961</label>
-						<label2>[COLOR themecolor]$VAR[scopeFormat235Var][/COLOR]</label2>
-						<onclick>Skin.ToggleSetting(scopeFormat235)</onclick>
-						<texturenofocus border="1">separator5.png</texturenofocus>
-					</control>
-					<control type="button" id="107">
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>31965</label>
-						<label2>[COLOR themecolor]$VAR[rememberScopeMaskSettingVar][/COLOR]</label2>
-						<onclick>Skin.ToggleSetting(rememberScopeMaskSetting)</onclick>
-						<texturenofocus border="1">separator5.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="113">
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>31963</label>
-						<visible>System.HasAddon(script.scopenox.tools)</visible>
-						<onclick>Skin.ToggleSetting(showZoomButtons)</onclick>
-						<selected>Skin.HasSetting(showZoomButtons)</selected>
-						<texturenofocus border="1">separator5.png</texturenofocus>
-					</control>
 				</control>
 				<control type="grouplist" id="9003">
 					<description>control area</description>
@@ -343,38 +300,16 @@
 					<onup>9003</onup>
 					<ondown>9003</ondown>
 					<visible>Container(9000).HasFocus(3)</visible>
-					<control type="radiobutton" id="306">
-						<description>Startup Playlist Path</description>
+					<control type="button" id="306">
 						<width>1316</width>
 						<height>60</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
-						<label>21398</label>
-						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
-						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
-					</control>
-					<control type="button" id="307">
-						<description>Startup Playlist Path</description>
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>15311</label>
-						<label2>[COLOR labelheader]$INFO[Skin.String(Startup_Playlist_Path)][/COLOR]</label2>
-						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
-						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
-					</control>
-					<control type="radiobutton" id="304">
-						<width>1316</width>
-						<height>60</height>
-						<textoffsetx>30</textoffsetx>
-						<font>font15</font>
-						<label>31126</label>
-						<onclick>Skin.ToggleSetting(Enable.TvTunes)</onclick>
+						<label>$LOCALIZE[31150]</label>
+						<label2>[COLOR labelheader]$INFO[Skin.String(StudioLogos.name)][/COLOR]</label2>
+						<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=StudioLogos&amp;type=resource.images.studios)</onclick>
+						<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
-						<visible>System.HasAddon(script.tvtunes)</visible>
-						<onclick>Skin.ToggleSetting</onclick>
-						<selected>Skin.HasSetting(Enable.TvTunes)</selected>
 					</control>
 					<control type="radiobutton" id="305">
 						<width>1316</width>
@@ -385,6 +320,30 @@
 						<onclick>Skin.ToggleSetting(Disable.NextAired)</onclick>
 						<selected>!Skin.HasSetting(Disable.NextAired)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
+						<visible>System.HasAddon(script.tv.show.next.aired)</visible>
+					</control>
+					<control type="radiobutton" id="307">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31083</label>
+						<onclick>InstallAddon(script.tv.show.next.aired)</onclick>
+						<selected>false</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<visible>!System.HasAddon(script.tv.show.next.aired)</visible>
+					</control>
+					<control type="radiobutton" id="304">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>$LOCALIZE[31121]</label>
+						<onclick condition="System.HasAddon(plugin.program.autocompletion)">Skin.ToggleSetting(Disable.Autocomplete)</onclick>
+						<onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
+						<selected>Skin.HasSetting(Disable.Autocomplete) | !System.HasAddon(plugin.program.autocompletion)</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<visible>System.HasAddon(plugin.program.autocompletion)</visible>
 					</control>
 					<control type="button" id="300">
 						<width>1316</width>
@@ -404,7 +363,7 @@
 						<label>- $LOCALIZE[10035]</label>
 						<onclick>Skin.Reset(VideoGenreFanartPath)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
-						<visible>!IsEmpty(Skin.String(VideoGenreFanartPath))</visible>
+						<visible>!String.IsEmpty(Skin.String(VideoGenreFanartPath))</visible>
 					</control>
 					<control type="button" id="301">
 						<width>1316</width>
@@ -424,7 +383,7 @@
 						<label>- $LOCALIZE[10035]</label>
 						<onclick>Skin.Reset(MusicGenreFanartPath)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
-						<visible>!IsEmpty(Skin.String(MusicGenreFanartPath))</visible>
+						<visible>!String.IsEmpty(Skin.String(MusicGenreFanartPath))</visible>
 					</control>
 				</control>
 				<control type="grouplist" id="9004">
@@ -489,7 +448,65 @@
 						<onclick>Skin.ToggleSetting(Enable.SlimList)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
+					<control type="radiobutton" id="406">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31961</label>
+						<onclick>Skin.ToggleSetting(Enable.HideRatings)</onclick>
+						<selected>Skin.HasSetting(Enable.HideRatings)</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
 				</control>
+				
+				
+				<control type="grouplist" id="9005">
+					<description>control area</description>
+					<left>522</left>
+					<top>80</top>
+					<width>1316</width>
+					<height>590</height>
+					<itemgap>0</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<visible>Container(9000).HasFocus(5)</visible>
+					<control type="button" id="107">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31966</label>
+						<label2>[COLOR themecolor]$VAR[scopeFormat235Var][/COLOR]</label2>
+						<onclick>Skin.ToggleSetting(scopeFormat235)</onclick>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
+					<control type="button" id="108">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31970</label>
+						<label2>[COLOR themecolor]$VAR[rememberScopeMaskSettingVar][/COLOR]</label2>
+						<onclick>Skin.ToggleSetting(rememberScopeMaskSetting)</onclick>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="109">
+						<width>1316</width>
+						<height>60</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31968</label>
+						<visible>System.HasAddon(script.scopenox.tools)</visible>
+						<onclick>Skin.ToggleSetting(showZoomButtons)</onclick>
+						<selected>Skin.HasSetting(showZoomButtons)</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+					</control>
+				</control>
+				
 			</control>
 		</control>
 	</controls>

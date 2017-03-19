@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog">
+<window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<coordinates>
 		<system>1</system>
 		<left>457</left>
 		<top>240</top>
+		<origin x="777" y="240">String.IsEqual(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
-	<zorder>2</zorder>
-	<include>dialogeffect</include>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="group">
 			<control type="image">
 				<left>157</left>
-				<top>0</top>
 				<width>692</width>
 				<height>600</height>
 				<texture border="40">dialogs/default/bg.png</texture>
-				<visible>Control.IsVisible(3) + !Control.IsVisible(5)</visible>
+				<visible>Control.IsVisible(3) + ![Control.IsVisible(5) | Control.IsVisible(7)]</visible>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>1006</width>
 				<height>600</height>
 				<texture border="40">dialogs/default/bg.png</texture>
-				<visible>Control.IsVisible(5) | Control.isVisible(6)</visible>
+				<visible>[Control.IsVisible(5) | Control.IsVisible(7)] | Control.isVisible(6)</visible>
 			</control>
 			<control type="image">
 				<left>30</left>
@@ -32,7 +29,7 @@
 				<width>632</width>
 				<height>482</height>
 				<texture border="5">dialogs/default/inner.png</texture>
-				<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="Control.IsVisible(3) + !Control.IsVisible(5)">Conditional</animation>
+				<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="Control.IsVisible(3) + ![Control.IsVisible(5) | Control.IsVisible(7)]">Conditional</animation>
 			</control>
 			<control type="label" id="1">
 				<left>30</left>
@@ -40,17 +37,14 @@
 				<width>940</width>
 				<height>40</height>
 				<font>font15_title</font>
-				<label>$LOCALIZE[13406]</label>
+				<label />
 				<align>center</align>
 				<textcolor>dialogheader</textcolor>
-				<font>font15_title</font>
 			</control>
 			<control type="group">
 				<left>676</left>
 				<top>86</top>
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
 					<width>300</width>
 					<height>332</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -72,7 +66,7 @@
 					<onright>60</onright>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="!Control.IsVisible(5)">Conditional</animation>
+					<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="![Control.IsVisible(5) | Control.IsVisible(7)]">Conditional</animation>
 					<itemlayout height="60" width="630">
 						<control type="image">
 							<width>630</width>
@@ -86,8 +80,6 @@
 							<font>font14</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -98,7 +90,6 @@
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>right</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
@@ -107,14 +98,14 @@
 							<width>630</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<width>630</width>
 							<height>60</height>
 							<texture border="5">listselect_fo.png</texture>
 							<visible>Control.HasFocus(3)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<width>630</width>
@@ -124,8 +115,6 @@
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<scroll>true</scroll>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(3)">Conditional</animation>
 						</control>
@@ -137,7 +126,6 @@
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>right</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(3)">Conditional</animation>
 						</control>
@@ -168,8 +156,6 @@
 							<textoffsetx>15</textoffsetx>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -180,7 +166,7 @@
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>right</align>
-							<label>$INFO[ListItem.Property(Addon.Version)]</label>
+							<label>$VAR[DialogSelectLabel2Var]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="60" width="641">
@@ -196,7 +182,7 @@
 							<height>60</height>
 							<texture border="5">listselect_fo.png</texture>
 							<visible>Control.HasFocus(6)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<width>630</width>
@@ -205,8 +191,6 @@
 							<textoffsetx>15</textoffsetx>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(6)">Conditional</animation>
 						</control>
@@ -215,10 +199,10 @@
 							<height>60</height>
 							<font>font14</font>
 							<textoffsetx>15</textoffsetx>
-							<textcolor>grey</textcolor>
+							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>right</align>
-							<label>$INFO[ListItem.Property(Addon.Version)]</label>
+							<label>$VAR[DialogSelectLabel2Var]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(6)">Conditional</animation>
 						</control>
 					</focusedlayout>
@@ -240,22 +224,35 @@
 					<texturefocus border="5">button_fo.png</texturefocus>
 					<texturenofocus border="5">dialogs/default/inner.png</texturenofocus>
 				</control>
+				<control type="button" id="7">
+					<description>Cancel button</description>
+					<width>300</width>
+					<label />
+					<texturefocus border="5">button_fo.png</texturefocus>
+					<texturenofocus border="5">dialogs/default/inner.png</texturenofocus>
+				</control>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>664</left>
+				<left>662</left>
 				<top>88</top>
 				<height>480</height>
-				<width>8</width>
+				<width>14</width>
 				<onleft>6</onleft>
 				<onright>9001</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="4">scrollbar/texturesliderbar3.png</texturesliderbar>
 				<texturesliderbarfocus border="4">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
-				<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="Control.IsVisible(3) + !Control.IsVisible(5)">Conditional</animation>
+				<animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="Control.IsVisible(3) + ![Control.IsVisible(5) | Control.IsVisible(7)]">Conditional</animation>
 			</control>
+		</control>
+		<control type="label" id="4">
+			<width>692</width>
+			<height>600</height>
+			<align>center</align>
+			<font>font14</font>
 		</control>
 	</controls>
 </window>

@@ -6,17 +6,18 @@
 			<visible>Control.IsVisible(55)</visible>
 			<include>ViewAnimation</include>
 			<top>0</top>
+
 			<control type="group"><!-- Info Right -->
 				<left>1400</left>
 				<top>136</top>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>780</top>
-					<width>542</width>
-					<height>752</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
+<!-- 				<control type="image"> -->
+<!-- 					<description>background image</description> -->
+<!-- 					<left>-32</left> -->
+<!-- 					<top>780</top> -->
+<!-- 					<width>542</width> -->
+<!-- 					<height>752</height> -->
+<!-- 					<texture border="40">panel_reflect.png</texture> -->
+<!-- 				</control> -->
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
@@ -34,66 +35,66 @@
 						<label>[COLOR labelheader]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Director) + Container.Content(movies)</visible>
+						<visible>!String.IsEmpty(ListItem.Director) + Container.Content(movies)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[31000]:[/COLOR][CR]$INFO[Window(home).Property(Set.Movies.Director)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[126]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.Status)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.Status))</visible>
+						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(Window(Home).Property(NextAired.Status))</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Premiered]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Premiered) + [Container.Content(episodes) | [[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Disable.NextAired)]]</visible>
+						<visible>!String.IsEmpty(ListItem.Premiered) + [Container.Content(episodes) | [[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Disable.NextAired)]]</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Studio]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Studio)</visible>
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
 						<visible>[[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Disable.NextAired)] | Container.Content(episodes)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.LatestDate)) + IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(Window(Home).Property(NextAired.LatestDate)) + String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(ListItem.Genre) + !Container.Content(episodes)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[Window(home).Property(Set.Movies.Genre)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$INFO[Window(home).Property(Set.Movies.Runtime),, $LOCALIZE[12391]]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Runtime)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Runtime)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 				</control>
 				<control type="textbox" id="70">
@@ -117,7 +118,7 @@
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -125,11 +126,11 @@
 				</control>
 			</control>
 			<control type="group"> <!-- Poster -->
-				<left>846</left>
+				<left>866</left>
 				<top>180</top>
 				<control type="image">
-					<width>570</width>
-					<height>783</height>
+					<width>510</width>
+					<height>763</height>
 					<aspectratio aligny="bottom" align="right">scale</aspectratio>
 					<texture background="true">$VAR[PosterThumbVar]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
@@ -146,25 +147,25 @@
 					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$VAR[PosterThumbVar]</texture>
 					<bordersize>20</bordersize>
 				</control>
-				<control type="image">
-					<left>550</left>
-					<top>58</top>
-					<width>80</width>
-					<height>720</height>
-					<texture flipx="true" border="1">side_shadow.png</texture>
-				</control>
+<!-- 				<control type="image"> -->
+<!-- 					<left>550</left> -->
+<!-- 					<top>58</top> -->
+<!-- 					<width>80</width> -->
+<!-- 					<height>720</height> -->
+<!-- 					<texture flipx="true" border="1">side_shadow.png</texture> -->
+<!-- 				</control> -->
 			</control>
 			<control type="group"> <!--   Left List -->
 				<left>36</left>
 				<top>80</top>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>932</top>
-					<width>270</width>
-					<height>750</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
+<!-- 				<control type="image"> -->
+<!-- 					<description>background image</description> -->
+<!-- 					<left>-32</left> -->
+<!-- 					<top>932</top> -->
+<!-- 					<width>270</width> -->
+<!-- 					<height>750</height> -->
+<!-- 					<texture border="40">panel_reflect.png</texture> -->
+<!-- 				</control> -->
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
@@ -176,7 +177,7 @@
 				<control type="list" id="55">
 					<left>0</left>
 					<top>130</top>
-					<height>680</height>
+					<height>683</height>
 					<width>806</width>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
@@ -206,7 +207,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -227,6 +228,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings) | [String.IsEqual(ListItem.Label2, ListItem.Rating) + String.IsEqual(Container.SortMethod,$LOCALIZE[563])]</visible>
 						</control>
 						<control type="image">
 							<left>742</left>
@@ -249,7 +251,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -261,7 +263,7 @@
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -281,6 +283,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings) | [String.IsEqual(ListItem.Label2, ListItem.Rating) + String.IsEqual(Container.SortMethod,$LOCALIZE[563])]</visible>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
 						</control>
 						<control type="image">
@@ -309,7 +312,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -330,6 +333,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 						</control>
 						<control type="image">
 							<left>742</left>
@@ -349,7 +353,7 @@
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -362,7 +366,7 @@
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>grey3</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</itemlayout>
@@ -378,7 +382,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -390,7 +394,7 @@
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -410,6 +414,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
 						</control>
 						<control type="image">
@@ -430,7 +435,7 @@
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -443,7 +448,7 @@
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>white</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</focusedlayout>
@@ -473,6 +478,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 						</control>
 						<control type="image">
 							<left>742</left>
@@ -495,7 +501,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<width>730</width>
@@ -515,6 +521,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
 						</control>
 						<control type="image">
@@ -572,7 +579,7 @@
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -585,7 +592,7 @@
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>grey3</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</itemlayout>
@@ -601,7 +608,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -641,7 +648,7 @@
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -654,7 +661,7 @@
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>white</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</focusedlayout>
@@ -668,7 +675,7 @@
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>62</onright>
-					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -689,7 +696,8 @@
 		<control type="group">
 			<visible>Control.IsVisible(55) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>0</top>
+			<width>1920</width>
+			<centerleft>50%</centerleft>
 			<control type="group">
 				<left>1396</left>
 				<top>401</top>
@@ -715,49 +723,30 @@
 					<width>448</width>
 					<height>420</height>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>Container.Content(songs) | Window.IsActive(musicfiles)</visible>
+					<visible>Container.Content(songs)</visible>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Artist)</visible>
+						<visible>!String.IsEmpty(ListItem.Artist)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[558]:[/COLOR][CR]$INFO[ListItem.Album]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Album)</visible>
+						<visible>!String.IsEmpty(ListItem.Album)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Year)</visible>
-					</control>
-					<control type="group">
-						<top>-12</top>
-						<control type="image">
-							<top>-3</top>
-							<left>298</left>
-							<colordiffuse>grey2</colordiffuse>
-							<include>MediaFlagVars</include>
-							<texture>$INFO[ListItem.FileExtension,flags/audio/,.png]</texture>
-							<visible>!IsEmpty(ListItem.FileExtension)</visible>
-						</control>
-						<control type="image">
-							<left>12</left>
-							<width>198</width>
-							<colordiffuse>grey2</colordiffuse>
-							<include>MediaFlagVars</include>
-							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.StarRating)</visible>
-						</control>
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -771,54 +760,50 @@
 						<label>[COLOR labelheader]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Artist)</visible>
+						<visible>!String.IsEmpty(ListItem.Artist)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[21899]:[/COLOR][CR]$INFO[ListItem.Property(Album_Label)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Property(Album_Label))</visible>
+						<visible>!String.IsEmpty(ListItem.Property(Album_Label))</visible>
+					</control>
+					<control type="button">
+						<label>[COLOR labelheader]$LOCALIZE[175]:[/COLOR][CR]$INFO[ListItem.Property(Album_Mood)]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!String.IsEmpty(ListItem.Property(Album_Mood))</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[176]:[/COLOR][CR]$INFO[ListItem.Property(Album_Style)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Property(Album_Style))</visible>
-					</control>
-					<control type="image">
-						<top>-12</top>
-						<left>12</left>
-						<width>198</width>
-						<colordiffuse>grey2</colordiffuse>
-						<include>MediaFlagVars</include>
-						<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-						<visible>!IsEmpty(ListItem.StarRating)</visible>
+						<visible>!String.IsEmpty(ListItem.Property(Album_Style))</visible>
 					</control>
 				</control>
 				<control type="grouplist">
-					<left>0</left>
 					<top>92</top>
 					<width>448</width>
 					<height>420</height>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>![Container.Content(songs) | Container.Content(albums) | Window.IsActive(musicfiles)]</visible>
+					<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
 					<control type="button">
-						<label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.Property(Addon.Creator)]</label>
+						<label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.AddonCreator]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonCreator)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Property(Artist_Genre)]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Property(Artist_Genre))</visible>
+						<visible>!String.IsEmpty(ListItem.Property(Artist_Genre))</visible>
 					</control>
 					<control type="textbox">
 						<label>$VAR[MusicPlotVar]</label>
@@ -891,7 +876,7 @@
 					<onright>60</onright>
 					<onup>55</onup>
 					<ondown>55</ondown>
-					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons) | Window.IsActive(musicfiles)</visible>
+					<visible>Container.Content(games) | Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons)</visible>
 					<viewtype label="31078">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<preloaditems>2</preloaditems>
@@ -913,7 +898,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
-							<visible>!IsEmpty(ListItem.Album)</visible>
+							<visible>!String.IsEmpty(ListItem.Album)</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -923,18 +908,6 @@
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-						</control>
-						<control type="label">
-							<left>110</left>
-							<width>680</width>
-							<height>68</height>
-							<font>font15</font>
-							<align>right</align>
-							<textcolor>grey2</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>StringCompare(Container.SortMethod,$LOCALIZE[557])</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="70" width="806" condition="Container.Content(albums)">
@@ -949,7 +922,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -961,7 +934,7 @@
 							<aligny>center</aligny>
 							<label fallback="• • • •">$INFO[ListItem.Year]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
-							<visible>!IsEmpty(ListItem.Album)</visible>
+							<visible>!String.IsEmpty(ListItem.Album)</visible>
 						</control>
 						<control type="label">
 							<left>110</left>
@@ -971,18 +944,6 @@
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>110</left>
-							<width>680</width>
-							<height>68</height>
-							<font>font15</font>
-							<align>right</align>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
-							<visible>StringCompare(Container.SortMethod,$LOCALIZE[557])</visible>
 						</control>
 					</focusedlayout>
 					<itemlayout height="70" width="806" condition="!Container.Content(albums)">
@@ -1025,7 +986,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -1058,7 +1019,7 @@
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>9002</onright>
-					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -1080,6 +1041,8 @@
 			<visible>Control.IsVisible(55)</visible>
 			<include>ViewAnimation</include>
 			<top>0</top>
+			<width>1836</width>
+			<centerleft>50%</centerleft>
 			<control type="group">
 				<left>1396</left>
 				<top>136</top>
@@ -1108,19 +1071,19 @@
 						<label>[COLOR labelheader]$LOCALIZE[31043]:[/COLOR][CR]$INFO[ListItem.Writer]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Writer)</visible>
+						<visible>!String.IsEmpty(ListItem.Writer)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR labelheader]$LOCALIZE[572]:[/COLOR][CR]$INFO[ListItem.Studio]</label>
 						<width>448</width>
 						<include>ShowCaseInfoPanelButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Studio)</visible>
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
 					</control>
 				</control>
 				<control type="textbox" id="70">
@@ -1130,11 +1093,11 @@
 					<width>418</width>
 					<height>402</height>
 					<font>font14_textbox</font>
-					<pagecontrol>62</pagecontrol>
+					<pagecontrol>63</pagecontrol>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 				</control>
-				<control type="scrollbar" id="62">
+				<control type="scrollbar" id="63">
 					<left>448</left>
 					<top>370</top>
 					<width>14</width>
@@ -1144,7 +1107,7 @@
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -1213,7 +1176,7 @@
 					<viewtype label="31078">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<preloaditems>2</preloaditems>
-					<visible>SubString(Container.FolderPath,plugin.program.advanced.launcher)</visible>
+					<visible>String.Contains(Container.FolderPath,plugin.program.advanced.launcher)</visible>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
 					<itemlayout height="70" width="806">
 						<control type="image">
@@ -1252,6 +1215,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="70" width="806">
@@ -1266,7 +1230,7 @@
 							<height>70</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(55)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -1274,8 +1238,6 @@
 							<height>68</height>
 							<font>font15</font>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Year]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
 						</control>
@@ -1297,6 +1259,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Rating]</label>
+							<visible>!Skin.HasSetting(Enable.HideRatings)</visible>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
 						</control>
 					</focusedlayout>
@@ -1310,7 +1273,7 @@
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>62</onright>
-					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>

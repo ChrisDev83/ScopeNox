@@ -2,17 +2,26 @@
 <window>
 	<defaultcontrol always="true">2</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(Window.HasSettings,True,home)</onload>
+	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<controls>
-		<include>CommonBackground</include>
+		<include content="CommonBackground">
+			<param name="windowOpen" value="!Window.Previous(settings)" />
+			<param name="windowClose" value="!Window.Next(settings)" />
+		</include>
 		<include>Topbar</include>
 		<control type="group">
-			<left>0</left>
 			<top>128</top>
-			<include>Window_OpenClose_Animation</include>
+			<left>SettingsLeft</left>
+			<include content="WindowOpenCloseAnimation">
+				<param name="windowOpen" value="!Window.Previous(settings)" />
+				<param name="windowClose" value="!Window.Next(settings)" />
+			</include>
 			<include>SystemLeftPanel</include>
 			<control type="panel" id="2">
 				<left>82</left>
-				<top>80</top>
+				<top>32</top>
 				<width>356</width>
 				<height>840</height>
 				<onleft>61</onleft>
@@ -21,48 +30,46 @@
 				<ondown>2</ondown>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime tween="quadratic" easing="out">200</scrolltime>
-				<itemlayout height="60" width="356">
+				<itemlayout height="90" width="356">
 					<control type="image">
-						<top></top>
+						<top>30</top>
 						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>60</height>
+						<height>90</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="60" width="356">
+				<focusedlayout height="90" width="356">
 					<control type="image">
-						<top>0</top>
+						<top>30</top>
 						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="image">
 						<width>356</width>
-						<height>60</height>
+						<height>90</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(2)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>60</height>
+						<height>90</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(2)">Conditional</animation>
 					</control>
@@ -70,22 +77,23 @@
 			</control>
 			<control type="scrollbar" id="61">
 				<left>68</left>
-				<top>80</top>
+				<top>32</top>
 				<width>8</width>
 				<height>720</height>
-				<onleft>9001</onleft>
+				<onleft>SetProperty(MediaMenu,True,home)</onleft>
+				<onleft>SetFocus(9050)</onleft>
 				<onright>2</onright>
 				<ondown>61</ondown>
 				<onup>61</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			</control>
 			<control type="image">
 				<description>separator image</description>
 				<left>82</left>
-				<top>660</top>
+				<top>692</top>
 				<width>356</width>
 				<height>60</height>
 				<texture border="1">separator2.png</texture>
@@ -94,7 +102,7 @@
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
-				<top>695</top>
+				<top>752</top>
 				<width>356</width>
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
@@ -104,11 +112,10 @@
 			<control type="grouplist" id="9001">
 				<description>control area</description>
 				<left>522</left>
-				<top>80</top>
+				<top>32</top>
 				<width>1316</width>
-				<height>580</height>
-				<itemgap>0</itemgap>
-				<pagecontrol>-</pagecontrol>
+				<height>720</height>
+				<pagecontrol />
 				<onleft>2</onleft>
 				<onright>2</onright>
 				<onup>9001</onup>
@@ -117,7 +124,7 @@
 					<description>Enable Login screen</description>
 					<label>20096</label>
 					<width>1316</width>
-					<height>60</height>
+					<height>90</height>
 					<font>font15</font>
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -127,7 +134,7 @@
 					<label>$LOCALIZE[33084]</label>
 					<label2>$INFO[System.ProfileAutoLogin, [COLOR labelheader],[/COLOR]]</label2>
 					<width>1316</width>
-					<height>60</height>
+					<height>90</height>
 					<font>font15</font>
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -137,14 +144,14 @@
 			<control type="image">
 				<description>separator image</description>
 				<left>522</left>
-				<top>590</top>
+				<top>692</top>
 				<width>1316</width>
 				<height>60</height>
 				<texture border="1">separator2.png</texture>
 			</control>
 			<control type="group">
 				<left>522</left>
-				<top>655</top>
+				<top>751</top>
 				<control type="image">
 					<width>120</width>
 					<height>120</height>
@@ -178,5 +185,12 @@
 				</control>
 			</control>
 		</control>
+		<control type="group">
+			<left>-440</left>
+			<include>SideBladeLeft</include>
+			<control type="grouplist" id="9050">
+				<include>NoMediaMenu</include>
+			</control>
+		</control>		
 	</controls>
 </window>
