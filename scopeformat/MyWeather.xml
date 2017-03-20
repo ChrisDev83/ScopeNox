@@ -14,7 +14,7 @@
 			<include>SystemLeftPanel</include>
 			<control type="panel" id="9000">
 				<left>82</left>
-				<top>32</top>
+				<top>80</top>
 				<width>356</width>
 				<height>720</height>
 				<onleft>61</onleft>
@@ -148,7 +148,7 @@
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
-				<top>752</top>
+				<top>695</top>
 				<width>356</width>
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
@@ -160,27 +160,29 @@
 					<visible>Container(9000).HasFocus(1)</visible>
 					<include>SettingsFadeAnimation</include>
 					<left>522</left>
-					<top>32</top>
+					<top>80</top>
 					<width>1316</width>
 					<height>840</height>
 					<control type="image">
 						<left>105</left>
-						<width>540</width>
-						<height>135</height>
+						<top>0</top>
+						<width>385</width>
+						<height>100</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$INFO[Window.Property(WeatherProviderLogo)]</texture>
 					</control>
 					<control type="image">
 						<description>current weather icon</description>
-						<left>971</left>
-						<width>345</width>
-						<height>345</height>
+						<left>1050</left>
+						<top>35</top>
+						<width>200</width>
+						<height>200</height>
 						<texture>$VAR[WeatherIconsPathVar]$INFO[Window.Property(Current.FanartCode)]$VAR[WeatherIconsExtVar]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
 						<description>weather location label</description>
-						<top>150</top>
+						<top>100</top>
 						<width>690</width>
 						<height>45</height>
 						<font>font15_title</font>
@@ -190,7 +192,7 @@
 					</control>
 					<control type="label">
 						<description>update label</description>
-						<top>190</top>
+						<top>140</top>
 						<width>690</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -200,7 +202,8 @@
 					</control>
 					<control type="label">
 						<description>current temp Value</description>
-						<left>530</left>
+						<left>580</left>
+						<top>-40</top>
 						<width>270</width>
 						<height>345</height>
 						<font>WeatherTemp</font>
@@ -210,7 +213,8 @@
 					</control>
 					<control type="label">
 						<description>current temp Value Units</description>
-						<left>800</left>
+						<left>850</left>
+						<top>-40</top>
 						<width>150</width>
 						<height>290</height>
 						<font>font16</font>
@@ -219,7 +223,7 @@
 					</control>
 					<control type="label">
 						<description>current condition label</description>
-						<top>280</top>
+						<top>200</top>
 						<width>1316</width>
 						<height>45</height>
 						<info>Window.Property(Current.Condition)</info>
@@ -230,13 +234,15 @@
 					</control>
 					<control type="image">
 						<description>separator image</description>
-						<top>280</top>
+						<left>0</left>
+						<top>200</top>
 						<width>1316</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="grouplist">
-						<top>350</top>
+						<left>0</left>
+						<top>270</top>
 						<width>438</width>
 						<itemgap>10</itemgap>
 						<control type="button">
@@ -251,7 +257,7 @@
 						</control>
 					</control>
 					<control type="image">
-						<top>340</top>
+						<top>260</top>
 						<left>437</left>
 						<width>2</width>
 						<height>198</height>
@@ -259,7 +265,7 @@
 					</control>
 					<control type="grouplist">
 						<left>438</left>
-						<top>350</top>
+						<top>270</top>
 						<width>438</width>
 						<itemgap>10</itemgap>
 						<control type="button">
@@ -274,7 +280,7 @@
 						</control>
 					</control>
 					<control type="image">
-						<top>340</top>
+						<top>260</top>
 						<left>875</left>
 						<width>2</width>
 						<height>198</height>
@@ -282,7 +288,7 @@
 					</control>
 					<control type="grouplist">
 						<left>876</left>
-						<top>350</top>
+						<top>270</top>
 						<width>438</width>
 						<itemgap>10</itemgap>
 						<control type="button">
@@ -303,9 +309,10 @@
 						</control>
 					</control>
 					<control type="panel" id="300">
-						<top>540</top>
+						<left>0</left>
+						<top>460</top>
 						<width>1316</width>
-						<height>300</height>
+						<height>230</height>
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<orientation>horizontal</orientation>
@@ -319,7 +326,7 @@
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
-								<top>60</top>
+								<top>50</top>
 								<width>329</width>
 								<height>100</height>
 								<texture>$INFO[ListItem.Icon]</texture>
@@ -327,7 +334,7 @@
 							</control>
 							<control type="label">
 								<width>329</width>
-								<height>60</height>
+								<height>50</height>
 								<font>font15</font>
 								<align>center</align>
 								<textcolor>grey</textcolor>
@@ -336,9 +343,9 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<top>160</top>
+								<top>150</top>
 								<width>329</width>
-								<height>60</height>
+								<height>50</height>
 								<font>font15</font>
 								<align>center</align>
 								<textcolor>grey</textcolor>
@@ -347,10 +354,10 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<top>240</top>
+								<top>185</top>
 								<width>329</width>
 								<height>60</height>
-								<font>font15</font>
+								<font>font12</font>
 								<align>center</align>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
@@ -366,13 +373,13 @@
 								<texture border="1">separator3.png</texture>
 							</control>
 							<control type="image">
-								<width>329</width>
+								<width>325</width>
 								<height>300</height>
 								<texture border="4">listselect_fo.png</texture>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
-								<top>60</top>
+								<top>50</top>
 								<width>329</width>
 								<height>100</height>
 								<texture>$INFO[ListItem.Icon]</texture>
@@ -380,7 +387,7 @@
 							</control>
 							<control type="label">
 								<width>329</width>
-								<height>60</height>
+								<height>50</height>
 								<font>font15</font>
 								<align>center</align>
 								<selectedcolor>selected</selectedcolor>
@@ -388,9 +395,9 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<top>160</top>
+								<top>150</top>
 								<width>329</width>
-								<height>60</height>
+								<height>50</height>
 								<font>font15</font>
 								<align>center</align>
 								<selectedcolor>selected</selectedcolor>
@@ -398,10 +405,10 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<top>240</top>
+								<top>185</top>
 								<width>329</width>
 								<height>60</height>
-								<font>font15</font>
+								<font>font12</font>
 								<align>center</align>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Property(HighTemp),[COLOR red],[/COLOR]]$INFO[ListItem.Property(LowTemp), | [COLOR blue],[/COLOR]]</label>
@@ -477,65 +484,69 @@
 				<control type="group">
 					<visible>Container(9000).HasFocus(2)</visible>
 					<include>SettingsFadeAnimation</include>
-					<left>522</left>
-					<top>32</top>
+					<left>422</left>
+					<top>100</top>
 					<width>1316</width>
 					<height>838</height>
 					<control type="image">
-						<left>657</left>
+						<left>750</left>
 						<width>2</width>
-						<height>838</height>
+						<height>660</height>
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="panel" id="301">
+						<left>105</left>
+						<top>0</top>
 						<width>1316</width>
-						<height>840</height>
+						<height>700</height>
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<orientation>vertical</orientation>
 						<scrolltime tween="quadratic" easing="out">200</scrolltime>
-						<itemlayout height="168" width="658">
+						<itemlayout height="140" width="658">
 							<control type="image">
-								<top>108</top>
-								<width>658</width>
+								<left>200</left>
+								<top>75</top>
+								<width>700</width>
 								<height>60</height>
 								<texture border="1">separator2.png</texture>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
 								<left>15</left>
-								<width>168</width>
-								<height>168</height>
+								<width>140</width>
+								<height>140</height>
 								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio>keep</aspectratio>
 								<bordersize>2</bordersize>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>labelheader</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<top>56</top>
 								<width>475</width>
 								<height>56</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Label2]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>183</left>
+								<left>145</left>
+								<top>0</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<align>right</align>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
@@ -543,22 +554,22 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<top>98</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Property(WindSpeed),$LOCALIZE[383]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>183</left>
+								<left>145</left>
 								<top>98</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<align>right</align>
 								<selectedcolor>selected</selectedcolor>
@@ -566,48 +577,50 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 						</itemlayout>
-						<focusedlayout height="168" width="658">
+						<focusedlayout height="140" width="658">
 							<control type="image">
-								<top>108</top>
-								<width>658</width>
+								<left>200</left>
+								<top>75</top>
+								<width>700</width>
 								<height>60</height>
 								<texture border="1">separator2.png</texture>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
 								<left>15</left>
-								<width>168</width>
-								<height>168</height>
+								<width>140</width>
+								<height>140</height>
 								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio>keep</aspectratio>
 								<bordersize>2</bordersize>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>labelheader</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<top>56</top>
 								<width>475</width>
 								<height>56</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Label2]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>183</left>
+								<left>145</left>
+								<top>0</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<align>right</align>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
@@ -615,22 +628,22 @@
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>185</left>
+								<left>145</left>
 								<top>98</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<selectedcolor>selected</selectedcolor>
 								<label>$INFO[ListItem.Property(WindSpeed),$LOCALIZE[383]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
 							<control type="label">
-								<left>183</left>
+								<left>145</left>
 								<top>98</top>
 								<width>475</width>
 								<height>70</height>
-								<font>font15</font>
+								<font>font12</font>
 								<textcolor>grey</textcolor>
 								<align>right</align>
 								<selectedcolor>selected</selectedcolor>
@@ -776,6 +789,8 @@
 					<width>1314</width>
 					<height>838</height>
 					<control type="panel" id="302">
+						<left>0</left>
+						<top>0</top>
 						<width>1314</width>
 						<height>838</height>
 						<onup>9000</onup>
@@ -917,6 +932,8 @@
 					<width>1316</width>
 					<height>838</height>
 					<control type="panel" id="303">
+						<left>0</left>
+						<top>0</top>
 						<width>1316</width>
 						<height>838</height>
 						<onup>9000</onup>
@@ -1141,6 +1158,8 @@
 						<texture border="1">separator3.png</texture>
 					</control>
 					<control type="panel" id="304">
+						<left>0</left>
+						<top>0</top>
 						<width>1316</width>
 						<height>840</height>
 						<onup>304</onup>
@@ -1939,10 +1958,11 @@
 		</control>
 		<include>Topbar</include>
 		<control type="label">
-			<left>1020</left>
-			<width>900</width>
+			<top>215</top>
+			<left>1140</left>
+			<width>700</width>
 			<height>90</height>
-			<font>font13_title</font>
+			<font>font12_title</font>
 			<textoffsetx>15</textoffsetx>
 			<textcolor>grey2</textcolor>
 			<align>right</align>
@@ -1956,7 +1976,7 @@
 			<left>-440</left>
 			<include>SideBladeLeft</include>
 			<control type="grouplist" id="9050">
-				<top>100</top>
+				<top>217</top>
 				<width>400</width>
 				<height>1080</height>
 				<onleft>9050</onleft>
@@ -1966,6 +1986,7 @@
 				<ondown>9050</ondown>
 				<onback>ClearProperty(MediaMenu,Home)</onback>
 				<onback>9000</onback>
+				<itemgap>0</itemgap>
 				<control type="label" id="200">
 					<width>400</width>
 					<height>52</height>
@@ -2039,7 +2060,7 @@
 			</control>
 			<control type="group">
 				<posx>0</posx>
-				<posy>152</posy>
+				<posy>268</posy>
 				<control type="label" id="201">
 					<include>ButtonCommonValues</include>
 					<label>31069</label>

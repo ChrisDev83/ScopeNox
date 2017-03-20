@@ -18,23 +18,15 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>874</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>874</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
-					<top>180</top>
+					<top>284</top>
 					<width>810</width>
-					<height>840</height>
+					<height>670</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -43,18 +35,17 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="120" width="810">
+					<itemlayout height="101" width="810">
 						<control type="image">
-							<top>60</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -63,11 +54,11 @@
 							<left>135</left>
 							<width>655</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -82,7 +73,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>730</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
@@ -90,16 +81,15 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="810">
+					<focusedlayout height="101" width="810">
 						<control type="image">
-							<top>60</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>810</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 							<include>VisibleFadeAnimation</include>
@@ -107,8 +97,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 						</control>
@@ -116,11 +106,11 @@
 							<left>135</left>
 							<width>655</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -135,7 +125,7 @@
 						<control type="label">
 							<left>60</left>
 							<width>730</width>
-							<height>120</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -225,23 +215,15 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>874</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>874</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="51">
-					<top>180</top>
+					<top>284</top>
 					<width>810</width>
-					<height>840</height>
+					<height>620</height>
 					<onleft>50</onleft>
 					<onright>61</onright>
 					<onup>51</onup>
@@ -251,18 +233,17 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>61</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="120" width="810">
+					<itemlayout height="101" width="810">
 						<control type="image">
-							<top>60</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -271,8 +252,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -281,18 +262,18 @@
 							<left>135</left>
 							<width>655</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>655</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.AddonSummary]</label>
@@ -301,23 +282,22 @@
 							<left>60</left>
 							<width>730</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.AddonVersion]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="810">
+					<focusedlayout height="101" width="810">
 						<control type="image">
-							<top>60</top>
 							<width>810</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<width>810</width>
-							<height>120</height>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(51)</visible>
 							<include>VisibleFadeAnimation</include>
@@ -325,8 +305,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
@@ -334,8 +314,8 @@
 						<control type="image">
 							<left>15</left>
 							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -344,18 +324,18 @@
 							<left>135</left>
 							<width>655</width>
 							<height>70</height>
-							<font>font30</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>655</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.AddonSummary]</label>
@@ -364,7 +344,7 @@
 							<left>60</left>
 							<width>730</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -375,9 +355,9 @@
 				</control>
 				<control type="scrollbar" id="61">
 					<left>810</left>
-					<top>180</top>
+					<top>285</top>
 					<width>14</width>
-					<height>840</height>
+					<height>600</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>51</onleft>

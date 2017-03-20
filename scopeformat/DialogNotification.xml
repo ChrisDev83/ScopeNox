@@ -2,7 +2,7 @@
 <window>
 	<coordinates>
 		<left>560</left>
-		<top>33</top>
+		<top>155</top>
 		<origin x="880" y="33">String.IsEqual(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
 	<include>DialogPopupAnimation</include>
@@ -31,7 +31,7 @@
 				<top>34</top>
 				<width>606</width>
 				<height>50</height>
-				<font>font15_title</font>
+				<font>font25</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>themecolor</textcolor>
 				<scrollout>false</scrollout>
@@ -43,7 +43,7 @@
 				<top>84</top>
 				<width>606</width>
 				<height>30</height>
-				<font>font15</font>
+				<font>font25</font>
 				<textoffsetx>15</textoffsetx>
 				<textcolor>grey2</textcolor>
 				<scrollout>false</scrollout>

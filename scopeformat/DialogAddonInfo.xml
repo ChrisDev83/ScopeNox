@@ -7,15 +7,15 @@
 		</control>
 		<control type="group">
 			<include>WindowASViewAnimation</include>
-			<top>128</top>
-			<left>SettingsLeft</left>
+			<left>0</left>
+			<top>130</top>
 			<control type="group">
 				<include>SystemLeftPanel</include>
 				<control type="image">
-					<left>82</left>
-					<top>32</top>
-					<width>356</width>
-					<height>356</height>
+					<left>130</left>
+					<top>80</top>
+					<width>280</width>
+					<height>280</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
 					<bordertexture border="1,1,2,1">thumbs/panel_border.png</bordertexture>
@@ -23,34 +23,37 @@
 				</control>
 				<control type="grouplist" id="9000">
 					<left>82</left>
-					<top>392</top>
-					<width>356</width>
-					<height>480</height>
+					<top>365</top>
+					<width>360</width>
+					<height>436</height>
 					<onleft>60</onleft>
 					<onright>60</onright>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
+					<itemgap>0</itemgap>
 					<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="Window.IsActive(textviewer)">Conditional</animation>
 					<control type="button" id="9">
 						<description>Configure Addon</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>24020</label>
-						<font>font15</font>
+						<align>left</align>
+						<font>font20</font>
 					</control>
 					<control type="button" id="8">
 						<description>Update Addon button</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>24069</label>
-						<font>font15</font>
+						<align>left</align>
+						<font>font20</font>
 					</control>
 					<control type="button" id="200">
 						<description>Screenshot button</description>
 						<width>356</width>
 						<height>68.57</height>
 						<label>$LOCALIZE[1000]</label>
-						<font>font15</font>
+						<font>font20</font>
 						<onclick>SetFocus(50)</onclick>
 						<onclick>Action(select)</onclick>
 						<onclick>SetFocus(9000)</onclick>
@@ -59,30 +62,32 @@
 					<control type="button" id="12">
 						<description>Launch Addon button</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>518</label>
-						<font>font15</font>
+						<align>left</align>
+						<font>font20</font>
 					</control>
 					<control type="button" id="6">
 						<description>Install/UnInstall Addon button</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>24022</label>
-						<font>font15</font>
+						<align>left</align>
+						<font>font20</font>
 					</control>
 					<control type="button" id="7">
 						<description>Enable/Disable Addon button</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>24021</label>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
 					<control type="radiobutton" id="13">
 						<description>Auto Update Addon button</description>
 						<width>356</width>
-						<height>68.57</height>
+						<height>50</height>
 						<label>21340</label>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
 				</control>
 			</control>
@@ -94,7 +99,7 @@
 					<include>SettingsFadeAnimation</include>
 					<control type="grouplist">
 						<left>32</left>
-						<top>32</top>
+						<top>85</top>
 						<width>658</width>
 						<itemgap>10</itemgap>
 						<control type="button">
@@ -117,7 +122,7 @@
 					</control>
 					<control type="grouplist">
 						<left>690</left>
-						<top>32</top>
+						<top>85</top>
 						<itemgap>10</itemgap>
 						<width>658</width>
 						<usecontrolcoords>true</usecontrolcoords>
@@ -142,15 +147,15 @@
 					</control>
 					<control type="grouplist">
 						<left>47</left>
-						<top>230</top>
-						<height>640</height>
+						<top>273</top>
+						<height>294</height>
 						<usecontrolcoords>true</usecontrolcoords>
 						<pagecontrol>60</pagecontrol>
 						<control type="textbox" id="400">
 							<description>Description</description>
 							<width>1256</width>
 							<height>auto</height>
-							<font>font15_textbox</font>
+							<font>font20_textbox</font>
 							<align>justify</align>
 							<textcolor>grey2</textcolor>
 							<label>$INFO[ListItem.AddonDescription,[COLOR labelheader]$LOCALIZE[21821]: [/COLOR][CR]]</label>
@@ -166,8 +171,8 @@
 							<description>What's new</description>
 							<top>10</top>
 							<width>1256</width>
-							<height>auto</height>
-							<font>font15_textbox</font>
+							<height>170</height>
+							<font>font20_textbox</font>
 							<align>justify</align>
 							<textcolor>grey2</textcolor>
 							<label>$INFO[ListItem.AddonNews,[COLOR labelheader]$LOCALIZE[24054]: [/COLOR][CR]]</label>
@@ -185,16 +190,16 @@
 							<top>10</top>
 							<width>1256</width>
 							<height>auto</height>
-							<font>font15_textbox</font>
+							<font>font20_textbox</font>
 							<align>justify</align>
 							<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 						</control>
 					</control>
 					<control type="scrollbar" id="60">
-						<left>1347</left>
-						<top>232</top>
-						<width>14</width>
-						<height>640</height>
+						<left>1351</left>
+						<top>272</top>
+						<width>8</width>
+						<height>305</height>
 						<onleft>9000</onleft>
 						<onright>9000</onright>
 						<ondown>60</ondown>
@@ -208,7 +213,7 @@
 			</control>
 			<control type="group">
 				<left>522</left>
-				<top>751</top>
+				<top>740</top>
 				<include>SettingsFadeAnimation</include>
 				<visible>!Window.isVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
 				<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
@@ -227,8 +232,9 @@
 					<height>115</height>
 					<aligny>top</aligny>
 					<textcolor>labelheader</textcolor>
+					<wrapmultiline>true</wrapmultiline>
 					<textoffsetx>15</textoffsetx>
-					<font>font15_title</font>
+					<font>font20_title</font>
 					<label>24096</label>
 				</control>
 				<control type="fadelabel">
@@ -238,7 +244,7 @@
 					<height>50</height>
 					<textcolor>grey2</textcolor>
 					<textoffsetx>15</textoffsetx>
-					<font>font15</font>
+					<font>font20</font>
 					<label>$INFO[ListItem.AddonBroken]</label>
 				</control>
 			</control>

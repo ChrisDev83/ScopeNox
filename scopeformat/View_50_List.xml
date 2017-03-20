@@ -1324,17 +1324,9 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
@@ -1826,28 +1818,20 @@
 			<centerleft>ListCenterleft</centerleft>
 			<width>100%</width>
 			<control type="group">
-				<left>100</left>
+				<left>200</left>
 				<top>-40</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
-					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<top>250</top>
+					<width>1004</width>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
-					<top>240</top>
+					<top>280</top>
 					<width>940</width>
-					<height>840</height>
+					<height>610</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1858,26 +1842,26 @@
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
 					<itemlayout height="101" width="940">
 						<control type="image">
-							<top>60</top>
+							<top>0</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<colordiffuse>grey2</colordiffuse>
 							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1890,14 +1874,14 @@
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>985</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.AddonSummary]</label>
@@ -1906,7 +1890,7 @@
 							<left>60</left>
 							<width>860</width>
 							<height>101</height>
-							<font>font15</font>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1915,9 +1899,9 @@
 					</itemlayout>
 					<focusedlayout height="101" width="940">
 						<control type="image">
-							<top>60</top>
+							<top>0</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -1928,19 +1912,19 @@
 							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1953,14 +1937,14 @@
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>985</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font20</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.AddonSummary]</label>
@@ -1969,7 +1953,7 @@
 							<left>60</left>
 							<width>860</width>
 							<height>101</height>
-							<font>font15</font>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
@@ -1979,9 +1963,9 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<left>940</left>
-					<top>240</top>
+					<top>285</top>
 					<width>14</width>
-					<height>840</height>
+					<height>600</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
@@ -1995,7 +1979,7 @@
 			</control>
 			<control type="group">
 				<left>1296</left>
-				<top>155</top>
+				<top>20</top>
 				<control type="image">
 					<width>570</width>
 					<height>835</height>
@@ -2003,15 +1987,6 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-				</control>
-				<control type="image">
-					<top>795</top>
-					<width>570</width>
-					<height>835</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 					<bordersize>20</bordersize>
 				</control>
 			</control>
@@ -2030,17 +2005,9 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
@@ -2614,17 +2581,9 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
@@ -2835,17 +2794,9 @@
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">

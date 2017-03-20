@@ -4,17 +4,17 @@
 	<!-- <defaultcontrol always="false">100</defaultcontrol> -->
 	<visible>Skin.HasSetting(DebugInfo)</visible>
 	<controls>
-		<control type="label" id="20">
-			<left>0</left>
-			<top>32</top>
-			<width>780</width>
-			<height>21</height>
-			<align>left</align>
-			<font>font11</font>
-			<label>AddonBrowser.xml</label>
-			<textcolor>white</textcolor>
-			<visible>Window.IsVisible(AddonBrowser.xml)</visible>
-		</control>
+<!-- 		<control type="label" id="20"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>32</top> -->
+<!-- 			<width>780</width> -->
+<!-- 			<height>21</height> -->
+<!-- 			<align>left</align> -->
+<!-- 			<font>font11</font> -->
+<!-- 			<label>AddonBrowser.xml</label> -->
+<!-- 			<textcolor>white</textcolor> -->
+<!-- 			<visible>Window.IsVisible(AddonBrowser.xml)</visible> -->
+<!-- 		</control> -->
 
 		<control type="label" id="20">
 			<left>0</left>

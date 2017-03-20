@@ -108,7 +108,7 @@
 		<textoffsetx>15</textoffsetx>
 		<textoffsety>-4</textoffsety>
 		<aligny>top</aligny>
-		<font>font15</font>
+		<font>font25</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>grey2</focusedcolor>
 		<texturefocus border="1">separator5.png</texturefocus>
