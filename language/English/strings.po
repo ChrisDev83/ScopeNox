@@ -16,8 +16,6 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#Misc labels
-
 msgctxt "#31000"
 msgid "Directed by"
 msgstr ""
@@ -26,7 +24,9 @@ msgctxt "#31001"
 msgid "Written by"
 msgstr ""
 
-#empty string with id 31002
+msgctxt "#31002"
+msgid "Blurred album thumb"
+msgstr ""
 
 msgctxt "#31003"
 msgid "Power Options"
@@ -252,14 +252,16 @@ msgctxt "#31058"
 msgid "PVR information"
 msgstr ""
 
-#empty string with id 31059
+msgctxt "#31059"
+msgid "Install Artist Slideshow add-on to enable this feature"
+msgstr ""
 
 msgctxt "#31060"
 msgid "This file is stacked, select the part you want to play from."
 msgstr ""
 
 msgctxt "#31061"
-msgid "Addon / Favourites statistics"
+msgid "Favourites statistics"
 msgstr ""
 
 msgctxt "#31062"
@@ -414,9 +416,13 @@ msgctxt "#31099"
 msgid "Musicvideo playlist statistics"
 msgstr ""
 
-#empty strings from id 31100 to 31101
-#Skin Settings labels
-#####################################################################
+msgctxt "#31100"
+msgid "View:"
+msgstr ""
+
+msgctxt "#31101"
+msgid "Choose view"
+msgstr ""
 
 msgctxt "#31102"
 msgid "Background"
@@ -450,7 +456,74 @@ msgctxt "#31109"
 msgid "Unwatched episode count"
 msgstr ""
 
-#empty strings from id 31110 to 31123
+msgctxt "#31110"
+msgid "Install Toolbox script to enable this feature"
+msgstr ""
+
+#: \1080i\variables.xml:612
+msgctxt "#31111"
+msgid "Similar movies"
+msgstr ""
+
+#: \1080i\variables.xml:613
+msgctxt "#31112"
+msgid "Movies directed by"
+msgstr ""
+
+#: \1080i\variables.xml:614
+msgctxt "#31113"
+msgid "Movies written by"
+msgstr ""
+
+#: \1080i\variables.xml:615
+msgctxt "#31114"
+msgid "More movies from"
+msgstr ""
+
+#: \1080i\variables.xml:616
+msgctxt "#31115"
+msgid "Similar TV shows"
+msgstr ""
+
+#: \1080i\custom_1128_WindowCustomizer.xml:65
+msgctxt "#31116"
+msgid "cycle fanart"
+msgstr ""
+
+#: \1080i\custom_1128_WindowCustomizer.xml:74
+msgctxt "#31117"
+msgid "Fallback"
+msgstr ""
+
+#: \1080i\custom_1128_WindowCustomizer.xml:84
+msgctxt "#31118"
+msgid "Download extrafanart"
+msgstr ""
+
+#: \1080i\DialogVideoInfo.xml:353
+msgctxt "#31119"
+msgid "Show the movies from this director in your library or view online information on this director on TMDb?"
+msgstr ""
+
+#: \1080i\DialogVideoInfo.xml:353
+msgctxt "#31120"
+msgid "TMDb"
+msgstr ""
+
+#: \1080i\SkinSettings.xml:321
+msgctxt "#31121"
+msgid "Disable autocomplete"
+msgstr ""
+
+#: \1080i\variables.xml:394
+msgctxt "#31122"
+msgid "Disables the autocomplete feature of the virtual keyboard"
+msgstr ""
+
+#: \1080i\variables.xml:638
+msgctxt "#31123"
+msgid "Album review"
+msgstr ""
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"
@@ -464,25 +537,267 @@ msgctxt "#31126"
 msgid "Enable TvTunes integration"
 msgstr ""
 
-#empty strings from id 31127 to 31128
+#: \1080i\custom_1150_LiveTvSettings.xml:28
+msgctxt "#31127"
+msgid "LiveTV Mod Settings"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:74
+msgctxt "#31128"
+msgid "Channels View"
+msgstr ""
 
 msgctxt "#31129"
 msgid "Hide Fanart in full screen visualisation"
 msgstr ""
 
-#empty strings from id 31130 to 31141
+#: \1080i\custom_1150_LiveTvSettings.xml:79
+msgctxt "#31130"
+msgid "Use \"Enigma2-style\" channel OSD"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:97
+msgctxt "#31131"
+msgid "EPG Timeline View"
+msgstr ""
+
+#: \1080i\Includes_LiveTV.xml:302
+msgctxt "#31132"
+msgid "Tuner:"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:104
+msgctxt "#31133"
+msgid "Timeline channels-type:"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:111
+msgctxt "#31134"
+msgid "Timeline view-type:"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:122
+msgctxt "#31135"
+msgid "Infobar Options"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:129
+msgctxt "#31136"
+msgid "Infobar type:"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:134
+msgctxt "#31137"
+msgid "Hide encryption information"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:140
+msgctxt "#31138"
+msgid "Hide tuner information"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:146
+msgctxt "#31139"
+msgid "Hide signal information"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:158
+msgctxt "#31140"
+msgid "Sideblade Options"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:163
+msgctxt "#31141"
+msgid "Hide Guide"
+msgstr ""
 
 msgctxt "#31142"
 msgid "Settings level"
 msgstr ""
 
-#empty strings from id 31143 to 31204
+#: \1080i\custom_1150_LiveTvSettings.xml:169
+msgctxt "#31143"
+msgid "Hide Recordings"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:175
+msgctxt "#31144"
+msgid "Hide Timer"
+msgstr ""
+
+#: \1080i\custom_1150_LiveTvSettings.xml:181
+msgctxt "#31145"
+msgid "Hide Search"
+msgstr ""
+
+#: \1080i\DialogVideoInfo.xml:248
+msgctxt "#31146"
+msgid "Rated"
+msgstr ""
+
+#: \1080i\DialogVideoInfo.xml:1570
+msgctxt "#31147"
+msgid "Change rating"
+msgstr ""
+
+#: /1080i/DialogVideoInfo.xml:404
+msgctxt "#31148"
+msgid "List local library items"
+msgstr ""
+
+#: /1080i/DialogVideoInfo.xml:406
+msgctxt "#31149"
+msgid "Online information from TMDb"
+msgstr ""
+
+#: /1080i/SkinSettings.xml:310
+msgctxt "#31150"
+msgid "Select studio logo artwork"
+msgstr ""
+
+#: /1080i/variables.xml:391
+msgctxt "#31151"
+msgid "Customize the studio logos by choosing a different logo pack. Note that this has no effect on the studio icons displayed in the \"List\" view."
+msgstr ""
+
+#: /1080i/variables.xml:430
+msgctxt "#31152"
+msgid "In progress movies"
+msgstr ""
+
+#: /1080i/variables.xml:432
+msgctxt "#31153"
+msgid "Popular movies on TheMovieDB.org"
+msgstr ""
+
+#: /1080i/variables.xml:433
+msgctxt "#31154"
+msgid "Top rated movies on TheMovieDB.org"
+msgstr ""
+
+#: /1080i/variables.xml:434
+msgctxt "#31155"
+msgid "Movies currently in cinema"
+msgstr ""
+
+#: /1080i/variables.xml:435
+msgctxt "#31156"
+msgid "Upcoming movies"
+msgstr ""
+
+#: /1080i/custom_1124_WidgetCustomizer.xml:120
+msgctxt "#31157"
+msgid "Multi movie widget"
+msgstr ""
+
+#: /1080i/variables.xml:447
+msgctxt "#31158"
+msgid "IMDb Top 250 movies"
+msgstr ""
+
+#: /1080i/DialogButtonMenu.xml:226 /shortcuts/x5.DATA.xml:45
+msgctxt "#31159"
+msgid "Event log"
+msgstr ""
+
+#: /1080i/SkinSettings.xml:242
+msgctxt "#31160"
+msgid "Display background name"
+msgstr ""
+
+#: /1080i/variables.xml:395
+msgctxt "#31161"
+msgid "Display title of movie/tvshow/artist on home screen if the background has a fanart slideshow as background"
+msgstr ""
+
+#: /1080i/variables.xml
+msgctxt "#31162"
+msgid "min"
+msgstr ""
+
+#: /1080i/Includes_LiveTV.xml
+msgctxt "#31163"
+msgid "TIMESHIFT"
+msgstr ""
+
+#: /1080i/MyWeather.xml
+msgctxt "#31164"
+msgid "Change weather icons"
+msgstr ""
+
+#: /1080i/MyVideoNav.xml
+msgctxt "#31165"
+msgid "Layout"
+msgstr ""
+
+#: /1080i/variables.xml
+msgctxt "#31166"
+msgid "Wall"
+msgstr ""
+
+#: /1080i/custom_1134_PausedOverlay.xml
+msgctxt "#31167"
+msgid "You're watching"
+msgstr ""
+
+#: /1080i/custom_1134_PausedOverlay.xml
+msgctxt "#31168"
+msgid "h"
+msgstr "short for Hour(s)"
+
+#: /1080i/custom_1134_PausedOverlay.xml
+msgctxt "#31169"
+msgid "m"
+msgstr "short for Minute(s)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31170"
+msgid "Enable Netflix style pause screen"
+msgstr ""
+
+#: /1080i/variables.xml
+msgctxt "#31171"
+msgid "Shows an overview of the movie or episode 10 seconds after the video is paused."
+msgstr ""
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31172"
+msgid "Inactive"
+msgstr ""
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31173"
+msgid "Decoder"
+msgstr ""
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31174"
+msgid "Hardware decoding"
+msgstr ""
+
+#: /1080i/variables.xml
+msgctxt "#31175"
+msgid "press 'OK' to see more..."
+msgstr ""
+
+#: /1080i/SmartPlaylistRule.xml
+msgctxt "#31176"
+msgid "Enter text here..."
+msgstr ""
+
+#: /1080i/MyVideoNav.xml
+msgctxt "#31177"
+msgid "Player controls"
+msgstr ""
+
+#: /1080i/MyPlaylist.xml
+msgctxt "#31178"
+msgid "Playlist options"
+msgstr ""
 
 msgctxt "#31205"
 msgid "Lyrics Source"
 msgstr ""
-
-#empty strings from id 31206 to 31299
 
 msgctxt "#31300"
 msgid "Overview"
@@ -492,25 +807,17 @@ msgctxt "#31301"
 msgid "Last Updated"
 msgstr ""
 
-#empty strings from id 31302 to 31306
-
 msgctxt "#31307"
 msgid "Hide Fanart"
 msgstr ""
-
-#empty string with id 31308
 
 msgctxt "#31309"
 msgid "Memory Used:"
 msgstr ""
 
-#empty strings from id 31310 to 31316
-
 msgctxt "#31317"
 msgid "Set Fanart Path"
 msgstr ""
-
-#empty strings from id 31318 to 31319
 
 msgctxt "#31320"
 msgid "Last Logged In"
@@ -520,38 +827,16 @@ msgctxt "#31321"
 msgid "Karaoke Song Selector"
 msgstr ""
 
-#empty strings from id 31322 to 31327
-
 msgctxt "#31328"
 msgid "Recently Added"
 msgstr ""
-
-#empty strings from id 31329 to 31389
 
 msgctxt "#31390"
 msgid "Skin default"
 msgstr ""
 
-#empty strings from id 31391 to 31399
-
 msgctxt "#31400"
-msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver"
-msgstr ""
-
-msgctxt "#31401"
-msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts"
-msgstr ""
-
-msgctxt "#31402"
-msgid "[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR]Manage your music library · Set music playback options · Change music listing options[CR]Setup song submission · Set karaoke options"
-msgstr ""
-
-msgctxt "#31403"
-msgid "[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR]Set picture listing options · Configure slideshows"
-msgstr ""
-
-msgctxt "#31404"
-msgid "[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR]Set three cities to collect weather information"
+msgid "[B]CONFIGURE INTERFACE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Setup remote controls[CR]Set up a screensaver · Setup master lock"
 msgstr ""
 
 msgctxt "#31405"
@@ -559,15 +844,11 @@ msgid "[B]MONITOR YOUR SYSTEM[/B][CR][CR]Check out your hardware · Monitor CPU 
 msgstr ""
 
 msgctxt "#31406"
-msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · Setup remote controls[CR]Set power saving options · Enable debugging · Setup master lock"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · [CR]Set power saving options · Enable debugging"
 msgstr ""
 
 msgctxt "#31407"
 msgid "[B]SETUP PROFILES[/B][CR][CR]Setup and manage user profiles · Enable login screen[CR]Change password · Add a profile picture"
-msgstr ""
-
-msgctxt "#31408"
-msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons · Browse for and install Add-ons from kodi.tv[CR]Modify Add-on settings"
 msgstr ""
 
 msgctxt "#31409"
@@ -578,8 +859,6 @@ msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr ""
 
-#empty string with id 31411
-
 msgctxt "#31412"
 msgid "Select section"
 msgstr ""
@@ -588,13 +867,17 @@ msgctxt "#31413"
 msgid "Local subtitle available"
 msgstr ""
 
-#empty strings from id 31414 to 31420
+msgctxt "#31414"
+msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Configure video playback · Configure music playback · Configure picture slideshow[CR]Configure video language and subtitles"
+msgstr ""
+
+msgctxt "#31415"
+msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR][CR]Set default select action · Configure file list options · Configure metadata options[CR]Manage databases"
+msgstr ""
 
 msgctxt "#31421"
 msgid "Select your Kodi user profile[CR]to login and continue"
 msgstr ""
-
-#empty strings from id 31422 to 31500
 
 msgctxt "#31501"
 msgid "Channel group"
@@ -620,14 +903,9 @@ msgctxt "#31506"
 msgid "Available[CR]Groups"
 msgstr ""
 
-#empty strings from id 31507 to 31510
-
 msgctxt "#31511"
 msgid "Channel Options"
 msgstr ""
-
-#empty strings from id 31512 to 31900
-#Weather plugin
 
 msgctxt "#31901"
 msgid "36 Hour Forecast"
@@ -644,8 +922,6 @@ msgstr ""
 msgctxt "#31904"
 msgid "10 Day Forecast"
 msgstr ""
-
-#empty strings from id 31905 to 31907
 
 msgctxt "#31908"
 msgid "Chance of Precipitation"
@@ -668,11 +944,11 @@ msgid "Customize the main menu with widgets, backgrounds and statistics. Add you
 msgstr ""
 
 msgctxt "#31913"
-msgid "Aeon Nox main menu horizontal position"
+msgid "Aeon Nox main menu vertical position"
 msgstr ""
 
 msgctxt "#31914"
-msgid "Change the horizontal position of the main menu. Default is centered on screen."
+msgid "Change the vertical position of the main menu. Default is centered on screen."
 msgstr ""
 
 msgctxt "#31915"
@@ -744,22 +1020,16 @@ msgid "Video plot preference"
 msgstr ""
 
 msgctxt "#31932"
-msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available. This setting can also be toggled by pressing \"Select\" when the plot is focused in the video information dialog."
+msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available."
 msgstr ""
 
 msgctxt "#31933"
 msgid "Select an item to display on the left top of the main menu"
 msgstr ""
 
-msgctxt "#31934"
-msgid "Check the TvTunes addon settings for additional options"
-msgstr ""
-
 msgctxt "#31935"
 msgid "Switch places with another menu item. Opens a dialog with a list of menu items to choose from."
 msgstr ""
-
-#empty string with id 31936
 
 msgctxt "#31937"
 msgid "Show the RSS feed on the bottom or top of the screen, depending on main menu position. Enabling this setting makes the submenu permanently visible."
@@ -796,16 +1066,6 @@ msgstr ""
 msgctxt "#31945"
 msgid "This toggles the layout of the List view. Default is a 7 item layout with extended info, \"Slim List\" is a 14 item, more basic layout"
 msgstr ""
-
-msgctxt "#31946"
-msgid "The images selected here will show in the corresponding section if no fanart is available."
-msgstr ""
-
-msgctxt "#31947"
-msgid "Setup background images"
-msgstr ""
-
-#empty strings from id 31948 to 31949
 
 msgctxt "#31950"
 msgid "WEATHER"
@@ -852,25 +1112,37 @@ msgid "CONCERTS"
 msgstr ""
 
 msgctxt "#31961"
-msgid "Scope Format"
+msgid "Hide ratings in list views"
 msgstr ""
 
 msgctxt "#31962"
-msgid "This will adjust the Skin to fit 2.35 or 2.40 format screens."
-msgstr ""
-
-msgctxt "#31963"
-msgid "Show Zoom/Subtitle Buttons for Non-Scope"
+msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
 msgstr ""
 
 msgctxt "#31964"
-msgid "This will display 2 extra buttons, zoom out and zoom in, which can be used to fit 16:9 / 4:3 content inside your scope view without zooming your projector out."
-msgstr ""
-
-msgctxt "#31965"
-msgid "Remember Scope Mask"
+msgid "NoTo"
 msgstr ""
 
 msgctxt "#31966"
+msgid "Scope Format"
+msgstr ""
+
+msgctxt "#31967"
+msgid "This will adjust the Skin to fit 2.35 or 2.40 format screens."
+msgstr ""
+
+msgctxt "#31968"
+msgid "Show Zoom/Subtitle Buttons for Non-Scope"
+msgstr ""
+
+msgctxt "#31969"
+msgid "This will display 2 extra buttons, zoom out and zoom in, which can be used to fit 16:9 / 4:3 content inside your scope view without zooming your projector out."
+msgstr ""
+
+msgctxt "#31970"
+msgid "Remember Scope Mask"
+msgstr ""
+
+msgctxt "#31971"
 msgid "This will keep the 'Scope Mask' on or off once you set it. It will not reset for each movie/video."
 msgstr ""

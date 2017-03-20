@@ -24,6 +24,10 @@ msgctxt "#31001"
 msgid "Written by"
 msgstr "Geschrieben von"
 
+msgctxt "#31002"
+msgid "Blurred album thumb"
+msgstr "Verschommenes Albumvorschaubild"
+
 msgctxt "#31003"
 msgid "Power Options"
 msgstr "Energieeinstellungen"
@@ -248,6 +252,10 @@ msgctxt "#31058"
 msgid "PVR information"
 msgstr "PVR-Information"
 
+msgctxt "#31059"
+msgid "Install Artist Slideshow add-on to enable this feature"
+msgstr "Installieren Sie das \"Artist Slideshow\" Add-on, um diese Funktion zu aktivieren."
+
 msgctxt "#31060"
 msgid "This file is stacked, select the part you want to play from."
 msgstr "Die Datei ist gestapelt, ab wo soll die Wiedergabe starten?."
@@ -354,7 +362,7 @@ msgstr "Musikvideo-Bibliotheksstatistik"
 
 msgctxt "#31086"
 msgid "Icon"
-msgstr "Icon"
+msgstr "Symbol"
 
 msgctxt "#31087"
 msgid "Banner"
@@ -380,6 +388,10 @@ msgctxt "#31092"
 msgid "Fullscreen fanart"
 msgstr "Vollbild-Fanart"
 
+msgctxt "#31093"
+msgid "LowList toggle"
+msgstr "Niedrige Liste umschalten"
+
 msgctxt "#31094"
 msgid "List view layout"
 msgstr "Listenansichtanordnung"
@@ -403,6 +415,14 @@ msgstr "Serien Playlist Statistik"
 msgctxt "#31099"
 msgid "Musicvideo playlist statistics"
 msgstr "Musikvideo Playlist Statistik"
+
+msgctxt "#31100"
+msgid "View:"
+msgstr "Anzeige:"
+
+msgctxt "#31101"
+msgid "Choose view"
+msgstr "Ansicht auswählen"
 
 msgctxt "#31102"
 msgid "Background"
@@ -435,6 +455,54 @@ msgstr "Interpreten-Informationseinspeisung aktivieren (falls vorhanden)"
 msgctxt "#31109"
 msgid "Unwatched episode count"
 msgstr "Anzahl der ungesehenen Folgen"
+
+msgctxt "#31110"
+msgid "Install Toolbox script to enable this feature"
+msgstr "Installieren Sie das \"Toolbox\"-Skript, um diese Funktion zu aktivieren."
+
+msgctxt "#31111"
+msgid "Similar movies"
+msgstr "Ähnliche Filme"
+
+msgctxt "#31112"
+msgid "Movies directed by"
+msgstr "Filme unter der Regie von"
+
+msgctxt "#31113"
+msgid "Movies written by"
+msgstr "Filme geschrieben von"
+
+msgctxt "#31114"
+msgid "More movies from"
+msgstr "Weitere Filme von"
+
+msgctxt "#31115"
+msgid "Similar TV shows"
+msgstr "Ähnliche Fernsehserien"
+
+msgctxt "#31117"
+msgid "Fallback"
+msgstr "Reservesystem"
+
+msgctxt "#31118"
+msgid "Download extrafanart"
+msgstr "Extrafankunst herunterladen"
+
+msgctxt "#31120"
+msgid "TMDb"
+msgstr "TMDb"
+
+msgctxt "#31121"
+msgid "Disable autocomplete"
+msgstr "Autovervollständigung deaktivieren"
+
+msgctxt "#31122"
+msgid "Disables the autocomplete feature of the virtual keyboard"
+msgstr "Deaktiviert die Autovervollständigen-Funktion der virtuellen Tastatur"
+
+msgctxt "#31123"
+msgid "Album review"
+msgstr "Albumrezension"
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"
@@ -652,9 +720,17 @@ msgctxt "#31921"
 msgid "Displays a widget on the Home screen with media information when a movie or episode is playing."
 msgstr "Zeige ein Widget auf dem Hauptbildschirm mit Medieninformationen, wenn ein Film oder eine Episode abgespielt wird."
 
+msgctxt "#31922"
+msgid "This enables custom genre backgrounds when browsing through the videolibrary's genre node. Filenames should match the genre label. Extension must be .jpg."
+msgstr "Genre-spezifische Hintergrundbilder beim Durchsuchen der Genre-Ansicht der Videobibliothek anzeigen. Dateinamen müssen dem Genrenamen entsprechen (mit Dateiendung .jpg)."
+
 msgctxt "#31923"
 msgid "Set a default select action to enable this item."
 msgstr "Eine Standard-Auswahlaktion einstellen, um diesen Eintrag zu aktivieren."
+
+msgctxt "#31924"
+msgid "This enables custom genre backgrounds when browsing through the musiclibrary's genre node. Filenames should match the genre label. Extension must be .jpg."
+msgstr "Genre-spezifische Hintergrundbilder beim Durchsuchen der Genre-Ansicht der Musikbibliothek anzeigen. Dateinamen müssen dem Genrenamen entsprechen (mit Dateiendung .jpg)."
 
 msgctxt "#31925"
 msgid "Pick one of the preset backgrounds or set your own images as the menu items background."
@@ -685,20 +761,20 @@ msgid "Video plot preference"
 msgstr "Videohandlungseinstellungen"
 
 msgctxt "#31932"
-msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available. This setting can also be toggled by pressing \"Select\" when the plot is focused in the video information dialog."
-msgstr "Zeige Zusammenfassung der Handlung in Bibliotheksansichten und die volle Handlung im Info-Fenster  oder umgekehrt. Die volle Handlung wird angezeigt, falls keine Zusammenfassung vorhanden ist. Zwischen diesen Einstellungen kann auch gewechselt werden, wenn bei markierter Handlung im Info-Fenster die \"Select\"-Taste  betätigt wird."
+msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available."
+msgstr "Zeige Kurzfassung der Handlung in der Bibliotheksansicht und die Langfassung in den Video Informationen an oder umgekehrt. Falls keine Kurzfassung vorhanden ist, wird auf die Langfassung zurückgegriffen."
 
 msgctxt "#31933"
 msgid "Select an item to display on the left top of the main menu"
 msgstr "Wähle ein Element aus um es oben links im Hauptmenü anzuzeigen"
 
-msgctxt "#31934"
-msgid "Check the TvTunes addon settings for additional options"
-msgstr "Siehe im TV-Tunes Addon für weiter Optionen nach"
-
 msgctxt "#31935"
 msgid "Switch places with another menu item. Opens a dialog with a list of menu items to choose from."
 msgstr "Den Platz mit einem anderen Menüelement tauschen. Öffnet ein Dialogfenster mit den vorhandenen Tauschmöglichkeiten."
+
+msgctxt "#31937"
+msgid "Show the RSS feed on the bottom or top of the screen, depending on main menu position. Enabling this setting makes the submenu permanently visible."
+msgstr "RSS-Feed am unteren Rand des Bildschirms anzeigen (abhängig von der Position des Hauptmenüs). Das Aktivieren dieser Option führt zur dauerhaften Anzeige des Untermenüs."
 
 msgctxt "#31938"
 msgid "Enables extra information in the TV show library, like TV show status, next / latest episode, etc. Depends on TV Show Next Aired add-on."
@@ -707,6 +783,10 @@ msgstr "Aktiviert zusätzliche Informationen in der TV-Serien-Bibliothek, wie Se
 msgctxt "#31939"
 msgid "Hide Infopanel on scrolling"
 msgstr "Infopanel beim Scrollen ausblenden"
+
+msgctxt "#31940"
+msgid "Hides the infopanel for Showcase and Landscape view (if activated) while scrolling through the library. Set the amount of seconds to wait for the infopanel to appear when scrolling is stopped."
+msgstr "Verbirgt das Infopanel beim Scrollen durch die Sammlung bei der Schaukasten - und Querformat-Ansicht (falls aktiv). Definiere die Anzahl der Sekunden, die gewartet werden soll, bevor das Infopanel nach Beendigung des Scrollens wieder erscheint."
 
 msgctxt "#31941"
 msgid "Kiosk mode"
@@ -727,14 +807,6 @@ msgstr "Auswählen, welche Markierungen bei symbolbasierten Ansichten auf den Vo
 msgctxt "#31945"
 msgid "This toggles the layout of the List view. Default is a 7 item layout with extended info, \"Slim List\" is a 14 item, more basic layout"
 msgstr "Wechselt das Layout der Listen-Ansicht. \"Standard\" zeigt 7 Einträge mit zusätzlichen Informationen, \"Schlanke Liste\" ist eine reduziertere Ansicht mit 14 Einträgen."
-
-msgctxt "#31946"
-msgid "The images selected here will show in the corresponding section if no fanart is available."
-msgstr "Die hier festgelegten Bilder werden in der entsprechenden Kategorie angezeigt, falls keine Fanart vorhanden ist."
-
-msgctxt "#31947"
-msgid "Setup background images"
-msgstr "Hintergrundbild einrichten"
 
 msgctxt "#31950"
 msgid "WEATHER"
@@ -779,3 +851,11 @@ msgstr "SYSTEM"
 msgctxt "#31960"
 msgid "CONCERTS"
 msgstr "KONZERTE"
+
+msgctxt "#31961"
+msgid "Hide ratings in list views"
+msgstr "Bewertungen in Listen ausblenden"
+
+msgctxt "#31962"
+msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
+msgstr "Blendet Bewertungen von Videos in den Ansichten Liste, LowList und TriPanel aus, es sei denn, es wird nach Bewertung sortiert."

@@ -48,6 +48,10 @@ msgctxt "#31010"
 msgid "Next episode"
 msgstr "下一集"
 
+msgctxt "#31011"
+msgid "Latest episode"
+msgstr "最新集"
+
 msgctxt "#31012"
 msgid "Airs"
 msgstr "播出"
@@ -199,6 +203,10 @@ msgstr "N/A"
 msgctxt "#31104"
 msgid "Similar artists"
 msgstr "相似艺人"
+
+msgctxt "#31117"
+msgid "Fallback"
+msgstr "备选"
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"

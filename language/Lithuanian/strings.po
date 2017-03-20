@@ -24,6 +24,10 @@ msgctxt "#31001"
 msgid "Written by"
 msgstr "Scenaristas"
 
+msgctxt "#31002"
+msgid "Blurred album thumb"
+msgstr "Neryški albumo miniatiūra"
+
 msgctxt "#31003"
 msgid "Power Options"
 msgstr "Maitinimo parinktys"
@@ -248,6 +252,10 @@ msgctxt "#31058"
 msgid "PVR information"
 msgstr "PVR informacija"
 
+msgctxt "#31059"
+msgid "Install Artist Slideshow add-on to enable this feature"
+msgstr "Įdiekite Artist Slideshow priedą, jei norite įjungti šią funkciją"
+
 msgctxt "#31060"
 msgid "This file is stacked, select the part you want to play from."
 msgstr "Šis failas yra sugrupuotas, pasirinkite dalį, kurią norite atkurti."
@@ -408,6 +416,14 @@ msgctxt "#31099"
 msgid "Musicvideo playlist statistics"
 msgstr "Muzikinių vaizdo klipų grojaraščio statistika"
 
+msgctxt "#31100"
+msgid "View:"
+msgstr "Rodinys:"
+
+msgctxt "#31101"
+msgid "Choose view"
+msgstr "Pasirinkite rodinį"
+
 msgctxt "#31102"
 msgid "Background"
 msgstr "Fonas"
@@ -439,6 +455,62 @@ msgstr "Įjungti atlikėjo informacijos sklaidos kanalą (jei prieinama)"
 msgctxt "#31109"
 msgid "Unwatched episode count"
 msgstr "Neperžiūrėtų epizodų skaitliukas"
+
+msgctxt "#31110"
+msgid "Install Toolbox script to enable this feature"
+msgstr "Įdiekite Toolbox scenarijų, jei norite įjungti šią funkciją"
+
+msgctxt "#31111"
+msgid "Similar movies"
+msgstr "Panašūs filmai"
+
+msgctxt "#31112"
+msgid "Movies directed by"
+msgstr "Filmai, kuriuos režisavo"
+
+msgctxt "#31113"
+msgid "Movies written by"
+msgstr "Filmai, kuriems scenarijų parašė"
+
+msgctxt "#31114"
+msgid "More movies from"
+msgstr "Daugiau filmų iš"
+
+msgctxt "#31115"
+msgid "Similar TV shows"
+msgstr "Panašios TV laidos"
+
+msgctxt "#31116"
+msgid "cycle fanart"
+msgstr "sukti Fanart ratu"
+
+msgctxt "#31117"
+msgid "Fallback"
+msgstr "Gryžti atgal"
+
+msgctxt "#31118"
+msgid "Download extrafanart"
+msgstr "Atsisiųsti Extrafanart"
+
+msgctxt "#31119"
+msgid "Show the movies from this director in your library or view online information on this director on TMDb?"
+msgstr "Rodyti šio režisieriaus filmus bibliotekoje ar peržiūrėti interneto informaciją apie šį režisierių iš TMDb?"
+
+msgctxt "#31120"
+msgid "TMDb"
+msgstr "TMDb"
+
+msgctxt "#31121"
+msgid "Disable autocomplete"
+msgstr "Išjungti automatinį užbaigimą"
+
+msgctxt "#31122"
+msgid "Disables the autocomplete feature of the virtual keyboard"
+msgstr "Išjungti automatinio užbaigimo funkciją virtualioje klaviatūroje"
+
+msgctxt "#31123"
+msgid "Album review"
+msgstr "Albumo apžvalga"
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"
@@ -697,16 +769,12 @@ msgid "Video plot preference"
 msgstr "Vaizdo siužeto pasirinkimas"
 
 msgctxt "#31932"
-msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available. This setting can also be toggled by pressing \"Select\" when the plot is focused in the video information dialog."
-msgstr "Rodyti siužeto kontūrus bibliotekos rodiniuose ir pilną siužetą vaizdo informacijos dialogo lange arba atvirkščiai. Grįžtama prie pilno siužeto, jei nėra kontūrų. Šis nustatymas taip pat gali būti perjungtas paspaudus \"Pasirinkti\" mygtuką, kai vaizdo informacijos dialogo lange pasirinktas siužetas."
+msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available."
+msgstr "Rodyti siužeto kontūrus bibliotekos rodiniuose ir pilną siužetą vaizdo informacijos dialogo lange arba atvirkščiai. Grįžtama prie pilno siužeto, jei nėra kontūrų."
 
 msgctxt "#31933"
 msgid "Select an item to display on the left top of the main menu"
 msgstr "Pasirinkite elementą, kuris bus rodomas pagrindinio meniu viršutiniame kairiajame kampe"
-
-msgctxt "#31934"
-msgid "Check the TvTunes addon settings for additional options"
-msgstr "Papildomoms parinktims, peržiūrėkite TVTunes priedo nustatymus"
 
 msgctxt "#31935"
 msgid "Switch places with another menu item. Opens a dialog with a list of menu items to choose from."
@@ -747,14 +815,6 @@ msgstr "Pasirinkite, kurias perdangas rodyti ant miniatiūrų piktogramomis pare
 msgctxt "#31945"
 msgid "This toggles the layout of the List view. Default is a 7 item layout with extended info, \"Slim List\" is a 14 item, more basic layout"
 msgstr "Tai perjungia sąrašo rodinio išdėstymą. Numatytasis yra 7 elementų išdėstymas su papildoma informacija, \"Siauras sąrašas\" yra 14 elementų, supaprastintas išdėstymas."
-
-msgctxt "#31946"
-msgid "The images selected here will show in the corresponding section if no fanart is available."
-msgstr "Čia pasirinktas paveikslėlis bus rodomas atitinkamame skyriuje, jei nebus pasiekiamo FanArt."
-
-msgctxt "#31947"
-msgid "Setup background images"
-msgstr "Nustatyti fono paveikslėlius"
 
 msgctxt "#31950"
 msgid "WEATHER"
@@ -799,3 +859,11 @@ msgstr "SISTEMA"
 msgctxt "#31960"
 msgid "CONCERTS"
 msgstr "KONCERTAI"
+
+msgctxt "#31961"
+msgid "Hide ratings in list views"
+msgstr "Slėpti įvertinimus sąrašo rodiniuose"
+
+msgctxt "#31962"
+msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
+msgstr "Perjungia įvertinimų matomumą sąrašo, žemo sąrašo ir TriPanel rodiniuose, išskyrus atvejus, kai rūšiuojama pagal įvertinimą."
