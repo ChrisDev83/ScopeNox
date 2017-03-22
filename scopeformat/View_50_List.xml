@@ -1152,7 +1152,7 @@
 					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
 				</control>
 				<control type="group">
-					<top>465</top>
+					<top>570</top>
 					<visible>Container.Content(episodes)</visible>
 					<control type="image">
 						<left>32</left>
@@ -1178,11 +1178,11 @@
 				</control>
 				<control type="textbox" id="70">
 					<label>$VAR[VideoPlotVar]</label>
-					<top>560</top>
+					<top>540</top>
 					<left>47</left>
 					<width>476</width>
-					<height>458</height>
-					<font>font15_textbox</font>
+					<height>300</height>
+					<font>font_plot_small</font>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<pagecontrol>62</pagecontrol>
