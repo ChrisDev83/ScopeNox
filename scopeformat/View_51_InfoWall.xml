@@ -27,7 +27,7 @@
 				<left>28</left>
 				<top>190</top>
 				<width>1300</width>
-				<height>709</height>
+				<height>703</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -40,10 +40,10 @@
 				<viewtype label="InfoWall">icon</viewtype>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<visible>Container.Content(tvshows) | Container.Content(movies)</visible>
-				<itemlayout height="236" width="156">
+				<itemlayout height="234" width="156">
 					<control type="image">
 						<width>156</width>
-						<height>236</height>
+						<height>234</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<fadetime>400</fadetime>
@@ -52,7 +52,7 @@
 						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<left>95</left>
+						<left>100</left>
 						<top>0</top>
 						<width>62</width>
 						<height>62</height>
@@ -67,24 +67,24 @@
 					</control>
 					<control type="image">
 						<width>156</width>
-						<height>236</height>
+						<height>234</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 					</control>
 				</itemlayout>
-				<focusedlayout height="236" width="156">
+				<focusedlayout height="234" width="156">
 					<control type="image">
 						<width>156</width>
-						<height>236</height>
+						<height>234</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<left>96</left>
-						<top>5</top>
+						<left>100</left>
+						<top>0</top>
 						<width>62</width>
 						<height>62</height>
 						<texture>$VAR[OverlayVar]</texture>
@@ -98,7 +98,7 @@
 					</control>
 					<control type="image">
 						<width>156</width>
-						<height>236</height>
+						<height>234</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
@@ -106,7 +106,7 @@
 					</control>
 					<control type="image">
 						<width>156</width>
-						<height>236</height>
+						<height>234</height>
 						<texture border="10">thumbs/thumbnail_focused.png</texture>
 						<include>FocusFadeInAnimation</include>
 					</control>

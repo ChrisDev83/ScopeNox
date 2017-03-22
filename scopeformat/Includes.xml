@@ -302,7 +302,7 @@
 		</control>
 	</include>
 	<include name="NoMediaMenu">
-		<top>100</top>
+		<top>225</top>
 		<width>400</width>
 		<height>1080</height>
 		<onleft>9050</onleft>
