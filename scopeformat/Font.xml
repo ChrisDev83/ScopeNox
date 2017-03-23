@@ -12,9 +12,12 @@
 			<linespacing>1.2</linespacing>
 		</font>
 		
-		
-		
-		
+		<font>
+			<name>font12_textbox</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>19</size>
+			<linespacing>1.27</linespacing>
+		</font>
 		
 		
 		
