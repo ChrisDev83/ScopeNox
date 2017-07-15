@@ -764,16 +764,9 @@
 				<texture border="1">nowplaying_shadow.png</texture>
 				<visible>!Skin.HasSetting(lowermainmenu)</visible>
 			</control>
-			<control type="image">
-				<top>-70</top>
-				<width>100%</width>
-				<height>630</height>
-				<texture flipy="true" border="1">nowplaying_shadow.png</texture>
-				<visible>Skin.HasSetting(lowermainmenu)</visible>
-			</control>
 			<control type="grouplist">
-				<left>410</left>
-				<top>86</top>
+				<left>390</left>
+				<top>35</top>
 				<width>1510</width>
 				<height>460</height>
 				<itemgap>12</itemgap>
@@ -782,20 +775,16 @@
 					<left>50</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font48_title</font>
+					<font>font13b</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title]</label>
 				</control>
 				<control type="label">
-					<height>2</height>
-					<label />
-				</control>
-				<control type="label">
 					<left>90</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font12b</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.Artist]</label>
@@ -804,7 +793,7 @@
 					<left>100</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font12b</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
@@ -813,7 +802,7 @@
 					<left>90</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font15</font>
+					<font>font12b</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.offset(1).TrackNumber,[COLOR=labelheader]$LOCALIZE[19031]:[/COLOR] ,. ]$INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
@@ -823,34 +812,35 @@
 					<label />
 				</control>
 				<control type="label">
+					<top>-20</top>
 					<description>Time Label</description>
 					<left>50</left>
 					<height>50</height>
 					<width>1300</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=labelheader] / [/COLOR]]</label>
-					<font>font48</font>
+					<font>font13b</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 			<control type="image">
-				<left>160</left>
-				<top>45</top>
-				<width>360</width>
-				<height>360</height>
+				<left>180</left>
+				<top>0</top>
+				<width>300</width>
+				<height>300</height>
 				<aligny>top</aligny>
 				<aspectratio align="left">keep</aspectratio>
 				<fadetime>300</fadetime>
-				<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				<animation effect="rotate" end="-300" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 				<texture background="true" fallback="special://skin/extras/cdart/default.png" diffuse="thumbs/cdart_mask.png">$INFO[Player.FolderPath]cdart.png</texture>
 				<bordersize>30</bordersize>
 			</control>
 			<control type="image">
 				<description>Cover image</description>
-				<left>-10</left>
-				<top>45</top>
-				<width>390</width>
-				<height>360</height>
+				<left>60</left>
+				<top>-10</top>
+				<width>370</width>
+				<height>340</height>
 				<aspectratio align="right">keep</aspectratio>
 				<texture diffuse="thumbs/cdcover_mask2.png" fallback="DefaultAlbumCover.png">$INFO[Player.Art(thumb)]</texture>
 				<bordertexture border="28">thumbs/cd_shadow2.png</bordertexture>
@@ -1298,6 +1288,7 @@
 				<include>HiddenObject</include>
 			</control>
 			<control type="button">
+				<top>145</top>
 				<width>auto</width>
 				<height>60</height>
 				<font>font10</font>

@@ -828,9 +828,9 @@
 					</focusedlayout>
 					<itemlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -853,7 +853,6 @@
 						</control>
 						<control type="label">
 							<left>30</left>
-							<top>55</top>
 							<width>1040</width>
 							<height>101</height>
 							<font>font15</font>
@@ -882,9 +881,9 @@
 					</itemlayout>
 					<focusedlayout height="101" width="940" condition="Container.Content(videos)">
 						<control type="image">
-							<top>62</top>
+							<top>0</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -933,9 +932,8 @@
 					</focusedlayout>
 					<itemlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons) | Container.Content(videos)]">
 						<control type="image">
-							<top>62</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -997,7 +995,7 @@
 					</itemlayout>
 					<focusedlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
 						<control type="image">
-							<top>62</top>
+							<top>101</top>
 							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
@@ -1319,20 +1317,20 @@
 			<centerleft>ListCenterleft</centerleft>
 			<width>100%</width>
 			<control type="group">
-				<left>100</left>
-				<top>-40</top>
+				<left>250</left>
+				<top>-20</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
 					<top>250</top>
-					<width>1204</width>
+					<width>1004</width>
 					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="panel" id="50">
-					<top>240</top>
+					<top>285</top>
 					<width>940</width>
-					<height>840</height>
+					<height>610</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1343,16 +1341,15 @@
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
 					<itemlayout height="101" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>60</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>4</top>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -1360,9 +1357,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>4</top>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1433,9 +1430,8 @@
 					</itemlayout>
 					<focusedlayout height="101" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>60</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -1649,26 +1645,24 @@
 					</focusedlayout>
 					<itemlayout height="101" width="940" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
 						<control type="image">
-							<top>60</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<colordiffuse>grey2</colordiffuse>
 							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1695,9 +1689,8 @@
 					</itemlayout>
 					<focusedlayout height="101" width="940" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
 						<control type="image">
-							<top>60</top>
 							<width>940</width>
-							<height>60</height>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -1709,18 +1702,17 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1748,9 +1740,9 @@
 				</control>
 				<control type="scrollbar" id="60">
 					<left>940</left>
-					<top>240</top>
+					<top>280</top>
 					<width>14</width>
-					<height>840</height>
+					<height>610</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
