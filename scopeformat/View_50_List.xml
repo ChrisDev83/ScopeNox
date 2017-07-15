@@ -1347,9 +1347,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>4</top>
-							<width>101</width>
-							<height>101</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<colordiffuse>grey2</colordiffuse>
@@ -1357,9 +1357,9 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>4</top>
-							<width>101</width>
-							<height>101</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1388,10 +1388,10 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>810</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font13</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Artist]</label>
@@ -1443,18 +1443,18 @@
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
 							<visible>!Container.Content(songs) + String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>8</top>
-							<width>105</width>
-							<height>105</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
@@ -1483,10 +1483,10 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>50</top>
+							<top>40</top>
 							<width>810</width>
 							<height>60</height>
-							<font>font15</font>
+							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<label>$INFO[ListItem.Artist]</label>

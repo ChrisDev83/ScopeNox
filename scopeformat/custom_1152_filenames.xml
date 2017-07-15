@@ -78,6 +78,23 @@
 			<visible>Window.IsVisible(custom_1123_OnClickCustomizer.xml)
 			</visible>
 		</control>
+		
+		<control type="label" id="20">
+			<left>0</left>
+			<top>82</top>
+			<width>780</width>
+			<height>21</height>
+			<align>left</align>
+			<font>font11</font>
+			<label>4325 visible!!</label>
+			<textcolor>white</textcolor>
+			<visible>Control.IsVisible(4325)
+			</visible>
+		</control>
+		
+		
+		
+		
 
 		<control type="label" id="20">
 			<left>0</left>
@@ -549,17 +566,17 @@
 			<visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
 		</control>
 
-		<control type="label" id="20">
-			<left>0</left>
-			<top>32</top>
-			<width>780</width>
-			<height>21</height>
-			<align>left</align>
-			<font>font11</font>
-			<label>DialogSeekBar.xml</label>
-			<textcolor>white</textcolor>
-			<visible>Window.IsVisible(DialogSeekBar.xml)</visible>
-		</control>
+<!-- 		<control type="label" id="20"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>32</top> -->
+<!-- 			<width>780</width> -->
+<!-- 			<height>21</height> -->
+<!-- 			<align>left</align> -->
+<!-- 			<font>font11</font> -->
+<!-- 			<label>DialogSeekBar.xml</label> -->
+<!-- 			<textcolor>white</textcolor> -->
+<!-- 			<visible>Window.IsVisible(DialogSeekBar.xml)</visible> -->
+<!-- 		</control> -->
 
 		<control type="label" id="20">
 			<left>0</left>
@@ -573,17 +590,17 @@
 			<visible>Window.IsVisible(DialogSelect.xml)</visible>
 		</control>
 
-		<control type="label" id="20">
-			<left>0</left>
-			<top>32</top>
-			<width>780</width>
-			<height>21</height>
-			<align>left</align>
-			<font>font11</font>
-			<label>DialogSettings.xml</label>
-			<textcolor>white</textcolor>
-			<visible>Window.IsVisible(DialogSettings.xml)</visible>
-		</control>
+<!-- 		<control type="label" id="20"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>32</top> -->
+<!-- 			<width>780</width> -->
+<!-- 			<height>21</height> -->
+<!-- 			<align>left</align> -->
+<!-- 			<font>font11</font> -->
+<!-- 			<label>DialogSettings.xml</label> -->
+<!-- 			<textcolor>white</textcolor> -->
+<!-- 			<visible>Window.IsVisible(DialogSettings.xml)</visible> -->
+<!-- 		</control> -->
 
 		<control type="label" id="20">
 			<left>0</left>
@@ -1323,29 +1340,29 @@
 			<visible>Window.IsVisible(variables.xml)</visible>
 		</control>
 
-		<control type="label" id="20">
-			<left>0</left>
-			<top>32</top>
-			<width>780</width>
-			<height>21</height>
-			<align>left</align>
-			<font>font11</font>
-			<label>VideoFullScreen.xml</label>
-			<textcolor>white</textcolor>
-			<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
-		</control>
+<!-- 		<control type="label" id="20"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>32</top> -->
+<!-- 			<width>780</width> -->
+<!-- 			<height>21</height> -->
+<!-- 			<align>left</align> -->
+<!-- 			<font>font11</font> -->
+<!-- 			<label>VideoFullScreen.xml</label> -->
+<!-- 			<textcolor>white</textcolor> -->
+<!-- 			<visible>Window.IsVisible(VideoFullScreen.xml)</visible> -->
+<!-- 		</control> -->
 
-		<control type="label" id="20">
-			<left>0</left>
-			<top>32</top>
-			<width>780</width>
-			<height>21</height>
-			<align>left</align>
-			<font>font11</font>
-			<label>VideoOSD.xml</label>
-			<textcolor>white</textcolor>
-			<visible>Window.IsVisible(VideoOSD.xml)</visible>
-		</control>
+<!-- 		<control type="label" id="20"> -->
+<!-- 			<left>0</left> -->
+<!-- 			<top>32</top> -->
+<!-- 			<width>780</width> -->
+<!-- 			<height>21</height> -->
+<!-- 			<align>left</align> -->
+<!-- 			<font>font11</font> -->
+<!-- 			<label>VideoOSD.xml</label> -->
+<!-- 			<textcolor>white</textcolor> -->
+<!-- 			<visible>Window.IsVisible(VideoOSD.xml)</visible> -->
+<!-- 		</control> -->
 
 		<control type="label" id="20">
 			<left>0</left>

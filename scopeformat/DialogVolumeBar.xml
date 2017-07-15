@@ -6,6 +6,8 @@
 	</coordinates>
 	<controls>
 		<control type="group">
+			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
+			<top>140</top>
 			<right>420</right>
 			<width>500</width>
 			<visible>!Player.Muted</visible>
@@ -13,7 +15,6 @@
 			<animation effect="slide" start="0,0" end="0,-60" time="200">WindowClose</animation>
 			<animation effect="slide" start="0,-60" end="0,0" time="200">VisibleChange</animation>
 			<control type="image">
-				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>500</width>
 				<height>70</height>
 				<texture border="40,0,40,35">topbar2.png</texture>
@@ -28,7 +29,6 @@
 				<visible>!Player.Passthrough</visible>
 			</control>
 			<control type="label">
-				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<left>30</left>
 				<label></label>
 				<aligny>top</aligny>
@@ -38,7 +38,6 @@
 			</control>
 			<control type="label">
 				<description>Line 1 Label</description>
-				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<width>470</width>
 				<height>40</height>
 				<textoffsetx>15</textoffsetx>
@@ -52,7 +51,6 @@
 			<control type="progress">
 				<left>80</left>
 				<width>270</width>
-				<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 				<height>37</height>
 				<texturebg border="2">osd/texturebg2.png</texturebg>
 				<lefttexture />
@@ -64,7 +62,6 @@
 		</control>
 		<control type="group">
 			<left>1830</left>
-			<animation effect="slide" start="0,0" end="0,-10" time="700" condition="Skin.HasSetting(scopeFormat235)">Conditional</animation>
 			<animation effect="slide" start="120" end="0,0" time="200">VisibleChange</animation>
 			<visible>Player.Muted</visible>
 			<control type="image">
