@@ -22,8 +22,8 @@
 					<description>background image</description>
 					<left>-32</left>
 					<top>60</top>
-					<width>542</width>
-					<height>750</height>
+					<width>552</width>
+					<height>778</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="grouplist">

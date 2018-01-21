@@ -17,18 +17,18 @@
 			<include>SystemLeftPanel</include>
 			<control type="grouplist" id="9000">
 				<left>82</left>
-				<top>32</top>
+				<top>80</top>
 				<width>356</width>
-				<height>840</height>
+				<height>700</height>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onleft>9001</onleft>
 				<onright>9001</onright>
 				<control type="button" id="95">
 					<description>Button Summary Values</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -37,9 +37,9 @@
 				</control>
 				<control type="button" id="94">
 					<description>Button Storage</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -48,9 +48,9 @@
 				</control>
 				<control type="button" id="96">
 					<description>Button Network</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -59,9 +59,9 @@
 				</control>
 				<control type="button" id="97">
 					<description>Button Video</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -70,9 +70,9 @@
 				</control>
 				<control type="button" id="98">
 					<description>Button Hardware</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -81,9 +81,9 @@
 				</control>
 				<control type="button" id="99">
 					<description>Button PVR</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -92,9 +92,9 @@
 				</control>
 				<control type="button" id="100">
 					<description>Button Kodi</description>
-					<height>90</height>
+					<height>58</height>
 					<width>356</width>
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>20</textoffsetx>
 					<align>right</align>
 					<font>font15</font>
 					<texturefocus border="3">listselect_fo.png</texturefocus>
@@ -105,16 +105,16 @@
 			<control type="image">
 				<description>separator image</description>
 				<left>82</left>
-				<top>692</top>
+				<top>652</top>
 				<width>356</width>
-				<height>60</height>
+				<height>2</height>
 				<texture border="1">separator2.png</texture>
 				<visible>!Container(9000).HasNext</visible>
 			</control>
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
-				<top>752</top>
+				<top>695</top>
 				<width>356</width>
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
@@ -123,17 +123,17 @@
 			<include>SystemRightPanel</include>
 			<control type="image">
 				<left>522</left>
-				<top>32</top>
+				<top>80</top>
 				<width>1316</width>
-				<height>839</height>
+				<height>695</height>
 				<aspectratio align="center">scale</aspectratio>
 				<texture background="true">special://skin/backgrounds/default_settings.jpg</texture>
 			</control>
 			<control type="image">
 				<left>522</left>
-				<top>32</top>
+				<top>80</top>
 				<width>1316</width>
-				<height>839</height>
+				<height>695</height>
 				<aspectratio align="center">scale</aspectratio>
 				<texture>black.png</texture>
 				<animation effect="fade" start="45" end="45" time="0" condition="true">conditional</animation>
@@ -143,12 +143,12 @@
 				<left>522</left>
 				<top>692</top>
 				<width>1316</width>
-				<height>60</height>
+				<height>58</height>
 				<texture border="1">separator2.png</texture>
 			</control>
 			<control type="group">
 				<left>552</left>
-				<top>754</top>
+				<top>695</top>
 				<control type="label" id="52">
 					<description>XBMC BUILD Version</description>
 					<left>-15</left>
@@ -161,9 +161,9 @@
 				</control>
 				<control type="label">
 					<description>CPU Text</description>
-					<left>630</left>
-					<top>20</top>
-					<width>240</width>
+					<left>510</left>
+					<top>10</top>
+					<width>360</width>
 					<height>24</height>
 					<label>$LOCALIZE[13271]</label>
 					<align>right</align>
@@ -173,7 +173,7 @@
 				<control type="progress">
 					<description>CPU BAR</description>
 					<left>880</left>
-					<top>20</top>
+					<top>10</top>
 					<width>380</width>
 					<height>24</height>
 					<info>System.CPUUsage</info>
@@ -182,7 +182,7 @@
 				<control type="label">
 					<description>Memory Text</description>
 					<left>510</left>
-					<top>70</top>
+					<top>50</top>
 					<width>360</width>
 					<height>24</height>
 					<label>$LOCALIZE[31309]</label>
@@ -193,7 +193,7 @@
 				<control type="progress">
 					<description>Memory BAR</description>
 					<left>880</left>
-					<top>70</top>
+					<top>50</top>
 					<width>380</width>
 					<height>24</height>
 					<texturebg border="2">osd/texturebg2.png</texturebg>
@@ -202,9 +202,9 @@
 			</control>
 			<control type="grouplist" id="9001">
 				<left>522</left>
-				<top>32</top>
+				<top>80</top>
 				<width>1316</width>
-				<height>720</height>
+				<height>700</height>
 				<onleft>9000</onleft>
 				<onright>60</onright>
 				<orientation>vertical</orientation>
@@ -213,7 +213,7 @@
 				<control type="button" id="2">
 					<description>Label 1</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -223,7 +223,7 @@
 				<control type="button" id="3">
 					<description>Label 2</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -233,7 +233,7 @@
 				<control type="button" id="4">
 					<description>Label 3</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -243,7 +243,7 @@
 				<control type="button" id="5">
 					<description>Label 4</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -253,7 +253,7 @@
 				<control type="button" id="6">
 					<description>Label 5</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -263,7 +263,7 @@
 				<control type="button" id="7">
 					<description>Label 6</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -273,7 +273,7 @@
 				<control type="button" id="8">
 					<description>Label 7</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -283,7 +283,7 @@
 				<control type="button" id="9">
 					<description>Label 8</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -293,7 +293,7 @@
 				<control type="button" id="10">
 					<description>Label 9</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -303,7 +303,7 @@
 				<control type="button" id="11">
 					<description>Label 10</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -313,7 +313,7 @@
 				<control type="button" id="12">
 					<description>Label 11</description>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<label />
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
@@ -324,9 +324,9 @@
 			<control type="textbox" id="30">
 				<description>Label 12</description>
 				<left>537</left>
-				<top>32</top>
+				<top>80</top>
 				<width>1286</width>
-				<height max="720">auto</height>
+				<height max="595">auto</height>
 				<label />
 				<font>font15_textbox</font>
 				<textcolor>grey2</textcolor>
@@ -335,10 +335,10 @@
 				<visible>!String.IsEmpty(Control.GetLabel(30))</visible>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>1838</left>
-				<top>32</top>
+				<left>1822</left>
+				<top>80</top>
 				<width>14</width>
-				<height>720</height>
+				<height>600</height>
 				<onleft>9001</onleft>
 				<onright>9000</onright>
 				<ondown>60</ondown>

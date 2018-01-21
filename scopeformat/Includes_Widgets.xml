@@ -599,7 +599,7 @@
 			<animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0" condition="!Skin.HasSetting(lowermainmenu)">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,-1080" end="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,-1080" start="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowClose</animation>
-			<animation effect="slide" end="0,-640" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="slide" end="0,-500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="group">
 				<control type="image">
 					<description>bg image</description>
@@ -756,7 +756,7 @@
 			<animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0" condition="!Skin.HasSetting(lowermainmenu)">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="720" start="0,-1080" end="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="720" end="0,-1080" start="0,0" condition="Skin.HasSetting(lowermainmenu)">WindowClose</animation>
-			<animation effect="slide" end="0,-640" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="slide" end="0,-490" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="image">
 				<top>-172</top>
 				<width>100%</width>
@@ -775,7 +775,7 @@
 					<left>50</left>
 					<width>1300</width>
 					<height>40</height>
-					<font>font13b</font>
+					<font>font30_title</font>
 					<textcolor>white2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<label>$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title]</label>
@@ -824,20 +824,20 @@
 				</control>
 			</control>
 			<control type="image">
-				<left>180</left>
+				<left>150</left>
 				<top>0</top>
-				<width>300</width>
-				<height>300</height>
+				<width>320</width>
+				<height>320</height>
 				<aligny>top</aligny>
 				<aspectratio align="left">keep</aspectratio>
 				<fadetime>300</fadetime>
-				<animation effect="rotate" end="-300" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 				<texture background="true" fallback="special://skin/extras/cdart/default.png" diffuse="thumbs/cdart_mask.png">$INFO[Player.FolderPath]cdart.png</texture>
 				<bordersize>30</bordersize>
 			</control>
 			<control type="image">
 				<description>Cover image</description>
-				<left>60</left>
+				<left>-15</left>
 				<top>-10</top>
 				<width>370</width>
 				<height>340</height>

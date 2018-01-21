@@ -753,4 +753,44 @@
 		<value condition="String.IsEmpty(Container.PluginName)">$INFO[Container(50).ListItem.FolderPath]</value>
 		<value></value>
 	</variable>	
+	
+	<variable name="AspectRatio">
+        <value condition="SubString(ListItem.FileNameAndPath,1.33) | SubString(ListItem.FileNameAndPath,4-3)">1.33</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.37) | SubString(ListItem.FileNameAndPath,4-3)">1.37</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.66) | SubString(ListItem.FileNameAndPath,15-9)">1.66</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.78) | SubString(ListItem.FileNameAndPath,16-9)">1.78</value>
+		<value condition="SubString(ListItem.FileNameAndPath,1.85) | SubString(ListItem.FileNameAndPath,16-9)">1.85</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.20) | SubString(ListItem.FileNameAndPath,22-10)">2.20</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.35) | SubString(ListItem.FileNameAndPath,21-9)">2.35</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.40) | SubString(ListItem.FileNameAndPath,21-9)">2.40</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.55) | SubString(ListItem.FileNameAndPath,23-9)">2.55</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.76) | SubString(ListItem.FileNameAndPath,11-4)">2.76</value>
+		<value>$INFO[ListItem.VideoAspect]</value>
+	</variable>
+	
+	<variable name="AudioChannelCustom">
+        <value condition="SubString(ListItem.FileNameAndPath,1.0)">1</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.0)">2</value>
+		<value condition="SubString(ListItem.FileNameAndPath,2.1)">3</value>
+		<value condition="SubString(ListItem.FileNameAndPath,4.0)">4</value>
+		<value condition="SubString(ListItem.FileNameAndPath,4.1)">5</value>
+		<value condition="SubString(ListItem.FileNameAndPath,5.1)">6</value>
+		<value condition="SubString(ListItem.FileNameAndPath,6.1)">7</value>
+		<value condition="SubString(ListItem.FileNameAndPath,7.1)">8</value>
+		<value>$INFO[ListItem.AudioChannels]</value>
+	</variable>
+	
+	<variable name="VideoPlayerAspectRatio">
+        <value condition="SubString(Player.Filenameandpath,1.33) | SubString(Player.Filenameandpath,4-3)">1.33</value>
+		<value condition="SubString(Player.Filenameandpath,1.37) | SubString(Player.Filenameandpath,4-3)">1.37</value>
+		<value condition="SubString(Player.Filenameandpath,1.66) | SubString(Player.Filenameandpath,15-9)">1.66</value>
+		<value condition="SubString(Player.Filenameandpath,1.78) | SubString(Player.Filenameandpath,16-9)">1.78</value>
+		<value condition="SubString(Player.Filenameandpath,1.85) | SubString(Player.Filenameandpath,16-9)">1.85</value>
+		<value condition="SubString(Player.Filenameandpath,2.20) | SubString(Player.Filenameandpath,22-10)">2.20</value>
+		<value condition="SubString(Player.Filenameandpath,2.35) | SubString(Player.Filenameandpath,21-9">2.35</value>
+		<value condition="SubString(Player.Filenameandpath,2.40) | SubString(Player.Filenameandpath,21-9)">2.40</value>
+		<value condition="SubString(Player.Filenameandpath,2.55) | SubString(Player.Filenameandpath,23-9)">2.55</value>
+		<value condition="SubString(Player.Filenameandpath,2.76) | SubString(Player.Filenameandpath,11-4)">2.76</value>
+		<value>$INFO[VideoPlayer.VideoAspect]</value>
+	</variable>
 </includes>

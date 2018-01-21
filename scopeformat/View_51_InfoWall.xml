@@ -287,25 +287,25 @@
 			<top>15</top>
 			<control type="image">
 				<description>background image</description>
-				<left>20</left>
+				<left>10</left>
 				<top>1080</top>
-				<width>1888</width>
-				<height>785</height>
+				<width>1875</width>
+				<height>880</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
 				<description>background image</description>
-				<left>20</left>
+				<left>10</left>
 				<top>148</top>
-				<width>1888</width>
-				<height>785</height>
+				<width>1900</width>
+				<height>775</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="51">
-				<left>50</left>
+				<left>40</left>
 				<top>180</top>
 				<width>1200</width>
-				<height>720</height>
+				<height>710</height>
 				<onleft condition="Control.IsVisible(60)">60</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
 				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
@@ -317,72 +317,72 @@
 				<viewtype label="InfoWall">icon</viewtype>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(addons)</visible>
-				<itemlayout height="300" width="300" condition="Container.Content(albums) | Container.Content(addons)">
+				<itemlayout height="180" width="300" condition="Container.Content(albums) | Container.Content(addons)">
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 					</control>
 				</itemlayout>
-				<focusedlayout height="300" width="300" condition="Container.Content(albums) | Container.Content(addons)">
+				<focusedlayout height="180" width="180" condition="Container.Content(albums) | Container.Content(addons)">
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 						<include>FocusFadeOutAnimation</include>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture border="10">thumbs/thumbnail_focused.png</texture>
 						<include>FocusFadeInAnimation</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="300" width="300" condition="Container.Content(artists)">
+				<itemlayout height="180" width="180" condition="Container.Content(artists)">
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>thumbs/poster_black.png</texture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="label">
-						<top>260</top>
-						<width>300</width>
+						<top>140</top>
+						<width>180</width>
 						<height>30</height>
 						<align>center</align>
 						<textoffsetx>15</textoffsetx>
@@ -390,10 +390,10 @@
 						<info>ListItem.Label</info>
 					</control>
 				</itemlayout>
-				<focusedlayout height="300" width="300" condition="Container.Content(artists)">
+				<focusedlayout height="180" width="180" condition="Container.Content(artists)">
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
@@ -401,22 +401,22 @@
 					</control>
 					<control type="image">
 						<left>200</left>
-						<width>100</width>
-						<height>100</height>
+						<width>80</width>
+						<height>80</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 						<include>FocusFadeOutAnimation</include>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>thumbs/poster_black.png</texture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="label">
-						<top>260</top>
-						<width>300</width>
+						<top>140</top>
+						<width>180</width>
 						<height>30</height>
 						<align>center</align>
 						<textoffsetx>15</textoffsetx>
@@ -424,8 +424,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture border="10">thumbs/thumbnail_focused.png</texture>
 						<include>FocusFadeInAnimation</include>
 					</control>
@@ -472,7 +472,7 @@
 				<control type="button">
 					<top>461</top>
 					<width>680</width>
-					<label>$INFO[ListItem.Artist,,[CR]]$INFO[ListItem.Year]$INFO[ListItem.Property(Album_Label), • ]</label>
+					<label>$INFO[ListItem.Artist,,[CR]]$INFO[ListItem.Year]$INFO[ListItem.Property(Album_Label), � ]</label>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<visible>Container.Content(albums)</visible>
 				</control>
@@ -576,42 +576,42 @@
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 					</control>
 				</itemlayout>
-				<focusedlayout height="300" width="300">
+				<focusedlayout height="180" width="180">
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<left>200</left>
-						<width>100</width>
-						<height>100</height>
+						<left>110</left>
+						<width>80</width>
+						<height>80</height>
 						<texture>overlays/addons/enabled.png</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
 						<visible>String.IsEqual(ListItem.Label2,$LOCALIZE[449])</visible>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture>black.png</texture>
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 						<include>FocusFadeOutAnimation</include>
 					</control>
 					<control type="image">
-						<width>300</width>
-						<height>300</height>
+						<width>180</width>
+						<height>180</height>
 						<texture border="10">thumbs/thumbnail_focused.png</texture>
 						<include>FocusFadeInAnimation</include>
 					</control>
@@ -656,7 +656,7 @@
 					<textoffsetx>15</textoffsetx>
 				</control>
 				<control type="button">
-					<top>461</top>
+					<top>406</top>
 					<width>680</width>
 					<label>$INFO[ListItem.AddonCreator,,[CR]]$INFO[ListItem.AddonVersion]</label>
 					<include>ShowCaseInfoPanelButtonsValues</include>

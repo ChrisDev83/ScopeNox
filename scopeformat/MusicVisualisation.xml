@@ -100,7 +100,7 @@
 			<animation effect="rotate" tween="cubic" time="720" center="auto" end="90" condition="true">Conditonal</animation>
 		</control>
 		<control type="group">
-			<top>540</top>
+			<top>460</top>
 			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<include>VisibleFadeAnimation</include>
 			<include>WindowOpenCloseAnimation</include>
@@ -192,7 +192,7 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>horizontal</orientation>
 					<control type="image">
-						<top>-8</top>
+						<top>-16</top>
 						<width>90</width>
 						<height>60</height>
 						<colordiffuse>grey</colordiffuse>
@@ -231,7 +231,7 @@
 			<control type="group">
 				<left>1180</left>
 				<control type="image">
-					<left>200</left>
+					<left>210</left>
 					<width>500</width>
 					<height>500</height>
 					<aligny>top</aligny>

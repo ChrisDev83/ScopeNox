@@ -273,26 +273,26 @@
 					</control>
 				</control>
 				<control type="group">
-					<right>110</right>
-					<top>1000</top>
+					<right>30</right>
+					<top>880</top>
 					<width>563</width>
 					<height>90</height>
 					<include>VisibleFadeAnimation</include>
 					<visible>![Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					<control type="image">
-						<left>32</left>
+						<left>13</left>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
 						<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="image">
-						<left>230</left>
+						<left>176</left>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
-						<left>428</left>
+						<left>339</left>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
 						<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>

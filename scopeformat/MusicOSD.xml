@@ -4,7 +4,7 @@
 	<coordinates>
 		<system>1</system>
 		<left>0</left>
-		<top>0</top>
+		<top>130</top>
 	</coordinates>
 	<controls>
 		<control type="group">
@@ -12,7 +12,7 @@
 			<animation effect="slide" start="0,-238" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
 			<animation effect="slide" end="0,-238" start="0,0" time="240" tween="quadratic">WindowClose</animation>
 			<control type="image">
-				<top>-1</top>
+				<top>0</top>
 				<width>100%</width>
 				<height>137</height>
 				<texture border="1,0,1,40">topbar.png</texture>

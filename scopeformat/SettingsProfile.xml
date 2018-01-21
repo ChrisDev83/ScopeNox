@@ -21,25 +21,25 @@
 			<include>SystemLeftPanel</include>
 			<control type="panel" id="2">
 				<left>82</left>
-				<top>32</top>
+				<top>80</top>
 				<width>356</width>
-				<height>840</height>
+				<height>700</height>
 				<onleft>61</onleft>
 				<onright>9001</onright>
 				<onup>2</onup>
 				<ondown>2</ondown>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime tween="quadratic" easing="out">200</scrolltime>
-				<itemlayout height="90" width="356">
+				<itemlayout height="58" width="356">
 					<control type="image">
-						<top>30</top>
+						<top>0</top>
 						<width>356</width>
-						<height>60</height>
+						<height>58</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>90</height>
+						<height>58</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>grey2</textcolor>
@@ -50,21 +50,21 @@
 				</itemlayout>
 				<focusedlayout height="90" width="356">
 					<control type="image">
-						<top>30</top>
+						<top>0</top>
 						<width>356</width>
-						<height>60</height>
+						<height>58</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="image">
 						<width>356</width>
-						<height>90</height>
+						<height>58</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(2)</visible>
 						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
 						<width>356</width>
-						<height>90</height>
+						<height>58</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
@@ -77,9 +77,9 @@
 			</control>
 			<control type="scrollbar" id="61">
 				<left>68</left>
-				<top>32</top>
+				<top>80</top>
 				<width>8</width>
-				<height>720</height>
+				<height>700</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>2</onright>
@@ -93,16 +93,16 @@
 			<control type="image">
 				<description>separator image</description>
 				<left>82</left>
-				<top>692</top>
+				<top>652</top>
 				<width>356</width>
-				<height>60</height>
+				<height>2</height>
 				<texture border="1">separator2.png</texture>
 				<visible>!Container(2).HasNext</visible>
 			</control>
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
-				<top>752</top>
+				<top>695</top>
 				<width>356</width>
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
@@ -112,9 +112,9 @@
 			<control type="grouplist" id="9001">
 				<description>control area</description>
 				<left>522</left>
-				<top>32</top>
+				<top>80</top>
 				<width>1316</width>
-				<height>720</height>
+				<height>700</height>
 				<pagecontrol />
 				<onleft>2</onleft>
 				<onright>2</onright>
@@ -124,7 +124,7 @@
 					<description>Enable Login screen</description>
 					<label>20096</label>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<font>font15</font>
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -134,7 +134,7 @@
 					<label>$LOCALIZE[33084]</label>
 					<label2>$INFO[System.ProfileAutoLogin, [COLOR labelheader],[/COLOR]]</label2>
 					<width>1316</width>
-					<height>90</height>
+					<height>58</height>
 					<font>font15</font>
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -144,14 +144,14 @@
 			<control type="image">
 				<description>separator image</description>
 				<left>522</left>
-				<top>692</top>
+				<top>587</top>
 				<width>1316</width>
-				<height>60</height>
+				<height>58</height>
 				<texture border="1">separator2.png</texture>
 			</control>
 			<control type="group">
-				<left>522</left>
-				<top>751</top>
+				<left>525</left>
+				<top>650</top>
 				<control type="image">
 					<width>120</width>
 					<height>120</height>
@@ -164,7 +164,7 @@
 					<left>120</left>
 					<top>10</top>
 					<width>1181</width>
-					<height>115</height>
+					<height>58</height>
 					<aligny>top</aligny>
 					<textcolor>labelheader</textcolor>
 					<wrapmultiline>true</wrapmultiline>
@@ -174,9 +174,9 @@
 				</control>
 				<control type="label">
 					<left>120</left>
-					<top>60</top>
+					<top>80</top>
 					<width>1181</width>
-					<height>60</height>
+					<height>58</height>
 					<textcolor>grey2</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<textoffsetx>15</textoffsetx>
