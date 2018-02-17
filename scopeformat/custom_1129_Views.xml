@@ -75,29 +75,29 @@
 					<onclick>Container.SetViewMode(501)</onclick>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				</item>
-<!-- 				<item> -->
-<!-- 					<label>LowList</label> -->
-<!-- 					<onclick>Container.SetViewMode(501)</onclick> -->
-<!-- 					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>LowList</label>
+					<onclick>Container.SetViewMode(501)</onclick>
+					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
+				</item>
 				<item>
 					<label>$LOCALIZE[31078]</label>
 					<onclick>Container.SetViewMode(55)</onclick>
 					<visible>Window.IsActive(videos)</visible>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets)</visible>
 				</item>
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[31078]</label> -->
-<!-- 					<onclick>Container.SetViewMode(55)</onclick> -->
-<!-- 					<visible>Window.IsActive(music) | Window.IsActive(addonbrowser)</visible> -->
-<!-- 					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons)</visible> -->
-<!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[31078]</label> -->
-<!-- 					<onclick>Container.SetViewMode(55)</onclick> -->
-<!-- 					<visible>Window.IsActive(programs)</visible> -->
-<!-- 					<visible>String.Contains(Container.FolderPath,plugin.program.advanced.launcher)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>$LOCALIZE[31078]</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<visible>Window.IsActive(music) | Window.IsActive(addonbrowser)</visible>
+					<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(addons)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31078]</label>
+					<onclick>Container.SetViewMode(55)</onclick>
+					<visible>Window.IsActive(programs)</visible>
+					<visible>String.Contains(Container.FolderPath,plugin.program.advanced.launcher)</visible>
+				</item>
 <!-- 				<item> -->
 <!-- 					<label>BigList</label> -->
 <!-- 					<onclick>Container.SetViewMode(510)</onclick> -->
@@ -110,13 +110,13 @@
 <!-- 					<visible>Window.IsActive(music)</visible> -->
 <!-- 					<visible>[Container.Content(artists) | Container.Content(albums)]</visible> -->
 <!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[536]</label> -->
-<!-- 					<onclick>Container.SetViewMode(500)</onclick> -->
-<!-- 					<visible>!Window.IsActive(eventlog)</visible> -->
-<!-- 					<visible>![Window.IsActive(pictures) + Container.Content(addons)]</visible> -->
-<!-- 					<visible>!Window.IsActive(pvr)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>$LOCALIZE[536]</label>
+					<onclick>Container.SetViewMode(500)</onclick>
+					<visible>!Window.IsActive(eventlog)</visible>
+					<visible>![Window.IsActive(pictures) + Container.Content(addons)]</visible>
+					<visible>!Window.IsActive(pvr)</visible>
+				</item>
 				<item>
 					<label>Wall</label>
 					<onclick>Container.SetViewMode(503)</onclick>
@@ -147,30 +147,30 @@
 <!-- 					<visible>Window.IsActive(videos)</visible> -->
 <!-- 					<visible>Container.Content(movies) | Container.Content(tvshows)</visible> -->
 <!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>Episode</label> -->
-<!-- 					<onclick>Container.SetViewMode(502)</onclick> -->
-<!-- 					<visible>Window.IsActive(videos)</visible> -->
-<!-- 					<visible>Container.Content(episodes)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>Episode</label>
+					<onclick>Container.SetViewMode(502)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+					<visible>Container.Content(episodes)</visible>
+				</item>
 <!-- 				<item> -->
 <!-- 					<label>Posters</label> -->
 <!-- 					<onclick>Container.SetViewMode(56)</onclick> -->
 <!-- 					<visible>Window.IsActive(videos)</visible> -->
 <!-- 					<visible>Container.Content(genres) | Container.Content(tvshows) | Container.Content(movies) | Container.Content(sets) | Container.Content(seasons) | Container.Content(musicvideos)</visible> -->
 <!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[31079]</label> -->
-<!-- 					<onclick>Container.SetViewMode(57)</onclick> -->
-<!-- 					<visible>Window.IsActive(videos)</visible> -->
-<!-- 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets) | Container.Content(addons) | Container.Content(files)</visible> -->
-<!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[31079]</label> -->
-<!-- 					<onclick>Container.SetViewMode(57)</onclick> -->
-<!-- 					<visible>Window.IsActive(music) | Window.IsActive(addonbrowser) | Window.IsActive(games) | Window.IsActive(programs)</visible> -->
-<!-- 					<visible>Container.Content(games) | Container.Content(addons) | Container.Content(songs) | Container.Content(artists) | Container.Content(albums) | Container.Content(genres)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>$LOCALIZE[31079]</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets) | Container.Content(addons) | Container.Content(files)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31079]</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+					<visible>Window.IsActive(music) | Window.IsActive(addonbrowser) | Window.IsActive(games) | Window.IsActive(programs)</visible>
+					<visible>Container.Content(games) | Container.Content(addons) | Container.Content(songs) | Container.Content(artists) | Container.Content(albums) | Container.Content(genres)</visible>
+				</item>
 <!-- 				<item> -->
 <!-- 					<label>$LOCALIZE[31076]</label> -->
 <!-- 					<onclick>Container.SetViewMode(52)</onclick> -->
@@ -182,12 +182,12 @@
 <!-- 					<visible>Window.IsActive(videos)</visible> -->
 <!-- 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets)</visible> -->
 <!-- 				</item> -->
-<!-- 				<item> -->
-<!-- 					<label>$LOCALIZE[31077]</label> -->
-<!-- 					<onclick>Container.SetViewMode(54)</onclick> -->
-<!-- 					<visible>![Window.IsActive(videos) | Window.IsActive(pictures)]</visible> -->
-<!-- 					<visible>Container.Content(games) | Container.Content(addons) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(genres) | Container.Content(years)</visible> -->
-<!-- 				</item> -->
+				<item>
+					<label>$LOCALIZE[31077]</label>
+					<onclick>Container.SetViewMode(54)</onclick>
+					<visible>![Window.IsActive(videos) | Window.IsActive(pictures)]</visible>
+					<visible>Container.Content(games) | Container.Content(addons) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(genres) | Container.Content(years)</visible>
+				</item>
 			</content>
 		</control>
 	</controls>
