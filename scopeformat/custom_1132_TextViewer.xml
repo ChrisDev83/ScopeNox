@@ -15,10 +15,10 @@
 			<width>1380</width>
 			<height>904</height>
 			<centerleft>50%</centerleft>
-			<centertop>50%</centertop>
+			<centertop>60%</centertop>
 			<control type="image">
 				<width>1380</width>
-				<height>904</height>
+				<height>704</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="label">
@@ -37,7 +37,7 @@
 				<left>62</left>
 				<top>72</top>
 				<width>1256</width>
-				<height>800</height>
+				<height>600</height>
 				<font>font15_textbox</font>
 				<textcolor>grey2</textcolor>
 				<pagecontrol>61</pagecontrol>

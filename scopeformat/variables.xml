@@ -400,6 +400,7 @@
 		<value condition="Control.HasFocus(107)">$LOCALIZE[31967]</value>
 		<value condition="Control.HasFocus(108)">$LOCALIZE[31971]</value>
 		<value condition="Control.HasFocus(109)">$LOCALIZE[31968]</value>
+		<value condition="Control.HasFocus(110)">$LOCALIZE[31973]</value>
 		<value condition="Control.HasFocus(200)">$LOCALIZE[31917]</value>
 		<value condition="Control.HasFocus(201)">$LOCALIZE[31918]</value>
 		<value condition="Control.HasFocus(202)">$LOCALIZE[31919]</value>
@@ -506,6 +507,13 @@
 		<value condition="Skin.HasSetting(mainmenuicons)">$LOCALIZE[536]</value>
 		<value condition="Skin.HasSetting(biggergap)">3 $LOCALIZE[31025]</value>
 		<value>5 $LOCALIZE[31025]</value>
+	</variable>
+	<variable name="NetflixVar">
+		<value condition="!Skin.HasSetting(netflix2secs) + !Skin.HasSetting(netflix5secs) + !Skin.HasSetting(netflix10secs)">2 seconds</value>
+		<value condition="Skin.HasSetting(netflix2secs)">2 seconds</value>
+		<value condition="Skin.HasSetting(netflix5secs)">5 seconds</value>
+		<value condition="Skin.HasSetting(netflix10secs)">10 seconds</value>
+		<value>2 seconds</value>
 	</variable>
 	<variable name="RatingFlagVar">
 		<value condition="String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G)">flags/mpaa/G.png</value>
@@ -766,6 +774,13 @@
 		<value condition="SubString(ListItem.FileNameAndPath,2.55) | SubString(ListItem.FileNameAndPath,23-9)">2.55</value>
 		<value condition="SubString(ListItem.FileNameAndPath,2.76) | SubString(ListItem.FileNameAndPath,11-4)">2.76</value>
 		<value>$INFO[ListItem.VideoAspect]</value>
+	</variable>
+	
+	<variable name="AudioCodecCustom">
+		<value condition="SubString(ListItem.FileNameAndPath,Atmos)">datmos</value>
+		<value condition="SubString(ListItem.FileNameAndPath,DTSX)">dtsx</value>
+		<value condition="SubString(ListItem.FileNameAndPath,DTS-X)">dtsx</value>
+		<value>$INFO[ListItem.AudioCodec]</value>
 	</variable>
 	
 	<variable name="AudioChannelCustom">

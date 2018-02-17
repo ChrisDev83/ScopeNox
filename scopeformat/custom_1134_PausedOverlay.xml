@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1134" type="dialog">
-	<visible>VideoPlayer.IsFullscreen + Player.Paused + System.IdleTime(2) + !Skin.HasSetting(Disable.Netflix.Pause)</visible>
+	<visible>VideoPlayer.IsFullscreen + Player.Paused + [[!Skin.HasSetting(netflix2secs) + !Skin.HasSetting(netflix5secs) + !Skin.HasSetting(netflix10secs) + System.IdleTime(2)] | [Skin.HasSetting(netflix2secs) + System.IdleTime(2)] | [Skin.HasSetting(netflix5secs) + System.IdleTime(5)] | [Skin.HasSetting(netflix10secs) + System.IdleTime(10)]] + !Skin.HasSetting(Disable.Netflix.Pause)</visible>
 	<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 	<visible>!System.HasModalDialog</visible>
 	<controls>

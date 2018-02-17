@@ -190,6 +190,10 @@
 						<label>$VAR[SourceFlagVar]</label>
 						<visible>false</visible>
 					</control>
+					<control type="label" id="9904">
+						<label>$VAR[AudioCodecCustom]</label>
+						<visible>false</visible>
+					</control>
 
 					<control type="image">
 						<width>90</width>
@@ -202,8 +206,8 @@
 						<width>90</width>
 						<colordiffuse>grey</colordiffuse>
 						<include>MediaFlagVars</include>
-						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+						<texture>flags/audio/$VAR[AudioCodecCustom].png</texture>
+						<visible>!IsEmpty(Control.GetLabel(9904))</visible>
 					</control>
 					<control type="image">
 						<width>90</width>

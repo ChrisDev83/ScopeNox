@@ -3,9 +3,9 @@
 	<defaultcontrol always="true">2</defaultcontrol>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="0,-270" end="0,0" time="500" tween="cubic" easing="out">WindowOpen</animation>
-			<animation effect="slide" start="0,-270" end="0,0" time="500" tween="cubic" easing="out">VisibleChange</animation>
-			<animation effect="slide" end="0,-270" start="0,0" time="500" tween="cubic" easing="out">WindowClose</animation>
+			<animation effect="slide" start="0,-270" end="0,140" time="500" tween="cubic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,-270" end="0,140" time="500" tween="cubic" easing="out">VisibleChange</animation>
+			<animation effect="slide" end="0,-270" start="0,140" time="500" tween="cubic" easing="out">WindowClose</animation>
 			<control type="image">
 				<width>100%</width>
 				<height>243</height>
