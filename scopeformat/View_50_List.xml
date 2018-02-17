@@ -1188,9 +1188,9 @@
 				</control>
 				<control type="scrollbar" id="62">
 					<left>538</left>
-					<top>560</top>
+					<top>540</top>
 					<width>14</width>
-					<height>460</height>
+					<height>215</height>
 					<onup>PageUp(70)</onup>
 					<ondown>PageUp(70)</ondown>
 					<onleft>50</onleft>
@@ -1756,7 +1756,7 @@
 			</control>
 			<control type="group">
 				<left>1296</left>
-				<top>155</top>
+				<top>15</top>
 				<visible>!Container.Content(genres)</visible>
 				<control type="image">
 					<width>570</width>

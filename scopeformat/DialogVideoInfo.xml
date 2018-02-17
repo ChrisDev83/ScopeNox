@@ -198,7 +198,7 @@
 						<width>160</width>
 						<visible>![String.IsEqual(ListItem.DBType,tvshow) + Skin.HasSetting(Disable.NextAired)]</visible>
 						<control type="label">
-							<left>45</left>
+							<left>40</left>
 							<top>-5</top>
 							<width>60</width>
 							<height>60</height>
@@ -425,7 +425,7 @@
 							<texture border="1">separator3.png</texture>
 						</control>
 						<control type="image">
-							<width>90</width>
+							<width>95</width>
 							<colordiffuse>grey</colordiffuse>
 							<include>MediaFlagVars</include>
 							<texture>flags/audio/$VAR[AudioCodecCustom].png</texture>
