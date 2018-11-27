@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<default type="image">
-		<left>0</left>
-		<top>0</top>
-		<texture>-</texture>
-		<colorkey>0</colorkey>
+		<texture />
 	</default>
 	<default type="multiimage">
 		<aspectratio align="center">scale</aspectratio>
 		<fadetime>FanartCrossfadeTime</fadetime>
 		<include>FullscreenDimensions</include>
-		<timeperimage>7000</timeperimage>
+		<timeperimage>20000</timeperimage>
 		<randomize>true</randomize>
 	</default>
 	<default type="label">
-		<left>0</left>
 		<top>0</top>
 		<align>left</align>
 		<aligny>center</aligny>
-		<label>-</label>
+		<label />
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
 		<scrollspeed>30</scrollspeed>
 	</default>
 	<default type="fadelabel">
-		<left>120</left>
-		<top>90</top>
+		<left>0</left>
+		<top>0</top>
 		<font>font13</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>grey3</disabledcolor>
 		<scrollspeed>40</scrollspeed>
 	</default>
 	<default type="button">
-		<left>0</left>
 		<top>0</top>
 		<width>450</width>
 		<height>60</height>
@@ -43,7 +38,6 @@
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -61,17 +55,12 @@
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
-		<label>-</label>
+		<label />
 		<aligny>center</aligny>
 		<font>font14</font>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="textbox">
-		<left>0</left>
-		<top>0</top>
-		<width>615</width>
-		<height>322</height>
 		<align>left</align>
 		<textcolor>white</textcolor>
 		<font>font15_textbox</font>
@@ -80,10 +69,10 @@
 		<left>0</left>
 		<top>0</top>
 		<texturebg border="1">osd/texturebg_cache.png</texturebg>
-		<lefttexture>-</lefttexture>
+		<lefttexture />
 		<midtexture border="2">osd/midtexture.png</midtexture>
-		<righttexture>-</righttexture>
-		<overlaytexture>-</overlaytexture>
+		<righttexture />
+		<overlaytexture />
 	</default>
 	<default type="spincontrol">
 		<left>0</left>
@@ -92,6 +81,8 @@
 		<texturedown>android/numberpicker_down_normal_holo_dark.png</texturedown>
 		<textureupfocus>android/numberpicker_up_longpressed_holo_dark.png</textureupfocus>
 		<texturedownfocus>android/numberpicker_down_longpressed_holo_dark.png</texturedownfocus>
+		<texturedowndisabled colordiffuse="40FFFFFF">android/numberpicker_down_normal_holo_dark.png</texturedowndisabled>
+		<textureupdisabled colordiffuse="40FFFFFF">android/numberpicker_up_normal_holo_dark.png</textureupdisabled>
 		<align>right</align>
 		<width>40</width>
 		<height>25</height>
@@ -100,7 +91,6 @@
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<subtype>text</subtype>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>0</textoffsety>
@@ -120,11 +110,12 @@
 		<texturedown>android/numberpicker_down_normal_holo_dark.png</texturedown>
 		<textureupfocus>android/numberpicker_up_longpressed_holo_dark.png</textureupfocus>
 		<texturedownfocus>android/numberpicker_down_longpressed_holo_dark.png</texturedownfocus>
+		<texturedowndisabled colordiffuse="40FFFFFF">android/numberpicker_down_normal_holo_dark.png</texturedowndisabled>
+		<textureupdisabled colordiffuse="40FFFFFF">android/numberpicker_up_normal_holo_dark.png</textureupdisabled>
 		<font>font14</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<reverse>yes</reverse>
@@ -143,12 +134,13 @@
 		<textureradiooffnofocus>android/btn_radio_off_holo_dark.png</textureradiooffnofocus>
 		<texturefocus border="1">listselect_fo.png</texturefocus>
 		<texturenofocus border="1">separator2.png</texturenofocus>
+		<textureradioondisabled colordiffuse="40FFFFFF">android/btn_radio_on_holo_dark.png</textureradioondisabled>
+		<textureradiooffdisabled colordiffuse="40FFFFFF">android/btn_radio_off_holo_dark.png</textureradiooffdisabled>
 		<label>215</label>
 		<font>font14</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -158,21 +150,19 @@
 		<top>0</top>
 		<width>450</width>
 		<height>60</height>
-		<label>-</label>
+		<label />
 		<font>font14</font>
-		<texturefocus>-</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<texturebg>-</texturebg>
+		<texturefocus />
+		<texturenofocus />
+		<texturebg />
 		<textureleft>scroll-left.png</textureleft>
 		<textureleftfocus colordiffuse="labelheader">scroll-left.png</textureleftfocus>
 		<textureright>scroll-right.png</textureright>
 		<texturerightfocus colordiffuse="labelheader">scroll-right.png</texturerightfocus>
-		<font>font14</font>
 		<textcolor>grey2</textcolor>
 		<textoffsetx>15</textoffsetx>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<align>left</align>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -180,8 +170,7 @@
 	<default type="slider">
 		<left>0</left>
 		<top>0</top>
-		<controloffsetx>75</controloffsetx>
-		<controloffsety>0</controloffsety>
+		<orientation>horizontal</orientation>
 	</default>
 	<default type="sliderex">
 		<left>0</left>
@@ -200,7 +189,6 @@
 		<textcolor>grey2</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey4</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="mover">
@@ -234,11 +222,10 @@
 		<pulseonselect>false</pulseonselect>
 	</default>
 	<default type="group">
-		<left>0</left>
-		<top>0</top>
+		<!-- <left>0</left> -->
+		<!-- <top>0</top> -->
 	</default>
 	<default type="grouplist">
-		<left>0</left>
 		<top>0</top>
 		<itemgap>0</itemgap>
 	</default>

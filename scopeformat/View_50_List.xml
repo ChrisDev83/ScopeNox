@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- Video : List -->
+	<!-- Video List -->
 	<include name="VideoList">
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
-				<left>100</left>
-				<top>-30</top>
+				<left>250</left>
+				<top>-20</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>935</top>
-					<width>1204</width>
-					<height>804</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>210</top>
-					<width>1204</width>
-					<height>760</height>
+					<top>250</top>
+					<width>1004</width>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
-					<left>0</left>
-					<top>240</top>
-					<width>1140</width>
-					<height>700</height>
+				<control type="panel" id="50">
+					<top>280</top>
+					<width>940</width>
+					<height>610</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -37,10 +30,10 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="101" width="1140" condition="Container.Content(movies)">
+					<itemlayout height="101" width="940" condition="Container.Content(movies)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -52,11 +45,10 @@
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<fadetime>IconCrossfadeTime</fadetime>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>20</top>
+							<top>10</top>
 							<width>790</width>
 							<height>70</height>
 							<font>font25</font>
@@ -65,54 +57,51 @@
 							<align>left</align>
 							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Genre)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>55</top>
+							<top>20</top>
 							<width>790</width>
 							<height>101</height>
 							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 						<control type="image">
-							<left>935</left>
+							<left>735</left>
 							<top>36</top>
 							<width>42</width>
 							<height>28</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating) | String.IsEqual(ListItem.Label2,ListItem.Year)</visible>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>97</height>
 							<font>font25</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>[String.IsEqual(ListItem.Label2,ListItem.Rating) + !Skin.HasSetting(Enable.HideRatings)] | String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>97</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<label>$VAR[VideoListLabelVar]</label>
+							<visible>[!String.IsEqual(ListItem.Label2,ListItem.Rating) | Skin.HasSetting(Enable.HideRatings)] + !String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>18</top>
 							<width>64</width>
 							<height>64</height>
@@ -120,21 +109,21 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(movies)">
+					<focusedlayout height="101" width="940" condition="Container.Content(movies)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -143,10 +132,9 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 						</control>
 						<control type="label">
-							<top>20</top>
+							<top>10</top>
 							<left>135</left>
 							<width>790</width>
 							<height>101</height>
@@ -155,59 +143,51 @@
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label> <!-- Movie Title -->
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Genre)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>55</top>
+							<top>20</top>
 							<width>790</width>
 							<height>101</height>
 							<font>font10</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="image">
-							<left>935</left>
+							<left>735</left>
 							<top>36</top>
 							<width>42</width>
 							<height>28</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating) | StringCompare(ListItem.Label2,ListItem.Year)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating) | String.IsEqual(ListItem.Label2,ListItem.Year)</visible>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>97</height>
 							<font>font25</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>[String.IsEqual(ListItem.Label2,ListItem.Rating) + !Skin.HasSetting(Enable.HideRatings)] | String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>97</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<label>$VAR[VideoListLabelVar]</label>
+							<visible>[!String.IsEqual(ListItem.Label2,ListItem.Rating) | Skin.HasSetting(Enable.HideRatings)] + !String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>18</top>
 							<width>64</width>
 							<height>64</height>
@@ -215,10 +195,10 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="Container.Content(episodes)">
+					<itemlayout height="101" width="940" condition="Container.Content(episodes)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -229,9 +209,8 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -240,68 +219,62 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
-						<control type="label">
+							<control type="label">
 							<left>135</left>
-							<top>20</top>
+							<top>5</top>
 							<width>790</width>
 							<height>70</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Premiered)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>55</top>
+							<top>20</top>
 							<width>790</width>
 							<height>101</height>
 							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 						<control type="image">
-							<left>935</left>
+							<left>735</left>
 							<top>46</top>
 							<width>42</width>
 							<height>28</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
 							<font>font25</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>!String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -309,21 +282,21 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(episodes)">
+					<focusedlayout height="101" width="940" condition="Container.Content(episodes)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -332,8 +305,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -342,72 +314,61 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>20</top>
+							<top>5</top>
 							<width>790</width>
 							<height>70</height>
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Premiered)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>55</top>
+							<top>20</top>
 							<width>790</width>
 							<height>101</height>
 							<font>font10</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="image">
-							<left>935</left>
+							<left>735</left>
 							<top>46</top>
 							<width>42</width>
 							<height>28</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
 							<font>font25</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>!StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>!String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -415,10 +376,10 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="Container.Content(tvshows)">
+					<itemlayout height="101" width="940" condition="Container.Content(tvshows)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -430,44 +391,39 @@
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<fadetime>IconCrossfadeTime</fadetime>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>20</top>
+							<top>5</top>
 							<width>790</width>
 							<height>70</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Genre)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>55</top>
+							<top>20</top>
 							<width>790</width>
 							<height>101</height>
 							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font12</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>20</top>
 							<width>64</width>
 							<height>64</height>
@@ -476,7 +432,7 @@
 						</control>
 						<control type="group">
 							<description>Unwatched episodes</description>
-							<left>1076</left>
+							<left>876</left>
 							<top>0</top>
 							<control type="image">
 								<left>0</left>
@@ -484,7 +440,94 @@
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
+							</control>
+							<control type="label">
+								<left>-18</left>
+								<width>100</width>
+								<height>101</height>
+								<font>font12_title</font>
+								<align>center</align>
+								<label>$VAR[ListOverlayEpisodesVar]</label>
+								<textcolor>grey3</textcolor>
+								<textoffsetx>18</textoffsetx>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="101" width="940" condition="Container.Content(tvshows)">
+						<control type="image">
+							<top>0</top>
+							<width>940</width>
+							<height>101</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>940</width>
+							<height>101</height>
+							<texture border="4">listselect_fo.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+							<include>VisibleFadeAnimation</include>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>15</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>5</top>
+							<width>790</width>
+							<height>70</height>
+							<font>font25</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Genre)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>20</top>
+							<width>790</width>
+							<height>101</height>
+							<font>font10</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$VAR[VideoListLabel2Var]</label>
+						</control>
+						<control type="label">
+							<width>860</width>
+							<height>101</height>
+							<font>font12</font>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="image">
+							<left>876</left>
+							<top>20</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[ListItem.Overlay]</texture>
+						</control>
+						<control type="group">
+							<description>Unwatched episodes</description>
+							<left>876</left>
+							<top>0</top>
+							<control type="image">
+								<left>0</left>
+								<top>28</top>
+								<width>64</width>
+								<height>64</height>
+								<texture>overlays/list/OverlayUnWatched.png</texture>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -493,116 +536,18 @@
 								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
-								<aligny>center</aligny>
-								<label>$VAR[ListOverlayEpisodesVar]</label>
-								<textcolor>grey3</textcolor>
-								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(tvshows)">
-						<control type="image">
-							<top>0</top>
-							<width>1140</width>
-							<height>101</height>
-							<texture border="1">separator2.png</texture>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
-							<height>101</height>
-							<texture border="4">listselect_fo.png</texture>
-							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
-							<aspectratio>keep</aspectratio>
-							<texture fallback="flags/studios/default-studio.png">$VAR[StudioIconVar]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>20</top>
-							<width>790</width>
-							<height>70</height>
-							<font>font25</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>55</top>
-							<width>790</width>
-							<height>101</height>
-							<font>font10</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
-							<label>$VAR[VideoListLabel2Var]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-						</control>
-						<control type="label">
-							<width>1060</width>
-							<height>101</height>
-							<font>font12</font>
-							<align>right</align>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-						</control>
-						<control type="image">
-							<left>1076</left>
-							<top>20</top>
-							<width>64</width>
-							<height>64</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$VAR[ListItem.Overlay]</texture>
-						</control>
-						<control type="group">
-							<description>Unwatched episodes</description>
-							<left>1076</left>
-							<top>0</top>
-							<control type="image">
-								<left>0</left>
-								<top>28</top>
-								<width>64</width>
-								<height>64</height>
-								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
-							</control>
-							<control type="label">
-								<left>-18</left>
-								<top>0</top>
-								<width>100</width>
-								<height>101</height>
-								<font>font12_title</font>
-								<align>center</align>
-								<aligny>center</aligny>
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>white</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="Container.Content(seasons)">
+					<itemlayout height="101" width="940" condition="Container.Content(seasons)">
 						<control type="image">
 							<top>0</top>
 							<height>101</height>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -613,8 +558,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -623,9 +567,8 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -634,22 +577,19 @@
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
-							<font>font12</font>
+							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20453]]</label>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -658,15 +598,13 @@
 						</control>
 						<control type="group">
 							<description>Unwatched episodes</description>
-							<left>1076</left>
-							<top>0</top>
+							<left>876</left>
 							<control type="image">
-								<left>0</left>
 								<top>28</top>
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -675,29 +613,28 @@
 								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
-								<aligny>center</aligny>
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>grey3</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(seasons)">
+					<focusedlayout height="101" width="940" condition="Container.Content(seasons)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -706,8 +643,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -716,8 +652,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -726,24 +661,19 @@
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
-							<width>1060</width>
+							<width>860</width>
 							<height>116</height>
-							<font>font12</font>
+							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20453]]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -752,15 +682,14 @@
 						</control>
 						<control type="group">
 							<description>Unwatched episodes</description>
-							<left>1076</left>
+							<left>876</left>
 							<top>0</top>
 							<control type="image">
-								<left>0</left>
 								<top>28</top>
 								<width>64</width>
 								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>-18</left>
@@ -769,18 +698,17 @@
 								<height>101</height>
 								<font>font12_title</font>
 								<align>center</align>
-								<aligny>center</aligny>
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>white</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -791,9 +719,8 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -802,8 +729,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<top>0</top>
@@ -813,10 +739,8 @@
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -826,37 +750,32 @@
 							<font>font10</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -865,8 +784,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -875,8 +793,7 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -885,11 +802,8 @@
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -899,28 +813,23 @@
 							<font>font10</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
+					<itemlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -931,56 +840,38 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left) + !Container.Content(studios)</visible>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
-							<aspectratio>keep</aspectratio>
-							<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
-							<colordiffuse>grey2</colordiffuse>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left) + Container.Content(studios)</visible>
-						</control>
-						<control type="image">
-							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default) + !Container.Content(studios)</visible>
 						</control>
 						<control type="label">
-							<left>135</left>
-							<top>0</top>
-							<width>960</width>
+							<left>100</left>
+							<width>1040</width>
 							<height>101</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<left>100</left>
-							<width>960</width>
+							<left>30</left>
+							<width>1040</width>
+							<height>101</height>
+							<font>font15</font>
+							<textcolor>grey3</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Studio]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<width>1040</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$VAR[VideoListLabelVar]</label>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -988,21 +879,62 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
+					<focusedlayout height="101" width="940" condition="Container.Content(videos)">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<width>1040</width>
+							<height>70</height>
+							<font>font25</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>55</top>
+							<width>1040</width>
+							<height>60</height>
+							<font>font15</font>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Studio]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<width>1040</width>
+							<height>101</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$VAR[VideoListLabelVar]</label>
+						</control>
+						<control type="image">
+							<left>876</left>
+							<top>28</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[ListItem.Overlay]</texture>
+						</control>
+					</focusedlayout>
+					<itemlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons) | Container.Content(videos)]">
+						<control type="image">
+							<width>940</width>
+							<height>101</height>
+							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -1011,18 +943,69 @@
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left) + !Container.Content(studios)</visible>
+							<colordiffuse>grey2</colordiffuse>
+							<visible>String.StartsWith(ListItem.Icon,Default) + !Container.Content(studios)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
+							<top>8</top>
 							<width>71</width>
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left) + Container.Content(studios)</visible>
+							<colordiffuse>grey2</colordiffuse>
+							<visible>String.StartsWith(ListItem.Icon,Default) + Container.Content(studios)</visible>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>8</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<width>935</width>
+							<height>101</height>
+							<font>font25</font>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>100</left>
+							<width>935</width>
+							<height>101</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$VAR[VideoListLabelVar]</label>
+						</control>
+						<control type="image">
+							<left>876</left>
+							<top>28</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[ListItem.Overlay]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout height="101" width="940" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(addons) | Container.Content(seasons)]">
+						<control type="image">
+							<top>101</top>
+							<width>940</width>
+							<height>101</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="image">
+							<width>940</width>
+							<height>101</height>
+							<texture border="4">listselect_fo.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
@@ -1030,37 +1013,49 @@
 							<width>71</width>
 							<height>71</height>
 							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
+							<visible>String.StartsWith(ListItem.Icon,Default) + !Container.Content(studios)</visible>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>8</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Label,flags/studios/,.png]</texture>
+							<visible>String.StartsWith(ListItem.Icon,Default) + Container.Content(studios)</visible>
+						</control>
+						<control type="image">
+							<left>15</left>
+							<top>8</top>
+							<width>71</width>
+							<height>71</height>
+							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<left>135</left>
+							<left>100</left>
 							<top>0</top>
-							<width>960</width>
+							<width>935</width>
 							<height>101</height>
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
-							<left>100</left>
-							<width>960</width>
+							<left>135</left>
+							<width>935</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$VAR[VideoListLabelVar]</label>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>28</top>
 							<width>64</width>
 							<height>64</height>
@@ -1070,88 +1065,49 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>240</top>
+					<left>940</left>
+					<top>280</top>
 					<width>14</width>
-					<height>700</height>
+					<height>610</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
-					<onright condition="!Control.IsVisible(62)">SetProperty(MediaMenu,True,home)</onright>
-					<onright condition="!Control.IsVisible(62)">SetFocus(9050)</onright>
-					<onright condition="Control.IsVisible(62)">62</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<onright condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetProperty(MediaMenu,True,home)</onright>
+					<onright condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetFocus(9050)</onright>
+					<onright condition="Control.IsVisible(62) + !Control.IsVisible(8000)">62</onright>
+					<onright condition="Control.IsVisible(8000)">8000</onright>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 			</control>
 			<control type="group">
-				<left>1296</left>
-				<top>170</top>
-				<visible>![Container.Content(genres) | Container.Content(episodes)]</visible>
-				<include>VisibleFadeEffect</include>
+				<left>1210</left>
+				<top>255</top>
+				<visible>Container.Content(movies) | Container.Content(genres) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content() | Container.Content(files) | Container.Content(addons) </visible>
+				<include>VisibleFadeAnimation</include>
 				<control type="image">
-					<width>570</width>
-					<height>780</height>
+					<width>513</width>
+					<height>612</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture background="true">$VAR[PosterThumb]</texture>
+					<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$VAR[PosterVar]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-				</control>
-				<control type="image">
-					<top>795</top>
-					<width>570</width>
-					<height>780</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
-					<bordersize>20</bordersize>
-				</control>
-			</control>
-			<control type="group">
-				<left>1296</left>
-				<top>155</top>
-				<visible>Container.Content(genres)</visible>
-				<include>VisibleFadeEffect</include>
-				<control type="image">
-					<width>570</width>
-					<height>780</height>
-					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-				</control>
-				<control type="image">
-					<top>795</top>
-					<width>570</width>
-					<height>780</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
 					<bordersize>20</bordersize>
 				</control>
 			</control>
 			<control type="group">
 				<left>1280</left>
-				<top>-40</top>
-				<visible>Container.Content(episodes)</visible>
-				<include>VisibleFadeEffect</include>
-				<control type="image">
-					<description>background image</description>
-					<top>1020</top>
-					<width>570</width>
-					<height>849</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
+				<top>22</top>
+				<visible>![Container.Content(movies) | Container.Content(genres) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content() | Container.Content(files) | Container.Content(addons)]</visible>
+				<include>VisibleFadeAnimation</include>
 				<control type="image">
 					<description>background image</description>
 					<top>210</top>
 					<width>570</width>
-					<height>849</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
 				<control type="image">
@@ -1162,6 +1118,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<bordersize>32</bordersize>
+					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
 				</control>
 				<control type="image">
 					<left>32</left>
@@ -1169,64 +1126,185 @@
 					<width>506</width>
 					<height>101</height>
 					<texture border="1">separator2.png</texture>
+					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
+				</control>
+				<control type="button">
+					<top>620</top>
+					<left>32</left>
+					<width>506</width>
+					<height>101</height>
+					<font>font15</font>
+					<disabledcolor>grey2</disabledcolor>
+					<textoffsetx>15</textoffsetx>
+					<label>$LOCALIZE[552]:</label>
+					<label2>$INFO[ListItem.Date]</label2>
+					<enable>no</enable>
+					<visible>Container.Content(videos)</visible>
 				</control>
 				<control type="image">
 					<left>32</left>
-					<top>620</top>
+					<top>500</top>
 					<width>506</width>
-					<height>101</height>
+					<height>60</height>
 					<texture border="1">separator2.png</texture>
+					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
 				</control>
 				<control type="group">
-					<top>527</top>
+					<top>570</top>
+					<visible>Container.Content(episodes)</visible>
 					<control type="image">
 						<left>32</left>
 						<colordiffuse>grey2</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+						<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="image">
 						<left>217</left>
 						<colordiffuse>grey2</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
 						<left>402</left>
 						<colordiffuse>grey2</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
-						<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+						<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
 					</control>
 				</control>
 				<control type="textbox" id="70">
 					<label>$VAR[VideoPlotVar]</label>
-					<top>622</top>
+					<top>540</top>
 					<left>47</left>
 					<width>476</width>
-					<height>458</height>
-					<font>font14_textbox_plot</font>
+					<height>300</height>
+					<font>font_plot_small</font>
 					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
 					<include>ShowCaseInfoPanelButtonsValues</include>
 					<pagecontrol>62</pagecontrol>
+					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
 				</control>
 				<control type="scrollbar" id="62">
 					<left>538</left>
-					<top>560</top>
+					<top>540</top>
 					<width>14</width>
-					<height>460</height>
+					<height>215</height>
 					<onup>PageUp(70)</onup>
 					<ondown>PageUp(70)</ondown>
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
+					<visible>Container.Content(episodes) | Container.Content(videos)</visible>
+				</control>
+				<control type="scrollbar" id="63">
+					<left>538</left>
+					<top>240</top>
+					<width>14</width>
+					<height>840</height>
+					<onleft>8000</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>![Container.Content(episodes) | Container.Content(videos)]</visible>
+				</control>
+				<control type="panel" id="8000">
+					<left>31</left>
+					<top>240</top>
+					<width>506</width>
+					<height>840</height>
+					<onleft>50</onleft>
+					<onright>63</onright>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>63</pagecontrol>
+					<orientation>vertical</orientation>
+					<scrolltime tween="quadratic" easing="out">200</scrolltime>
+					<visible>![Container.Content(episodes) | Container.Content(videos)]</visible>
+					<animation effect="fade" start="100" end="0" time="150" condition="Container(8000).IsUpdating">Conditional</animation>
+					<itemlayout height="60" width="506">
+						<control type="image">
+							<width>506</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="label">
+							<width>506</width>
+							<height>60</height>
+							<font>font14</font>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<textoffsetx>15</textoffsetx>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<width>506</width>
+							<height>60</height>
+							<font>font14</font>
+							<align>right</align>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<textoffsetx>15</textoffsetx>
+							<label>$INFO[ListItem.Year]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="60" width="506">
+						<control type="image">
+							<width>506</width>
+							<height>60</height>
+							<texture border="5">listselect_fo.png</texture>
+						</control>
+						<control type="label">
+							<width>506</width>
+							<height>60</height>
+							<font>font14</font>
+							<selectedcolor>selected</selectedcolor>
+							<textoffsetx>15</textoffsetx>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<width>506</width>
+							<height>60</height>
+							<font>font14</font>
+							<align>right</align>
+							<selectedcolor>selected</selectedcolor>
+							<textoffsetx>15</textoffsetx>
+							<label>$INFO[ListItem.Year]</label>
+						</control>
+					</focusedlayout>
+					<content target="videos" sortby="$VAR[ListSortByVar]" sortorder="ascending">$VAR[ListContentVar]</content>
+				</control>
+				<control type="group">
+					<visible>Container(8000).IsUpdating</visible>
+					<visible>![Container.Content(episodes) | Container.Content(videos)]</visible>
+					<include>SettingsFadeAnimation</include>
+					<left>236</left>
+					<top>552</top>
+					<control type="image">
+						<description>Busy animation</description>
+						<width>96</width>
+						<height>96</height>
+						<texture>android/spinner_48_inner_holo.png</texture>
+						<aspectratio>keep</aspectratio>
+						<animation effect="rotate" start="0" end="360" center="auto" time="2000" loop="true" condition="true">conditional</animation>
+					</control>
+					<control type="image">
+						<description>Busy animation</description>
+						<width>96</width>
+						<height>96</height>
+						<texture>android/spinner_48_outer_holo.png</texture>
+						<aspectratio>keep</aspectratio>
+						<animation effect="rotate" start="360" end="0" center="auto" time="2000" loop="true" condition="true">conditional</animation>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -1236,30 +1314,23 @@
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
-				<left>100</left>
-				<top>25</top>
+				<left>250</left>
+				<top>-20</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
-					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>790</height>
+					<top>250</top>
+					<width>1004</width>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50"> <!-- Music : List -->
-					<left>0</left>
-					<top>180</top>
-					<width>1140</width>
-					<height>730</height>
+				<control type="panel" id="50">
+					<top>285</top>
+					<width>940</width>
+					<height>610</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1268,44 +1339,40 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="81" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<itemlayout height="101" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>!Container.Content(songs) + SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!Container.Content(songs) + String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!Container.Content(songs) + !SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
-							<font>font13</font>
+							<left>5</left>
+							<top>8</top>
+							<width>115</width>
+							<height>105</height>
+							<font>font45caps_title</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
-							<aligny>center</aligny>
 							<label>[B]$INFO[ListItem.Tracknumber][/B]</label>
 							<visible>Container.Content(songs)</visible>
 						</control>
@@ -1313,49 +1380,42 @@
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
-							<top>10</top>
-							<font>font13</font>
+							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
-							<label>$VAR[MusicListLabel3Var]</label> <!-- Album Title -->
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Artist)">Conditional</animation>
+							<label>$VAR[MusicListLabel3Var]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Artist)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>40</top>
 							<width>810</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font13</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>bottom</aligny>
 							<label>$INFO[ListItem.Artist]</label>
 						</control>
 						<control type="label">
-							<top>10</top>
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>70</height>
-							<font>font13</font>
+							<font>font25</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>top</aligny>
 							<label fallback="• • • •">$VAR[MusicListLabel4Var]</label>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>8</top>
+							<top>50</top>
 							<width>180</width>
-							<height>101</height>
+							<height>70</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>grey3</colordiffuse>
-							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.Title) + ![ListItem.IsPlaying | ListItem.IsSelected] + StringCompare(ListItem.StarRating,rating0.png)</visible>
+							<texture fallback="flags/rating/0.png">$INFO[ListItem.Rating,rating,.png]</texture>
+							<visible>!ListItem.IsParentFolder + String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
@@ -1364,148 +1424,130 @@
 							<height>70</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>themecolor</colordiffuse>
-							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.Title) + ![ListItem.IsPlaying | ListItem.IsSelected] + !StringCompare(ListItem.StarRating,rating0.png)</visible>
-						</control>
-						<control type="image">
-							<left>950</left>
-							<top>50</top>
-							<width>180</width>
-							<height>70</height>
-							<aspectratio>keep</aspectratio>
-							<colordiffuse>selected</colordiffuse>
-							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.Title) + [ListItem.IsPlaying | ListItem.IsSelected]</visible>
+							<texture>$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
+							<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout height="81" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<focusedlayout height="101" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!Container.Content(songs) + SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!Container.Content(songs) + String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>7</top>
+							<width>90</width>
+							<height>90</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!Container.Content(songs) + !SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
-							<font>font13</font>
+							<left>5</left>
+							<top>8</top>
+							<width>115</width>
+							<height>105</height>
+							<font>font45caps_title</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
-							<aligny>center</aligny>
 							<label>[B]$INFO[ListItem.Tracknumber][/B]</label>
 							<visible>Container.Content(songs)</visible>
 						</control>
 						<control type="label">
-							<top>10</top>
 							<left>135</left>
 							<width>985</width>
 							<height>70</height>
-							<font>font13</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>top</aligny>
 							<label>$VAR[MusicListLabel3Var]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Artist)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.Artist)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>40</top>
 							<width>810</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font13</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>bottom</aligny>
 							<label>$INFO[ListItem.Artist]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
-							<top>10</top>
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>70</height>
-							<font>font13</font>
+							<font>font25</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>top</aligny>
 							<label fallback="• • • •">$VAR[MusicListLabel4Var]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
-							<top>8</top>
+							<top>50</top>
 							<width>180</width>
-							<height>101</height>
+							<height>70</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>$VAR[StarRatingDiffuseVar]</colordiffuse>
-							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<texture fallback="rating0.png">$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
+							<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.UserRating)</visible>
+						</control>
+						<control type="image">
+							<left>950</left>
+							<top>50</top>
+							<width>180</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>$VAR[StarRatingDiffuseVar]</colordiffuse>
+							<texture fallback="rating0.png">$INFO[ListItem.Rating,rating,.png]</texture>
+							<visible>!ListItem.IsParentFolder + String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</focusedlayout>
-					<itemlayout height="81" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
-							<top>81</top>
-							<width>1140</width>
-							<height>81</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -1514,70 +1556,61 @@
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="81" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
-							<top>81</top>
-							<width>1140</width>
-							<height>81</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -1586,184 +1619,156 @@
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>50</top>
 							<width>905</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="81" width="1140" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
+					<itemlayout height="101" width="940" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
 						<control type="image">
-							<top>81</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>0</top>
-							<width>71</width>
-							<height>71</height>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>0</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>1005</width>
-							<height>81</height>
+							<height>101</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label> <!-- Title Label -->
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
 							<width>1005</width>
-							<height>81</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="81" width="1140" condition="![Container.Content(albums) | Container.Content(songs) |  Container.Content(addons)]">
+					<focusedlayout height="101" width="940" condition="![Container.Content(albums) | Container.Content(songs) | Container.Content(addons)]">
 						<control type="image">
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>-5</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>0</top>
-							<width>71</width>
-							<height>71</height>
+							<width>101</width>
+							<height>101</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>0</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>1005</width>
-							<height>81</height>
+							<height>101</height>
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>60</left>
 							<width>1005</width>
-							<height>81</height>
+							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>180</top>
+					<left>940</left>
+					<top>280</top>
 					<width>14</width>
-					<height>710</height>
+					<height>610</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>9002</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 			</control>
 			<control type="group">
 				<left>1296</left>
-				<top>155</top>
+				<top>15</top>
 				<visible>!Container.Content(genres)</visible>
 				<control type="image">
 					<width>570</width>
 					<height>835</height>
-					<aspectratio aligny="middle">keep</aspectratio>
+					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
-					<top>640</top>
+					<top>795</top>
 					<width>570</width>
 					<height>835</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -1802,30 +1807,23 @@
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
-				<left>100</left>
-				<top>38</top>
+				<left>200</left>
+				<top>-40</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
-					<width>1204</width>
-					<height>750</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>750</height>
+					<top>250</top>
+					<width>1004</width>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50"> <!-- Addon : List -->
-					<left>0</left>
-					<top>180</top>
-					<width>1140</width>
-					<height>660</height>
+				<control type="panel" id="50">
+					<top>280</top>
+					<width>940</width>
+					<height>610</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -1834,160 +1832,139 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="81" width="1140">
+					<itemlayout height="101" width="940">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<width>985</width>
-							<height>81</height>
-							<font>font14</font>
-							<textcolor>grey2</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>middle</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>25</top>
 							<width>985</width>
 							<height>70</height>
-							<font>font12</font>
+							<font>font25</font>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>40</top>
+							<width>985</width>
+							<height>60</height>
+							<font>font20</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>      $INFO[ListItem.Property(Addon.Summary)]</label>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<top>0</top>
-							<width>1060</width>
-							<height>81</height>
-							<font>font14</font>
+							<width>860</width>
+							<height>101</height>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="81" width="1140">
+					<focusedlayout height="101" width="940">
 						<control type="image">
 							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
-							<height>81</height>
+							<width>940</width>
+							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
-							<left>15</left>
-							<top>5</top>
-							<width>71</width>
-							<height>71</height>
+							<left>20</left>
+							<top>11</top>
+							<width>80</width>
+							<height>80</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<width>985</width>
-							<height>81</height>
-							<font>font14</font>
-							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>middle</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>135</left>
-							<top>25</top>
 							<width>985</width>
 							<height>70</height>
-							<font>font12</font>
+							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>      $INFO[ListItem.Property(Addon.Summary)]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>135</left>
+							<top>40</top>
+							<width>985</width>
+							<height>60</height>
+							<font>font20</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<top>0</top>
-							<width>1060</width>
-							<height>81</height>
-							<font>font14</font>
+							<width>860</width>
+							<height>101</height>
+							<font>font20</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>180</top>
+					<left>940</left>
+					<top>285</top>
 					<width>14</width>
-					<height>680</height>
+					<height>600</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>9002</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
@@ -2004,15 +1981,6 @@
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
-				<control type="image">
-					<top>795</top>
-					<width>570</width>
-					<height>835</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
-					<bordersize>20</bordersize>
-				</control>
 			</control>
 		</control>
 	</include>
@@ -2021,30 +1989,23 @@
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
 				<left>100</left>
 				<top>-40</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>210</top>
-					<width>1204</width>
-					<height>780</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
-					<left>0</left>
+				<control type="panel" id="50">
 					<top>240</top>
-					<width>1140</width>
-					<height>720</height>
+					<width>940</width>
+					<height>840</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -2053,268 +2014,227 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="101" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
-							<top>101</top>
-							<width>1140</width>
-							<height>101</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>985</width>
 							<height>70</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>50</top>
 							<width>985</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<top>0</top>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="101" width="940" condition="Container.Content(addons)">
 						<control type="image">
-							<top>101</top>
-							<width>1140</width>
-							<height>101</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>985</width>
 							<height>70</height>
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>135</left>
 							<top>50</top>
 							<width>985</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$INFO[ListItem.AddonSummary]</label>
 						</control>
 						<control type="label">
 							<left>60</left>
-							<top>0</top>
-							<width>1060</width>
+							<width>860</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="101" width="1140" condition="!Container.Content(addons)">
+					<itemlayout height="101" width="940" condition="!Container.Content(addons)">
 						<control type="image">
-							<top>0</top>
-							<width>1140</width>
-							<height>101</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>1005</width>
 							<height>101</height>
 							<font>font25</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>115</left>
-							<top>0</top>
 							<width>1005</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="101" width="1140" condition="!Container.Content(addons)">
+					<focusedlayout height="101" width="940" condition="!Container.Content(addons)">
 						<control type="image">
-							<top>101</top>
-							<width>1140</width>
-							<height>101</height>
+							<top>60</top>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>101</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>SubString(ListItem.Icon,Default,left)</visible>
+							<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="image">
 							<left>15</left>
-							<top>15</top>
-							<width>71</width>
-							<height>71</height>
+							<top>8</top>
+							<width>105</width>
+							<height>105</height>
 							<aspectratio>keep</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<visible>!SubString(ListItem.Icon,Default,left)</visible>
+							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
 							<width>1005</width>
 							<height>101</height>
 							<font>font25</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>115</left>
-							<top>0</top>
 							<width>1005</width>
 							<height>101</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
+					<left>940</left>
 					<top>240</top>
 					<width>14</width>
 					<height>715</height>
@@ -2322,9 +2242,9 @@
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>9002</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
@@ -2358,6 +2278,8 @@
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
 				<left>100</left>
 				<top>-30</top>
@@ -2377,10 +2299,9 @@
 					<height>780</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
-					<left>0</left>
+				<control type="panel" id="50">
 					<top>230</top>
-					<width>1140</width>
+					<width>940</width>
 					<height>720</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
@@ -2390,10 +2311,10 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="60" width="1140" condition="!Container.Content(addons)">
+					<itemlayout height="60" width="940" condition="!Container.Content(addons)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -2416,11 +2337,11 @@
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
 							<colordiffuse>grey2</colordiffuse>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
@@ -2430,7 +2351,7 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="image">
-							<left>1076</left>
+							<left>876</left>
 							<top>0</top>
 							<width>60</width>
 							<height>60</height>
@@ -2439,7 +2360,7 @@
 						</control>
 						<control type="group">
 							<description>Unwatched episodes</description>
-							<left>1076</left>
+							<left>876</left>
 							<top>0</top>
 							<visible>Container.Content(seasons) | Container.Content(tvshows)</visible>
 							<control type="image">
@@ -2448,7 +2369,7 @@
 								<width>60</width>
 								<height>60</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>32</left>
@@ -2457,27 +2378,26 @@
 								<height>60</height>
 								<font>font12_title</font>
 								<align>center</align>
-								<aligny>center</aligny>
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textcolor>grey3</textcolor>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="60" width="1140" condition="!Container.Content(addons)">
+					<focusedlayout height="60" width="940" condition="!Container.Content(addons)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -2486,10 +2406,7 @@
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="image">
 							<left>960</left>
@@ -2498,60 +2415,52 @@
 							<height>28</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[UnFocusHDIndicator]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
-							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+							<visible>String.IsEqual(ListItem.Label2,ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<left>5</left>
-							<width>1060</width>
+							<width>860</width>
 							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="image">
-							<left>1076</left>
-							<top>0</top>
-							<width>60</width>
-							<height>60</height>
+							<left>876</left>
+							<width>64</width>
+							<height>64</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="overlays/list/">$VAR[ListItem.Overlay]</texture>
 						</control>
 						<control type="group">
 							<description>Unwatched episodes</description>
-							<left>1076</left>
-							<top>0</top>
+							<left>876</left>
 							<visible>Container.Content(seasons) | Container.Content(tvshows)</visible>
 							<control type="image">
-								<left>0</left>
 								<top>-2</top>
-								<width>60</width>
-								<height>60</height>
+								<width>64</width>
+								<height>64</height>
 								<texture>overlays/list/OverlayUnWatched.png</texture>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + String.IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
 								<left>32</left>
-								<top>0</top>
 								<width>100</width>
-								<height>60</height>
+								<height>62</height>
 								<font>font12_title</font>
 								<align>center</align>
-								<aligny>center</aligny>
 								<label>$VAR[ListOverlayEpisodesVar]</label>
 								<textoffsetx>18</textoffsetx>
-								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+								<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout height="60" width="1140" condition="Container.Content(addons)">
+					<itemlayout height="60" width="940" condition="Container.Content(addons)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -2562,8 +2471,6 @@
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -2574,23 +2481,22 @@
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="60" width="1140" condition="Container.Content(addons)">
+					<focusedlayout height="60" width="940" condition="Container.Content(addons)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -2599,10 +2505,7 @@
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -2612,35 +2515,33 @@
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>230</top>
+					<left>940</left>
+					<top>240</top>
 					<width>14</width>
-					<height>720</height>
+					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 			</control>
 			<control type="group">
 				<left>1296</left>
-				<top>170</top>
+				<top>155</top>
 				<control type="image">
 					<width>570</width>
-					<height>785</height>
+					<height>835</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture background="true">$VAR[PosterThumb]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
@@ -2648,9 +2549,9 @@
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
-					<top>755</top>
+					<top>795</top>
 					<width>570</width>
-					<height>785</height>
+					<height>835</height>
 					<aspectratio aligny="top">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
@@ -2664,29 +2565,22 @@
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
 				<left>100</left>
 				<top>-40</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>904</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
-					<left>0</left>
-					<top>180</top>
-					<width>1140</width>
+				<control type="panel" id="50">
+					<top>240</top>
+					<width>940</width>
 					<height>840</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
@@ -2696,11 +2590,11 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="60" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<itemlayout height="60" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
@@ -2711,44 +2605,41 @@
 							<aspectratio align="right">keep</aspectratio>
 							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
 							<colordiffuse>grey3</colordiffuse>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>200</left>
 							<width>900</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>210</left>
 							<width>900</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="60" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
+					<focusedlayout height="60" width="940" condition="Container.Content(albums) | Container.Content(songs)">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="image">
 							<left>5</left>
@@ -2757,106 +2648,93 @@
 							<height>50</height>
 							<aspectratio align="right">keep</aspectratio>
 							<texture fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
-							<visible>!IsEmpty(ListItem.Title)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<left>200</left>
 							<width>900</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>210</left>
 							<width>900</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="60" width="1140" condition="![Container.Content(albums) | Container.Content(songs)]">
+					<itemlayout height="60" width="940" condition="![Container.Content(albums) | Container.Content(songs)]">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="60" width="1140" condition="![Container.Content(albums) | Container.Content(songs)]">
+					<focusedlayout height="60" width="940" condition="![Container.Content(albums) | Container.Content(songs)]">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<width>1140</width>
-							<height>101</height>
+							<width>940</width>
+							<height>60</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>30</left>
 							<width>1080</width>
-							<height>101</height>
+							<height>60</height>
 							<font>font15</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>180</top>
+					<left>940</left>
+					<top>240</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
@@ -2864,9 +2742,9 @@
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
@@ -2900,30 +2778,23 @@
 		<control type="group">
 			<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
+			<centerleft>ListCenterleft</centerleft>
+			<width>100%</width>
 			<control type="group">
 				<left>100</left>
-				<top>30</top>
+				<top>-40</top>
 				<control type="image">
 					<description>background image</description>
 					<left>-32</left>
-					<top>1020</top>
+					<top>250</top>
 					<width>1204</width>
-					<height>904</height>
-					<texture border="40">panel_reflect.png</texture>
-				</control>
-				<control type="image">
-					<description>background image</description>
-					<left>-32</left>
-					<top>148</top>
-					<width>1204</width>
-					<height>770</height>
+					<height>670</height>
 					<texture border="40">listpanel_back.png</texture>
 				</control>
-				<control type="list" id="50">
-					<left>0</left>
-					<top>180</top>
-					<width>1140</width>
-					<height>705</height>
+				<control type="panel" id="50">
+					<top>240</top>
+					<width>940</width>
+					<height>840</height>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
 					<onright>60</onright>
@@ -2932,10 +2803,10 @@
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="60" width="1140">
+					<itemlayout height="60" width="940">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
@@ -2946,8 +2817,6 @@
 							<font>font15</font>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -2958,23 +2827,22 @@
 							<align>right</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="60" width="1140">
+					<focusedlayout height="60" width="940">
 						<control type="image">
 							<top>2</top>
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<width>1140</width>
+							<width>940</width>
 							<height>60</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(50)</visible>
-							<include>VisibleFadeEffect</include>
+							<include>VisibleFadeAnimation</include>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -2983,10 +2851,7 @@
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -2996,36 +2861,34 @@
 							<align>right</align>
 							<textcolor>white</textcolor>
 							<selectedcolor>selected</selectedcolor>
-							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1140</left>
-					<top>180</top>
+					<left>940</left>
+					<top>240</top>
 					<width>14</width>
-					<height>705</height>
+					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
 					<onleft>50</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground>-</texturesliderbackground>
-					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar3.png</texturesliderbar>
-					<texturesliderbarfocus border="1">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 			</control>
 			<control type="group">
 				<left>1296</left>
-				<top>180</top>
+				<top>155</top>
 				<control type="image">
 					<width>570</width>
-					<height>760</height>
-					<aspectratio aligny="middle">keep</aspectratio>
+					<height>835</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture background="true">$VAR[PosterThumb]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>

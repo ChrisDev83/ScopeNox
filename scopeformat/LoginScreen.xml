@@ -27,7 +27,6 @@
 				<font>font15</font>
 				<textcolor>grey2</textcolor>
 				<align>center</align>
-				<aligny>center</aligny>
 				<label>$LOCALIZE[31421]</label>
 			</control>
 			<control type="list" id="52">
@@ -73,22 +72,18 @@
 				</itemlayout>
 				<focusedlayout height="150" width="870">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
 						<width>1035</width>
 						<height>142</height>
 						<texture border="5">button-nofocus.png</texture>
 						<visible>!Control.HasFocus(52)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
 						<width>1035</width>
 						<height>142</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(52)</visible>
-						<include>VisibleFadeEffect</include>
+						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="image">
 						<left>15</left>
@@ -129,11 +124,11 @@
 			<control type="button" id="20">
 				<description>Power push button</description>
 				<left>917</left>
-				<top>940</top>
+				<top>950</top>
 				<width>86</width>
 				<height>86</height>
-				<label>-</label>
-				<font>-</font>
+				<label />
+				<font />
 				<onclick>ActivateWindow(ShutdownMenu)</onclick>
 				<texturefocus>power_fo.png</texturefocus>
 				<texturenofocus>power_nf.png</texturenofocus>

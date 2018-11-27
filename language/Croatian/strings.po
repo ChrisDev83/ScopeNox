@@ -408,6 +408,10 @@ msgctxt "#31099"
 msgid "Musicvideo playlist statistics"
 msgstr "Stanje liste izvođenja video spotova"
 
+msgctxt "#31100"
+msgid "View:"
+msgstr "Prikaz:"
+
 msgctxt "#31102"
 msgid "Background"
 msgstr "Pozadina"
@@ -683,14 +687,6 @@ msgstr "Ova opcija određuje koliko će stavki biti vidljivo u glavnom izborniku
 msgctxt "#31930"
 msgid "Choose a widget to display on the Home screen to have easy access to content from the library."
 msgstr "Odaberite widget koji će biti na početnom zaslonu kako bi imali lakši pristup sadržaju zbirke."
-
-msgctxt "#31946"
-msgid "The images selected here will show in the corresponding section if no fanart is available."
-msgstr "Slike odabrane ovdje prikazivat će se u odgovarajućem odjeljku ako nema odgovarajućeg fanarta."
-
-msgctxt "#31947"
-msgid "Setup background images"
-msgstr "Postavite slike pozadine"
 
 msgctxt "#31950"
 msgid "WEATHER"

@@ -24,6 +24,10 @@ msgctxt "#31001"
 msgid "Written by"
 msgstr "Écrit par"
 
+msgctxt "#31002"
+msgid "Blurred album thumb"
+msgstr "Imagette d'album floue"
+
 msgctxt "#31003"
 msgid "Power Options"
 msgstr "Options d'alimentation"
@@ -70,7 +74,7 @@ msgstr "Statistiques"
 
 msgctxt "#31014"
 msgid "Extras"
-msgstr "Bonus"
+msgstr "Suppléments"
 
 msgctxt "#31015"
 msgid "Set path to video genre fanart folder"
@@ -248,6 +252,10 @@ msgctxt "#31058"
 msgid "PVR information"
 msgstr "Informations du numériscope"
 
+msgctxt "#31059"
+msgid "Install Artist Slideshow add-on to enable this feature"
+msgstr "Installer l'addiciel du diaporama de l'artiste pour activer cette fonction"
+
 msgctxt "#31060"
 msgid "This file is stacked, select the part you want to play from."
 msgstr "Ce fichier est empilé. Choisir un point de départ de la lecture."
@@ -326,7 +334,7 @@ msgstr "Panneau triple"
 
 msgctxt "#31079"
 msgid "Shift"
-msgstr "Maj"
+msgstr "Déplacer"
 
 msgctxt "#31080"
 msgid "Manage submenu"
@@ -342,7 +350,7 @@ msgstr "Détacher le fil RSS du menu principal"
 
 msgctxt "#31083"
 msgid "Enable Next Aired information in the videolibrary"
-msgstr "Activer l'information Prochain diffusion dans la vidéothèque"
+msgstr "Activer l'information Prochaine diffusion dans la vidéothèque"
 
 msgctxt "#31084"
 msgid "Conditional weather"
@@ -382,7 +390,7 @@ msgstr "Fanart en plein écran"
 
 msgctxt "#31093"
 msgid "LowList toggle"
-msgstr "Activation/désactivation de la liste inférieure"
+msgstr "Activation/désactivation de la liste basse"
 
 msgctxt "#31094"
 msgid "List view layout"
@@ -407,6 +415,14 @@ msgstr "Statistiques des listes de lecture des émissions télé"
 msgctxt "#31099"
 msgid "Musicvideo playlist statistics"
 msgstr "Statistiques des listes de lecture des vidéos musicales"
+
+msgctxt "#31100"
+msgid "View:"
+msgstr "Vue : "
+
+msgctxt "#31101"
+msgid "Choose view"
+msgstr "Choisir la vue"
 
 msgctxt "#31102"
 msgid "Background"
@@ -439,6 +455,62 @@ msgstr "Activer le flux d'informations sur l'artiste (si disponible)"
 msgctxt "#31109"
 msgid "Unwatched episode count"
 msgstr "Nombre d'épisodes non regardés"
+
+msgctxt "#31110"
+msgid "Install Toolbox script to enable this feature"
+msgstr "Installer le script de la boîte à outils pour activer cette fonction"
+
+msgctxt "#31111"
+msgid "Similar movies"
+msgstr "Films semblables"
+
+msgctxt "#31112"
+msgid "Movies directed by"
+msgstr "Films réalisés par"
+
+msgctxt "#31113"
+msgid "Movies written by"
+msgstr "Films écrits par"
+
+msgctxt "#31114"
+msgid "More movies from"
+msgstr "D'autres films de"
+
+msgctxt "#31115"
+msgid "Similar TV shows"
+msgstr "Émissions télé semblables"
+
+msgctxt "#31116"
+msgid "cycle fanart"
+msgstr "alterner le fanart"
+
+msgctxt "#31117"
+msgid "Fallback"
+msgstr "Repli"
+
+msgctxt "#31118"
+msgid "Download extrafanart"
+msgstr "Télécharger des fanarts supplémentaires"
+
+msgctxt "#31119"
+msgid "Show the movies from this director in your library or view online information on this director on TMDb?"
+msgstr "Afficher les films de ce directeur dans votre vidéothèque ou visualiser en ligne l'information de ce directeur sur TMDb"
+
+msgctxt "#31120"
+msgid "TMDb"
+msgstr "TMDb"
+
+msgctxt "#31121"
+msgid "Disable autocomplete"
+msgstr "Désactiver la saisie semi-automatique"
+
+msgctxt "#31122"
+msgid "Disables the autocomplete feature of the virtual keyboard"
+msgstr "Désactiver la saisie semi-automatique du clavier virtuel"
+
+msgctxt "#31123"
+msgid "Album review"
+msgstr "Critique de l'album"
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"
@@ -506,19 +578,19 @@ msgstr "[B]CONFIGURER LES PARAMÈTRES D'APPARENCE[/B][CR][CR]Changer l'habillage
 
 msgctxt "#31401"
 msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts"
-msgstr "[B]DÉFINIR LES PARAMÈTRES DES VIDÉOS[/B][CR][CR]Gérez votre vidéothèque · Définissez les paramètres de lecture des vidéos · Changez les options de listage des vidéos[CR]Définissez les polices des sous-titres"
+msgstr "[B]DÉFINIR LES PARAMÈTRES DES VIDÉOS[/B][CR][CR]Gérer la vidéothèque · Définir les paramètres de lecture des vidéos · Changer les options de listage des vidéos[CR]Définir les polices des sous-titres"
 
 msgctxt "#31402"
 msgid "[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR]Manage your music library · Set music playback options · Change music listing options[CR]Setup song submission · Set karaoke options"
-msgstr "[B]DÉFINIR LES PARAMÈTRES DE LA MUSIQUE[/B][CR][CR]Gérez votre audiothèque · Définissez les paramètres de lecture de la musique · Changez les options de listage de la musique[CR]Réglez l'envoi des morceaux - Définissez les options de karaoké"
+msgstr "[B]DÉFINIR LES PARAMÈTRES DE LA MUSIQUE[/B][CR][CR]Gérer l'audiothèque · Définir les paramètres de lecture de la musique · Changer les options de listage de la musique[CR]Régler l'envoi des morceaux - Définir les options de karaoké"
 
 msgctxt "#31403"
 msgid "[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR]Set picture listing options · Configure slideshows"
-msgstr "[B]CONFIGURER LES PARAMÈTRES D'IMAGES[/B][CR][CR]Définir les options de listage d'images · Configurer les diaporamas"
+msgstr "[B]CONFIGURER LES PARAMÈTRES DES IMAGES[/B][CR][CR]Définir les options de listage d'images · Configurer les diaporamas"
 
 msgctxt "#31404"
 msgid "[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR]Set three cities to collect weather information"
-msgstr "[B]CONFIGURER LES PARAMÈTRES MÉTÉO[/B][CR][CR]Définir trois villes pour recueillir des informations météo"
+msgstr "[B]CONFIGURER LES PARAMÈTRES DE LA MÉTÉO[/B][CR][CR]Définir trois villes pour recueillir des informations météo"
 
 msgctxt "#31405"
 msgid "[B]MONITOR YOUR SYSTEM[/B][CR][CR]Check out your hardware · Monitor CPU usage[CR]Check Kodi revision number"
@@ -670,7 +742,7 @@ msgstr "Ceci active les arrière-plans de genre personnalisés lors du parcours 
 
 msgctxt "#31925"
 msgid "Pick one of the preset backgrounds or set your own images as the menu items background."
-msgstr "Choisissez un des arrière-plans préréglés ou définissez vos propres images comme arrière-plan des éléments de menu."
+msgstr "Choisissez un des arrière-plans préréglés ou définissez vos propres images comme arrière-plan des éléments du menu."
 
 msgctxt "#31926"
 msgid "Select add-ons, playlists or favourites. Choose 'Custom' for any of Kodi's built-in functions. (http://kodi.wiki/?title=List_of_Built_In_Functions)"
@@ -697,16 +769,12 @@ msgid "Video plot preference"
 msgstr "Préférences de l'intrigue de la vidéo"
 
 msgctxt "#31932"
-msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available. This setting can also be toggled by pressing \"Select\" when the plot is focused in the video information dialog."
-msgstr "Afficher un résumé de l'intrigue dans les vues de la vidéothèque et l'intrigue complète dans la fenêtre d'information de la vidéo ou vice versa. Si aucun résumé n'est proposé, l'intrigue complète sera affichée. Ce paramètres peut aussi être défini en pesant sur « Choisir » quand l'intrigue apparaît dans la fenêtre d'information de la vidéo."
+msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available."
+msgstr "Afficher un résumé de l'intrigue dans les vues de la vidéothèque et l'intrigue complète dans la fenêtre d'information de la vidéo ou vice versa. Si aucun résumé n'est disponible, l'intrigue complète sera affichée."
 
 msgctxt "#31933"
 msgid "Select an item to display on the left top of the main menu"
 msgstr "Choisir un élément à afficher en haut à gauche du menu principal"
-
-msgctxt "#31934"
-msgid "Check the TvTunes addon settings for additional options"
-msgstr "Vérifier les paramètres de l'addiciel TvTunes pour des options supplémentaires"
 
 msgctxt "#31935"
 msgid "Switch places with another menu item. Opens a dialog with a list of menu items to choose from."
@@ -746,15 +814,7 @@ msgstr "Choisir quelle surcouche afficher sur les imagettes dans les vues en ic�
 
 msgctxt "#31945"
 msgid "This toggles the layout of the List view. Default is a 7 item layout with extended info, \"Slim List\" is a 14 item, more basic layout"
-msgstr "Ceci définit l'agencement en liste. Par défaut la disposition est de 7 éléments avec des infos supplémentaires, la liste réduite étant un agencement de base avec 14 éléments"
-
-msgctxt "#31946"
-msgid "The images selected here will show in the corresponding section if no fanart is available."
-msgstr "Les images sélectionnées ici s'afficheront dans la section correspondante si aucun fanart n'est proposé."
-
-msgctxt "#31947"
-msgid "Setup background images"
-msgstr "Configuration des images d'arrière-plan"
+msgstr "Ceci définit l'agencement en liste. Par défaut la mise en page est de 7 éléments avec des infos supplémentaires, la liste réduite étant un agencement de base avec 14 éléments"
 
 msgctxt "#31950"
 msgid "WEATHER"
@@ -799,3 +859,11 @@ msgstr "SYSTÈME"
 msgctxt "#31960"
 msgid "CONCERTS"
 msgstr "CONCERTS"
+
+msgctxt "#31961"
+msgid "Hide ratings in list views"
+msgstr "Cacher les évaluations dans les vues en liste."
+
+msgctxt "#31962"
+msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
+msgstr "Ceci active/désactive la visibilité des évaluations dans les vues en liste, liste basse et panneau triple, sauf si triée par évaluation."

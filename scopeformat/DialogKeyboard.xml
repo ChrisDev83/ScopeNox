@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol>300</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<left>290</left>
-		<top>269</top>
-	</coordinates>
-	<include>dialogeffect</include>
-	<zorder>2</zorder>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="group">
 			<animation effect="slide" start="0,0" end="-100,0" time="320" tween="cubic" easing="inout" condition="Window.IsActive(numericinput)">Conditional</animation>
+			<width>1340</width>
+			<height>542</height>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
 			<control type="image" id="0">
-				<top>0</top>
 				<width>1340</width>
 				<height>542</height>
 				<texture border="40,100,40,100">dialog_back.png</texture>
@@ -35,10 +32,10 @@
 				<align>center</align>
 				<font>font15</font>
 				<textcolor>grey2</textcolor>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
+				<texturefocus />
+				<texturenofocus />
 			</control>
-			<control type="group">
+			<control type="group" id="4000">
 				<left>30</left>
 				<top>70</top>
 				<width>1720</width>
@@ -49,79 +46,92 @@
 					<control type="button" id="309">
 						<description>Layout</description>
 						<label>1006</label>
-						<onup>300</onup>
+						<onup condition="!Control.IsVisible(5000)">300</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>304</ondown>
 						<include>Objects_DoubleKeyOff</include>
 					</control>
 					<control type="button" id="100">
 						<left>126</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>120</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="101">
 						<left>189</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>121</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="102">
 						<left>252</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>122</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="103">
 						<left>315</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>123</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="104">
 						<left>378</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>124</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="105">
 						<left>441</left>
-						<onup>32</onup>
+						<onup condition="!Control.IsVisible(5000)">32</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>125</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="106">
 						<left>504</left>
-						<onup>305</onup>
+						<onup condition="!Control.IsVisible(5000)">305</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>126</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="107">
 						<left>504</left>
-						<onup>305</onup>
+						<onup condition="!Control.IsVisible(5000)">305</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>127</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="108">
 						<left>504</left>
-						<onup>306</onup>
+						<onup condition="!Control.IsVisible(5000)">306</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>128</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="109">
 						<left>504</left>
-						<onup>8</onup>
+						<onup condition="!Control.IsVisible(5000)">8</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>129</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="110">
 						<left>504</left>
-						<onup>8</onup>
+						<onup condition="!Control.IsVisible(5000)">8</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>130</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
 					<control type="button" id="111">
 						<left>504</left>
-						<onup>8</onup>
+						<onup condition="!Control.IsVisible(5000)">8</onup>
+						<onup condition="Control.IsVisible(5000)">5000</onup>
 						<ondown>131</ondown>
 						<include>Objects_SingleKeyOff</include>
 					</control>
@@ -397,7 +407,8 @@
 					<control type="button" id="300">
 						<label>$LOCALIZE[20177]</label>
 						<onup>302</onup>
-						<ondown>304</ondown>
+						<ondown condition="!Control.IsVisible(5000)">107</ondown>
+						<ondown condition="Control.IsVisible(5000)">5000</ondown>
 						<include>Objects_DoubleKeyOff</include>
 					</control>
 					<control type="button" id="32">
@@ -408,14 +419,16 @@
 						<texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
 						<label>$LOCALIZE[20182]</label>
 						<onup>160</onup>
-						<ondown>100</ondown>
+						<ondown condition="!Control.IsVisible(5000)">100</ondown>
+						<ondown condition="Control.IsVisible(5000)">5000</ondown>
 						<include>Objects_KeyOffVars</include>
 					</control>
 					<control type="button" id="305">
 						<left>504</left>
 						<label>&#x2190;</label>
 						<onup>166</onup>
-						<ondown>106</ondown>
+						<ondown condition="!Control.IsVisible(5000)">106</ondown>
+						<ondown condition="Control.IsVisible(5000)">5000</ondown>
 						<width>120</width>
 						<font>fontArial15</font>
 						<include>Objects_SingleKeyOff</include>
@@ -424,7 +437,8 @@
 						<left>630</left>
 						<label>&#x2192;</label>
 						<onup>167</onup>
-						<ondown>107</ondown>
+						<ondown condition="!Control.IsVisible(5000)">107</ondown>
+						<ondown condition="Control.IsVisible(5000)">5000</ondown>
 						<width>120</width>
 						<font>fontArial15</font>
 						<include>Objects_SingleKeyOff</include>
@@ -438,11 +452,13 @@
 						<texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
 						<label>20181</label>
 						<onup>170</onup>
-						<ondown>110</ondown>
+						<ondown condition="!Control.IsVisible(5000)">110</ondown>
+						<ondown condition="Control.IsVisible(5000)">5000</ondown>
 						<include>Objects_KeyOffVars</include>
 					</control>
 				</control>
 			</control>
+			<include condition="System.HasAddon(plugin.program.autocompletion) + !Skin.HasSetting(Disable.Autocomplete)">ExtendedInfoAutoComplete</include>
 		</control>
 	</controls>
 </window>

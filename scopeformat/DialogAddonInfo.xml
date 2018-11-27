@@ -2,6 +2,9 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
+		<control type="panel" id="50">
+			<include>HiddenList</include>
+		</control>
 		<control type="group">
 			<include>WindowASViewAnimation</include>
 			<left>0</left>
@@ -35,7 +38,7 @@
 						<height>50</height>
 						<label>24020</label>
 						<align>left</align>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
 					<control type="button" id="8">
 						<description>Update Addon button</description>
@@ -43,7 +46,18 @@
 						<height>50</height>
 						<label>24069</label>
 						<align>left</align>
-						<font>font15</font>
+						<font>font20</font>
+					</control>
+					<control type="button" id="200">
+						<description>Screenshot button</description>
+						<width>356</width>
+						<height>68.57</height>
+						<label>$LOCALIZE[1000]</label>
+						<font>font20</font>
+						<onclick>SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>SetFocus(9000)</onclick>
+						<enable>Integer.IsGreater(Container(50).NumItems,0)</enable>
 					</control>
 					<control type="button" id="12">
 						<description>Launch Addon button</description>
@@ -51,7 +65,7 @@
 						<height>50</height>
 						<label>518</label>
 						<align>left</align>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
 					<control type="button" id="6">
 						<description>Install/UnInstall Addon button</description>
@@ -59,31 +73,21 @@
 						<height>50</height>
 						<label>24022</label>
 						<align>left</align>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
 					<control type="button" id="7">
 						<description>Enable/Disable Addon button</description>
 						<width>356</width>
 						<height>50</height>
 						<label>24021</label>
-						<align>left</align>
-						<font>font15</font>
+						<font>font20</font>
 					</control>
-					<control type="button" id="11">
-						<description>Rollback button</description>
+					<control type="radiobutton" id="13">
+						<description>Auto Update Addon button</description>
 						<width>356</width>
 						<height>50</height>
-						<label>24048</label>
-						<align>left</align>
-						<font>font15</font>
-					</control>
-					<control type="button" id="10">
-						<description>Changelog button</description>
-						<width>356</width>
-						<height>50</height>
-						<label>24036</label>
-						<align>left</align>
-						<font>font15</font>
+						<label>21340</label>
+						<font>font20</font>
 					</control>
 				</control>
 			</control>
@@ -92,20 +96,29 @@
 				<control type="group">
 					<left>490</left>
 					<visible>!Window.isVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
-					<include>SettingsFadeEffect</include>
+					<include>SettingsFadeAnimation</include>
 					<control type="grouplist">
 						<left>32</left>
 						<top>85</top>
 						<width>658</width>
 						<itemgap>10</itemgap>
 						<control type="button">
-							<label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.Property(Addon.Creator)]</label>
+							<label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.AddonCreator]</label>
+							<include>SettingsPanelButtonsValues</include>
+						</control>
+						<control type="group">
+						<control type="button">
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[24051][/COLOR][CR]$INFO[ListItem.AddonVersion]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
 						<control type="button">
-							<label>[COLOR labelheader]$LOCALIZE[24051][/COLOR][CR]$INFO[ListItem.Property(Addon.Version)]</label>
+							<left>329</left>
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[22031]:[/COLOR][CR]$INFO[ListItem.AddonSize]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
+					</control>
 					</control>
 					<control type="grouplist">
 						<left>690</left>
@@ -113,10 +126,20 @@
 						<itemgap>10</itemgap>
 						<width>658</width>
 						<usecontrolcoords>true</usecontrolcoords>
+						<control type="group">
+							<height>90</height>
 						<control type="button">
-							<label>[COLOR labelheader]$LOCALIZE[146][/COLOR][CR]$INFO[ListItem.Property(Addon.Type)]</label>
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[12013]:[/COLOR][CR]$INFO[ListItem.AddonInstallDate]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
+						<control type="button">
+							<left>329</left>
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[146][/COLOR][CR]$INFO[ListItem.AddonType]</label>
+							<include>SettingsPanelButtonsValues</include>
+						</control>
+					</control>
 						<control type="button">
 							<label>[COLOR labelheader]$LOCALIZE[560]:[/COLOR][CR]$INFO[ListItem.Property(Addon.ID)]</label>
 							<include>SettingsPanelButtonsValues</include>
@@ -125,36 +148,51 @@
 					<control type="grouplist">
 						<left>47</left>
 						<top>273</top>
+						<height>294</height>
 						<usecontrolcoords>true</usecontrolcoords>
+						<pagecontrol>60</pagecontrol>
 						<control type="textbox" id="400">
 							<description>Description</description>
 							<width>1256</width>
-							<height>294</height>
-							<font>font15_textbox</font>
+							<height>auto</height>
+							<font>font20_textbox</font>
 							<align>justify</align>
 							<textcolor>grey2</textcolor>
-							<label>$INFO[ListItem.Property(Addon.Description),[COLOR labelheader]$LOCALIZE[21821]: [/COLOR][CR]]</label>
-							<pagecontrol>60</pagecontrol>
-							<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+							<label>$INFO[ListItem.AddonDescription,[COLOR labelheader]$LOCALIZE[21821]: [/COLOR][CR]]</label>
 						</control>
 						<control type="image">
 							<top>-40</top>
 							<width>1316</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
-							<animation effect="slide" end="-15" time="0" condition="true">conditional</animation>
+							<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+						</control>
+						<control type="textbox">
+							<description>What's new</description>
+							<top>10</top>
+							<width>1256</width>
+							<height>170</height>
+							<font>font20_textbox</font>
+							<align>justify</align>
+							<textcolor>grey2</textcolor>
+							<label>$INFO[ListItem.AddonNews,[COLOR labelheader]$LOCALIZE[24054]: [/COLOR][CR]]</label>
+							<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+						</control>
+						<control type="image">
+							<top>-40</top>
+							<width>1316</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+							<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 						</control>
 						<control type="textbox">
 							<description>Disclaimer</description>
 							<top>10</top>
 							<width>1256</width>
-							<height>170</height>
-							<font>font15_textbox</font>
+							<height>auto</height>
+							<font>font20_textbox</font>
 							<align>justify</align>
-							<textcolor>grey2</textcolor>
-							<label>$INFO[ListItem.Property(Addon.Disclaimer),[COLOR labelheader]$LOCALIZE[24052]: [/COLOR][CR]]</label>
-							<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
-							<visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
+							<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 						</control>
 					</control>
 					<control type="scrollbar" id="60">
@@ -172,21 +210,13 @@
 						<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					</control>
 				</control>
-				<control type="image">
-					<description>separator image</description>
-					<left>522</left>
-					<top>692</top>
-					<width>1316</width>
-					<height>60</height>
-					<texture border="1">separator2.png</texture>
-				</control>
 			</control>
 			<control type="group">
 				<left>522</left>
 				<top>740</top>
-				<include>SettingsFadeEffect</include>
+				<include>SettingsFadeAnimation</include>
 				<visible>!Window.isVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
-				<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
+				<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
 				<control type="image">
 					<width>120</width>
 					<height>120</height>
@@ -204,7 +234,7 @@
 					<textcolor>labelheader</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<textoffsetx>15</textoffsetx>
-					<font>font15_title</font>
+					<font>font20_title</font>
 					<label>24096</label>
 				</control>
 				<control type="fadelabel">
@@ -214,8 +244,8 @@
 					<height>50</height>
 					<textcolor>grey2</textcolor>
 					<textoffsetx>15</textoffsetx>
-					<font>font15</font>
-					<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+					<font>font20</font>
+					<label>$INFO[ListItem.AddonBroken]</label>
 				</control>
 			</control>
 		</control>

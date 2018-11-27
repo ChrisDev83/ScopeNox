@@ -5,8 +5,9 @@
 		<system>1</system>
 		<left>122</left>
 		<top>254</top>
+		<origin x="443" y="254">String.IsEqual(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
-	<include>dialogeffect</include>
+	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -14,13 +15,6 @@
 			<height>600</height>
 			<texture border="40">dialogs/default/bg.png</texture>
 		</control>
-		<!--<control type="image">
-			<left>30</left>
-			<top>32</top>
-			<width>1614</width>
-			<height>40</height>
-			<texture border="5">dialogs/default/inner.png</texture>
-		</control>-->
 		<control type="label" id="20">
 			<description>header label</description>
 			<left>30</left>
@@ -29,7 +23,6 @@
 			<height>40</height>
 			<textoffsetx>15</textoffsetx>
 			<align>center</align>
-			<aligny>center</aligny>
 			<textcolor>dialogheader</textcolor>
 			<font>font15_title</font>
 		</control>
@@ -46,11 +39,8 @@
 			</control>
 			<control type="grouplist" id="9">
 				<description>button area</description>
-				<left>0</left>
-				<top>0</top>
 				<width>310</width>
 				<height>480</height>
-				<itemgap>0</itemgap>
 				<onleft>9001</onleft>
 				<onright>2</onright>
 				<onup>9</onup>
@@ -71,24 +61,20 @@
 			</control>
 			<control type="grouplist" id="2">
 				<description>control area</description>
-				<left>0</left>
-				<top>0</top>
 				<width>960</width>
 				<height>480</height>
-				<itemgap>0</itemgap>
 				<pagecontrol>30</pagecontrol>
 				<onleft>9</onleft>
 				<onright>30</onright>
 				<onup>2</onup>
-				<ondown>9001</ondown>
+				<ondown>2</ondown>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 			</control>
 			<control type="scrollbar" id="30">
-				<left>962</left>
-				<top>0</top>
-				<width>8</width>
+				<left>960</left>
+				<width>14</width>
 				<height>480</height>
-				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbackground />
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>2</onleft>
@@ -109,14 +95,18 @@
 				<texture border="5">dialogs/default/inner.png</texture>
 			</control>
 			<control type="grouplist" id="9001">
-				<top>0</top>
-				<left>0</left>
 				<width>310</width>
 				<height>480</height>
 				<onleft>2</onleft>
 				<onright>9</onright>
 				<onup>9001</onup>
 				<ondown>9001</ondown>
+				<control type="image" id="2000">
+					<width>310</width>
+					<height>300</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[System.AddonIcon(Window.Property(Addon.ID))]</texture>
+				</control>
 				<control type="button" id="10">
 					<description>OK Button</description>
 					<width>310</width>
@@ -139,7 +129,6 @@
 			<height>60</height>
 			<width>310</width>
 			<align>right</align>
-			<aligny>center</aligny>
 			<font>font14</font>
 			<textoffsetx>20</textoffsetx>
 			<textcolor>grey2</textcolor>
@@ -148,34 +137,24 @@
 			<description>Default Button</description>
 			<width>960</width>
 			<height>60</height>
-			<font>font14</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
 		</control>
 		<control type="radiobutton" id="4">
 			<description>Default RadioButton</description>
 			<width>960</width>
 			<height>60</height>
-			<font>font14</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
 			<textwidth>880</textwidth>
 		</control>
 		<control type="spincontrolex" id="5">
 			<description>Default spincontrolex</description>
 			<width>960</width>
 			<height>60</height>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
-			<font>font14</font>
-			<aligny>center</aligny>
-			<reverse>yes</reverse>
+			<reverse>true</reverse>
 		</control>
 		<control type="label" id="7">
 			<width>960</width>
 			<height>60</height>
 			<font>font14_title</font>
-			<label>-</label>
+			<label />
 			<textcolor>labelheader</textcolor>
 			<textoffsetx>15</textoffsetx>
 		</control>
@@ -189,9 +168,6 @@
 			<description>Default Slider</description>
 			<width>960</width>
 			<height>60</height>
-			<font>font14</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
 		</control>
 	</controls>
 </window>

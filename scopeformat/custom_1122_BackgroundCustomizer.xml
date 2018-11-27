@@ -5,15 +5,15 @@
 		<system>1</system>
 		<left>457</left>
 		<top>240</top>
+		<origin x="777" y="240">String.IsEqual(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
-	<include>dialogeffect</include>
-	<onunload condition="!IsEmpty(Skin.String(ItemToEdit.MultiFanart))">Skin.SetString($INFO[Window(Home).Property(Nox.Temp)],$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
-	<onunload condition="!IsEmpty(Skin.String(ItemToEdit.BGType))">Skin.SetString($INFO[Window(Home).Property(Nox.BGType)],$INFO[Skin.String(ItemToEdit.BGType)])</onunload>
+	<include>DialogOpenCloseAnimation</include>
+	<onunload condition="!String.IsEmpty(Skin.String(ItemToEdit.MultiFanart))">Skin.SetString($INFO[Window(Home).Property(Nox.Temp)],$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
+	<onunload condition="!String.IsEmpty(Skin.String(ItemToEdit.BGType))">Skin.SetString($INFO[Window(Home).Property(Nox.BGType)],$INFO[Skin.String(ItemToEdit.BGType)])</onunload>
 	<onunload>ClearProperty(No.Cases,Home)</onunload>
 	<controls>
 		<control type="image">
 			<left>157</left>
-			<top>0</top>
 			<width>692</width>
 			<height>600</height>
 			<texture border="40">dialogs/default/bg.png</texture>
@@ -34,12 +34,11 @@
 			<label>$LOCALIZE[31027]</label>
 			<align>center</align>
 			<textcolor>dialogheader</textcolor>
-			<font>font15_title</font>
 		</control>
 		<control type="list" id="90100">
 			<left>189</left>
 			<top>88</top>
-			<width>630</width>
+			<width>628</width>
 			<height>480</height>
 			<onup>90100</onup>
 			<ondown>90100</ondown>
@@ -47,48 +46,44 @@
 			<onright>60</onright>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime tween="quadratic" easing="out">200</scrolltime>
-			<itemlayout height="60" width="630">
+			<itemlayout height="60" width="628">
 				<control type="image">
-					<width>630</width>
+					<width>628</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="label">
-					<width>630</width>
+					<width>628</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14</font>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
-			<focusedlayout height="60" width="630">
+			<focusedlayout height="60" width="628">
 				<control type="image">
-					<width>630</width>
+					<width>628</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
-					<include>VisibleFadeEffect</include>
+					<include>VisibleFadeAnimation</include>
 				</control>
 				<control type="image">
 					<width>629</width>
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
 					<visible>Control.HasFocus(90100)</visible>
-					<include>VisibleFadeEffect</include>
+					<include>VisibleFadeAnimation</include>
 				</control>
 				<control type="label">
-					<width>630</width>
+					<width>628</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14</font>
 					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<scroll>true</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(90100)">Conditional</animation>
 				</control>
@@ -154,28 +149,28 @@
 					<onclick>Skin.SetString(ItemToEdit.BGType,4)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.MultiFanart,7)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[31028]: $LOCALIZE[31030]</label>
 					<onclick>Skin.SetString(ItemToEdit.BGType,4)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.MultiFanart,8)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[31028]: $LOCALIZE[20012]</label>
 					<onclick>Skin.SetString(ItemToEdit.BGType,5)</onclick>
 					<onclick>Skin.SetFile(ItemToEdit.MultiFanart,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[31028]: $LOCALIZE[31035]</label>
 					<onclick>Skin.SetString(ItemToEdit.BGType,4)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.MultiFanart,9)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 					<visible>System.HasAddon(service.library.data.provider)</visible>
 				</item>
 				<item>
@@ -183,7 +178,7 @@
 					<onclick>Skin.SetString(ItemToEdit.BGType,4)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.MultiFanart,10)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 					<visible>System.HasAddon(service.library.data.provider)</visible>
 				</item>
 				<item>
@@ -191,28 +186,28 @@
 					<onclick>Skin.SetString(ItemToEdit.BGType,6)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.MultiFanart,6)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>!IsEmpty(Skin.String(WeatherFanartDir))</visible>
+					<visible>!String.IsEmpty(Skin.String(weatherfanart.path))</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[20012]</label>
 					<onclick>Skin.SetString(ItemToEdit.BGType,7)</onclick>
 					<onclick>Skin.SetFile(ItemToEdit.MultiFanart,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick>Dialog.Close(1122)</onclick>
-					<visible>IsEmpty(Window(Home).Property(No.Cases))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(No.Cases))</visible>
 				</item>
 			</content>
 		</control>
 		<control type="scrollbar" id="60">
-			<left>820</left>
+			<left>819</left>
 			<top>88</top>
 			<height>480</height>
-			<width>8</width>
+			<width>14</width>
 			<onleft>90100</onleft>
 			<onright>90100</onright>
 			<ondown>60</ondown>
 			<onup>60</onup>
 			<showonepage>false</showonepage>
-			<texturesliderbackground>-</texturesliderbackground>
+			<texturesliderbackground />
 			<texturesliderbar colordiffuse="55ffffff" border="4">scrollbar/texturesliderbar3.png</texturesliderbar>
 			<texturesliderbarfocus border="4">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
 		</control>
