@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.scope.nox.1.22" version="1.22-6.0.1" name="Scope Nox" provider-name="Funkd">
+<addon id="skin.scope.nox.1.23" version="1.23-6.0.1" name="Scope Nox" provider-name="Funkd">
 	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
+		<import addon="xbmc.gui" version="5.14.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
 		<import addon="script.skinshortcuts" version="0.4.5"/>
 		<import addon="service.library.data.provider" version="0.0.7"/>
