@@ -114,10 +114,10 @@
 					<include>WallPosterOverlay</include>
 					<include>WallPosterFocus</include>
 				</focusedlayout>
-				<itemlayout height="306" width="173" condition="Container.Content(genres)">
+				<itemlayout height="220" width="145" condition="Container.Content(genres)">
 					<control type="image">
-						<width>240</width>
-						<height>306</height>
+						<width>145</width>
+						<height>220</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
@@ -125,10 +125,10 @@
 					</control>
 					<include>WallPosterOverlay</include>
 				</itemlayout>
-				<focusedlayout height="306" width="173" condition="Container.Content(genres)">
+				<focusedlayout height="220" width="145" condition="Container.Content(genres)">
 					<control type="image">
-						<width>240</width>
-						<height>306</height>
+						<width>145</width>
+						<height>220</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>

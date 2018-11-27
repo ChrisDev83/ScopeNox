@@ -253,7 +253,7 @@
 					</control>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.UserRating)</visible>
-						<width>20</width>
+						<width>120</width>
 						<control type="label">
 							<top>-3</top>
 							<width>120</width>
@@ -283,7 +283,7 @@
 						<visible>!String.IsEmpty(ListItem.Top250)</visible>
 						<width>170</width>
 						<control type="label">
-							<top>2</top>
+							<top>-3</top>
 							<width>170</width>
 							<height>60</height>
 							<align>center</align>
@@ -293,7 +293,7 @@
 							<textcolor>grey</textcolor>
 						</control>
 						<control type="label">
-							<top>52</top>
+							<top>40</top>
 							<width>170</width>
 							<height>30</height>
 							<align>center</align>

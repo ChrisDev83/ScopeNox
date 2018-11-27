@@ -250,7 +250,7 @@
 			<include condition="Skin.HasSetting(HorizontalListNav)">MainMenuListFixed</include>
 			<include condition="!Skin.HasSetting(HorizontalListNav)">MainMenuListWrapped</include>
 			<control type="label">
-				<top>17</top>
+				<top>7</top>
 				<width>100%</width>
 				<height>41</height>
 				<font>font12_title</font>
