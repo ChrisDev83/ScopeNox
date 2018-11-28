@@ -14,6 +14,7 @@ This version of the skin contains all the GUI within an 800/820 pixel height.
 To install simply download the zip file and then within Kodi go to AddOns and 'Install from Zip' and it should install.
 
 Latest Release (Krypton) : https://github.com/Funkd/ScopeNox/releases/download/1.22/skin.scope.nox.1.22.zip
+
 Latest Release (Leia)    : https://github.com/Funkd/ScopeNox/releases/download/1.23/skin.scope.nox.1.23.zip
 
 In order to switch between 2.35 and 2.40 format go to :
