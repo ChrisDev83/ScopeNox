@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+    <addon id="funkd" name="Funkd Repo" version="1.0.0" provider-name="Chris">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="Funkd Repo">
+            <info compressed="false">https://raw.githubusercontent.com/Funkd/ScopeNox/_leia/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Funkd/ScopeNox/_leia/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Funkd/ScopeNox/_leia/</datadir>
+            <hashes>false</hashes>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Repo for ScopeNox skin updates</summary>
+            <description>.</description>
+            <platform>all</platform>
+    </extension>
+</addon>
+</addons>
