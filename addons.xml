@@ -4,7 +4,7 @@
 	<extension point="xbmc.addon.repository" name="Funkd's Repository">
 		<info compressed="false">https://raw.githubusercontent.com/Funkd/ScopeNox/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/Funkd/ScopeNox/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/Funkd/ScopeNox/master/</datadir>
+		<datadir zip="true">https://raw.githubusercontent.com/Funkd/ScopeNox/master/releases</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Funkd's Repository</summary>
@@ -19,7 +19,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.scope.nox" version="1.24" name="Scope Nox" provider-name="Funkd" aeonnox-version="6.0.1">
+<addon id="skin.scope.nox" version="1.23" name="Scope Nox" provider-name="Funkd" aeonnox-version="6.0.1">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
