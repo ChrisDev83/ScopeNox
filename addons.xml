@@ -81,7 +81,7 @@
 		</assets>
 	</extension>
 </addon>
-<addon id="skin.scope.nox.leia" version="1.24" name="Scope Nox - Leia" provider-name="Funkd" aeonnox-version="6.0.1">
+<addon id="skin.scope.nox.leia" version="1.25" name="Scope Nox - Leia" provider-name="Funkd" aeonnox-version="6.0.1">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
