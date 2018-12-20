@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Video InfoWall -->
+	<include name="VideoInfoWall">
+		<control type="group">
+			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation)</visible>
+			<include>ViewAnimation</include>
+			<left>ViewInfoWallLeft</left>
+			<top>15</top>
+			<control type="image">
+				<description>background image</description>
+				<left>2</left>
+				<top>933</top>
+				<width>1900</width>
+				<height>775</height>
+				<texture border="40">panel_reflect.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<left>2</left>
+				<top>158</top>
+				<width>1930</width>
+				<height>775</height>
+				<texture border="40">listpanel_back.png</texture>
+			</control>
+			<control type="panel" id="51">
+				<left>28</left>
+				<top>190</top>
+				<width>1300</width>
+				<height>703</height>
+				<onleft condition="Control.IsVisible(60)">60</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
+				<!-- Only works if ParentFolder item is disabled -->
+				<onright>SetFocus(51,$INFO[Container(51).CurrentItem],absolute)</onright>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="InfoWall">icon</viewtype>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<visible>Container.Content(tvshows) | Container.Content(movies)</visible>
+				<itemlayout height="234" width="156">
+					<control type="image">
+						<width>156</width>
+						<height>234</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+						<fadetime>400</fadetime>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
+					</control>
+					<control type="image">
+						<left>100</left>
+						<top>0</top>
+						<width>62</width>
+						<height>62</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<bordersize>1</bordersize>
+					</control>
+					<control type="group">
+						<left>15</left>
+						<top>15</top>
+						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
+					</control>
+					<control type="image">
+						<width>156</width>
+						<height>234</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout height="234" width="156">
+					<control type="image">
+						<width>156</width>
+						<height>234</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[PosterThumb]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<left>100</left>
+						<top>0</top>
+						<width>62</width>
+						<height>62</height>
+						<texture>$VAR[OverlayVar]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="group">
+						<left>15</left>
+						<top>15</top>
+						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
+					</control>
+					<control type="image">
+						<width>156</width>
+						<height>234</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+						<include>FocusFadeOutAnimation</include>
+					</control>
+					<control type="image">
+						<width>156</width>
+						<height>234</height>
+						<texture border="10">thumbs/thumbnail_focused.png</texture>
+						<include>FocusFadeInAnimation</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>18</left>
+				<top>190</top>
+				<width>9</width>
+				<height>710</height>
+				<onright>50</onright>
+				<onleft>SetProperty(MediaMenu,True,home)</onleft>
+				<onleft>SetFocus(9050)</onleft>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<showonepage>false</showonepage>
+				<texturesliderbackground />
+				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			</control>
+			<control type="group">
+				<left>1275</left>
+				<top>188</top>
+				<control type="image">
+					<width>630</width>
+					<height>376</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+					<fadetime>300</fadetime>
+					<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+					<bordersize>2</bordersize>
+				</control>
+				<control type="label">
+					<top>370</top>
+					<width>640</width>
+					<height>60</height>
+					<font>font16_title</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<label>[B]$VAR[FloorLabelVar][/B]</label>
+					<textoffsetx>15</textoffsetx>
+				</control>
+				<control type="label">
+					<top>435</top>
+					<width>630</width>
+					<height>70</height>
+					<font>font12</font>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+					<label>$INFO[ListItem.Genre]</label>
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
+				</control>
+				<control type="image">
+					<top>306</top>
+					<width>630</width>
+					<height>70</height>
+					<texture>black.png</texture>
+					<colordiffuse>DDffffff</colordiffuse>
+					<bordersize>2</bordersize>
+				</control>
+				<control type="grouplist">
+					<left>0</left>
+					<top>306</top>
+					<width>630</width>
+					<height>75</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+
+					<!-- Invisible labels so that the IsEmpty can be called on VARs -->
+					<control type="label" id="9901">
+						<label>$VAR[AspectRatio]</label>
+						<visible>false</visible>
+					</control>
+					<control type="label" id="9902">
+						<label>$VAR[AudioChannelCustom]</label>
+						<visible>false</visible>
+					</control>
+					<control type="label" id="9903">
+						<label>$VAR[SourceFlagVar]</label>
+						<visible>false</visible>
+					</control>
+					<control type="label" id="9904">
+						<label>$VAR[AudioCodecCustom]</label>
+						<visible>false</visible>
+					</control>
+
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					</control>
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>flags/audio/$VAR[AudioCodecCustom].png</texture>
+						<visible>!IsEmpty(Control.GetLabel(9904))</visible>
+					</control>
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>flags/channels/$VAR[AudioChannelCustom].png</texture>
+						<visible>!IsEmpty(Control.GetLabel(9902))</visible>
+					</control>
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
+						<visible>!IsEmpty(Control.GetLabel(9903))</visible>
+					</control>
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>flags/aspectratio/$VAR[AspectRatio].png</texture>
+						<visible>!IsEmpty(Control.GetLabel(9901))</visible>
+					</control>
+					<control type="image">
+						<width>90</width>
+						<colordiffuse>grey</colordiffuse>
+						<include>MediaFlagVars</include>
+						<texture>flags/cc.png</texture>
+						<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<top>470</top>
+					<width>680</width>
+					<height>270</height>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					
+					<control type="label">
+						<label>$VAR[VideoSubLabelVar]</label>
+						<width>680</width>
+						<height>40</height>
+						<font>font12</font>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+					</control>
+				</control>
+				<control type="textbox">
+					<label>$VAR[VideoPlotVar]</label>
+					<top>525</top>
+					<left>15</left>
+					<width>600</width>
+					<height>173</height>
+					<font>font13</font>
+					<autoscroll time="3000" delay="1" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
+					<pagecontrol>61</pagecontrol>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+				</control>
+				<control type="scrollbar" id="61">
+					<left>617</left>
+					<top>525</top>
+					<width>14</width>
+					<height>170</height>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<showonepage>false</showonepage>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- Music InfoWall -->
+	<include name="MusicInfoWall">
+		<control type="group">
+			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation)</visible>
+			<include>ViewAnimation</include>
+			<left>ViewInfoWallLeft</left>
+			<top>15</top>
+			<control type="image">
+				<description>background image</description>
+				<left>10</left>
+				<top>1080</top>
+				<width>1875</width>
+				<height>880</height>
+				<texture border="40">panel_reflect.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<left>10</left>
+				<top>148</top>
+				<width>1900</width>
+				<height>775</height>
+				<texture border="40">listpanel_back.png</texture>
+			</control>
+			<control type="panel" id="51">
+				<left>40</left>
+				<top>180</top>
+				<width>1200</width>
+				<height>710</height>
+				<onleft condition="Control.IsVisible(60)">60</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
+				<onright>61</onright>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="InfoWall">icon</viewtype>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(addons)</visible>
+				<itemlayout height="180" width="300" condition="Container.Content(albums) | Container.Content(addons)">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout height="180" width="180" condition="Container.Content(albums) | Container.Content(addons)">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+						<include>FocusFadeOutAnimation</include>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture border="10">thumbs/thumbnail_focused.png</texture>
+						<include>FocusFadeInAnimation</include>
+					</control>
+				</focusedlayout>
+				<itemlayout height="180" width="180" condition="Container.Content(artists)">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>thumbs/poster_black.png</texture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="label">
+						<top>140</top>
+						<width>180</width>
+						<height>30</height>
+						<align>center</align>
+						<textoffsetx>15</textoffsetx>
+						<textcolor>grey2</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="180" width="180" condition="Container.Content(artists)">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<left>200</left>
+						<width>80</width>
+						<height>80</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+						<include>FocusFadeOutAnimation</include>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>thumbs/poster_black.png</texture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="label">
+						<top>140</top>
+						<width>180</width>
+						<height>30</height>
+						<align>center</align>
+						<textoffsetx>15</textoffsetx>
+						<textcolor>grey2</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture border="10">thumbs/thumbnail_focused.png</texture>
+						<include>FocusFadeInAnimation</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>404</left>
+				<top>180</top>
+				<width>14</width>
+				<height>720</height>
+				<onright>50</onright>
+				<onleft>SetProperty(MediaMenu,True,home)</onleft>
+				<onleft>SetFocus(9050)</onleft>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<showonepage>false</showonepage>
+				<texturesliderbackground />
+				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			</control>
+			<control type="group">
+				<left>1270</left>
+				<top>240</top>
+				<control type="image">
+					<width>380</width>
+					<height>400</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[Container(51).ListItem.Art(fanart)]</texture>
+					<fadetime>300</fadetime>
+					<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+					<bordersize>2</bordersize>
+				</control>
+				<control type="label">
+					<top>401</top>
+					<width>615</width>
+					<height>60</height>
+					<font>font16_title_bold</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<label>$VAR[FloorLabelVar]</label>
+					<textoffsetx>15</textoffsetx>
+				</control>
+				<control type="button">
+					<top>461</top>
+					<width>680</width>
+					<label>$INFO[ListItem.Artist,,[CR]]$INFO[ListItem.Year]$INFO[ListItem.Property(Album_Label), � ]</label>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				<control type="button">
+					<top>461</top>
+					<width>680</width>
+					<label>$INFO[ListItem.Property(Artist_Genre),,[CR]]$INFO[ListItem.Property(Artist_YearsActive)]</label>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>Container.Content(artists)</visible>
+				</control>
+				<control type="button">
+					<top>461</top>
+					<width>680</width>
+					<label>$INFO[ListItem.AddonCreator,,[CR]]$INFO[ListItem.AddonVersion]</label>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>Container.Content(addons)</visible>
+				</control>
+				<control type="textbox">
+					<label>$VAR[MusicPlotVar]</label>
+					<top>555</top>
+					<left>15</left>
+					<width>650</width>
+					<height>342</height>
+					<font>font14_textbox</font>
+					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
+					<pagecontrol>61</pagecontrol>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+				</control>
+				<control type="scrollbar" id="61">
+					<left>590</left>
+					<top>555</top>
+					<width>14</width>
+					<height>342</height>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<showonepage>false</showonepage>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- Addon InfoWall -->
+	<include name="AddonInfoWall">
+		<control type="group">
+			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation)</visible>
+			<include>ViewAnimation</include>
+			<top>25</top>
+			<control type="image">
+				<description>background image</description>
+				<left>10</left>
+				<top>1080</top>
+				<width>1875</width>
+				<height>880</height>
+				<texture border="40">panel_reflect.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<left>10</left>
+				<top>148</top>
+				<width>1900</width>
+				<height>775</height>
+				<texture border="40">listpanel_back.png</texture>
+			</control>
+			<control type="panel" id="51">
+				<left>40</left>
+				<top>180</top>
+				<width>1200</width>
+				<height>710</height>
+				<onleft condition="Control.IsVisible(60)">60</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetProperty(MediaMenu,True,home)</onleft>
+				<onleft condition="!Control.IsVisible(60)">SetFocus(9050)</onleft>
+				<onright>61</onright>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="InfoWall">icon</viewtype>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<visible>Container.Content(addons)</visible>
+				<itemlayout height="180" width="180">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<left>110</left>
+						<width>80</width>
+						<height>80</height>
+						<texture>overlays/addons/enabled.png</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>String.IsEqual(ListItem.Label2,$LOCALIZE[449])</visible>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout height="180" width="180">
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<left>110</left>
+						<width>80</width>
+						<height>80</height>
+						<texture>overlays/addons/enabled.png</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>String.IsEqual(ListItem.Label2,$LOCALIZE[449])</visible>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture>black.png</texture>
+						<bordersize>2</bordersize>
+						<colordiffuse>44ffffff</colordiffuse>
+						<include>FocusFadeOutAnimation</include>
+					</control>
+					<control type="image">
+						<width>180</width>
+						<height>180</height>
+						<texture border="10">thumbs/thumbnail_focused.png</texture>
+						<include>FocusFadeInAnimation</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>154</left>
+				<top>179</top>
+				<width>14</width>
+				<height>900</height>
+				<onright>50</onright>
+				<onleft>SetProperty(MediaMenu,True,home)</onleft>
+				<onleft>SetFocus(9050)</onleft>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<showonepage>false</showonepage>
+				<texturesliderbackground />
+				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			</control>
+			<control type="group">
+				<left>1160</left>
+				<top>190</top>
+				<control type="image">
+					<width>625</width>
+					<height>368</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" fallback="special://skin/backgrounds/default_livecases.jpg">$INFO[Container(51).ListItem.Art(fanart)]</texture>
+					<fadetime>300</fadetime>
+					<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
+					<bordersize>2</bordersize>
+				</control>
+				<control type="label">
+					<top>360</top>
+					<width>628</width>
+					<height>60</height>
+					<font>font16_title_bold</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<label>$VAR[FloorLabelVar]</label>
+					<textoffsetx>15</textoffsetx>
+				</control>
+				<control type="button">
+					<top>406</top>
+					<width>680</width>
+					<label>$INFO[ListItem.AddonCreator,,[CR]]$INFO[ListItem.AddonVersion]</label>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+				</control>
+				<control type="textbox">
+					<label>$VAR[MusicPlotVar]</label>
+					<top>470</top>
+					<left>15</left>
+					<width>690</width>
+					<height>232</height>
+					<font>font12_textbox</font>
+					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
+					<pagecontrol>61</pagecontrol>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+				</control>
+				<control type="scrollbar" id="61">
+					<left>700</left>
+					<top>480</top>
+					<width>14</width>
+					<height>225</height>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<showonepage>false</showonepage>
+					<texturesliderbackground />
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>
